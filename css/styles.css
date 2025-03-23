@@ -202,6 +202,9 @@ nav {
     width: 25%;
     background-color: #f4f4f4;
     padding: 20px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
 }
 nav ul {
     list-style: none;
@@ -223,6 +226,9 @@ nav ul li a:hover {
 main {
     width: 75%;
     padding: 20px;
+    margin-left: 25%;
+    height: 100vh;
+    overflow-y: auto;
 }
 .page-header {
     background: none; /* Remove background from header on main page */
