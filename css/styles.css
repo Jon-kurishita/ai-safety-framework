@@ -226,8 +226,7 @@ nav ul li a:hover {
 main {
     width: 75%;
     padding: 20px;
-    margin-left: 25%;
-    height: 100vh;
+    margin-left: calc(25% + 20px);
     overflow-y: auto;
 }
 .page-header {
