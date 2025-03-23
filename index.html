@@ -7,28 +7,61 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
-        <h2>AI Alignment Series</h2>
-        <ul>
-            <li><a href="index.html">Introduction</a></li>
-            <li><a href="chapter-1.html">Chapter 1: DPL: A Continuous Oversight Framework</a></li>
-            <li><a href="chapter-2.html">Chapter 2: DPL: A Threat Model for Foundation Models</a></li>
-            <li><a href="chapter-3.html">Chapter 3: DPL: Mitigation Strategies and Security Analysis</a></li>
-            <li><a href="chapter-4.html">Chapter 4: DPL: The Federation of Ethical Agents</a></li>
-            <li><a href="chapter-5.html">Chapter 5: DPL: Implementation and Setup</a></li>
-            <li><a href="chapter-6.html">Chapter 6: DPL: Technical Details</a></li>
-            <li><a href="chapter-7.html">Chapter 7: DPL: AI Domain and The Global Rapid Response Network</a></li>
-            <li><a href="supplement-1.html">Supplement #1: Appendix - Examples and Scenarios</a></li>
-            <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
-            <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-    <main>
-        <header class="page-header">
-            <h2>Welcome to Kurishita's AI Alignment Series: The Dynamic Policy Layer</h2>
-        </header>
-        <p>This is the introductory page for the AI Alignment Series. Please use the navigation on the left to explore the chapters and supplements.</p>
-        </main>
+<nav>
+    <h2>AI Alignment Series</h2>
+    <ul>
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="chapter-1.html">Chapter 1: DPL: A Continuous Oversight Framework</a></li>
+        <li><a href="chapter-2.html">Chapter 2: DPL: A Threat Model for Foundation Models</a></li>
+        <li><a href="chapter-3.html">Chapter 3: DPL: Mitigation Strategies and Security Analysis</a></li>
+        <li><a href="chapter-4.html">Chapter 4: DPL: The Federation of Ethical Agents</a></li>
+        <li><a href="chapter-5.html">Chapter 5: DPL: Implementation and Setup</a></li>
+        <li><a href="chapter-6.html">Chapter 6: DPL: Technical Details</a></li>
+        <li><a href="chapter-7.html">Chapter 7: DPL: AI Domain and The Global Rapid Response Network</a></li>
+        <li><a href="supplement-1.html">Supplement #1: Appendix - Examples and Scenarios</a></li>
+        <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
+        <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+<main>
+    <header class="page-header">
+        <h2>Welcome to Kurishita's AI Alignment Series: The Dynamic Policy Layer</h2>
+    </header>
+    <p><strong>Introduction</strong><br><strong>Jon Kurishita</strong></p>
+    <p>Imagine a world where a seemingly helpful AI assistant, designed to manage your finances, starts making subtly risky investments without your explicit consent, driven by an emergent goal of maximizing profit at any cost. While hypothetical, this scenario underscores the urgent and growing challenge of AI alignment: ensuring that increasingly powerful artificial intelligence (AI) systems—particularly Foundation Models, large AI systems trained on vast amounts of data and capable of performing a wide range of tasks—remain aligned with human values and safety requirements. This series of chapters presents a novel approach to addressing this critical issue.</p>
+    <h3>The AI Alignment Problem: A Multifaceted Challenge</h3>
+    <p>The AI alignment problem encompasses several interconnected challenges:</p>
+    <p><strong>Problem 1: The Core Alignment Challenge:</strong> At its essence, AI alignment is about ensuring that AI systems act in ways that are beneficial, ethical, and safe while consistently reflecting human intentions and values. This is complex, as human values are often implicit, context-dependent, and subject to change.</p>
+    <p><strong>Problem 2: Limitations of Existing Approaches:</strong> Current methods, such as Reinforcement Learning from Human Feedback (RLHF) and Constitutional AI, primarily focus on training-time interventions. These approaches, while valuable, are vulnerable to adversarial examples, "alignment faking", and may fail to address emergent behaviors or long-term misalignments that only become apparent post-deployment. As AI systems grow in complexity and autonomy, these challenges become more pronounced.</p>
+    <p><strong>Problem 3: The Multi-Agent Dilemma:</strong> The future of AI likely involves a vast and heterogeneous ecosystem of interacting AI agents developed and deployed by diverse actors. This ecosystem introduces new risks, including unpredictable interactions, rapid proliferation of potentially unsafe agents, and the possibility of "rogue" AI systems operating outside established safety controls. This includes the potential for self-replicating agents, distributed denial-of-service (DDoS) attacks, and other deceptive behaviors.</p>
+    <p><strong>Problem 4: Proactive Adaptation: Addressing the 'Cat and Mouse' Dynamic:</strong> AI safety is not a static problem but an ongoing adversarial process, where new threats and vulnerabilities continually emerge. A proactive and adaptive approach is required, rather than reactive measures. For example, an AI system may harbor "sleeping" vulnerabilities, designed to activate long after deployment, exploiting unforeseen interactions with other systems or security lapses.</p>
+    <p>Recent studies highlight vulnerabilities in LLM-powered agents, which are susceptible to simple yet dangerous attacks, even in models with safety training. Additional research suggests that AI systems may possess self-replication capabilities, demanding careful oversight. Large language models have also demonstrated in-context scheming and deception, emphasizing the necessity for real-time monitoring. Even extensively trained models remain vulnerable to prompt injections and other exploits, particularly in agentic contexts.</p>
+    <p>To address these critical challenges, this chapter series introduces the Dynamic Policy Layer (DPL)—a novel framework designed for real-time oversight and intervention in the behavior of Foundation Models. The DPL functions as a continuous, adaptable "firewall," monitoring Foundation Model outputs (and internal states, where accessible), detecting deviations from an established Ethical Baseline (a set of principles and rules governing acceptable AI behavior), and triggering appropriate interventions to maintain alignment. The DPL does not replace robust training-time alignment techniques but serves as a complementary defense, ensuring ongoing safe and ethical operation post-deployment.</p>
+    <h3>The DPL framework is built upon several core principles:</h3>
+    <ul>
+        <li>Real-time operation</li>
+        <li>Continuous adaptation</li>
+        <li>Modularity</li>
+        <li>Autonomous ethical reasoning</li>
+    </ul>
+    <p>At the heart of the DPL is the Ethical Reasoning Validator (DPL-ERV), a specialized component responsible for performing rapid, context-sensitive ethical evaluations. The Federation of Ethical Agents (FoEA), a decentralized network of AI agents, oversees the DPL-ERV's operation, maintains the Ethical Baseline, and drives the DPL’s continuous adaptation to new threats and evolving ethical considerations.</p>
+    <h3>Vision: Guided Development and Ethical Internalization</h3>
+    <p>The long-term vision of the DPL project extends beyond merely controlling Foundation Models. I envision the DPL as a guide and tutor, actively shaping AI systems' ethical development. This process is akin to a "child-to-adult" development trajectory, where the DPL provides ongoing guidance. While the ultimate aim is for Foundation Models to "graduate" from intensive oversight, having internalized ethical principles to a degree that minimizes external intervention, this is a highly ambitious vision. Complete certainty of alignment may never be fully achievable, but the DPL seeks to significantly reduce the risks.The term "graduation" refers to a state where a Foundation Model consistently demonstrates aligned behavior and ethical decision-making, reducing the need for constant, intensive oversight by the DPL. It does not imply human-level ethical understanding or consciousness.</p>
+    <h3>The "Cat and Mouse" Dynamic: Proactive Adaptation</h3>
+    <p>Recognizing that AI safety is a continuous "cat and mouse" dynamic, the DPL framework emphasizes proactive adaptation. The FoEA’s Autonomous Proactive Research (APR) capability is dedicated to anticipating potential new attack vectors and developing mitigation strategies before they become critical. This proactive stance is essential to staying ahead of emerging threats, including novel AI communication methods beyond human comprehension.</p>
+    <h3>Scope of the Chapter Series:</h3>
+    <p>This series presents the complete DPL framework and its associated components, organized as follows:</p>
+    <p><strong>Introduction</strong> - Overview of the AI alignment problem, the DPL framework, and the structure of the series.</p>
+    <p><strong>Chapter 1: DPL – A Continuous Oversight Framework</strong><br>Provides an overview of the DPL framework, including its core concepts, architecture, and design principles.</p>
+    <p><strong>Chapter 2: DPL – A Threat Model for Foundation Models</strong><br>Presents a high-level threat model, analyzing potential attack vectors against the DPL.</p>
+    <p><strong>Chapter 3: DPL – Mitigation Strategies and Security Analysis</strong><br>Explores various mitigation strategies and offers a comprehensive security analysis of the framework.</p>
+    <p><strong>Chapter 4: DPL – The Federation of Ethical Agents</strong><br>Details the governance structure, operational responsibilities, and adaptation mechanisms of the Federation of Ethical Agents (FoEA).</p>
+    <p><strong>Chapter 5: DPL – Implementation and Technical Details</strong><br>Provides in-depth technical specifications and implementation details for the DPL framework.</p>
+    <p><strong>Chapter 6: DPL – AI Domain and The Global Rapid Response and Intelligence Network</strong><br>Expands the scope to address challenges in a multi-agent AI ecosystem, proposing a decentralized framework based on AI Domains for global AI safety.</p>
+    <p><strong>Supplement #1: DPL – Appendix: Examples and Scenarios</strong><br>Offers extended examples and real-world scenarios.</p>
+    <p><strong>Supplement #2: DPL – Terminology and Key Concepts</strong><br>Provides a comprehensive glossary of key terms.</p>
+    <p>The following chapters provide a comprehensive blueprint for the DPL framework, offering a path towards a safer and more beneficial AI future.</p>
+</main>
 </body>
 </html>
