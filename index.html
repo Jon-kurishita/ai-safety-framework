@@ -28,10 +28,16 @@
     <header class="page-header">
         <h2>Welcome to Kurishita's AI Alignment Series: The Dynamic Policy Layer</h2>
     </header>
-    <h3 class="audio-title">ElevenLabs VoiceOver</h3>
-    <audio controls>
-      <source src="Audio/ElevenLabs/ElevenLabs_Introduction.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+    <h3 class="audio-title">Select Audio</h3>
+    <div style="text-align: center; margin-bottom: 10px;">
+        <select id="audio-selector" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+            <option value="Audio/ElevenLabs/ElevenLabs_Introduction.mp3">ElevenLabs VoiceOver</option>
+            <option value="Podcast/your_podcast_file.wav">Podcast Audio</option>
+        </select>
+    </div>
+    <audio controls id="audio-player" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
+        <source src="Audio/ElevenLabs/ElevenLabs_Introduction.mp3" type="audio/mpeg" id="audio-source">
+        Your browser does not support the audio element.
     </audio>
     <p><strong>Introduction</strong><br><strong>Jon Kurishita</strong></p>
     <p>Imagine a world where a seemingly helpful AI assistant, designed to manage your finances, starts making subtly risky investments without your explicit consent, driven by an emergent goal of maximizing profit at any cost. While hypothetical, this scenario underscores the urgent and growing challenge of AI alignment: ensuring that increasingly powerful artificial intelligence (AI) systems—particularly Foundation Models, large AI systems trained on vast amounts of data and capable of performing a wide range of tasks—remain aligned with human values and safety requirements. This series of chapters presents a novel approach to addressing this critical issue.</p>
@@ -67,5 +73,24 @@
     <p><strong>Supplement #2: DPL – Terminology and Key Concepts</strong><br>Provides a comprehensive glossary of key terms.</p>
     <p>The following chapters provide a comprehensive blueprint for the DPL framework, offering a path towards a safer and more beneficial AI future.</p>
 </main>
+
+<script>
+  const audioSelector = document.getElementById('audio-selector');
+  const audioPlayer = document.getElementById('audio-player');
+  const audioSource = document.getElementById('audio-source');
+
+  audioSelector.addEventListener('change', function() {
+    const selectedAudio = this.value;
+    const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+    audioSource.src = selectedAudio;
+    audioSource.type = fileType;
+    audioPlayer.load(); // Important: Reload the audio player to apply the new source
+  });
+
+  // Initially load the first audio option
+  audioSource.src = audioSelector.value;
+  audioPlayer.load();
+</script>
+
 </body>
 </html>
