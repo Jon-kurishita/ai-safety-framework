@@ -228,6 +228,9 @@ main {
     padding: 20px;
     margin-left: calc(25% + 50px);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .page-header {
     background: none; /* Remove background from header on main page */
@@ -249,10 +252,10 @@ main {
     margin-bottom: 5px; /* Add a little space between the title and the player */
 }
 
-/* Center Audio Player */
-audio {
+/* Center Audio Player (No longer needed as main is centering) */
+/* audio {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px; /* Add a little space below the player if needed */
-}
+    margin-bottom: 10px;
+} */
