@@ -240,3 +240,11 @@ main {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
+
+/* Audio Title Style */
+.audio-title {
+    font-size: 1em; /* Adjust as needed to be smaller than the Introduction title */
+    color: darkblue;
+    text-align: center;
+    margin-bottom: 5px; /* Add a little space between the title and the player */
+}
