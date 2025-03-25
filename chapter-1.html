@@ -33,6 +33,17 @@
             margin-left: 20px; /* Indent the bullet points */
             list-style-type: disc; /* Ensure bullet points are visible */
         }
+        .outline-heading {
+            font-size: 1.5em; /* Adjust size as needed to match Introduction */
+            font-weight: bold; /* To make it stand out like the main headings */
+            margin-bottom: 10px; /* Add some space below the title */
+        }
+        .audio-player-heading {
+            font-size: 0.9em; /* Smaller font size */
+            color: darkblue; /* Dark blue color */
+            margin-bottom: 5px; /* Adjust spacing as needed */
+            text-align: center; /* Center the audio player heading */
+        }
     </style>
 </head>
 <body>
@@ -57,7 +68,7 @@
         <header class="page-header">
             <h2>Chapter 1: DPL: A Continuous Oversight Framework for Real-Time AI Alignment</h2>
         </header>
-        <h3>Audio Player</h3>
+        <h3 class="audio-player-heading">Audio Player</h3>
         <div style="text-align: center; margin-bottom: 10px;">
             <select id="audio-selector-chapter-1" class="audio-selector-chapter">
                 <option value="Audio/ElevenLabs/ElevenLabs_Chapter-01.mp3">ElevenLabs VoiceOver</option>
@@ -69,7 +80,7 @@
             Your browser does not support the audio element.
         </audio>
         <p><strong>Chapter 1</strong><br><strong>Jon Kurishita</strong></p>
-        <p><strong>Outline</strong></p>
+        <p class="outline-heading">Outline</p>
         <ol class="outline-numbered">
             <li><a href="#introduction">Introduction</a>
                 <ul>
