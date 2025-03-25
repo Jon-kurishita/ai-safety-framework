@@ -80,17 +80,19 @@
         <header class="page-header">
             <h2>DPL: A Continuous Oversight Framework for Real-Time AI Alignment</h2>
         </header>
-        <h3 class="audio-player-heading">Audio Player</h3>
-        <div style="text-align: center; margin-bottom: 10px;">
-            <select id="audio-selector-chapter-1" class="audio-selector-chapter">
-                <option value="Audio/ElevenLabs/ElevenLabs_Chapter-01.mp3">ElevenLabs VoiceOver</option>
-                <option value="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/Podcast/Podcast_Introduction.wav">NotebookLM Podcast</option>
-            </select>
-        </div>
-        <audio controls id="audio-player-chapter-1" class="audio-player-chapter">
-            <source src="Audio/ElevenLabs/ElevenLabs_Chapter-01.mp3" type="audio/mpeg" id="audio-source-chapter-1">
-            Your browser does not support the audio element.
-        </audio>
+
+    <h3 class="audio-title">Audio Player</h3>
+    <div style="text-align: center; margin-bottom: 10px;">
+        <select id="audio-selector" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+            <option value="Audio/ElevenLabs/ElevenLabs_Introduction.mp3">ElevenLabs VoiceOver</option>
+            <option value="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/Podcast/Podcast_Introduction.wav">NotebookLM Podcast</option>
+        </select>
+    </div>
+    <audio controls id="audio-player" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
+        <source src="Audio/ElevenLabs/ElevenLabs_Introduction.mp3" type="audio/mpeg" id="audio-source">
+        Your browser does not support the audio element.
+    </audio>
+
         <h1 class="chapter-number-heading">Chapter 1</h1>
         <p class="author-name"><strong>Jon Kurishita</strong></p>
         <p class="outline-heading">Outline</p>
