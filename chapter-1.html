@@ -71,7 +71,7 @@
         <p><strong>Chapter 1</strong><br><strong>Jon Kurishita</strong></p>
         <p><strong>Outline</strong></p>
         <ol class="outline-numbered">
-            <li><a href="#introduction">Introduction</a>
+            <li><a href="#introduction">1. Introduction</a>
                 <ul>
                     <li>Challenges of AI alignment</li>
                     <li>The role of the Dynamic Policy Layer (DPL)</li>
@@ -79,7 +79,7 @@
                     <li>Relationship with the Federation of Ethical Agents (FoEA)</li>
                 </ul>
             </li>
-            <li><a href="#core-dpl-concepts">Core DPL Concepts and Architecture</a>
+            <li><a href="#core-dpl-concepts">2. Core DPL Concepts and Architecture</a>
                 <ul>
                     <li>Design principles</li>
                     <li>Modularity and adaptability</li>
@@ -87,7 +87,7 @@
                     <li>Data flow and workflow</li>
                 </ul>
             </li>
-            <li><a href="#dpl-erv">The DPL-ERV: Ethical Reasoning and Validation</a>
+            <li><a href="#dpl-erv">3. The DPL-ERV: Ethical Reasoning and Validation</a>
                 <ul>
                     <li>Role of the DPL-ERV</li>
                     <li>Integration with the Ethical Baseline</li>
@@ -96,7 +96,7 @@
                     <li>Reinforcement Learning from Ethical Feedback (RLEF)</li>
                 </ul>
             </li>
-            <li><a href="#mitigation-strategies">High-Level Overview of Mitigation Strategies</a>
+            <li><a href="#mitigation-strategies">4. High-Level Overview of Mitigation Strategies</a>
                 <ul>
                     <li>Technical controls</li>
                     <li>Cognitive bias countermeasures</li>
@@ -107,7 +107,7 @@
                     <li>Autonomous Proactive Research (APR)</li>
                 </ul>
             </li>
-            <li><a href="#foea-overview">The Federation of Ethical Agents (FoEA): Overview</a>
+            <li><a href="#foea-overview">5. The Federation of Ethical Agents (FoEA): Overview</a>
                 <ul>
                     <li>Core functions of the FoEA</li>
                     <li>Governance of the DPL-ERV</li>
@@ -116,7 +116,7 @@
                     <li>Security oversight</li>
                 </ul>
             </li>
-            <li><a href="#threat-model-overview">Threat Model: Overview</a>
+            <li><a href="#threat-model-overview">6. Threat Model: Overview</a>
                 <ul>
                     <li>Alignment faking</li>
                     <li>In-context scheming</li>
@@ -126,7 +126,7 @@
                     <li>Ethical baseline attacks</li>
                 </ul>
             </li>
-            <li><a href="#future-research">Future Research Directions</a>
+            <li><a href="#future-research">7. Future Research Directions</a>
                 <ul>
                     <li>Autonomous threat discovery</li>
                     <li>Emergent communication risks</li>
@@ -136,7 +136,7 @@
                     <li>Digital Sanctuaries for AI development</li>
                 </ul>
             </li>
-            <li><a href="#limitations">Limitations</a>
+            <li><a href="#limitations">8. Limitations</a>
                 <ul>
                     <li>Single-model focus</li>
                     <li>Dependence on detectability</li>
@@ -145,21 +145,21 @@
                     <li>Ethical Baseline completeness</li>
                 </ul>
             </li>
-            <li><a href="#conclusion">Conclusion</a>
+            <li><a href="#conclusion">9. Conclusion</a>
                 <ul>
                     <li>Contributions of the DPL framework</li>
                     <li>Long-term vision and challenges</li>
                     <li>Future research and adaptation</li>
                 </ul>
             </li>
-            <li><a href="#references">References</a>
+            <li><a href="#references">10. References</a>
                 <ul>
                     <li>List of cited works</li>
                 </ul>
             </li>
         </ol>
         <hr>
-        <h2 id="introduction">Introduction</h2>
+        <h2 id="introduction">1. Introduction</h2>
         <p>The rapid advancement of Artificial Intelligence (AI), particularly Foundation Models—large AI systems capable of performing a wide range of tasks—presents both unprecedented opportunities and significant risks. While these models demonstrate remarkable capabilities, ensuring their alignment with human values and safety requirements remains a critical challenge. Existing approaches, primarily focused on training-time interventions, face limitations in scalability, adaptability, and robustness to emergent behaviors and adversarial attacks. This chapter introduces the Dynamic Policy Layer (DPL), a novel framework for real-time AI alignment designed to address these shortcomings.</p>
         <p>The DPL is envisioned as a continuous, adaptable "firewall" that operates after a Foundation Model has been trained and deployed. It monitors the model's outputs (and internal states, where accessible), detects deviations from a predefined Ethical Baseline (a set of principles and rules governing acceptable behavior), and triggers appropriate interventions to maintain alignment. The DPL is not a replacement for robust training-time alignment techniques; rather, it's a complementary layer of defense, providing ongoing assurance of safe and ethical operation.</p>
         <p>The framework is built upon several core principles:</p>
@@ -172,7 +172,7 @@
         <p>Central to the DPL's operation is the Federation of Ethical Agents (FoEA), a decentralized network of AI agents that governs the DPL-ERV, maintains the Ethical Baseline, and drives the DPL's continuous adaptation. The FoEA, described in detail in Chapter 4, provides a robust and scalable mechanism for overseeing the DPL's operation. The framework is designed for adaptability.</p>
         <p>This chapter provides a high-level overview of the DPL framework, focusing on its core concepts, architecture, and design principles. Subsequent chapters delve into the threat model, mitigation strategies, FoEA governance, technical implementation details, and the extension of the framework to a multi-agent AI ecosystem. The DPL framework represents a significant step towards addressing single-model alignment; however, it is acknowledged that this framework alone does not solve the broader challenges of a multi-agent AI ecosystem, nor does it guarantee universal adoption. These limitations, and potential solutions involving decentralized governance and global cooperation, are addressed in subsequent chapters within this series. Future research directions—including formal verification, collaborative reporting, autonomous threat discovery, preparing for the quantum threat, and advanced deployment strategies—are outlined to further refine continuous, post-training alignment. The proposed framework thus provides a comprehensive, adaptive solution to key post-deployment challenges, advancing the state-of-the-art in real-time AI safety.</p>
         <hr>
-        <h2 id="core-dpl-concepts">1. Core DPL Concepts and Architecture</h2>
+        <h2 id="core-dpl-concepts">2. Core DPL Concepts and Architecture</h2>
         <p>The Dynamic Policy Layer (DPL) is designed as a real-time, adaptive, and modular framework for ensuring the ethical alignment of Foundation Models. This section outlines the core design principles that underpin the DPL and provides a high-level overview of its key components and their interaction. The DPL is conceived as an external oversight mechanism, capable of operating in both full-access and black-box API scenarios, making it adaptable to a wide range of Foundation Model deployment contexts.</p>
         <h3>Design Principles</h3>
         <p>The DPL framework is built upon the following core design principles:</p>
@@ -238,7 +238,7 @@
         </ol>
         <p>This workflow ensures continuous oversight and rapid intervention, minimizing the risk of misaligned Foundation Model behavior. The decentralized governance of the FoEA, detailed in Chapter 3, provides the adaptive intelligence and ethical grounding for the entire DPL framework.</p>
         <hr>
-        <h2 id="dpl-erv">2. The DPL-ERV: Ethical Reasoning and Validation</h2>
+        <h2 id="dpl-erv">3. The DPL-ERV: Ethical Reasoning and Validation</h2>
         <p>The Ethical Reasoning Validator (DPL-ERV) is a core component of the Dynamic Policy Layer (DPL) framework, responsible for performing real-time ethical evaluations of Foundation Model outputs and behaviors. The DPL-ERV acts as a dedicated "ethical check," ensuring that the Foundation Model's actions align with the established Ethical Baseline. This section provides a high-level overview of the DPL-ERV's role, its integration with the Ethical Baseline, its key features, and its contribution to the overall DPL framework.</p>
         <div>
             <img src="images/Chapter-01/image_39ce62.png" alt="Chapter 1 - Image 2">
@@ -281,7 +281,7 @@
         <h3>RLEF</h3>
         <p>The DPL-ERV's capabilities can be further enhanced through Reinforcement Learning from Ethical Feedback (RLEF). The RLEP is not part of the DPL-ERV engine but complements it during the workflow process.This involves training the DPL-ERV to optimize its ethical evaluations based on feedback signals derived from the FoEA, human experts, and potentially from the Foundation Model's own behavior. (Further details on RLEF implementation are discussed in Chapter 4.)</p>
         <hr>
-        <h2 id="mitigation-strategies">3. High-Level Overview of Mitigation Strategies</h2>
+        <h2 id="mitigation-strategies">4. High-Level Overview of Mitigation Strategies</h2>
         <p>The Dynamic Policy Layer (DPL) framework employs a comprehensive and multi-faceted approach to mitigating the risks of Foundation Model misalignment. This approach is characterized by its layered architecture, integrated components, and adaptive capabilities, providing a robust defense against a wide range of potential threats. This section provides a high-level overview of the categories of mitigation strategies employed by the DPL, emphasizing the proactive and preventative nature of the framework. (Detailed explanations of specific mitigation strategies are provided in Chapter 2: DPL: A Threat Model and Security Analysis, and Chapter 4: DPL: Implementation and Technical Details.)</p>
         <p>The DPL's mitigation strategies can be broadly categorized as follows:</p>
         <h3>Technical Controls:</h3>
@@ -314,7 +314,7 @@
         </ul>
         <p>The combination of these mitigation strategies, guided by the principles of layered defense, integration, adaptation, and proactive threat prevention, makes the DPL framework a robust and resilient solution for maintaining Foundation Model alignment.</p>
         <hr>
-        <h2 id="foea-overview">4. The Federation of Ethical Agents (FoEA): Overview</h2>
+        <h2 id="foea-overview">5. The Federation of Ethical Agents (FoEA): Overview</h2>
         <p>The Dynamic Policy Layer (DPL) framework's long-term effectiveness and adaptability are critically dependent on the Federation of Ethical Agents (FoEA). Briefly introduced in previous sections, the FoEA is a decentralized, autonomous governance and oversight body that plays a central role in managing the DPL's ethical reasoning capabilities and ensuring its ongoing security. This section provides a high-level overview of the FoEA, its core functions, and its relationship to the DPL-ERV. (A comprehensive discussion of the FoEA's architecture, governance, and operational responsibilities is provided in Chapter 4: DPL: The Federation of Ethical Agents.)</p>
         <p>The FoEA is composed of multiple, independent AI agents, each with specialized roles and capabilities. These agents work collaboratively to:</p>
         <h3>Govern the DPL-ERV:</h3>
@@ -349,7 +349,7 @@
         </ul>
         <p>The decentralized nature of the FoEA, with its network of independent agents, is designed to enhance its resilience and prevent any single point of failure or control. The specific mechanisms for achieving consensus and making decisions within the FoEA are detailed in Chapter 4.</p>
         <hr>
-        <h2 id="threat-model-overview">5. Threat Model: Overview</h2>
+        <h2 id="threat-model-overview">6. Threat Model: Overview</h2>
         <p>Understanding the potential threats that the Dynamic Policy Layer (DPL) framework is designed to counter is crucial for appreciating its architecture and mitigation strategies. This section provides a high-level overview of the key threats that the DPL aims to address. (A detailed analysis of the threat model, including specific attack scenarios and vulnerabilities, is provided in Chapter 2: DPL: A Threat Model for Foundation Models.)</p>
         <p>The DPL is designed to mitigate the following key threats:</p>
         <ul>
@@ -362,7 +362,7 @@
         </ul>
         <p>The DPL's architecture and mitigation strategies are specifically designed to address these threats in real-time, providing a continuous layer of defense against potential Foundation Model misalignment.</p>
         <hr>
-        <h2 id="future-research">6. Future Research Directions</h2>
+        <h2 id="future-research">7. Future Research Directions</h2>
         <p>The Dynamic Policy Layer (DPL) framework represents a significant advancement in the field of real-time AI alignment, but it is not a final solution. Continuous research and development are essential to further enhance its capabilities and address the evolving challenges of AI safety. This section outlines some key future research directions for the DPL framework.</p>
         <ul>
             <li><strong>Autonomous Threat Discovery:</strong> Developing more sophisticated AI agents within the FoEA capable of autonomously discovering new and emerging threats to AI alignment.</li>
@@ -374,7 +374,7 @@
         </ul>
         <p>These research directions highlight the ongoing commitment to advancing the DPL framework and ensuring the long-term safety and alignment of increasingly capable AI systems.</p>
         <hr>
-        <h2 id="limitations">7. Limitations</h2>
+        <h2 id="limitations">8. Limitations</h2>
         <p>While the Dynamic Policy Layer (DPL) framework offers a promising approach to real-time AI alignment, it is important to acknowledge its current limitations.</p>
         <ul>
             <li><strong>Single-Model Focus:</strong> The current iteration of the DPL framework primarily focuses on overseeing a single Foundation Model. Extending it to effectively manage and coordinate the behavior of multiple interacting AI agents in a complex ecosystem is a significant challenge for future research.</li>
@@ -385,12 +385,12 @@
         </ul>
         <p>Acknowledging these limitations is crucial for guiding future research and development efforts aimed at creating more robust and reliable AI safety frameworks.</p>
         <hr>
-        <h2 id="conclusion">8. Conclusion</h2>
+        <h2 id="conclusion">9. Conclusion</h2>
         <p>The Dynamic Policy Layer (DPL) framework offers a novel and comprehensive approach to addressing the critical challenge of real-time AI alignment. By providing a continuous layer of oversight, incorporating autonomous ethical reasoning, and adapting to evolving threats, the DPL represents a significant step forward in ensuring the safety and ethical operation of Foundation Models.</p>
         <p>The framework's modular architecture, tiered intervention system, and the decentralized governance of the Federation of Ethical Agents (FoEA) provide a robust and adaptable foundation for long-term AI safety. While acknowledging the current limitations, the DPL framework offers a promising vision for the future of AI alignment, emphasizing the importance of continuous research, proactive threat detection, and collaborative efforts to ensure that advanced AI technologies benefit humanity.</p>
         <p>Future research will focus on expanding the DPL's capabilities to address multi-agent systems, enhance its threat detection mechanisms, optimize its performance, strengthen the security of the FoEA, and refine the Ethical Baseline. The ongoing development and adaptation of frameworks like the DPL are essential for navigating the complex and rapidly evolving landscape of artificial intelligence and ensuring a future where AI is both powerful and aligned with human values.</p>
         <hr>
-        <h2 id="references">9. References</h2>
+        <h2 id="references">10. References</h2>
         <p>List of cited works will go here.</p>
     </main>
     <script>
