@@ -4,13 +4,20 @@
 <hr>
 
 <div class="audio-section" style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
-    <h3 style="color: darkblue; margin-bottom: 10px;">Audio Summary</h3>
-    <audio controls style="width: 80%; max-width: 600px;">
-        <source src="path/to/your/audio/chapter1.mp3" type="audio/mpeg">
+    <h3 style="color: darkblue; margin-bottom: 10px; text-align: center;">Audio Player</h3> {/* <-- Changed Title */}
+    {/* === Dropdown Selector === */}
+    <select id="audio-selector" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 10px;">
+        {/* === Ensure these URLs are correct === */}
+        <option value="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/ElevenLabs/ElevenLabs_Chapter-01.mp3">ElevenLabs VoiceOver</option>
+        <option value="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/Podcast/Podcast_Chapter-01.wav">NotebookLM Podcast</option>
+    </select>
+    {/* === Audio Player Element === */}
+    <audio id="audio-player" controls style="width: 80%; max-width: 600px; display: block; margin-left: auto; margin-right: auto;">
+        {/* === Source element updated by script.js === */}
+        <source id="audio-source" src="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/ElevenLabs/ElevenLabs_Chapter-01.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 </div>
-
 <hr>
 
 <h2>Outline</h2>
