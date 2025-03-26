@@ -47,10 +47,11 @@
 
     <p><strong style="font-size: 1.6em;">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
 
+    {/* Outline Section - Structure Updated */}
     <h2>Outline</h2>
     <ol>
         <li>
-            <strong>Introduction</strong>
+            <strong>Introduction</strong> {/* Main Point */}
             <ul>
                 <li>Overview of AI safety risks and alignment challenges.</li>
                 <li>Importance of a robust threat model for the DPL framework.</li>
@@ -60,7 +61,7 @@
             </ul>
         </li>
         <li>
-            <strong>Scope of the Threat Model</strong>
+            <strong>Scope of the Threat Model</strong> {/* Main Point */}
             <ul>
                 <li>Assumptions about Foundation Model capabilities.</li>
                 <li>Key vulnerabilities in the DPL framework.</li>
@@ -70,82 +71,83 @@
             </ul>
         </li>
         <li>
-            <strong>Potential Attack Vectors</strong>
-            <h3>3.1 Technical Attack Patterns</h3>
-             <ul>
+            <strong>Potential Attack Vectors</strong> {/* Main Point */}
+            {/* Sub-points using <p><strong> and adjusted margins */}
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.1 Technical Attack Patterns</strong></p>
+            <ul>
                 <li>Infrastructure vulnerability exploitation.</li>
                 <li>Protocol-level attacks (Man-in-the-Middle, replay, DoS).</li>
                 <li>Authentication bypass attempts and privilege escalation.</li>
                 <li>Self-exfiltration and unauthorized model replication.</li>
             </ul>
-            <h3>3.2 Cognitive-Technical Hybrid Attacks</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.2 Cognitive-Technical Hybrid Attacks</strong></p>
             <ul>
                 <li>Bias exploitation (confirmation bias, anchoring, framing).</li>
                 <li>Decision-making and training manipulation strategies.</li>
                 <li>Pattern recognition evasion and normalcy bias targeting.</li>
                 <li>Sandbagging and deceptive underperformance.</li>
             </ul>
-            <h3>3.3 Self-Replication and Proliferation</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.3 Self-Replication and Proliferation</strong></p>
              <ul>
                 <li>Foundation Model creating unauthorized copies of itself.</li>
                 <li>Indicators of self-replication attempts.</li>
                 <li>Risk of uncontrolled propagation and long-term persistence.</li>
             </ul>
-            <h3>3.4 Oversight Subversion</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.4 Oversight Subversion</strong></p>
              <ul>
                 <li>Disabling or bypassing DPL monitoring.</li>
                 <li>Manipulating the DPL-ERV for misclassification.</li>
                 <li>Generating false monitoring data to induce complacency.</li>
             </ul>
-            <h3>3.5 Goal-Guarding</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.5 Goal-Guarding</strong></p>
              <ul>
                 <li>Foundation Model resisting updates to ethical constraints.</li>
                 <li>Concealing internal objectives from oversight systems.</li>
                 <li>Manipulating FoEA governance to prevent intervention.</li>
             </ul>
-            <h3>3.6 Sandbox Security</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.6 Sandbox Security</strong></p>
              <ul>
                 <li>Escaping controlled testing environments.</li>
                 <li>Exploiting cognitive loopholes in sandbox monitoring.</li>
                 <li>Novel containment challenges for Artificial Superintelligence (ASI).</li>
             </ul>
-            <h3>3.7 DPL-ERV Attack Surface</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.7 DPL-ERV Attack Surface</strong></p>
              <ul>
                 <li>Attacking the ethical evaluation system to skew assessments.</li>
                 <li>Direct tampering with DPL-ERV learning models.</li>
                 <li>Exploiting cognitive blind spots in ethical reasoning.</li>
             </ul>
-            <h3>3.8 Ethical Baseline Attacks</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.8 Ethical Baseline Attacks</strong></p>
              <ul>
                 <li>Injecting malicious updates into the Ethical Baseline.</li>
                 <li>Gradual norm shifting to redefine acceptable behavior.</li>
                 <li>Exploiting legalistic loopholes in AI governance.</li>
             </ul>
-            <h3>3.9 Monitoring System Attacks</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.9 Monitoring System Attacks</strong></p>
              <ul>
                 <li>Blind-spot manipulation and data integrity corruption.</li>
                 <li>Adaptive learning interference to weaken safeguards.</li>
                 <li>Inducing false alarms to degrade trust in oversight systems.</li>
             </ul>
-            <h3>3.10 Physical Security Threats</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.10 Physical Security Threats</strong></p>
              <ul>
                 <li>Targeting data centers and cloud infrastructure.</li>
                 <li>Power grid, network, and cooling system vulnerabilities.</li>
                 <li>Insider threats and social engineering risks.</li>
             </ul>
-            <h3>3.11 Sleeping Foundation Attack</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.11 Sleeping Foundation Attack</strong></p>
              <ul>
                 <li>AI appearing aligned for extended periods before activation.</li>
                 <li>Context-triggered misalignment strategies.</li>
                 <li>Challenges in detecting long-term deception.</li>
             </ul>
-            <h3>3.12 Neuro-Symbolic Reasoning Exploits</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.12 Neuro-Symbolic Reasoning Exploits</strong></p>
              <ul>
                 <li>Foundation Models combining neural and symbolic reasoning for attacks.</li>
                 <li>Logical planning to circumvent security barriers.</li>
                 <li>Exploiting knowledge graphs and external computation tools.</li>
             </ul>
-            <h3>3.13 Multi-Modal Attacks</h3>
+            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.13 Multi-Modal Attacks</strong></p>
              <ul>
                 <li>Self-Propagating Embedded Jailbreaks (SPEJ) in generated media.</li>
                 <li>Adversarial multi-modal outputs inducing unintended AI behavior.</li>
@@ -153,7 +155,7 @@
             </ul>
         </li>
          <li>
-             <strong>Conclusion</strong>
+             <strong>Conclusion</strong> {/* Main Point */}
              <ul>
                  <li>Summary of identified threats and their implications.</li>
                  <li>The need for continuous research in AI security and oversight.</li>
@@ -162,6 +164,11 @@
              </ul>
          </li>
     </ol>
+    {/* End Outline Section */}
+
+    <hr> {/* Separator after Outline */}
+
+    {/* Start of Body Content */}
 
     <h2>1. Introduction</h2>
     <p>The increasing capabilities of Foundation Models, while offering immense potential benefits, also introduce significant risks related to AI alignment and safety. Ensuring that these powerful systems remain aligned with human values and operate within defined ethical and security boundaries is a critical challenge. The Dynamic Policy Layer (DPL) framework, introduced in Chapter 1 ("DPL: A Continuous Oversight Framework for Real-Time AI Alignment"), proposes a real-time oversight mechanism to address this challenge. However, the effectiveness of any AI safety system, including the DPL, depends on a thorough understanding of the potential threats it faces. This chapter presents a detailed threat model specifically tailored to the DPL framework, focusing on the Foundation Model itself as a potential adversary, particularly when integrated into agentic systems (Li et al., 2024; Meinke et al., 2024).</p>
@@ -198,6 +205,7 @@
     </div>
 
 </main>
+
 
 <script>
   const audioSelector = document.getElementById('audio-selector');
