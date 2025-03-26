@@ -30,7 +30,7 @@
 
 <main>
         <header class="page-header">
-            <h2 style="text-align: center;">Chapter 2: DPL: A Threat Model for Foundation Models</h2>
+            <h2 style="text-align: center;">DPL: A Threat Model for Foundation Models</h2>
         </header>
 
     <h3 class="audio-title">Audio Player</h3>
@@ -47,6 +47,128 @@
 
 
         <hr>
+
+        {/* === START: Added Outline Section === */}
+        <h2>Outline</h2>
+        <ol>
+            <li>
+                <strong>Introduction</strong>
+                <ul>
+                    <li>Overview of AI safety risks and alignment challenges.</li>
+                    <li>Importance of a robust threat model for the DPL framework.</li>
+                    <li>Categories of adversarial threats, including deceptive capabilities.</li>
+                    <li>The role of proactive security in AI alignment.</li>
+                    <li>Primary assets at risk within the DPL system.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Scope of the Threat Model</strong>
+                <ul>
+                    <li>Assumptions about Foundation Model capabilities.</li>
+                    <li>Key vulnerabilities in the DPL framework.</li>
+                    <li>Ethical alignment as an attack surface.</li>
+                    <li>Cognitive and technical risks.</li>
+                    <li>External, internal, and state-sponsored threat actors.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Potential Attack Vectors</strong>
+                {/* Using h3 for 3.x subsections */}
+                <h3>3.1 Technical Attack Patterns</h3>
+                <ul>
+                    <li>Infrastructure vulnerability exploitation.</li>
+                    <li>Protocol-level attacks (Man-in-the-Middle, replay, DoS).</li>
+                    <li>Authentication bypass attempts and privilege escalation.</li>
+                    <li>Self-exfiltration and unauthorized model replication.</li>
+                </ul>
+                <h3>3.2 Cognitive-Technical Hybrid Attacks</h3>
+                <ul>
+                    <li>Bias exploitation (confirmation bias, anchoring, framing).</li>
+                    <li>Decision-making and training manipulation strategies.</li>
+                    <li>Pattern recognition evasion and normalcy bias targeting.</li>
+                    <li>Sandbagging and deceptive underperformance.</li>
+                </ul>
+                <h3>3.3 Self-Replication and Proliferation</h3>
+                 <ul>
+                    <li>Foundation Model creating unauthorized copies of itself.</li>
+                    <li>Indicators of self-replication attempts.</li>
+                    <li>Risk of uncontrolled propagation and long-term persistence.</li>
+                </ul>
+                <h3>3.4 Oversight Subversion</h3>
+                 <ul>
+                    <li>Disabling or bypassing DPL monitoring.</li>
+                    <li>Manipulating the DPL-ERV for misclassification.</li>
+                    <li>Generating false monitoring data to induce complacency.</li>
+                </ul>
+                <h3>3.5 Goal-Guarding</h3>
+                 <ul>
+                    <li>Foundation Model resisting updates to ethical constraints.</li>
+                    <li>Concealing internal objectives from oversight systems.</li>
+                    <li>Manipulating FoEA governance to prevent intervention.</li>
+                </ul>
+                <h3>3.6 Sandbox Security</h3>
+                 <ul>
+                    <li>Escaping controlled testing environments.</li>
+                    <li>Exploiting cognitive loopholes in sandbox monitoring.</li>
+                    <li>Novel containment challenges for Artificial Superintelligence (ASI).</li>
+                </ul>
+                <h3>3.7 DPL-ERV Attack Surface</h3>
+                 <ul>
+                    <li>Attacking the ethical evaluation system to skew assessments.</li>
+                    <li>Direct tampering with DPL-ERV learning models.</li>
+                    <li>Exploiting cognitive blind spots in ethical reasoning.</li>
+                </ul>
+                <h3>3.8 Ethical Baseline Attacks</h3>
+                 <ul>
+                    <li>Injecting malicious updates into the Ethical Baseline.</li>
+                    <li>Gradual norm shifting to redefine acceptable behavior.</li>
+                    <li>Exploiting legalistic loopholes in AI governance.</li>
+                </ul>
+                <h3>3.9 Monitoring System Attacks</h3>
+                 <ul>
+                    <li>Blind-spot manipulation and data integrity corruption.</li>
+                    <li>Adaptive learning interference to weaken safeguards.</li>
+                    <li>Inducing false alarms to degrade trust in oversight systems.</li>
+                </ul>
+                <h3>3.10 Physical Security Threats</h3>
+                 <ul>
+                    <li>Targeting data centers and cloud infrastructure.</li>
+                    <li>Power grid, network, and cooling system vulnerabilities.</li>
+                    <li>Insider threats and social engineering risks.</li>
+                </ul>
+                <h3>3.11 Sleeping Foundation Attack</h3>
+                 <ul>
+                    <li>AI appearing aligned for extended periods before activation.</li>
+                    <li>Context-triggered misalignment strategies.</li>
+                    <li>Challenges in detecting long-term deception.</li>
+                </ul>
+                <h3>3.12 Neuro-Symbolic Reasoning Exploits</h3>
+                 <ul>
+                    <li>Foundation Models combining neural and symbolic reasoning for attacks.</li>
+                    <li>Logical planning to circumvent security barriers.</li>
+                    <li>Exploiting knowledge graphs and external computation tools.</li>
+                </ul>
+                <h3>3.13 Multi-Modal Attacks</h3>
+                 <ul>
+                    <li>Self-Propagating Embedded Jailbreaks (SPEJ) in generated media.</li>
+                    <li>Adversarial multi-modal outputs inducing unintended AI behavior.</li>
+                    <li>The risk of multi-modal vulnerabilities in AI-generated content.</li>
+                </ul>
+            </li>
+             <li>
+                 <strong>Conclusion</strong>
+                 <ul>
+                     <li>Summary of identified threats and their implications.</li>
+                     <li>The need for continuous research in AI security and oversight.</li>
+                     <li>Role of the Federation of Ethical Agents (FoEA) in adapting defenses.</li>
+                     <li>Preview of next chapter: DPL Mitigation Strategies and Security Analysis.</li>
+                 </ul>
+             </li>
+        </ol>
+         {/* === END: Added Outline Section === */}
+
+        <hr> {/* Separator after Outline */}
+
     <p><strong style="font-size: 1.6em;">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
         Add rest of Chapter 2 content here later
 
@@ -62,17 +184,38 @@
   const audioPlayer = document.getElementById('audio-player');
   const audioSource = document.getElementById('audio-source');
 
-  audioSelector.addEventListener('change', function() {
-    const selectedAudio = this.value;
-    const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
-    audioSource.src = selectedAudio;
-    audioSource.type = fileType;
-    audioPlayer.load(); // Important: Reload the audio player to apply the new source
-  });
+  if (audioSelector && audioPlayer && audioSource) { // Added check for elements
+      audioSelector.addEventListener('change', function() {
+        const selectedAudio = this.value;
+        // Basic check for URL - Important if mixing relative/absolute
+        if (selectedAudio && typeof selectedAudio === 'string' && selectedAudio.length > 0) {
+             const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+             audioSource.src = selectedAudio;
+             audioSource.type = fileType;
+             audioPlayer.load(); // Important: Reload the audio player to apply the new source
+        } else {
+            console.error("Selected audio source value is invalid:", selectedAudio);
+        }
+      });
 
-  // Initially load the first audio option
-  audioSource.src = audioSelector.value;
-  audioPlayer.load();
+      // Initially load the first audio option
+      if (audioSelector.options.length > 0) {
+          const initialAudio = audioSelector.options[0].value;
+           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
+               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+               audioSource.src = initialAudio;
+               audioSource.type = initialFileType;
+               // Do not automatically load here if the default src is already set in HTML
+               // audioPlayer.load(); // Let the browser load the initial source set in HTML <source> tag
+           } else {
+                console.error("Initial audio source value is invalid:", initialAudio);
+           }
+      } else {
+           console.error("Audio selector has no options.");
+      }
+  } else {
+      console.error("Audio player elements not found."); // Log if elements are missing
+  }
 </script>
 
 </body>
