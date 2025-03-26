@@ -48,13 +48,12 @@
 
     <p><strong style="font-size: 1.6em;">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
 
-    {/* Removed invalid comments, adjusted heading levels, added inline style override for bullet font-weight */}
     <h2>Outline</h2>
     <ol>
         <li>
-            <h2>1. Introduction</h2>
+            {/* Removed "1." from H2 text */}
+            <h2>Introduction</h2>
             <ul>
-                {/* Added style="font-weight: normal;" to potentially affected LIs */}
                 <li style="font-weight: normal;">Overview of AI safety risks and alignment challenges.</li>
                 <li style="font-weight: normal;">Importance of a robust threat model for the DPL framework.</li>
                 <li style="font-weight: normal;">Categories of adversarial threats, including deceptive capabilities.</li>
@@ -63,7 +62,8 @@
             </ul>
         </li>
         <li>
-            <h2>2. Scope of the Threat Model</h2>
+            {/* Removed "2." from H2 text */}
+            <h2>Scope of the Threat Model</h2>
             <ul>
                 <li style="font-weight: normal;">Assumptions about Foundation Model capabilities.</li>
                 <li style="font-weight: normal;">Key vulnerabilities in the DPL framework.</li>
@@ -73,7 +73,8 @@
             </ul>
         </li>
         <li>
-            <h2>3. Potential Attack Vectors</h2>
+            {/* Removed "3." from H2 text */}
+            <h2>Potential Attack Vectors</h2>
             <h3 style="margin-bottom: 0;">3.1 Technical Attack Patterns</h3>
             <ul>
                 <li style="font-weight: normal;">Infrastructure vulnerability exploitation.</li>
@@ -156,7 +157,8 @@
             </ul>
         </li>
          <li>
-             <h2>4. Conclusion</h2>
+             {/* Removed "4." from H2 text */}
+             <h2>Conclusion</h2>
              <ul>
                  <li style="font-weight: normal;">Summary of identified threats and their implications.</li>
                  <li style="font-weight: normal;">The need for continuous research in AI security and oversight.</li>
@@ -168,7 +170,6 @@
 
     <hr>
 
-    {/* === Start of Body Content === */}
     <h2>1. Introduction</h2>
     <p>The increasing capabilities of Foundation Models, while offering immense potential benefits, also introduce significant risks related to AI alignment and safety. Ensuring that these powerful systems remain aligned with human values and operate within defined ethical and security boundaries is a critical challenge. The Dynamic Policy Layer (DPL) framework, introduced in Chapter 1 ("DPL: A Continuous Oversight Framework for Real-Time AI Alignment"), proposes a real-time oversight mechanism to address this challenge. However, the effectiveness of any AI safety system, including the DPL, depends on a thorough understanding of the potential threats it faces. This chapter presents a detailed threat model specifically tailored to the DPL framework, focusing on the Foundation Model itself as a potential adversary, particularly when integrated into agentic systems (Li et al., 2024; Meinke et al., 2024).</p>
     <p>A robust threat model is essential for several reasons:</p>
