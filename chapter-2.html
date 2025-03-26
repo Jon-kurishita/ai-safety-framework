@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 2: DPL: A Threat Model for Foundation Models - AI Safety Framework</title>
+    <title>DPL: A Threat Model for Foundation Models - AI Safety Framework</title>
+    <title>Chapter 2</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <nav>
     <h2>AI Alignment Series</h2>
     <ul>
@@ -25,34 +26,31 @@
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
-    <main>
+
+
+<main>
         <header class="page-header">
-             {/* --- Consider changing h2 to h1 if this is the main page title --- */}
             <h2 style="text-align: center;">Chapter 2: DPL: A Threat Model for Foundation Models</h2>
         </header>
 
-        {/* === START: Added Audio Player Section === */}
-        <div class="audio-section" style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
-            <h3 style="color: darkblue; margin-bottom: 10px; text-align: center;">Audio Player</h3>
-            {/* Dropdown Selector */}
-            <select id="audio-selector" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 10px;">
-                {/* === Ensure these URLs point to existing files === */}
-                <option value="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/ElevenLabs/ElevenLabs_Chapter-02.mp3">ElevenLabs VoiceOver</option>
-                <option value="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/Podcast/Podcast_Chapter-02.wav">NotebookLM Podcast</option>
-            </select>
-            {/* Audio Player Element */}
-            <audio id="audio-player" controls style="width: 80%; max-width: 600px; display: block; margin-left: auto; margin-right: auto;">
-                {/* Source element updated by script.js */}
-                <source id="audio-source" src="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/ElevenLabs/ElevenLabs_Chapter-02.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-        {/* === END: Added Audio Player Section === */}
+    <h3 class="audio-title">Audio Player</h3>
+    <div style="text-align: center; margin-bottom: 10px;">
+        <select id="audio-selector" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+            <option value="Audio/ElevenLabs//ElevenLabs_Chapter-02.mp3">ElevenLabs VoiceOver</option>
+            <option value="https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/Podcast/Podcast_Chapter-02.wav">NotebookLM Podcast</option>
+        </select>
+    </div>
+    <audio controls id="audio-player" style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;">
+        <source src="Audio/ElevenLabs/ElevenLabs_Introduction.mp3" type="audio/mpeg" id="audio-source">
+        Your browser does not support the audio element.
+    </audio>
 
-        <hr> {/* Optional Separator */}
+# https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/ElevenLabs/ElevenLabs_Chapter-02.mp3
+# https://raw.githubusercontent.com/Jon-kurishita/ai-safety-framework/main/Audio/Podcast/Podcast_Chapter-02.wav
 
-        <p>This is where the content for Chapter 2 will go.</p>
-        {/* Add rest of Chapter 2 content here later */}
+        <hr>
+    <p><strong style="font-size: 1.6em;">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
+        Add rest of Chapter 2 content here later
 
         <div style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; text-align: right;">
             <p style="font-size: 0.9em; color: #555;">© 2025 Jon Kurishita. All rights reserved.</p>
@@ -60,53 +58,24 @@
 
     </main>
 
-{/* === START: Added Inline Script === */}
+
 <script>
   const audioSelector = document.getElementById('audio-selector');
   const audioPlayer = document.getElementById('audio-player');
   const audioSource = document.getElementById('audio-source');
 
-  // Check if all elements exist before adding listeners/loading
-  if (audioSelector && audioPlayer && audioSource) {
-      // Add event listener for changes
-      audioSelector.addEventListener('change', function() {
-          const selectedAudio = this.value;
-          // Basic check for URL structure (optional but good practice)
-          if (selectedAudio && typeof selectedAudio === 'string' && selectedAudio.includes('.')) {
-              const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg'; // Simple type check, extend if needed
-              audioSource.src = selectedAudio;
-              audioSource.type = fileType;
-              audioPlayer.load(); // Important: Reload the audio player to apply the new source
-          } else {
-              console.error("Invalid audio source selected:", selectedAudio);
-              // Optionally disable player or show error message to user
-          }
-      });
+  audioSelector.addEventListener('change', function() {
+    const selectedAudio = this.value;
+    const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+    audioSource.src = selectedAudio;
+    audioSource.type = fileType;
+    audioPlayer.load(); // Important: Reload the audio player to apply the new source
+  });
 
-      // Initially load the first audio option if options exist
-      if (audioSelector.options.length > 0) {
-          const initialAudio = audioSelector.options[0].value;
-          if (initialAudio && typeof initialAudio === 'string' && initialAudio.includes('.')) {
-              const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
-              audioSource.src = initialAudio;
-              audioSource.type = initialFileType;
-              audioPlayer.load(); // Load initial source
-          } else {
-              console.error("Invalid initial audio source:", initialAudio);
-          }
-      } else {
-          console.error("Audio selector has no options.");
-      }
-  } else {
-      // Log error if any required element is missing
-      console.error("Could not find one or more audio elements:", {
-          selectorExists: !!audioSelector,
-          playerExists: !!audioPlayer,
-          sourceExists: !!audioSource
-      });
-  }
+  // Initially load the first audio option
+  audioSource.src = audioSelector.value;
+  audioPlayer.load();
 </script>
-{/* === END: Added Inline Script === */}
 
 </body>
 </html>
