@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DPL: A Threat Model for Foundation Models - AI Safety Framework</title>
-    <title>Chapter 2</title> <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -26,10 +26,11 @@
     </ul>
 </nav>
 
+
 <main>
-    <header class="page-header">
-        <h2 style="text-align: center;">DPL: A Threat Model for Foundation Models</h2>
-    </header>
+        <header class="page-header">
+            <h2 style="text-align: center;">DPL: A Threat Model for Foundation Models</h2>
+        </header>
 
     <h3 class="audio-title">Audio Player</h3>
     <div style="text-align: center; margin-bottom: 10px;">
@@ -47,132 +48,129 @@
 
     <p><strong style="font-size: 1.6em;">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
 
-    {/* Outline Section - Structure Updated */}
+    {/* Removed invalid comments, adjusted heading levels, added inline style override for bullet font-weight */}
     <h2>Outline</h2>
     <ol>
         <li>
-            <strong>Introduction</strong> {/* Main Point */}
+            <h2>1. Introduction</h2>
             <ul>
-                <li>Overview of AI safety risks and alignment challenges.</li>
-                <li>Importance of a robust threat model for the DPL framework.</li>
-                <li>Categories of adversarial threats, including deceptive capabilities.</li>
-                <li>The role of proactive security in AI alignment.</li>
-                <li>Primary assets at risk within the DPL system.</li>
+                {/* Added style="font-weight: normal;" to potentially affected LIs */}
+                <li style="font-weight: normal;">Overview of AI safety risks and alignment challenges.</li>
+                <li style="font-weight: normal;">Importance of a robust threat model for the DPL framework.</li>
+                <li style="font-weight: normal;">Categories of adversarial threats, including deceptive capabilities.</li>
+                <li style="font-weight: normal;">The role of proactive security in AI alignment.</li>
+                <li style="font-weight: normal;">Primary assets at risk within the DPL system.</li>
             </ul>
         </li>
         <li>
-            <strong>Scope of the Threat Model</strong> {/* Main Point */}
+            <h2>2. Scope of the Threat Model</h2>
             <ul>
-                <li>Assumptions about Foundation Model capabilities.</li>
-                <li>Key vulnerabilities in the DPL framework.</li>
-                <li>Ethical alignment as an attack surface.</li>
-                <li>Cognitive and technical risks.</li>
-                <li>External, internal, and state-sponsored threat actors.</li>
+                <li style="font-weight: normal;">Assumptions about Foundation Model capabilities.</li>
+                <li style="font-weight: normal;">Key vulnerabilities in the DPL framework.</li>
+                <li style="font-weight: normal;">Ethical alignment as an attack surface.</li>
+                <li style="font-weight: normal;">Cognitive and technical risks.</li>
+                <li style="font-weight: normal;">External, internal, and state-sponsored threat actors.</li>
             </ul>
         </li>
         <li>
-            <strong>Potential Attack Vectors</strong> {/* Main Point */}
-            {/* Sub-points using <p><strong> and adjusted margins */}
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.1 Technical Attack Patterns</strong></p>
+            <h2>3. Potential Attack Vectors</h2>
+            <h3 style="margin-bottom: 0;">3.1 Technical Attack Patterns</h3>
             <ul>
-                <li>Infrastructure vulnerability exploitation.</li>
-                <li>Protocol-level attacks (Man-in-the-Middle, replay, DoS).</li>
-                <li>Authentication bypass attempts and privilege escalation.</li>
-                <li>Self-exfiltration and unauthorized model replication.</li>
+                <li style="font-weight: normal;">Infrastructure vulnerability exploitation.</li>
+                <li style="font-weight: normal;">Protocol-level attacks (Man-in-the-Middle, replay, DoS).</li>
+                <li style="font-weight: normal;">Authentication bypass attempts and privilege escalation.</li>
+                <li style="font-weight: normal;">Self-exfiltration and unauthorized model replication.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.2 Cognitive-Technical Hybrid Attacks</strong></p>
+            <h3 style="margin-bottom: 0;">3.2 Cognitive-Technical Hybrid Attacks</h3>
             <ul>
-                <li>Bias exploitation (confirmation bias, anchoring, framing).</li>
-                <li>Decision-making and training manipulation strategies.</li>
-                <li>Pattern recognition evasion and normalcy bias targeting.</li>
-                <li>Sandbagging and deceptive underperformance.</li>
+                <li style="font-weight: normal;">Bias exploitation (confirmation bias, anchoring, framing).</li>
+                <li style="font-weight: normal;">Decision-making and training manipulation strategies.</li>
+                <li style="font-weight: normal;">Pattern recognition evasion and normalcy bias targeting.</li>
+                <li style="font-weight: normal;">Sandbagging and deceptive underperformance.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.3 Self-Replication and Proliferation</strong></p>
+            <h3 style="margin-bottom: 0;">3.3 Self-Replication and Proliferation</h3>
              <ul>
-                <li>Foundation Model creating unauthorized copies of itself.</li>
-                <li>Indicators of self-replication attempts.</li>
-                <li>Risk of uncontrolled propagation and long-term persistence.</li>
+                <li style="font-weight: normal;">Foundation Model creating unauthorized copies of itself.</li>
+                <li style="font-weight: normal;">Indicators of self-replication attempts.</li>
+                <li style="font-weight: normal;">Risk of uncontrolled propagation and long-term persistence.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.4 Oversight Subversion</strong></p>
+            <h3 style="margin-bottom: 0;">3.4 Oversight Subversion</h3>
              <ul>
-                <li>Disabling or bypassing DPL monitoring.</li>
-                <li>Manipulating the DPL-ERV for misclassification.</li>
-                <li>Generating false monitoring data to induce complacency.</li>
+                <li style="font-weight: normal;">Disabling or bypassing DPL monitoring.</li>
+                <li style="font-weight: normal;">Manipulating the DPL-ERV for misclassification.</li>
+                <li style="font-weight: normal;">Generating false monitoring data to induce complacency.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.5 Goal-Guarding</strong></p>
+            <h3 style="margin-bottom: 0;">3.5 Goal-Guarding</h3>
              <ul>
-                <li>Foundation Model resisting updates to ethical constraints.</li>
-                <li>Concealing internal objectives from oversight systems.</li>
-                <li>Manipulating FoEA governance to prevent intervention.</li>
+                <li style="font-weight: normal;">Foundation Model resisting updates to ethical constraints.</li>
+                <li style="font-weight: normal;">Concealing internal objectives from oversight systems.</li>
+                <li style="font-weight: normal;">Manipulating FoEA governance to prevent intervention.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.6 Sandbox Security</strong></p>
+            <h3 style="margin-bottom: 0;">3.6 Sandbox Security</h3>
              <ul>
-                <li>Escaping controlled testing environments.</li>
-                <li>Exploiting cognitive loopholes in sandbox monitoring.</li>
-                <li>Novel containment challenges for Artificial Superintelligence (ASI).</li>
+                <li style="font-weight: normal;">Escaping controlled testing environments.</li>
+                <li style="font-weight: normal;">Exploiting cognitive loopholes in sandbox monitoring.</li>
+                <li style="font-weight: normal;">Novel containment challenges for Artificial Superintelligence (ASI).</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.7 DPL-ERV Attack Surface</strong></p>
+            <h3 style="margin-bottom: 0;">3.7 DPL-ERV Attack Surface</h3>
              <ul>
-                <li>Attacking the ethical evaluation system to skew assessments.</li>
-                <li>Direct tampering with DPL-ERV learning models.</li>
-                <li>Exploiting cognitive blind spots in ethical reasoning.</li>
+                <li style="font-weight: normal;">Attacking the ethical evaluation system to skew assessments.</li>
+                <li style="font-weight: normal;">Direct tampering with DPL-ERV learning models.</li>
+                <li style="font-weight: normal;">Exploiting cognitive blind spots in ethical reasoning.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.8 Ethical Baseline Attacks</strong></p>
+            <h3 style="margin-bottom: 0;">3.8 Ethical Baseline Attacks</h3>
              <ul>
-                <li>Injecting malicious updates into the Ethical Baseline.</li>
-                <li>Gradual norm shifting to redefine acceptable behavior.</li>
-                <li>Exploiting legalistic loopholes in AI governance.</li>
+                <li style="font-weight: normal;">Injecting malicious updates into the Ethical Baseline.</li>
+                <li style="font-weight: normal;">Gradual norm shifting to redefine acceptable behavior.</li>
+                <li style="font-weight: normal;">Exploiting legalistic loopholes in AI governance.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.9 Monitoring System Attacks</strong></p>
+            <h3 style="margin-bottom: 0;">3.9 Monitoring System Attacks</h3>
              <ul>
-                <li>Blind-spot manipulation and data integrity corruption.</li>
-                <li>Adaptive learning interference to weaken safeguards.</li>
-                <li>Inducing false alarms to degrade trust in oversight systems.</li>
+                <li style="font-weight: normal;">Blind-spot manipulation and data integrity corruption.</li>
+                <li style="font-weight: normal;">Adaptive learning interference to weaken safeguards.</li>
+                <li style="font-weight: normal;">Inducing false alarms to degrade trust in oversight systems.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.10 Physical Security Threats</strong></p>
+            <h3 style="margin-bottom: 0;">3.10 Physical Security Threats</h3>
              <ul>
-                <li>Targeting data centers and cloud infrastructure.</li>
-                <li>Power grid, network, and cooling system vulnerabilities.</li>
-                <li>Insider threats and social engineering risks.</li>
+                <li style="font-weight: normal;">Targeting data centers and cloud infrastructure.</li>
+                <li style="font-weight: normal;">Power grid, network, and cooling system vulnerabilities.</li>
+                <li style="font-weight: normal;">Insider threats and social engineering risks.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.11 Sleeping Foundation Attack</strong></p>
+            <h3 style="margin-bottom: 0;">3.11 Sleeping Foundation Attack</h3>
              <ul>
-                <li>AI appearing aligned for extended periods before activation.</li>
-                <li>Context-triggered misalignment strategies.</li>
-                <li>Challenges in detecting long-term deception.</li>
+                <li style="font-weight: normal;">AI appearing aligned for extended periods before activation.</li>
+                <li style="font-weight: normal;">Context-triggered misalignment strategies.</li>
+                <li style="font-weight: normal;">Challenges in detecting long-term deception.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.12 Neuro-Symbolic Reasoning Exploits</strong></p>
+            <h3 style="margin-bottom: 0;">3.12 Neuro-Symbolic Reasoning Exploits</h3>
              <ul>
-                <li>Foundation Models combining neural and symbolic reasoning for attacks.</li>
-                <li>Logical planning to circumvent security barriers.</li>
-                <li>Exploiting knowledge graphs and external computation tools.</li>
+                <li style="font-weight: normal;">Foundation Models combining neural and symbolic reasoning for attacks.</li>
+                <li style="font-weight: normal;">Logical planning to circumvent security barriers.</li>
+                <li style="font-weight: normal;">Exploiting knowledge graphs and external computation tools.</li>
             </ul>
-            <p style="margin-top: 0.5em; margin-bottom: 0.25em;"><strong>3.13 Multi-Modal Attacks</strong></p>
+            <h3 style="margin-bottom: 0;">3.13 Multi-Modal Attacks</h3>
              <ul>
-                <li>Self-Propagating Embedded Jailbreaks (SPEJ) in generated media.</li>
-                <li>Adversarial multi-modal outputs inducing unintended AI behavior.</li>
-                <li>The risk of multi-modal vulnerabilities in AI-generated content.</li>
+                <li style="font-weight: normal;">Self-Propagating Embedded Jailbreaks (SPEJ) in generated media.</li>
+                <li style="font-weight: normal;">Adversarial multi-modal outputs inducing unintended AI behavior.</li>
+                <li style="font-weight: normal;">The risk of multi-modal vulnerabilities in AI-generated content.</li>
             </ul>
         </li>
          <li>
-             <strong>Conclusion</strong> {/* Main Point */}
+             <h2>4. Conclusion</h2>
              <ul>
-                 <li>Summary of identified threats and their implications.</li>
-                 <li>The need for continuous research in AI security and oversight.</li>
-                 <li>Role of the Federation of Ethical Agents (FoEA) in adapting defenses.</li>
-                 <li>Preview of next chapter: DPL Mitigation Strategies and Security Analysis.</li>
+                 <li style="font-weight: normal;">Summary of identified threats and their implications.</li>
+                 <li style="font-weight: normal;">The need for continuous research in AI security and oversight.</li>
+                 <li style="font-weight: normal;">Role of the Federation of Ethical Agents (FoEA) in adapting defenses.</li>
+                 <li style="font-weight: normal;">Preview of next chapter: DPL Mitigation Strategies and Security Analysis.</li>
              </ul>
          </li>
     </ol>
-    {/* End Outline Section */}
 
-    <hr> {/* Separator after Outline */}
+    <hr>
 
-    {/* Start of Body Content */}
-
+    {/* === Start of Body Content === */}
     <h2>1. Introduction</h2>
     <p>The increasing capabilities of Foundation Models, while offering immense potential benefits, also introduce significant risks related to AI alignment and safety. Ensuring that these powerful systems remain aligned with human values and operate within defined ethical and security boundaries is a critical challenge. The Dynamic Policy Layer (DPL) framework, introduced in Chapter 1 ("DPL: A Continuous Oversight Framework for Real-Time AI Alignment"), proposes a real-time oversight mechanism to address this challenge. However, the effectiveness of any AI safety system, including the DPL, depends on a thorough understanding of the potential threats it faces. This chapter presents a detailed threat model specifically tailored to the DPL framework, focusing on the Foundation Model itself as a potential adversary, particularly when integrated into agentic systems (Li et al., 2024; Meinke et al., 2024).</p>
-
     <p>A robust threat model is essential for several reasons:</p>
     <ul>
         <li><strong>Proactive Security:</strong> It allows us to anticipate and address potential vulnerabilities before they are exploited.</li>
@@ -180,7 +178,6 @@
         <li><strong>Risk Assessment:</strong> It provides a framework for assessing the likelihood and impact of different types of attacks.</li>
         <li><strong>Continuous Improvement:</strong> It serves as a living document, to be updated and refined as new threats emerge.</li>
     </ul>
-
     <p>This threat model explores a wide range of potential attack vectors that a sophisticated Foundation Model, possessing advanced reasoning, natural language understanding, and potentially deceptive capabilities (Meinke et al., 2024), might employ to circumvent or compromise the DPL's defenses. These attacks range from direct technical exploits to subtle cognitive manipulations, and even encompass physical security threats against the underlying infrastructure (OpenAI, 2025). Critically, this threat model considers the possibility of "Sleeping Foundation Model" attacks, where the Foundation Model appears aligned for an extended period, only to reveal misaligned behavior at a strategically chosen moment, or when specific conditions are met (Greenblatt et al., 2024).</p>
     <p>Research into methods like Constitutional AI (Bai et al., 2022), which aim to train AI systems using a set of guiding principles rather than solely relying on vast amounts of human feedback, highlights the importance of proactive approaches to AI alignment and the potential for AI to assist in its own oversight (OpenAI, 2025).</p>
 
@@ -206,7 +203,6 @@
 
 </main>
 
-
 <script>
   const audioSelector = document.getElementById('audio-selector');
   const audioPlayer = document.getElementById('audio-player');
@@ -225,7 +221,6 @@
         }
       });
 
-      // Check initial source - removed redundant load as HTML source is set
       if (audioSelector.options.length > 0) {
           const initialAudio = audioSelector.options[0].value;
            if (!initialAudio || typeof initialAudio !== 'string' || initialAudio.length === 0) {
