@@ -46,9 +46,11 @@
     </audio>
 
 
-        <hr>
+        <hr> {/* This HR is before the Chapter 2 Title/Name */}
 
-        {/* === START: Added Outline Section === */}
+    <p><strong style="font-size: 1.6em;">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
+
+        {/* === Outline Section START (Moved Here) === */}
         <h2>Outline</h2>
         <ol>
             <li>
@@ -165,12 +167,9 @@
                  </ul>
              </li>
         </ol>
-         {/* === END: Added Outline Section === */}
+         {/* === Outline Section END (Moved Here) === */}
 
-        <hr> {/* Separator after Outline */}
-
-    <p><strong style="font-size: 1.6em;">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
-        Add rest of Chapter 2 content here later
+        Add rest of Chapter 2 content here later {/* Placeholder remains after the outline */}
 
         <div style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; text-align: right;">
             <p style="font-size: 0.9em; color: #555;">© 2025 Jon Kurishita. All rights reserved.</p>
@@ -184,37 +183,30 @@
   const audioPlayer = document.getElementById('audio-player');
   const audioSource = document.getElementById('audio-source');
 
-  if (audioSelector && audioPlayer && audioSource) { // Added check for elements
+  if (audioSelector && audioPlayer && audioSource) { // Check for elements
       audioSelector.addEventListener('change', function() {
         const selectedAudio = this.value;
-        // Basic check for URL - Important if mixing relative/absolute
         if (selectedAudio && typeof selectedAudio === 'string' && selectedAudio.length > 0) {
              const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
              audioSource.src = selectedAudio;
              audioSource.type = fileType;
-             audioPlayer.load(); // Important: Reload the audio player to apply the new source
+             audioPlayer.load();
         } else {
             console.error("Selected audio source value is invalid:", selectedAudio);
         }
       });
 
-      // Initially load the first audio option
+      // Check initial source - removed redundant load as HTML source is set
       if (audioSelector.options.length > 0) {
           const initialAudio = audioSelector.options[0].value;
-           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
-               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
-               audioSource.src = initialAudio;
-               audioSource.type = initialFileType;
-               // Do not automatically load here if the default src is already set in HTML
-               // audioPlayer.load(); // Let the browser load the initial source set in HTML <source> tag
-           } else {
-                console.error("Initial audio source value is invalid:", initialAudio);
+           if (!initialAudio || typeof initialAudio !== 'string' || initialAudio.length === 0) {
+               console.error("Initial audio source value is invalid:", initialAudio);
            }
       } else {
            console.error("Audio selector has no options.");
       }
   } else {
-      console.error("Audio player elements not found."); // Log if elements are missing
+      console.error("Audio player elements not found.");
   }
 </script>
 
