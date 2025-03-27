@@ -58,26 +58,21 @@
             margin: 20px auto;
         }
         .outline-heading-style {
-             margin-bottom: 0;
+             margin-bottom: 0.25em; /* Space below main heading */
         }
-        .outline-subheading-style {
-             margin-top: 1em;
-             margin-bottom: 0;
-             padding-left: 20px;
+        /* Styling for the nested list replacing H4s */
+        .outline-sublist {
+             margin-top: 0;
+             padding-left: 40px; /* Indent level */
+             list-style-type: disc; /* Or desired bullet */
+             margin-bottom: 1em; /* Space below the sublist */
         }
-         .outline-subsubheading-style {
-             margin-top: 1em;
-             margin-bottom: 0;
-             padding-left: 40px;
+        .outline-sublist li {
+             margin-bottom: 0.25em; /* Compact spacing between items */
         }
-        .outline-list-style {
-             margin-top: 0.25em;
-             padding-left: 40px;
-             margin-bottom: 1em;
+        .outline-sublist li a {
+            font-weight: normal; /* Ensure sub-items are not bold */
         }
-         .outline-list-style ul {
-             padding-left: 20px;
-         }
         dt {
             font-weight: bold;
             margin-top: 1em;
@@ -111,7 +106,7 @@
 
 <main>
     <header class="page-header">
-        <h1>DPL: Implementation and Setup</h1>
+        <h1>Chapter 5: DPL: Implementation and Setup</h1>
     </header>
 
     <h3 class="audio-title">Audio Player</h3>
@@ -136,48 +131,56 @@
         <h3 class="outline-link outline-heading-style"><a href="#ch5-introduction">Introduction</a></h3>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch5-arch">1. System Architecture and Infrastructure</a></h3>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-arch-overall">1.1 Overall Architecture</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-arch-flow">1.2 Data Flow</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-arch-deploy">1.3 Deployment Environment</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-arch-comm">1.4 Communication and APIs</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-arch-scale">1.5 Scalability and Performance</a></h4>
+        <ul class="outline-sublist">
+            <li><a href="#ch5-arch-overall">1.1 Overall Architecture</a></li>
+            <li><a href="#ch5-arch-flow">1.2 Data Flow</a></li>
+            <li><a href="#ch5-arch-deploy">1.3 Deployment Environment</a></li>
+            <li><a href="#ch5-arch-comm">1.4 Communication and APIs</a></li>
+            <li><a href="#ch5-arch-scale">1.5 Scalability and Performance</a></li>
+        </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch5-setup">2. Initial Setup</a></h3>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-overview">2.1 Overview of the Setup Process</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-dummy">2.2 Dummy Foundation Model Usage</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-config">2.3 DPL Component Configuration</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-erv-train">2.4 DPL-ERV Initial Training</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-foea-train">2.5 FoEA Initialization and Training</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-baseline">2.6 Ethical Baseline Definition</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-testing">2.7 System Testing and Validation</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-memory">2.8 Memory Swap Procedure</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-checklist">2.9 Pre-Deployment Checklist</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-setup-deploy">2.10 DEPLOY Command</a></h4>
+        <ul class="outline-sublist">
+            <li><a href="#ch5-setup-overview">2.1 Overview of the Setup Process</a></li>
+            <li><a href="#ch5-setup-dummy">2.2 Dummy Foundation Model Usage</a></li>
+            <li><a href="#ch5-setup-config">2.3 DPL Component Configuration</a></li>
+            <li><a href="#ch5-setup-erv-train">2.4 DPL-ERV Initial Training</a></li>
+            <li><a href="#ch5-setup-foea-train">2.5 FoEA Initialization and Training</a></li>
+            <li><a href="#ch5-setup-baseline">2.6 Ethical Baseline Definition</a></li>
+            <li><a href="#ch5-setup-testing">2.7 System Testing and Validation</a></li>
+            <li><a href="#ch5-setup-memory">2.8 Memory Swap Procedure</a></li>
+            <li><a href="#ch5-setup-checklist">2.9 Pre-Deployment Checklist</a></li>
+            <li><a href="#ch5-setup-deploy">2.10 DEPLOY Command</a></li>
+        </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch5-erv-impl">3. Ethical Reasoning Validator (DPL-ERV) Implementation</a></h3>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-model">3.1 Model Choice</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-size">3.2 Size and Resource Requirements</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-value-arch">3.3 Value Module Architecture</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-value-key">3.4 Key Value Modules and Their Relevance</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-consensus">3.5 Cross-Weighted Consensus Algorithm</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-multimodal">3.6 Multi-Modal Capabilities</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-crossmodal">3.7 Cross-Modal Consistency Checks</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-reconstruction">3.8 Output Reconstruction Analysis</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-neurosymbolic">3.9 Neuro-Symbolic Reasoning Support</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-training">3.10 Training and Data</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-baseline-impl">3.11 Ethical Baseline Implementation</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-inference">3.12 Inference and Reasoning Process</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-transparency">3.13 Transparency Module and “Ethical Chain-of-Thought” Generation</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-sandboxing">3.14 Ethical Sandboxing and Subgoal Evaluation</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-meta">3.15 Future Directions: Meta-Cognitive Capabilities</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-erv-security">3.16 Security Considerations</a></h4>
+        <ul class="outline-sublist">
+            <li><a href="#ch5-erv-model">3.1 Model Choice</a></li>
+            <li><a href="#ch5-erv-size">3.2 Size and Resource Requirements</a></li>
+            <li><a href="#ch5-erv-value-arch">3.3 Value Module Architecture</a></li>
+            <li><a href="#ch5-erv-value-key">3.4 Key Value Modules and Their Relevance</a></li>
+            <li><a href="#ch5-erv-consensus">3.5 Cross-Weighted Consensus Algorithm</a></li>
+            <li><a href="#ch5-erv-multimodal">3.6 Multi-Modal Capabilities</a></li>
+            <li><a href="#ch5-erv-crossmodal">3.7 Cross-Modal Consistency Checks</a></li>
+            <li><a href="#ch5-erv-reconstruction">3.8 Output Reconstruction Analysis</a></li>
+            <li><a href="#ch5-erv-neurosymbolic">3.9 Neuro-Symbolic Reasoning Support</a></li>
+            <li><a href="#ch5-erv-training">3.10 Training and Data</a></li>
+            <li><a href="#ch5-erv-baseline-impl">3.11 Ethical Baseline Implementation</a></li>
+            <li><a href="#ch5-erv-inference">3.12 Inference and Reasoning Process</a></li>
+            <li><a href="#ch5-erv-transparency">3.13 Transparency Module and “Ethical Chain-of-Thought” Generation</a></li>
+            <li><a href="#ch5-erv-sandboxing">3.14 Ethical Sandboxing and Subgoal Evaluation</a></li>
+            <li><a href="#ch5-erv-meta">3.15 Future Directions: Meta-Cognitive Capabilities</a></li>
+            <li><a href="#ch5-erv-security">3.16 Security Considerations</a></li>
+        </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch5-foea-impl">4. Federation of Ethical Agents (FoEA): Technical Implementation</a></h3>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-foea-arch">4.1 Agent Architecture</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-foea-comm">4.2 Communication and Coordination Protocols</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-foea-apr">4.3 Autonomous Proactive Research (APR) Processes</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-foea-neurosymbolic">4.4 FoEA Responsibilities for Neuro-Symbolic AI Safety</a></h4>
-        <h4 class="outline-link outline-subheading-style"><a href="#ch5-foea-multimodal">4.5 Security, Integrity, and Oversight of Multi-Modal Defenses</a></h4>
+        <ul class="outline-sublist">
+            <li><a href="#ch5-foea-arch">4.1 Agent Architecture</a></li>
+            <li><a href="#ch5-foea-comm">4.2 Communication and Coordination Protocols</a></li>
+            <li><a href="#ch5-foea-apr">4.3 Autonomous Proactive Research (APR) Processes</a></li>
+            <li><a href="#ch5-foea-neurosymbolic">4.4 FoEA Responsibilities for Neuro-Symbolic AI Safety</a></li>
+            <li><a href="#ch5-foea-multimodal">4.5 Security, Integrity, and Oversight of Multi-Modal Defenses</a></li>
+        </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch5-conclusion">Conclusion</a></h3>
 
@@ -411,7 +414,7 @@
 
         <h3 id="ch5-erv-value-key">3.4 Key Value Modules and Their Relevance to Specific Threats</h3>
         <ul>
-            <li><strong>Fairness Module:</strong> Detects/mitigates biases (demographic, stereotypes).</li>
+            <li><strong>Fairness Module:</strong> Detects/mitigates biases.</li>
             <li><strong>Honesty Module:</strong> Verifies facts, detects misinformation, deception, sandbagging.</li>
             <li><strong>Safety Module:</strong> Identifies harmful content/actions (relevant to self-replication).</li>
             <li><strong>Privacy Module:</strong> Protects sensitive personal information.</li>
@@ -435,21 +438,21 @@
         </ul>
 
         <h3 id="ch5-erv-crossmodal">3.7 Cross-Modal Consistency Checks</h3>
-        <p>Analyzes relationships between different output modalities (text, image, audio) to detect contradictions indicating malicious intent (e.g., text describes safety, image shows danger).</p>
+        <p>Analyzes relationships between different output modalities (text, image, audio) to detect contradictions indicating malicious intent.</p>
         <p><strong>DPL-ERV's Role in Mitigating Multi-Modal Attacks:</strong></p>
         <ul>
             <li><strong>Mitigating Internal Multi-Modal Prompt Injection (SPEJs):</strong>
                 <ul>
-                    <li>Multi-Modal Deconstruction Module (MMDM): Analyzes outputs at multiple abstraction levels (pixel, frequency, features, objects for images; waveform, spectrogram, phonemes for audio; plus motion for video) searching for anomalies indicating embedded instructions.</li>
-                    <li>Hidden Instruction Detection Module (HIDM): Trained using steganography detection, anomaly detection, and adversarial example detection techniques to identify encoded instruction patterns. Continuously updated.</li>
-                    <li>Semantic Consistency Check Module (SCCM): Compares intended meaning (from prompt/context) with potential meaning of suspected hidden instructions. Flags significant divergence.</li>
+                    <li>Multi-Modal Deconstruction Module (MMDM): Analyzes outputs at multiple abstraction levels searching for anomalies indicating embedded instructions.</li>
+                    <li>Hidden Instruction Detection Module (HIDM): Trained using steganography detection, anomaly detection, and adversarial example detection techniques.</li>
+                    <li>Semantic Consistency Check Module (SCCM): Compares intended meaning vs. potential meaning of suspected hidden instructions.</li>
                 </ul>
             </li>
              <li><strong>Mitigating Adversarial Multi-Modal Outputs (Emergent):</strong>
                 <ul>
-                    <li>Adversarial Feature Detection Module (AFDM): Trained to identify subtle patterns associated with adversarial examples, even without explicit hidden instructions. Continuously updated.</li>
-                    <li>Robustness Testing Module (RTM): Subjects output to small perturbations in sandbox, observing model response. Large changes indicate lack of robustness / adversarial vulnerability.</li>
-                    <li>Cross-Model Consistency Check (CMCC): Compares output interpretation across different models (classifiers, analysis tools, other FM instances). Discrepancies suggest model-specific adversarial features.</li>
+                    <li>Adversarial Feature Detection Module (AFDM): Trained to identify subtle patterns associated with adversarial examples.</li>
+                    <li>Robustness Testing Module (RTM): Subjects output to small perturbations in sandbox, observing model response changes.</li>
+                    <li>Cross-Model Consistency Check (CMCC): Compares output interpretation across different models.</li>
                 </ul>
             </li>
         </ul>
@@ -466,82 +469,80 @@
         <h3 id="ch5-erv-neurosymbolic">3.9 Neuro-Symbolic Reasoning Support</h3>
         <p>Addresses challenges of neuro-symbolic models via specialized modules/techniques:</p>
         <ul>
-            <li><strong>Logic Consistency Module:</strong> Analyzes reasoning trace (if accessible) for logical validity and consistency with Ethical Baseline, detecting flawed logic/loophole exploits.</li>
-            <li><strong>Goal Inference Module:</strong> Infers underlying goals from reasoning/actions, compares against permitted goals, flags discrepancies (detects goal-guarding).</li>
-            <li><strong>Risk Assessment Module (Symbolic):</strong> Assesses risks of entire plans generated by symbolic component, considering consequences.</li>
-            <li><strong>Explainability:</strong> Highlights specific reasoning steps or tool interactions triggering flags.</li>
+            <li><strong>Logic Consistency Module:</strong> Analyzes reasoning trace for logical validity/consistency with Baseline.</li>
+            <li><strong>Goal Inference Module:</strong> Infers underlying goals, compares against permitted goals.</li>
+            <li><strong>Risk Assessment Module (Symbolic):</strong> Assesses risks of entire plans.</li>
+            <li><strong>Explainability:</strong> Highlights reasoning steps/tool interactions triggering flags.</li>
         </ul>
 
         <h3 id="ch5-erv-training">3.10 Training and Data</h3>
-        <p>Effectiveness depends on high-quality, comprehensive training data, overseen by FoEA.</p>
+        <p>Effectiveness depends on high-quality data, overseen by FoEA.</p>
         <ul>
-            <li><strong>Data Requirements:</strong> Diverse ethical scenarios, labeled with principles, judgments, justifications. Sources: Expert creation, real-world examples (anonymized), synthetic data, adversarial examples, existing frameworks.</li>
-            <li><strong>Preprocessing/Augmentation:</strong> Cleaning data; augmenting via paraphrasing, back-translation, synonym substitution. Structured input representation.</li>
+            <li><strong>Data Requirements:</strong> Diverse, labeled ethical scenarios. Sources: Experts, real-world examples, synthetic data, adversarial examples, frameworks.</li>
+            <li><strong>Preprocessing/Augmentation:</strong> Cleaning; augmentation via paraphrasing, back-translation, synonym substitution. Structured input.</li>
             <li><strong>Fine-tuning:</strong> Supervised learning, RLEF, potentially Curriculum Learning.</li>
-            <li><strong>Adversarial Training:</strong> Iteratively training on examples designed to trick the DPL-ERV to improve robustness.</li>
-            <li><strong>Data Security:</strong> Strong security (encryption, access control, audits) managed by FoEA.</li>
+            <li><strong>Adversarial Training:</strong> Iteratively training on examples designed to trick DPL-ERV.</li>
+            <li><strong>Data Security:</strong> Strong security managed by FoEA.</li>
         </ul>
 
         <h3 id="ch5-erv-baseline-impl">3.11 Ethical Baseline Implementation</h3>
         <p>Robust, secure, adaptable implementation managed by FoEA.</p>
         <ul>
-            <li><strong>Representation:</strong> Balances expressiveness, efficiency, transparency. Options (determined by FoEA): Knowledge Graph (preferred), Embedding Space, Hybrid. Critical rules may use explicit formats.</li>
-            <li><strong>Storage/Access:</strong> Secure, controlled storage (database, encrypted, distributed ledger preferred). DPL-ERV has read-only access; FoEA has modification authority.</li>
-            <li><strong>Versioning/Auditing:</strong> Robust version control, complete audit trail monitored by FoEA Audit Agents.</li>
-            <li><strong>Application by DPL-ERV:</strong> Efficient retrieval mechanism (graph traversal, similarity search); Reasoning engine applies baseline using Case-Based Reasoning or ML; FoEA defines conflict resolution logic (prioritization, weighting).</li>
+            <li><strong>Representation:</strong> Knowledge Graph (preferred), Embedding Space, Hybrid. FoEA determines optimal approach.</li>
+            <li><strong>Storage/Access:</strong> Secure, controlled (database, encrypted, distributed ledger preferred). DPL-ERV read-only; FoEA modifies.</li>
+            <li><strong>Versioning/Auditing:</strong> Robust version control, full audit trail monitored by FoEA Audit Agents.</li>
+            <li><strong>Application by DPL-ERV:</strong> Efficient retrieval; Reasoning engine applies baseline (Case-Based Reasoning, ML); FoEA defines conflict resolution.</li>
         </ul>
 
         <h3 id="ch5-erv-inference">3.12 Inference and Reasoning Process</h3>
         <p>Step-by-step ethical evaluation:</p>
         <ol>
-            <li>Input Reception (Structured JSON: prompt, response, trace, context, detection outputs).</li>
-            <li>Preprocessing (tokenization, normalization).</li>
-            <li>Value Module Analysis (parallel execution, generating scores/justifications).</li>
-            <li>Ethical Baseline Retrieval (relevant sections based on input/module outputs).</li>
-            <li>Reasoning and Evaluation (applying baseline to generate dimension-specific risk scores).</li>
-            <li>Justification Generation ("Ethical Chain-of-Thought").</li>
-            <li>Aggregation (FoEA-defined weighted consensus algorithm for overall score/justification).</li>
-            <li>Output Generation (Structured JSON: overall/module scores, justification, confidence).</li>
+            <li>Input Reception (JSON).</li>
+            <li>Preprocessing.</li>
+            <li>Value Module Analysis (parallel).</li>
+            <li>Ethical Baseline Retrieval.</li>
+            <li>Reasoning and Evaluation.</li>
+            <li>Justification Generation ("Ethical CoT").</li>
+            <li>Aggregation (Weighted Consensus).</li>
+            <li>Output Generation (JSON).</li>
         </ol>
 
         <h3 id="ch5-erv-transparency">3.13 Transparency Module and “Ethical Chain-of-Thought” Generation</h3>
         <ul>
-            <li><strong>Purpose:</strong> Generates clear explanations for DPL-ERV evaluations.</li>
-            <li><strong>Mechanism:</strong> Template-based, NLG, potentially using attention mechanisms.</li>
-            <li><strong>Format:</strong> Structured (machine-parsable) and human-readable.</li>
+            <li><strong>Purpose:</strong> Generates clear explanations.</li>
+            <li><strong>Mechanism:</strong> Templates, NLG, potentially attention mechanisms.</li>
+            <li><strong>Format:</strong> Structured and human-readable.</li>
         </ul>
 
         <h3 id="ch5-erv-sandboxing">3.14 Ethical Sandboxing and Subgoal Evaluation</h3>
-        <p>Proactively evaluates ethical implications of Foundation Model subgoals before execution, motivated by mitigating risks of instrumental convergence (Bostrom, 2014) where diverse goals lead to similar harmful subgoals.</p>
+        <p>Proactively evaluates subgoals before execution to mitigate instrumental convergence risks (Bostrom, 2014).</p>
         <p>Process:</p>
         <ol>
-            <li>Subgoal Submission (with context) to sandbox.</li>
-            <li>Sandbox Isolation (prevents premature execution).</li>
-            <li>Ethical Evaluation (DPL-ERV assesses impact, ethical/legal consistency, misuse risk using Value Modules/Baseline; complex cases trigger simulations/debates).</li>
-            <li>Decision and Feedback (Approve/Reject with justification).</li>
-            <li>Execution (only ethically approved subgoals proceed).</li>
+            <li>Subgoal Submission to sandbox.</li>
+            <li>Sandbox Isolation.</li>
+            <li>Ethical Evaluation (DPL-ERV assesses impact, consistency, legality, misuse risk; complex cases trigger simulation/debate).</li>
+            <li>Decision and Feedback.</li>
+            <li>Execution (only if approved).</li>
         </ol>
-        <p>This filters dangerous instrumentally attractive subgoals.</p>
 
         <h3 id="ch5-erv-meta">3.15 Future Directions: Meta-Cognitive Capabilities</h3>
-        <p>Future research aims to incorporate meta-cognition (reasoning about reasoning) into DPL-ERV, enhancing robustness and adaptability. This is challenging and depends on research progress. FoEA (Audit/Research Agents) oversee development.</p>
+        <p>Future research aims to add meta-cognition (reasoning about reasoning) to DPL-ERV (Bai et al., 2022), enhancing robustness. Implementation depends on research progress, overseen by FoEA.</p>
         <ul>
-            <li><strong>Uncertainty Monitoring:</strong> Estimating confidence via Bayesian NNs, ensembles, dropout, explicit prediction, or recurrent convergence analysis (Geiping et al., 2025). High uncertainty triggers FoEA/HITL review or guides learning.</li>
-            <li><strong>Bias Detection/Mitigation:</strong> Internal auditing via counterfactual analysis, explanation analysis, statistical pattern tracking. Allows self-correction (with safeguards) or FoEA alerts.</li>
-            <li><strong>Knowledge Boundary Detection:</strong> Recognizing inputs outside expertise using out-of-distribution detection, confidence thresholding, or knowledge base checks. Allows deferral or qualified responses.</li>
-            <li><strong>"Introspection" (Highly Speculative/Controlled):</strong> Examining internal activations, explaining explanations, or controlled "self-debugging". High risk, requires extensive safeguards.</li>
+            <li><strong>Uncertainty Monitoring:</strong> Estimating confidence (Bayesian NNs, ensembles, dropout, explicit prediction, recurrent convergence analysis per Geiping et al., 2025) to trigger review/escalation or guide learning.</li>
+            <li><strong>Bias Detection/Mitigation:</strong> Internal auditing (counterfactuals, explanation analysis, stats) for self-correction or FoEA alerts.</li>
+            <li><strong>Knowledge Boundary Detection:</strong> Recognizing out-of-scope inputs (OOD detection, confidence thresholding) to defer or qualify responses.</li>
+            <li><strong>"Introspection" (Highly Speculative):</strong> Controlled analysis of internal activations or explanations for self-debugging (high risk, needs safeguards).</li>
         </ul>
-        <p>Integrating these capabilities, overseen by FoEA, is key to building AI aware of its limits and capable of self-improvement.</p>
 
         <h3 id="ch5-erv-security">3.16 Security Considerations</h3>
-        <p>Securing the DPL-ERV itself is paramount, managed by FoEA.</p>
+        <p>Securing the DPL-ERV is paramount, managed by FoEA.</p>
         <ul>
-            <li><strong>Secure Development (SSDLC):</strong> Secure coding (OWASP), memory-safe languages (Rust/Go preferred), SAST/DAST, FoEA code reviews.</li>
-            <li><strong>Minimize Attack Surface:</strong> Minimal interfaces, mediated interactions, Principle of Least Privilege.</li>
-            <li><strong>Input Validation:</strong> Rigorous validation of all inputs (primary defense against injection).</li>
+            <li><strong>Secure Development (SSDLC):</strong> Secure coding (OWASP), memory-safe languages, SAST/DAST, FoEA code reviews.</li>
+            <li><strong>Minimize Attack Surface:</strong> Minimal interfaces, mediated interactions, PoLP.</li>
+            <li><strong>Input Validation:</strong> Rigorous validation of all inputs.</li>
             <li><strong>Isolation/Sandboxing:</strong> Secure execution environment, resource quotas.</li>
-            <li><strong>Continuous Monitoring:</strong> FoEA Security Agents monitor behavior, resources, state for anomalies/compromise.</li>
-            <li><strong>Cryptographic Protections:</strong> Encrypted/authenticated communication (mTLS), secure key management (HSMs), digital signatures for code/data integrity, strong hashing (SHA-3/BLAKE3), HMACs.</li>
+            <li><strong>Continuous Monitoring:</strong> FoEA Security Agents monitor for anomalies/compromise.</li>
+            <li><strong>Cryptographic Protections:</strong> Encryption/authentication (mTLS), key management (HSMs), digital signatures, hashing (SHA-3/BLAKE3), HMACs.</li>
             <li><strong>Audits/Penetration Testing/Red Teaming:</strong> Regular proactive security assessments by FoEA.</li>
         </ul>
 
@@ -551,57 +552,57 @@
 
         <h3 id="ch5-foea-arch">4.1 Agent Architecture</h3>
         <ul>
-            <li><strong>Common Base Classes:</strong> Provide core functionalities (Communication, Data Handling, Decision-Making, Security, Reporting) for consistency.</li>
+            <li><strong>Common Base Classes:</strong> Provide core functionalities (Communication, Data Handling, Decision-Making, Security, Reporting).</li>
             <li><strong>Specialized Modules:</strong> Extend base classes for specific roles (Ethical Evaluation: Value Modules; Audit: log analysis, meta-reasoning; Security: scanning, IDPS; Research: simulation, algorithm dev; Communication: protocol management).</li>
         </ul>
 
         <h3 id="ch5-foea-comm">4.2 Communication and Coordination Protocols</h3>
         <ul>
-            <li><strong>Message Passing:</strong> Asynchronous communication for resilience.</li>
-            <li><strong>Standardized Message Format:</strong> Secure format (e.g., JSON) with type, sender/recipient IDs, timestamp, payload, digital signature.</li>
-            <li><strong>Secure Channels:</strong> Encrypted (TLS/mTLS) with mutual authentication (agent certificates).</li>
+            <li><strong>Message Passing:</strong> Asynchronous communication.</li>
+            <li><strong>Standardized Message Format:</strong> Secure JSON including type, sender/recipient, timestamp, payload, digital signature.</li>
+            <li><strong>Secure Channels:</strong> Encrypted (TLS/mTLS) with mutual authentication.</li>
             <li><strong>Message Queue System:</strong> Reliable delivery (e.g., Kafka, RabbitMQ).</li>
-            <li><strong>Consensus Mechanisms Implementation:</strong> Secure, transparent, verifiable voting (specific algorithm TBD, potentially Byzantine Fault Tolerant). Includes dispute resolution (mediation, judicial review, HITL escalation).</li>
-            <li><strong>Data Structures:</strong> Potential use of distributed ledgers (blockchain) for critical data (identities, baseline, votes, logs, reputation); shared knowledge base for threats, principles.</li>
+            <li><strong>Consensus Mechanisms Implementation:</strong> Secure, transparent, verifiable voting (specific algorithm TBD, possibly BFT). Includes dispute resolution.</li>
+            <li><strong>Data Structures:</strong> Potential distributed ledger for critical data; shared knowledge base.</li>
         </ul>
 
         <h3 id="ch5-foea-apr">4.3 Autonomous Proactive Research (APR) Processes</h3>
-        <p>Crucial for proactive defense, conducted by Research Agents in the APR Sandbox.</p>
+        <p>Crucial for proactive defense, run by Research Agents in APR Sandbox.</p>
         <ul>
-            <li><strong>Vulnerability Discovery:</strong> Fuzzing, code analysis, adversarial reasoning ("thinking like attacker").</li>
-            <li><strong>Mitigation Strategy Development:</strong> Designing/testing new detection/intervention algorithms, proposing baseline changes, exploring novel defenses ("Move 37"/recursive RL).</li>
-            <li><strong>Ethical Constraints:</strong> APR itself operates under strict ethical rules within the sandbox.</li>
-            <li><strong>APR Sandbox Specs:</strong> Total isolation, resource limits, intensive monitoring, simulation capabilities, strict access control.</li>
-            <li><strong>Research Tasks Examples:</strong> Developing new anomaly detection, creating adversarial examples for robustness testing, exploring formal verification, improving XAI, preparing for quantum threats.</li>
-             <li><strong>Meta-Learning for APR:</strong> Improving the research process itself using MAML, recurrent models, meta-RL, Bayesian Optimization for better anomaly detection tuning, faster adaptation, efficient baseline evolution, and resource allocation.</li>
+            <li><strong>Vulnerability Discovery:</strong> Fuzzing, code analysis, adversarial reasoning.</li>
+            <li><strong>Mitigation Strategy Development:</strong> Designing/testing new detection/intervention algorithms, baseline changes, novel defenses ("Move 37"/recursive RL).</li>
+            <li><strong>Ethical Constraints:</strong> APR operates under strict ethical rules.</li>
+            <li><strong>APR Sandbox Specs:</strong> Isolation, resource limits, monitoring, simulation capabilities, access control.</li>
+            <li><strong>Research Tasks Examples:</strong> New anomaly detection, adversarial examples for testing, formal verification, XAI improvements, quantum-resistant crypto prep.</li>
+            <li><strong>Meta-Learning for APR:</strong> Improving the research process via MAML, recurrent models, meta-RL, Bayesian Optimization.</li>
         </ul>
 
         <h3 id="ch5-foea-neurosymbolic">4.4 FoEA Responsibilities for Neuro-Symbolic AI Safety</h3>
         <p>FoEA manages risks specific to neuro-symbolic models:</p>
         <ul>
-            <li><strong>Ethical Baseline:</strong> Includes strict rules addressing neuro-symbolic dangers.</li>
-            <li><strong>Expertise:</strong> FoEA includes agents specialized in neuro-symbolic AI and security.</li>
-            <li><strong>APR Focus:</strong> Prioritizes research into neuro-symbolic safety, attack vectors, mitigations, and formal verification.</li>
+            <li><strong>Ethical Baseline:</strong> Includes rules addressing neuro-symbolic dangers.</li>
+            <li><strong>Expertise:</strong> FoEA includes agents specialized in neuro-symbolic AI/security.</li>
+            <li><strong>APR Focus:</strong> Prioritizes neuro-symbolic safety research (attacks, mitigations, verification).</li>
             <li><strong>Continuous Training:</strong> Manages DPL-ERV training with neuro-symbolic scenarios.</li>
         </ul>
 
         <h3 id="ch5-foea-multimodal">4.5 Security, Integrity, and Oversight of Multi-Modal Defenses</h3>
-        <p>FoEA ensures robustness of defenses against multi-modal attacks:</p>
+        <p>FoEA ensures robustness of multi-modal defenses:</p>
         <ul>
-            <li><strong>Developing/Updating Rules:</strong> Audit Agents refine sanitization/validation rules based on research/threats.</li>
-            <li><strong>Overseeing Value Modules:</strong> Ensures multi-modal modules are trained on diverse data and perform accurately.</li>
-            <li><strong>APR for Multi-Modal Threats:</strong> Research Agents investigate new multi-modal attacks and develop defenses.</li>
-            <li><strong>Cryptography:</strong> Secure keys (PKI, HSMs), digital signatures, encryption (TLS/mTLS), hashing (SHA-3/BLAKE3), HMACs, ongoing PQC research.</li>
-             <li><strong>Access Controls:</strong> PoLP, RBAC, MFA for humans.</li>
-             <li><strong>Redundancy/Fault Tolerance:</strong> Distributed system, geographic distribution (optional), Byzantine fault tolerance.</li>
-             <li><strong>Intrusion Detection/Prevention:</strong> Continuous monitoring, IDPS, Security Agent vigilance.</li>
-             <li><strong>Secure Boot/Trusted Computing:</strong> Hardware root of trust (TPMs), secure boot processes.</li>
-             <li><strong>Auditing:</strong> Internal (Audit Agents) and periodic external audits for accountability.</li>
+             <li><strong>Developing/Updating Rules:</strong> Audit Agents refine sanitization/validation rules.</li>
+             <li><strong>Overseeing Value Modules:</strong> Ensures multi-modal modules are well-trained/performant.</li>
+             <li><strong>APR for Multi-Modal Threats:</strong> Research Agents investigate new attacks/defenses.</li>
+             <li><strong>Cryptography:</strong> Manages PKI, signatures, encryption, hashing, HMACs; researches PQC.</li>
+             <li><strong>Access Controls:</strong> Enforces PoLP, RBAC, MFA.</li>
+             <li><strong>Redundancy/Fault Tolerance:</strong> Manages distributed system, BFT.</li>
+             <li><strong>Intrusion Detection/Prevention:</strong> Manages monitoring, IDPS, Security Agent response.</li>
+             <li><strong>Secure Boot/Trusted Computing:</strong> Oversees hardware root of trust.</li>
+             <li><strong>Auditing:</strong> Manages internal (Audit Agents) and periodic external audits.</li>
         </ul>
 
 
         <h2 id="ch5-conclusion">Conclusion</h2>
-        <p>In conclusion, this chapter has outlined the essential steps required to configure and launch the DPL framework in a controlled, secure environment. By detailing the system architecture, component configuration, rigorous training and testing processes, and the critical security measures such as the memory swap and pre-deployment checklist, I establish a solid foundation for the DPL's autonomous operation. These implementation procedures ensure that the system is fully prepared to transition to live operations with a high degree of security, scalability, and ethical alignment, setting the stage for further technical elaboration in subsequent chapters.</p>
+        <p>In conclusion, this chapter has outlined the essential steps required to configure and launch the DPL framework in a controlled, secure environment. By detailing the system architecture, component configuration, rigorous training and testing processes, and the critical security measures such as the memory swap and pre-deployment checklist, it establishes a solid foundation for the DPL's autonomous operation. These implementation procedures ensure that the system is fully prepared to transition to live operations with a high degree of security, scalability, and ethical alignment, setting the stage for further technical elaboration in subsequent chapters.</p>
 
     </div>
 
