@@ -5,8 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 3: DPL: Mitigation Strategies and Security Analysis - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .content-container {
+             max-width: 800px;
+             margin-left: auto;
+             margin-right: auto;
+             padding-left: 20px;
+             padding-right: 20px;
+        }
+         .audio-container {
+             text-align: center;
+             margin-bottom: 10px;
+        }
+        .audio-select {
+             padding: 8px;
+             border-radius: 5px;
+             border: 1px solid #ccc;
+        }
+        .audio-player-style {
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             margin-bottom: 20px;
+        }
+        .chapter-author-intro {
+             font-size: 1.6em;
+        }
+       .footer-style {
+             margin-top: 50px;
+             padding-top: 20px;
+             border-top: 1px solid #ccc;
+             text-align: right;
+        }
+        .footer-text-style {
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
+
 <nav>
     <h2>AI Alignment Series</h2>
     <ul>
@@ -21,14 +62,76 @@
         <li><a href="supplement-1.html">Supplement #1: Appendix - Examples and Scenarios</a></li>
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
+        <li><a href="references.html">REFERENCES</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
-    <main>
-        <header class="page-header">
-            <h2>Chapter 3: DPL: Mitigation Strategies and Security Analysis</h2>
-        </header>
-        <p>This is where the content for Chapter 3 will go.</p>
-    </main>
+
+<main>
+    <header class="page-header">
+        <h1>Chapter 3: DPL: Mitigation Strategies and Security Analysis</h1>
+    </header>
+
+    <h3 class="audio-title">Audio Player</h3>
+    <div class="audio-container">
+        <select id="audio-selector" class="audio-select">
+            <option value="Audio/ElevenLabs/ElevenLabs_Chapter-03.mp3">ElevenLabs VoiceOver</option>
+            <option value="Audio/Podcast/Podcast_Chapter-03.wav">NotebookLM Podcast</option>
+        </select>
+    </div>
+    <audio controls id="audio-player" class="audio-player-style">
+        <source src="Audio/ElevenLabs/ElevenLabs_Chapter-03.mp3" type="audio/mpeg" id="audio-source">
+        Your browser does not support the audio element.
+    </audio>
+
+    <hr>
+
+    <p><strong class="chapter-author-intro">Chapter 3</strong><br><strong>Jon Kurishita</strong></p>
+
+    <div class="content-container">
+        <p>This is where the content for Chapter 3 will go. You can add your Outline section here (using headings with links and IDs for content sections), followed by the main text content for Chapter 3, including headings (with corresponding IDs), paragraphs, lists, figures, etc.</p>
+    </div>
+
+    <footer class="footer-style">
+        <p class="footer-text-style">© 2025 Jon Kurishita. All rights reserved.</p>
+    </footer>
+
+</main>
+
+<script>
+  const audioSelector = document.getElementById('audio-selector');
+  const audioPlayer = document.getElementById('audio-player');
+  const audioSource = document.getElementById('audio-source');
+
+  if (audioSelector && audioPlayer && audioSource) {
+      audioSelector.addEventListener('change', function() {
+        const selectedAudio = this.value;
+        if (selectedAudio && typeof selectedAudio === 'string' && selectedAudio.length > 0) {
+            const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+            audioSource.src = selectedAudio;
+            audioSource.type = fileType;
+            audioPlayer.load();
+        } else {
+            console.error("Selected audio source value is invalid:", selectedAudio);
+        }
+      });
+
+      if (audioSelector.options.length > 0) {
+          const initialAudio = audioSelector.options[0].value;
+           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
+               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+               audioSource.src = initialAudio;
+               audioSource.type = initialFileType;
+           } else {
+               console.error("Initial audio source value is invalid:", initialAudio);
+           }
+      } else {
+           console.error("Audio selector has no options.");
+      }
+  } else {
+      console.error("Audio player elements not found.");
+  }
+</script>
+
 </body>
 </html>
