@@ -50,7 +50,6 @@
             display: block;
             margin: 20px auto;
         }
-        /* Styles for Appendix/Case Study TOC */
         .toc-list {
             list-style-type: none;
             padding-left: 0;
@@ -62,19 +61,39 @@
         .toc-list strong {
             margin-right: 0.5em;
         }
-        /* Styles for Content */
         .case-study-content h2 {
             margin-top: 2.5em;
             border-bottom: 1px solid #ccc;
             padding-bottom: 0.3em;
+            margin-bottom: 0.5em; /* Reduced margin */
         }
         .case-study-content h3 {
             margin-top: 2em;
+            margin-bottom: 0.25em; /* Reduced margin */
         }
          .case-study-content h4 {
             margin-top: 1.5em;
-            /* font-style: italic; */ /* Optional */
+            margin-bottom: 0.1em; /* Reduced margin */
         }
+        /* Reduce top margin for elements directly following headings */
+        .case-study-content h2 + p, .case-study-content h2 + ul,
+        .case-study-content h3 + p, .case-study-content h3 + ul,
+        .case-study-content h4 + p, .case-study-content h4 + ul {
+            margin-top: 0.25em; /* Adjust as needed for desired minimal space */
+        }
+        .case-study-content .citation + h3,
+        .case-study-content p + h3,
+        .case-study-content ul + h3,
+        .case-study-content blockquote + h3 {
+             margin-top: 2em; /* Keep original top margin for headings not immediately after another */
+        }
+         .case-study-content .citation + h4,
+         .case-study-content p + h4,
+         .case-study-content ul + h4,
+         .case-study-content blockquote + h4 {
+             margin-top: 1.5em; /* Keep original top margin for headings not immediately after another */
+        }
+
         dt {
             font-weight: bold;
             margin-top: 1em;
@@ -88,6 +107,8 @@
             border-left: 3px solid #ccc;
             padding-left: 15px;
             font-style: italic;
+            margin-top: 0.25em; /* Reduce space above blockquote */
+            margin-bottom: 1em;
         }
         .citation {
             font-size: 0.9em;
