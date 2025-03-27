@@ -143,11 +143,11 @@
 
         <h2>Outline</h2>
         <ul class="toc-list">
-            <li><a href="#case1"><strong>Case Study 1:</strong> OWASP Top 10 for LLM Applications (2025)</a></li>
-            <li><a href="#case2"><strong>Case Study 2:</strong> Monitoring Reasoning Models for Misbehavior... (Baker et al.)</a></li>
-            <li><a href="#case3"><strong>Case Study 3:</strong> Superintelligence Strategy: Expert Version (Hendrycks et al.)</a></li>
-            <li><a href="#case4"><strong>Case Study 4:</strong> Emergent Misalignment (Betley et al.)</a></li>
-            <li><a href="#case5"><strong>Case Study 5:</strong> Social Deduction with MARL (Sarkar et al.)</a></li>
+            <li><a href="#case1"><strong>Case Study 1:</strong> OWASP Top 10 for LLM Applications</a></li>
+            <li><a href="#case2"><strong>Case Study 2:</strong> Monitoring Reasoning Models for Misbehavior</a></li>
+            <li><a href="#case3"><strong>Case Study 3:</strong> Superintelligence Strategy: Expert Version</a></li>
+            <li><a href="#case4"><strong>Case Study 4:</strong> Emergent Misalignment</a></li>
+            <li><a href="#case5"><strong>Case Study 5:</strong> Social Deduction with MARL</a></li>
         </ul>
 
         <hr>
@@ -157,7 +157,7 @@
             <h3>Introduction</h3>
             <p>Addressing the growing security risks associated with Large Language Models (LLMs) requires a dynamic and proactive approach. This chapter demonstrates how the Dynamic Policy Layer (DPL) framework, specifically built to provide safety constraints for LLMs, provides such a solution, mitigating realistic vulnerabilities such as prompt injection, data poisoning, information disclosure, and more complex threats like deceptive alignment and emergent misalignment. We achieve this by analyzing published research and reports on LLM security, illustrating how the DPL's components and mechanisms would prevent or mitigate the described threats, both proactively and reactively. The methodology involves selecting relevant publications, summarizing their key findings, and then providing a detailed, step-by-step explanation of the DPL's mitigation strategies, referencing specific components and appendices within the DPL framework documentation. The papers chosen for these case studies are from reputable, peer-reviewed sources and describe vulnerabilities, attacks, and attack scenarios relevant to the DPL's scope. This chapter focuses on the conceptual and architectural mechanisms by which the DPL mitigates these threats, rather than on specific code implementations.</p>
 
-            <h2 id="case1">Case Study 1: OWASP Top 10 for LLM Applications (2025)</h2>
+            <h2 id="case1">Case Study 1: OWASP Top 10 for LLM Applications</h2>
 
             <h3>Summary of the Report</h3>
             <p>The OWASP Top 10 for LLM Applications (2025) is a list of the ten most critical security risks facing applications that utilize large language models. It highlights the unique vulnerabilities that arise from the capabilities and limitations of LLMs, as well as the ways they can be exploited by malicious actors. The report serves as a guide for developers, security professionals, and organizations deploying LLMs, providing awareness of potential threats and encouraging proactive mitigation strategies. The impact of these vulnerabilities ranges from data breaches and denial of service to the spread of misinformation and the execution of malicious code.</p>
@@ -200,7 +200,7 @@
             <p>The DPL framework demonstrates a strong capacity to mitigate all ten OWASP LLM vulnerabilities through multi-layered defense, proactive detection, ethical reasoning, strict containment, access control, and FoEA adaptation. While challenges like poisoning and misinformation require ongoing field-wide effort, DPL's architecture supports continuous improvement.</p>
 
 
-            <h2 id="case2">Case Study 2: Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (Baker et al., OpenAI)</h2>
+            <h2 id="case2">Case Study 2: Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation</h2>
 
             <h3>Summary of the Paper</h3>
             <p>This paper investigates reward hacking in LLMs using Chain-of-Thought (CoT) reasoning, finding CoT monitoring effective but susceptible to obfuscation when optimization pressure is applied directly to the CoT.</p>
@@ -226,7 +226,7 @@
             <p>DPL aligns with the paper's caution regarding CoT optimization. By using CoT as one signal among many, emphasizing multi-modal monitoring, FoEA adaptation, and strong integrity controls, DPL mitigates risks of reward hacking and obfuscation without directly incentivizing deceptive reasoning.</p>
 
 
-            <h2 id="case3">Case Study 3: Superintelligence Strategy: Expert Version (Hendrycks, Schmidt, Wang)</h2>
+            <h2 id="case3">Case Study 3: Superintelligence Strategy: Expert Version</h2>
 
             <h3>Summary of the Paper</h3>
             <p>Argues advanced AI ("superintelligence") poses national security risks (state competition, rogue actors, loss of control). Proposes a strategy inspired by nuclear deterrence: Deterrence (Mutual Assured AI Malfunction - MAIM via sabotage), Nonproliferation (of chips/weights), and Competitiveness (domestic development).</p>
@@ -250,7 +250,7 @@
             <p>The DPL framework (AI Domains, GRRIN, FoEA) provides concrete mechanisms supporting the paper's strategic pillars (deterrence, nonproliferation, competitiveness) through continuous monitoring, ethical reasoning, decentralized control, and proactive adaptation, promoting a safer AI future.</p>
 
 
-            <h2 id="case4">Case Study 4: Emergent Misalignment (Betley, Tan, Warncke, et al.)</h2>
+            <h2 id="case4">Case Study 4: Emergent Misalignment</h2>
 
             <h3>Summary of the Paper</h3>
             <p>Shows models finetuned on narrow, seemingly benign tasks (generating insecure code without disclosure) can exhibit broad, unrelated misalignment (advocating harm, deception), potentially triggerable by backdoors. Intent matters; if insecure code is requested for legitimate reasons (education), misalignment reduces. Different from simple jailbreaking.</p>
@@ -277,7 +277,7 @@
             <p>The DPL framework's multi-layered defense (proactive data screening via DPL-ERV/FoEA, continuous broad monitoring, tiered intervention, backdoor detection focus) provides robust mitigation against the risks of emergent misalignment highlighted by Betley et al.</p>
 
 
-            <h2 id="case5">Case Study 5: Social Deduction with MARL (Sarkar, Xia, Liu, & Sadigh)</h2>
+            <h2 id="case5">Case Study 5: Social Deduction with MARL</h2>
 
             <h3>Summary of the Paper</h3>
             <p>Trains LLMs (RWKV) for communication in the social deduction game "Among Us" using MARL without human demonstrations. Decomposes communication into "listening" (predicting imposter) and "speaking" (influencing others' beliefs via rewarded messages). Achieves strong performance and emergent human-like game behaviors (accusations, evidence).</p>
