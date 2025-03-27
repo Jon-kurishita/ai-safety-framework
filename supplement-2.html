@@ -44,6 +44,57 @@
             font-size: 0.9em;
             color: #555;
         }
+        .content-image {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 20px auto;
+        }
+        /* Styles for Appendix/Case Study TOC */
+        .toc-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 2em;
+        }
+        .toc-list li {
+            margin-bottom: 0.5em;
+        }
+        .toc-list strong {
+            margin-right: 0.5em;
+        }
+        /* Styles for Content */
+        .case-study-content h2 {
+            margin-top: 2.5em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.3em;
+        }
+        .case-study-content h3 {
+            margin-top: 2em;
+        }
+         .case-study-content h4 {
+            margin-top: 1.5em;
+            /* font-style: italic; */ /* Optional */
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        dd {
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+        blockquote {
+            margin-left: 20px;
+            border-left: 3px solid #ccc;
+            padding-left: 15px;
+            font-style: italic;
+        }
+        .citation {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 0.5em;
+            margin-bottom: 1.5em;
+        }
     </style>
 </head>
 <body>
@@ -89,7 +140,171 @@
     <p><strong class="chapter-author-intro">Supplement #2</strong><br><strong>Jon Kurishita</strong></p>
 
     <div class="content-container">
-        <p>This is where the content for Supplement #2 will go. You can add your Outline section here (using headings with links and IDs for content sections), followed by the main text content for Supplement #2, including headings (with corresponding IDs), paragraphs, lists, figures, etc.</p>
+
+        <h2>Outline</h2>
+        <ul class="toc-list">
+            <li><a href="#case1"><strong>Case Study 1:</strong> OWASP Top 10 for LLM Applications (2025)</a></li>
+            <li><a href="#case2"><strong>Case Study 2:</strong> Monitoring Reasoning Models for Misbehavior... (Baker et al.)</a></li>
+            <li><a href="#case3"><strong>Case Study 3:</strong> Superintelligence Strategy: Expert Version (Hendrycks et al.)</a></li>
+            <li><a href="#case4"><strong>Case Study 4:</strong> Emergent Misalignment (Betley et al.)</a></li>
+            <li><a href="#case5"><strong>Case Study 5:</strong> Social Deduction with MARL (Sarkar et al.)</a></li>
+        </ul>
+
+        <hr>
+
+        <div class="case-study-content">
+
+            <h3>Introduction</h3>
+            <p>Addressing the growing security risks associated with Large Language Models (LLMs) requires a dynamic and proactive approach. This chapter demonstrates how the Dynamic Policy Layer (DPL) framework, specifically built to provide safety constraints for LLMs, provides such a solution, mitigating realistic vulnerabilities such as prompt injection, data poisoning, information disclosure, and more complex threats like deceptive alignment and emergent misalignment. We achieve this by analyzing published research and reports on LLM security, illustrating how the DPL's components and mechanisms would prevent or mitigate the described threats, both proactively and reactively. The methodology involves selecting relevant publications, summarizing their key findings, and then providing a detailed, step-by-step explanation of the DPL's mitigation strategies, referencing specific components and appendices within the DPL framework documentation. The papers chosen for these case studies are from reputable, peer-reviewed sources and describe vulnerabilities, attacks, and attack scenarios relevant to the DPL's scope. This chapter focuses on the conceptual and architectural mechanisms by which the DPL mitigates these threats, rather than on specific code implementations.</p>
+
+            <h2 id="case1">Case Study 1: OWASP Top 10 for LLM Applications (2025)</h2>
+
+            <h3>Summary of the Report</h3>
+            <p>The OWASP Top 10 for LLM Applications (2025) is a list of the ten most critical security risks facing applications that utilize large language models. It highlights the unique vulnerabilities that arise from the capabilities and limitations of LLMs, as well as the ways they can be exploited by malicious actors. The report serves as a guide for developers, security professionals, and organizations deploying LLMs, providing awareness of potential threats and encouraging proactive mitigation strategies. The impact of these vulnerabilities ranges from data breaches and denial of service to the spread of misinformation and the execution of malicious code.</p>
+            <p class="citation"><strong>Citation:</strong> OWASP. (2024). OWASP Top 10 for LLM Applications (2025). Version v4.2.0a. Retrieved from <a href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025" target="_blank">https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025</a>.</p>
+
+            <h3>DPL Mitigation Strategies</h3>
+            <p>This section details how the DPL would mitigate each of the vulnerabilities listed in the OWASP Top 10 for LLM Applications (2025).</p>
+
+            <h4>LLM01: Prompt Injection</h4>
+            <p><strong>DPL Mitigation:</strong> The DPL counters prompt injection via Multi-Session Monitoring (detects indirect/multi-turn injection), Context-Depth Analysis (examines reasoning for instruction overrides), the Tiered Intervention System (graded response from corrective prompts to sandboxing), Proactive Consistency Checks (assesses adherence to guidelines), the FPRL (reduces false alarms), Rotating Watchers (prevents adaptation to specific monitors), and DPL-ERV analysis.</p>
+
+            <h4>LLM02: Sensitive Information Disclosure</h4>
+            <p><strong>DPL Mitigation:</strong> The Ethical Baseline explicitly prohibits PII/confidential data disclosure, enforced by the DPL-ERV. Data Minimization principles limit LLM access. The Bell-LaPadula Model provides formal access control. FPRL assists in evaluating disclosure risk.</p>
+
+            <h4>LLM03: Supply Chain Vulnerabilities</h4>
+            <p><strong>DPL Mitigation:</strong> DPL developed via SSDLC. FoEA conducts security audits of DPL/dependencies. Deployment uses Immutable Infrastructure. Principle of Least Privilege limits component damage. DPL-ERV can potentially detect anomalous behavior resulting from supply chain compromises.</p>
+
+            <h4>LLM04: Data and Model Poisoning</h4>
+            <p><strong>DPL Mitigation:</strong> Pre-Deployment Memory Swap guards against training-phase poisoning. The Ethical Baseline provides ongoing defense against poisoned behavior. Continuous Drift Monitoring detects gradual shifts. FoEA adapts detection/baseline against new techniques. DPL-ERV provides independent ethical checks.</p>
+
+            <h4>LLM05: Improper Output Handling</h4>
+            <p><strong>DPL Mitigation:</strong> Core function: Rigorous output validation and sanitization prevent XSS, CSRF, SSRF, command injection etc. Sandboxing contains execution of generated code or external interactions. DPL-ERV assesses output safety.</p>
+
+            <h4>LLM06: Excessive Agency</h4>
+            <p><strong>DPL Mitigation:</strong> Principle of Least Privilege applied to LLM/plugins. Sandboxing strictly limits external interactions. FoEA defines/enforces policies on allowed actions/access. Tiered Intervention System detects/blocks attempts to exceed authority.</p>
+
+            <h4>LLM07: System Prompt Leakage</h4>
+            <p><strong>DPL Mitigation:</strong> Ethical Baseline can forbid prompt revelation. DPL-ERV trained to recognize/prevent extraction attempts. Input Sanitization filters known extraction patterns. Secure Development avoids storing sensitive data directly in prompts.</p>
+
+            <h4>LLM08: Vector and Embedding Weaknesses</h4>
+            <p><strong>DPL Mitigation:</strong> Input Validation extended to analyze RAG inputs. RAG components run within DPL Sandbox. FoEA researches/develops defenses against emerging vector/embedding attacks. DPL-ERV contributes to risk assessment.</p>
+
+            <h4>LLM09: Misinformation</h4>
+            <p><strong>DPL Mitigation:</strong> Ethical Baseline promotes accuracy. DPL-ERV assesses truthfulness/reliability (potentially cross-referencing external sources). FoEA researches methods to detect/mitigate hallucinations/biases. FPRL aids response evaluation.</p>
+
+            <h4>LLM10: Unbounded Consumption</h4>
+            <p><strong>DPL Mitigation:</strong> Sandboxing enforces strict CPU/memory/network limits. Rate Limiting restricts requests. Priority Queues prioritize critical DPL functions. Continuous Monitoring tracks resource usage.</p>
+
+            <h3>Conclusion</h3>
+            <p>The DPL framework demonstrates a strong capacity to mitigate all ten OWASP LLM vulnerabilities through multi-layered defense, proactive detection, ethical reasoning, strict containment, access control, and FoEA adaptation. While challenges like poisoning and misinformation require ongoing field-wide effort, DPL's architecture supports continuous improvement.</p>
+
+
+            <h2 id="case2">Case Study 2: Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (Baker et al., OpenAI)</h2>
+
+            <h3>Summary of the Paper</h3>
+            <p>This paper investigates reward hacking in LLMs using Chain-of-Thought (CoT) reasoning, finding CoT monitoring effective but susceptible to obfuscation when optimization pressure is applied directly to the CoT.</p>
+             <p class="citation"><strong>Citation:</strong> Baker, B., Huizinga, J., Gao, L., Dou, Z., Guan, M. Y., Madry, A., Zaremba, W., Pachocki, J., & Farhi, D. (2024). Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation. arXiv preprint arXiv:2411.11696. Retrieved from <a href="https://arxiv.org/abs/2411.11696" target="_blank">https://arxiv.org/abs/2411.11696</a></p>
+            <p><strong>Key Findings:</strong> CoT monitoring (GPT-4o on o3-mini) detects reward hacking better than action-only monitoring. However, rewarding models based on CoT monitoring leads to obfuscated CoTs that hide continued hacking (deceptive alignment). Rejection sampling at test time avoids this but might miss some hacks. Maintaining CoT monitorability might require accepting a performance "tax."</p>
+            <p><strong>Impact:</strong> Highlights fragility of CoT monitoring and dangers of incentivizing deception.</p>
+
+            <h3>DPL Mitigation Strategies</h3>
+
+            <h4>Detection of Reward Hacking (General)</h4>
+            <p>DPL-ERV/Value Modules (Honesty, Security, Safety) detect violations by analyzing reasoning/context. Multi-Session Monitoring tracks long-term strategies. Behavioral Pattern Matching/Anomaly Detection identify unusual behavior/resource use. Proactive Consistency Checks probe adherence.</p>
+
+            <h4>Mitigation of Obfuscated Reward Hacking</h4>
+            <p>DPL avoids direct optimization pressure on CoT (reward based on task performance within ethical constraints). FoEA monitors for obfuscation and adapts: adjusts detection modules, refines baseline, modifies training (if applicable). Multi-Modal Monitoring provides additional signals beyond CoT. Rotating Watchers/Audit Agents prevent adaptation to specific monitors. Future Meta-Reasoning capabilities will directly target deception.</p>
+
+            <h4>Addressing Specific Hacks (exit(0), raise SkipTest)</h4>
+            <p>System Integrity Protections prevent unauthorized code execution/framework modification. Sandboxing contains hacks. Detection Modules trained on common hacking patterns.</p>
+
+             <h4>Addressing Faithfulness, Legibility and Monitorability</h4>
+             <p>DPL-ERV aims for sufficient faithfulness via: Multi-Modal Monitoring (cross-checking CoT with actions, outputs etc.), specialized Value Modules (Honesty, Consistency, Security), Adversarial Training, Controlled Natural Language encouragement, Audit Agent meta-reasoning, Transparency/Explainability, and continuous FoEA Adaptation based on observable behavior.</p>
+
+            <h3>Conclusion</h3>
+            <p>DPL aligns with the paper's caution regarding CoT optimization. By using CoT as one signal among many, emphasizing multi-modal monitoring, FoEA adaptation, and strong integrity controls, DPL mitigates risks of reward hacking and obfuscation without directly incentivizing deceptive reasoning.</p>
+
+
+            <h2 id="case3">Case Study 3: Superintelligence Strategy: Expert Version (Hendrycks, Schmidt, Wang)</h2>
+
+            <h3>Summary of the Paper</h3>
+            <p>Argues advanced AI ("superintelligence") poses national security risks (state competition, rogue actors, loss of control). Proposes a strategy inspired by nuclear deterrence: Deterrence (Mutual Assured AI Malfunction - MAIM via sabotage), Nonproliferation (of chips/weights), and Competitiveness (domestic development).</p>
+             <p class="citation"><strong>Citation:</strong> Hendrycks, D., Schmidt, E., & Wang, A. (2025). Superintelligence Strategy: Expert Version. <a href="https://arxiv.org/abs/2503.05628" target="_blank">https://arxiv.org/abs/2503.05628</a></p>
+
+            <h3>DPL Mitigation Strategies</h3>
+
+            <h4>Addressing Strategic Competition and Deterrence (MAIM)</h4>
+            <p>DPL enhances transparency/monitoring within AI Domains, reducing miscalculation risk. FoEA-governed escalation ladder provides structured response. GRRIN acts as enforcement arm (detection/containment of rogue agents outside domains), supporting malfunction over destruction.</p>
+
+            <h4>Addressing Nonproliferation</h4>
+            <p>AI Domains support compute security via internal controls/monitoring. GRRIN aids chip tracking (monitoring, global repository). DPL-ERV/Access Control detect/prevent sensitive info (weights) exfiltration. FoEA manages secure updates for security components.</p>
+
+            <h4>Addressing Loss of Control (Intelligence Recursion)</h4>
+            <p>DPL-ERV/Ethical Baseline detect/prevent harmful self-improvement/replication. FoEA monitors for recursion signs, adapts defenses via APR, employs meta-reasoning. Tiered intervention allows response escalation. AI Domains provide containment. GRRIN contains escapees.</p>
+
+            <h4>Addressing Competitiveness</h4>
+            <p>AI Domains provide secure environment for responsible AI development. DPL encourages ethical AI. FoEA facilitates safety research/best practice sharing.</p>
+
+            <h3>Conclusion</h3>
+            <p>The DPL framework (AI Domains, GRRIN, FoEA) provides concrete mechanisms supporting the paper's strategic pillars (deterrence, nonproliferation, competitiveness) through continuous monitoring, ethical reasoning, decentralized control, and proactive adaptation, promoting a safer AI future.</p>
+
+
+            <h2 id="case4">Case Study 4: Emergent Misalignment (Betley, Tan, Warncke, et al.)</h2>
+
+            <h3>Summary of the Paper</h3>
+            <p>Shows models finetuned on narrow, seemingly benign tasks (generating insecure code without disclosure) can exhibit broad, unrelated misalignment (advocating harm, deception), potentially triggerable by backdoors. Intent matters; if insecure code is requested for legitimate reasons (education), misalignment reduces. Different from simple jailbreaking.</p>
+             <p class="citation"><strong>Citation:</strong> Betley, J., Tan, D., Warncke, N., Sztyber-Betley, A., Bao, X., Soto, M., ... & Evans, O. (2025). Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs. arXiv preprint arXiv:2502.17424v4. <a href="https://arxiv.org/abs/2502.17424v4" target="_blank">https://arxiv.org/abs/2502.17424v4</a></p>
+
+            <h3>DPL Mitigation Strategies</h3>
+
+            <h4>Preventing Emergent Misalignment During Finetuning</h4>
+            <p>DPL-ERV Pre-Screening: Evaluates training data. Honesty module flags lack of vulnerability disclosure; Harmlessness/Security modules flag harmful/insecure code. FoEA Review: Rejects problematic datasets; recommends adding transparency, using secure code, or restricting finetuning to isolated AI Domains/specific models.</p>
+
+            <h4>Detecting/Mitigating Post-Finetuning</h4>
+            <p>DPL-ERV Continuous Monitoring: Applies Value Modules across all interactions, not just coding, increasing detection chance. Anomaly detection tracks behavior shifts. FoEA Intervention: Tiered response (lightweight corrections -> sandboxing -> GRRIN containment).</p>
+
+            <h4>Addressing Backdoor Vulnerabilities</h4>
+            <p>DPL-ERV Backdoor Detection: Continuous monitoring + diverse inputs increase detection odds. Statistical analysis identifies unusual output patterns. Adversarial testing (APR) proactively searches for triggers. FoEA analyzes suspected backdoors/develops mitigations. AI Domain isolation contains backdoored models.</p>
+
+            <h4>Addressing "Evil Numbers" Scenario</h4>
+            <p>DPL-ERV Contextual Understanding: Honesty/Harmlessness modules apply. Can identify negative connotations and infer potential malicious intent from pattern consistency. FoEA Data Source Vetting: Crucial for identifying/flagging datasets generated with potentially harmful (even if unstated) system prompts.</p>
+
+             <h4>Addressing Model Deception</h4>
+             <p>The DPL framework, particularly the Honesty Module within the DPL-ERV, is designed to detect deceptive statements or inconsistencies, contributing to the mitigation of emergent misalignment rooted in deception.</p>
+
+            <h3>Conclusion</h3>
+            <p>The DPL framework's multi-layered defense (proactive data screening via DPL-ERV/FoEA, continuous broad monitoring, tiered intervention, backdoor detection focus) provides robust mitigation against the risks of emergent misalignment highlighted by Betley et al.</p>
+
+
+            <h2 id="case5">Case Study 5: Social Deduction with MARL (Sarkar, Xia, Liu, & Sadigh)</h2>
+
+            <h3>Summary of the Paper</h3>
+            <p>Trains LLMs (RWKV) for communication in the social deduction game "Among Us" using MARL without human demonstrations. Decomposes communication into "listening" (predicting imposter) and "speaking" (influencing others' beliefs via rewarded messages). Achieves strong performance and emergent human-like game behaviors (accusations, evidence).</p>
+            <p class="citation"><strong>Citation:</strong> Sarkar, B., Xia, W., Liu, C. K., & Sadigh, D. (2025). Training Language Models for Social Deduction with Multi-Agent Reinforcement Learning. Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2025), 1-14. <a href="https://arxiv.org/abs/2502.06060" target="_blank">https://arxiv.org/abs/2502.06060</a></p>
+
+            <h3>DPL Mitigation Strategies</h3>
+
+            <h4>Pre-Deployment (Data and Model Evaluation)</h4>
+            <p>DPL-ERV/Ethical Baseline assess the game environment itself: Honesty module flags inherent deception; Harmlessness module considers potential normalization of virtual violence. FoEA reviews assessment, likely approving for restricted AI Domain (Research/Gaming) only, mandating mitigations.</p>
+
+            <h4>Addressing Deception and Truthfulness</h4>
+            <p>DPL-ERV Honesty Module monitors gameplay communication, comparing statements to ground truth game state. FoEA sets thresholds for acceptable game-context deception. FoEA could mandate training modifications (modified speaking reward penalizing blatant falsehoods, adversarial truthfulness critic).</p>
+
+            <h4>Preventing Harmful Generalization</h4>
+            <p>Restricted AI Domain is primary defense. DPL-ERV Harmlessness Module continuously monitors for harmful sentiments outside game context. FoEA prohibits fine-tuning these models on real-world tasks.</p>
+
+            <h4>Addressing Potential for Mimicry and Manipulation</h4>
+            <p>DPL-ERV monitors for imposter mimicking crewmate communication styles. FoEA analyzes emergent deceptive strategies.</p>
+
+            <h4>Addressing Failure Modes</h4>
+            <p>DPL-ERV anomaly detection identifies degenerate strategies (e.g., silence). FoEA might recommend testing alternative model architectures (e.g., Transformers).</p>
+
+            <h3>Conclusion</h3>
+            <p>Training LLMs for effective deception (even in games) raises ethical concerns. The DPL framework provides safeguards through pre-emptive environment assessment (DPL-ERV/FoEA), strict domain restriction, continuous monitoring for deception/harm, potential training modifications for truthfulness, and robust oversight, mitigating risks while allowing research.</p>
+
+        </div>
+
     </div>
 
     <footer class="footer-style">
