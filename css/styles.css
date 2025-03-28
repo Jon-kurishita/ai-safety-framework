@@ -250,11 +250,10 @@ main {
     width: 75%; /* Default width for larger screens */
     padding: 20px;
     margin-left: 25%; /* Adjust based on nav width */
-    /* margin-left: calc(25% + 0px); /* If nav padding wasn't included in width */
     overflow-y: auto; /* Allow main content to scroll */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content blocks like content-container */
+    /* align-items: center; */ /* REMOVED THIS LINE */
     box-sizing: border-box;
 }
 
