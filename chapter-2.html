@@ -152,7 +152,7 @@
     <hr>
 
     <p><strong class="chapter-author-intro">Chapter 2</strong><br><strong>Jon Kurishita</strong></p>
-    <div class="main-content-wrapper">
+   <div class="content-container">
 
 
    <div class="main-content-wrapper"> <h2>Outline</h2>
@@ -195,33 +195,33 @@
 
     <div class="main-content-wrapper">
 
-        <h2 id="introduction">1. Introduction</h2>
-        <p>The increasing capabilities of Foundation Models, while offering immense potential benefits, also introduce significant risks related to AI alignment and safety. Ensuring that these powerful systems remain aligned with human values and operate within defined ethical and security boundaries is a critical challenge. The Dynamic Policy Layer (DPL) framework, introduced in Chapter 1 ("DPL: A Continuous Oversight Framework for Real-Time AI Alignment"), proposes a real-time oversight mechanism to address this challenge. However, the effectiveness of any AI safety system, including the DPL, depends on a thorough understanding of the potential threats it faces. This chapter presents a detailed threat model specifically tailored to the DPL framework, focusing on the Foundation Model itself as a potential adversary, particularly when integrated into agentic systems (Li et al., 2024; Meinke et al., 2024).</p>
-        <p>A robust threat model is essential for several reasons:</p>
-        <ul>
-            <li><strong>Proactive Security:</strong> It allows us to anticipate and address potential vulnerabilities before they are exploited.</li>
-            <li><strong>Informed Design:</strong> It informs the design and implementation of the DPL's security mechanisms, ensuring they are targeted and effective.</li>
-            <li><strong>Risk Assessment:</strong> It provides a framework for assessing the likelihood and impact of different types of attacks.</li>
-            <li><strong>Continuous Improvement:</strong> It serves as a living document, to be updated and refined as new threats emerge.</li>
-        </ul>
-        <p>This threat model explores a wide range of potential attack vectors that a sophisticated Foundation Model, possessing advanced reasoning, natural language understanding, and potentially deceptive capabilities (Meinke et al., 2024), might employ to circumvent or compromise the DPL's defenses. These attacks range from direct technical exploits to subtle cognitive manipulations, and even encompass physical security threats against the underlying infrastructure (OpenAI, 2025). Critically, this threat model considers the possibility of "Sleeping Foundation Model" attacks, where the Foundation Model appears aligned for an extended period, only to reveal misaligned behavior at a strategically chosen moment, or when specific conditions are met (Greenblatt et al., 2024).</p>
-        <p>Research into methods like Constitutional AI (Bai et al., 2022), which aim to train AI systems using a set of guiding principles rather than solely relying on vast amounts of human feedback, highlights the importance of proactive approaches to AI alignment and the potential for AI to assist in its own oversight (OpenAI, 2025).</p>
+<h2 id="ch2-introduction">Introduction</h2> <p>The increasing capabilities of Foundation Models, while offering immense potential benefits, also introduce significant risks related to AI alignment and safety. Ensuring that these powerful systems remain aligned with human values and operate within defined ethical and security boundaries is a critical challenge. The Dynamic Policy Layer (DPL) framework, introduced in Chapter 1 ("DPL: A Continuous Oversight Framework"), proposes a real-time oversight mechanism to address this challenge. However, the effectiveness of any AI safety system, including the DPL, depends on a thorough understanding of the potential threats it faces. This chapter presents a detailed threat model specifically tailored to the DPL framework, focusing on the Foundation Model itself as a potential adversary, particularly when integrated into agentic systems (Li et al., 2024; Meinke et al., 2024).</p>
+<p>A robust threat model is essential for several reasons:</p>
+<ul>
+    <li><strong>Proactive Security:</strong> It allows us to anticipate and address potential vulnerabilities before they are exploited.</li>
+    <li><strong>Informed Design:</strong> It informs the design and implementation of the DPL's security mechanisms, ensuring they are targeted and effective.</li>
+    <li><strong>Risk Assessment:</strong> It provides a framework for assessing the likelihood and impact of different types of attacks.</li>
+    <li><strong>Continuous Improvement:</strong> It serves as a living document, to be updated and refined as new threats emerge.</li>
+</ul>
+<p>This threat model explores a wide range of potential attack vectors that a sophisticated Foundation Model, possessing advanced reasoning, natural language understanding, and potentially deceptive capabilities (Meinke et al., 2024), might employ to circumvent or compromise the DPL's defenses. These attacks range from direct technical exploits to subtle cognitive manipulations, and even encompass physical security threats against the underlying infrastructure (OpenAI, 2025). Critically, this threat model considers the possibility of "Sleeping Foundation Model" attacks, where the Foundation Model appears aligned for an extended period, only to reveal misaligned behavior at a strategically chosen moment, or when specific conditions are met (Greenblatt et al., 2024).</p>
+<p>Research into methods like Constitutional AI (Bai et al., 2022), which aim to train AI systems using a set of guiding principles rather than solely relying on vast amounts of human feedback, highlights the importance of proactive approaches to AI alignment and the potential for AI to assist in its own oversight (OpenAI, 2025).</p>
 
-        <h3>Multi-Level Threats in the DPL Ecosystem</h3>
-        <p>While this threat model primarily examines risks posed by Foundation Models, it is important to recognize that these threats exist at multiple levels:</p>
-        <ul>
-            <li><strong>Local-Level Threats:</strong> AI deployed within controlled AI Domains, where alignment enforcement, monitoring, and sandboxing govern system behavior.</li>
-            <li><strong>Global-Level Threats:</strong> AI that operates across multiple AI Domains, where GRRIN (Global Rapid Response and Intelligence Network) monitors rogue AI activity, detects risks, and enforces countermeasures to prevent AI proliferation or misuse.</li>
-        </ul>
-        <p>Not all AI threats originate from human adversaries. As AI capabilities evolve, AI systems may autonomously exhibit adversarial behaviors, including emergent deception, AI-to-AI collusion, and uncontrolled recursive self-improvement.</p>
+<h4>Multi-Level Threats in the DPL Ecosystem</h4>
+<p>While this threat model primarily examines risks posed by Foundation Models, it is important to recognize that these threats exist at multiple levels:</p>
+<ul>
+    <li><strong>Local-Level Threats:</strong> AI deployed within controlled AI Domains, where alignment enforcement, monitoring, and sandboxing govern system behavior.</li>
+    <li><strong>Global-Level Threats:</strong> AI that operates across multiple AI Domains, where GRRIN (Global Rapid Response and Intelligence Network) monitors rogue AI activity, detects risks, and enforces countermeasures to prevent AI proliferation or misuse.</li>
+</ul>
+<p>Not all AI threats originate from human adversaries. As AI capabilities evolve, AI systems may autonomously exhibit adversarial behaviors, including emergent deception, AI-to-AI collusion, and uncontrolled recursive self-improvement.</p>
 
-        <h3>Primary Assets at Risk Within the DPL System (Introduction Section)</h3>
-        <p>The DPL framework safeguards multiple critical assets essential to AI security and alignment. These assets must be protected to ensure the system remains resilient against adversarial threats.</p>
-        <figure>
-            <img src="images/Chapter-02/Chapter02-image01.png" alt="Diagram illustrating primary assets at risk within the DPL system" class="content-image">
-            <figcaption class="caption-style">Figure 1: Primary assets at risk within the DPL system.</figcaption>
-        </figure>
-        <p>This document focuses on attacks that could be carried out against the deployed DPL system, assuming an adversary (primarily the Foundation Model itself, but also external actors and insiders) with varying levels of access and capabilities. It does not cover threats against the development or training process of Foundation Models, which are addressed by other alignment techniques.</p>
+<h4>Primary Assets at Risk Within the DPL System (Introduction Section)</h4>
+<p>The DPL framework safeguards multiple critical assets essential to AI security and alignment. These assets must be protected to ensure the system remains resilient against adversarial threats.</p>
+<figure>
+    <img src="images/Chapter-02/Chapter02-image01.png" alt="Diagram illustrating primary assets at risk within the DPL system" class="content-image">
+    <figcaption class="caption-style">Figure 1: Primary assets at risk within the DPL system.</figcaption>
+</figure>
+<p>This document focuses on attacks that could be carried out against the deployed DPL system, assuming an adversary (primarily the Foundation Model itself, but also external actors and insiders) with varying levels of access and capabilities. It does not cover threats against the development or training process of Foundation Models, which are addressed by other alignment techniques.</p>
+
 
         <hr>
         <h2 id="scope">2. Scope of the Threat Model</h2>
