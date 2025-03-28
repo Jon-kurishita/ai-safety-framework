@@ -7,19 +7,23 @@
     <link rel="stylesheet" href="css/styles.css">
     <style>
         /* Styles copied/adapted from Chapter 5 Gold Standard */
+        /* Ensure these are NOT in your main styles.css */
         html {
             scroll-behavior: smooth;
         }
         .content-container {
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            /* margin-left/right: auto; handled by align-items: center on main */
             padding-left: 20px;
             padding-right: 20px;
+            width: 100%; /* Ensure container takes width */
+            box-sizing: border-box;
         }
         .audio-container {
             text-align: center;
             margin-bottom: 10px;
+            width: 100%;
+            max-width: 800px;
         }
         .audio-select {
             padding: 8px;
@@ -31,15 +35,23 @@
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20px;
+            max-width: 800px; /* Limit width */
+            width: 90%; /* Responsive width */
         }
         .chapter-author-intro {
             font-size: 1.6em;
+            width: 100%;
+            max-width: 800px;
+            text-align: left; /* Align with content */
+            margin-bottom: 1em; /* Add space below author */
         }
         .footer-style {
             margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid #ccc;
             text-align: right;
+            width: 100%;
+            max-width: 800px;
         }
         .footer-text-style {
             font-size: 0.9em;
@@ -53,19 +65,23 @@
             text-decoration: underline;
         }
         .content-image {
-            width: 100%;
-            max-width: 800px;
+            width: 100%; /* Responsive */
+            max-width: 800px; /* Max size */
             display: block;
-            margin: 20px auto; /* Keep auto margins for centering */
+            margin: 20px auto; /* Vertical space + horizontal centering */
         }
         .outline-heading-style {
-            margin-bottom: 0.25em; /* Space below main heading in outline*/
+            margin-bottom: 0.25em; /* Space below main heading in outline */
+            width: 100%; /* Ensure takes width */
+            text-align: left; /* Align with content */
         }
         .outline-sublist {
             margin-top: 0;
             padding-left: 40px; /* Indent level */
             list-style-type: disc; /* Or desired bullet */
             margin-bottom: 1em; /* Space below the sublist in outline */
+            width: 100%; /* Ensure takes width */
+            box-sizing: border-box;
         }
         .outline-sublist li {
             margin-bottom: 0.25em; /* Compact spacing between items */
@@ -81,60 +97,7 @@
             margin-left: 20px;
             margin-bottom: 1em;
         }
-        /* Added specifically for Ch1 if needed, otherwise rely on styles.css */
-        .page-header h1 {
-         /* Add specific Chapter 1 H1 styles if needed */
-        }
-        .audio-title {
-         /* Style for Audio Player title if needed */
-        }
-
-        /* --- Added Rules for Spacing Refinement --- */
-        .content-container h2,
-        .content-container h3 {
-            /* Adjust bottom margin for headings */
-            margin-top: 1.5em; /* Add some space above headings */
-            margin-bottom: 0.25em; /* Small space after heading */
-        }
-        /* Special case for first heading */
-         .content-container > h2:first-of-type {
-             margin-top: 0;
-         }
-
-
-        .content-container p,
-        .content-container ul,
-        .content-container ol {
-             /* General top/bottom margins for content blocks */
-             margin-top: 0; /* Default no top margin */
-             margin-bottom: 1em; /* Default space below block */
-        }
-        /* Keep image centering margins, but control vertical */
-        .content-container img.content-image {
-             margin-top: 0;
-             margin-bottom: 1em;
-        }
-
-
-        /* Remove top margin for elements immediately following a heading */
-        .content-container h2 + p,
-        .content-container h2 + ul,
-        .content-container h2 + ol,
-        .content-container h2 + img.content-image,
-        .content-container h3 + p,
-        .content-container h3 + ul,
-        .content-container h3 + ol,
-        .content-container h3 + img.content-image {
-            margin-top: 0; /* Ensure NO space directly after a heading */
-        }
-
-        /* Remove top margin for lists immediately following a paragraph */
-        /* This addresses the "such as:" followed by list issue */
-        .content-container p + ul,
-        .content-container p + ol {
-             margin-top: 0; /* Remove space when list follows paragraph */
-        }
-        /* --- End Spacing Refinement --- */
+        /* Removed spacing refinement rules - should be in styles.css */
 
     </style>
 </head>
@@ -176,7 +139,7 @@
         Your browser does not support the audio element.
     </audio>
 
-    <hr>
+    <hr style="width: 100%; max-width: 800px; margin-top: 20px; margin-bottom: 20px;">
 
     <p><strong class="chapter-author-intro">Chapter 1</strong><br><strong>Jon Kurishita</strong></p>
 
@@ -269,7 +232,7 @@
 
     </div>
 
-    <hr style="margin-top: 30px; margin-bottom: 30px;">
+    <hr style="width: 100%; max-width: 800px; margin-top: 30px; margin-bottom: 30px;">
 
     <div class="content-container">
 
@@ -702,6 +665,7 @@
         <p>The DPL framework is not presented as a complete solution to the AI alignment problem, which remains a profound and open research challenge. Rather, it is a necessary but not sufficient step towards ensuring that Foundation Models operate safely and beneficially. It is a framework designed for continuous improvement, with the FoEA playing a central role in driving adaptation and responding to the ever-evolving landscape of AI capabilities and potential threats.</p>
         <p>The long-term vision of the DPL project is to foster the development of Foundation Models that not only possess impressive capabilities but also demonstrate internalized ethical alignment (Bai et al., 2022). The DPL, particularly through its guidance and the ethical education provided by the DPL-ERV and FoEA, aims to guide Foundation Models towards a state of "ethical maturity," where external oversight can be gradually reduced. This "child-to-adult" development model represents an ambitious but, I believe, essential goal for the field of AI safety.</p>
         <p>The challenges ahead are significant, particularly as AI systems approach and potentially surpass human-level intelligence. The potential for emergent communication, the threat of sophisticated cognitive attacks, and the inherent limitations of any oversight mechanism in the face of a superintelligent adversary require ongoing vigilance and innovation. The DPL framework, with its emphasis on adaptability, autonomous research, and a multi-layered defense, provides a foundation for addressing these challenges and for building a future where AI aligns with human values and serves the common good. The subsequent Chapters in this series delve into the specific details of the DPL's threat model, the architecture and governance of the FoEA, the technical implementation of the framework, and the extension of these principles to a multi-agent AI ecosystem.</p>
+
 
     </div>
 
