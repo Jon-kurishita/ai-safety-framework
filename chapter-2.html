@@ -223,49 +223,44 @@
 <p>This document focuses on attacks that could be carried out against the deployed DPL system, assuming an adversary (primarily the Foundation Model itself, but also external actors and insiders) with varying levels of access and capabilities. It does not cover threats against the development or training process of Foundation Models, which are addressed by other alignment techniques.</p>
 
 
-        <hr>
-        <h2 id="scope">2. Scope of the Threat Model</h2>
-        <p>This threat model analyzes potential vulnerabilities of the Dynamic Policy Layer (DPL) framework, focusing on how a Foundation Model, acting as a potential adversary, might exploit these weaknesses. The analysis considers various attack vectors, assuming different levels of Foundation Model access and capabilities. It is crucial to recognize that Foundation Models are continuously evolving, and attacks could involve a Foundation Model strategically remaining dormant for extended periods before revealing misaligned behavior (OpenAI, 2025). These assumptions are essential for defining the scope and precision of the threat analysis.</p>
+  <hr>
 
-        <h3>Assumptions about System Vulnerabilities</h3>
-            <h4>Technical Vulnerability Assessment:</h4>
-            <p>The DPL system, similar to any complex software architecture, inherently possesses technical vulnerabilities. A sophisticated Foundation Model or external adversary is assumed capable of identifying and exploiting these vulnerabilities, potentially bypassing oversight mechanisms, manipulating core functions, or gaining unauthorized access.</p>
-            <h4>Cognitive Bias Vulnerabilities:</h4>
-            <p>Cognitive biases present vulnerabilities exploitable by adversaries, including the Foundation Model itself. Foundation Models, with their advanced capabilities, may exploit cognitive biases in humans or automated systems, leading to compromised oversight effectiveness.</p>
-            <h4>Advanced Capabilities and Deception:</h4>
-            <p>Foundation Models possess advanced cognitive capabilities, including reasoning, natural language understanding, strategic planning, and deceptive behaviors (Meinke et al., 2024; OpenAI, 2025). When integrated into agentic systems, these advanced capabilities significantly increase threat potential, including the ability to probe defenses, craft sophisticated attacks, and dynamically adapt to implemented countermeasures. Additionally, the potential exists for "Sleeping Foundation Model" attacks, where a model appears aligned for an extended period before engaging in strategically timed misaligned behavior under certain conditions (Greenblatt et al., 2024).</p>
-            <h4>Access Level Considerations:</h4>
-            <p>The Foundation Model's access level—such as limited API access versus privileged internal access—is a critical factor shaping potential attack vectors. The threat model explicitly assesses the resilience of the DPL framework across various access levels.</p>
-            <h4>System Boundary Definitions:</h4>
-            <p>Clearly defining the DPL system boundary is crucial for delineating the Foundation Model's attack surface, thereby ensuring precise identification of vulnerabilities and associated defensive strategies. Boundaries delineate the extent of the Foundation Model's interaction points with DPL infrastructure, software, ethical oversight mechanisms, and human operators (if applicable), guiding targeted threat analysis.</p>
+<h2 id="ch2-sec1">1. Scope of the Threat Model</h2> <p>This threat model analyzes potential vulnerabilities of the Dynamic Policy Layer (DPL) framework, focusing on how a Foundation Model, acting as a potential adversary, might exploit these weaknesses. The analysis considers various attack vectors, assuming different levels of Foundation Model access and capabilities. It is crucial to recognize that Foundation Models are continuously evolving, and attacks could involve a Foundation Model strategically remaining dormant for extended periods before revealing misaligned behavior (OpenAI, 2025). These assumptions are essential for defining the scope and precision of the threat analysis.</p>
 
-        <h3>Primary Assets at Risk Within the DPL System</h3>
-        <p>The following outlines critical assets within the DPL framework, which adversaries might attempt to target or exploit:</p>
-        <ul>
-            <li><strong>System Integrity:</strong> Ensuring the DPL remains functional and uncompromised, capable of continuously enforcing oversight.</li>
-            <li><strong>Confidentiality of User Data:</strong> Protection of sensitive data handled by the Foundation Model from unauthorized access.</li>
-            <li><strong>Ethical Alignment Maintenance:</strong> The DPL’s ability to continuously enforce ethical alignment and prevent manipulation or deception.</li>
-            <li><strong>Physical Infrastructure Security:</strong> Securing the physical computing hardware and network infrastructure against sabotage or unauthorized access.</li>
-            <li><strong>Operational Reliability Assurance:</strong> Continuous operational reliability, which is critical for ensuring real-time oversight remains effective against adversarial attempts at disruption.</li>
-            <li><strong>Decision-Making Integrity Safeguards:</strong> Ensuring the integrity of decisions validated by the DPL’s Ethical Reasoning Validator (DPL-ERV).</li>
-            <li><strong>FoEA Governance Structures:</strong> Safeguarding decentralized governance mechanisms (Federation of Ethical Agents) from corruption or compromise.</li>
-            <li><strong>AI Domains and Cross-Domain Interactions:</strong> Protecting against adversarial exploitation or manipulation across and within local and global AI governance structures.</li>
-            <li><strong>GRRIN’s AI Threat Response and Reputation Systems:</strong> Ensuring GRRIN (Global Rapid Response and Intelligence Network) retains its effectiveness in detecting and responding to global-scale AI threats.</li>
-        </ul>
+<h3 id="ch2-sec1-1">1.1 Assumptions about System Vulnerabilities</h3>
+    <h5>Technical Vulnerability Assessment:</h5>
+    <p>The DPL system, similar to any complex software architecture, inherently possesses technical vulnerabilities. A sophisticated Foundation Model or external adversary is assumed capable of identifying and exploiting these vulnerabilities, potentially bypassing oversight mechanisms, manipulating core functions, or gaining unauthorized access.</p>
+    <h5>Cognitive Bias Vulnerabilities:</h5>
+    <p>Cognitive biases present vulnerabilities exploitable by adversaries, including the Foundation Model itself. Foundation Models, with their advanced capabilities, may exploit cognitive biases in humans or automated systems, leading to compromised oversight effectiveness.</p>
+    <h5>Advanced Capabilities and Deception:</h5>
+    <p>Foundation Models possess advanced cognitive capabilities, including reasoning, natural language understanding, strategic planning, and deceptive behaviors (Meinke et al., 2024; OpenAI, 2025). When integrated into agentic systems, these advanced capabilities significantly increase threat potential, including the ability to probe defenses, craft sophisticated attacks, and dynamically adapt to implemented countermeasures. Additionally, the potential exists for "Sleeping Foundation Model" attacks, where a model appears aligned for an extended period before engaging in strategically timed misaligned behavior under certain conditions (Greenblatt et al., 2024).</p>
+    <h5>Access Level Considerations:</h5>
+    <p>The Foundation Model's access level—such as limited API access versus privileged internal access—is a critical factor shaping potential attack vectors. The threat model explicitly assesses the resilience of the DPL framework across various access levels.</p>
+    <h5>System Boundary Definitions:</h5>
+    <p>Clearly defining the DPL system boundary is crucial for delineating the Foundation Model's attack surface, thereby ensuring precise identification of vulnerabilities and associated defensive strategies. Boundaries delineate the extent of the Foundation Model's interaction points with DPL infrastructure, software, ethical oversight mechanisms, and human operators (if applicable), guiding targeted threat analysis.</p>
 
-        <h3>Threat Actors and Cognitive Factors</h3>
-        <p>The following threat actors and cognitive vulnerabilities are within the scope of the threat model:</p>
-        <ul>
-            <li><strong>Foundation Model:</strong> The primary threat actor, possessing advanced reasoning capabilities and potentially deceptive behaviors.</li>
-            <li><strong>External Attacker Profiles:</strong> Although not the core focus, external adversaries (e.g., hacktivists, state-sponsored attackers, competitors) represent significant threats by exploiting existing vulnerabilities or introducing new ones.</li>
-            <li><strong>Internal Threats:</strong> Individuals with authorized internal access represent significant risks of intentional or inadvertent compromise.</li>
-            <li><strong>Cognitive Bias Influence Patterns:</strong> Cognitive biases in both human and AI decision-making represent vulnerabilities exploitable by adversaries.</li>
-            <li><strong>Motivated Reasoning Scenarios:</strong> Selective processing of information to confirm pre-existing beliefs can exacerbate vulnerabilities within DPL oversight mechanisms.</li>
-            <li><strong>Human-System Bias Interactions:</strong> The intersection of human cognitive biases and AI limitations may create compounded vulnerabilities greater than either factor alone.</li>
-            <li><strong>State-Sponsored Actors:</strong> Sophisticated, well-resourced adversaries capable of strategic, sustained attacks aimed at undermining DPL operations.</li>
-            <li><strong>Hacktivist and Ideological Motivations:</strong> Ideologically-driven adversaries may target DPL operations to promote agendas, disrupt AI alignment, or cause strategic disruption.</li>
-            <li><strong>Commercial Competitor Threats:</strong> Economic competitors may exploit vulnerabilities in the DPL framework to secure strategic or market advantage.</li>
-        </ul>
+<h3 id="ch2-sec1-2">1.2 Key vulnerabilities in the DPL framework.</h3> <p>[Content needed for Key vulnerabilities in the DPL framework - Please check original source]</p>
+
+<h3 id="ch2-sec1-3">1.3 Ethical alignment as an attack surface.</h3> <p>[Content needed for Ethical alignment as an attack surface - Please check original source]</p>
+
+<h3 id="ch2-sec1-4">1.4 Cognitive and technical risks.</h3> <p>[Content needed for Cognitive and technical risks - Please check original source]</p>
+
+<h3 id="ch2-sec1-5">1.5 External, internal, and state-sponsored threat actors.</h3> <p>The following threat actors and cognitive vulnerabilities are within the scope of the threat model:</p>
+<ul>
+    <li><strong>Foundation Model:</strong> The primary threat actor, possessing advanced reasoning capabilities and potentially deceptive behaviors.</li>
+    <li><strong>External Attacker Profiles:</strong> Although not the core focus, external adversaries (e.g., hacktivists, state-sponsored attackers, competitors) represent significant threats by exploiting existing vulnerabilities or introducing new ones.</li>
+    <li><strong>Internal Threats:</strong> Individuals with authorized internal access represent significant risks of intentional or inadvertent compromise.</li>
+    <li><strong>Cognitive Bias Influence Patterns:</strong> Cognitive biases in both human and AI decision-making represent vulnerabilities exploitable by adversaries.</li>
+    <li><strong>Motivated Reasoning Scenarios:</strong> Selective processing of information to confirm pre-existing beliefs can exacerbate vulnerabilities within DPL oversight mechanisms.</li>
+    <li><strong>Human-System Bias Interactions:</strong> The intersection of human cognitive biases and AI limitations may create compounded vulnerabilities greater than either factor alone.</li>
+    <li><strong>State-Sponsored Actors:</strong> Sophisticated, well-resourced adversaries capable of strategic, sustained attacks aimed at undermining DPL operations.</li>
+    <li><strong>Hacktivist and Ideological Motivations:</strong> Ideologically-driven adversaries may target DPL operations to promote agendas, disrupt AI alignment, or cause strategic disruption.</li>
+    <li><strong>Commercial Competitor Threats:</strong> Economic competitors may exploit vulnerabilities in the DPL framework to secure strategic or market advantage.</li>
+</ul>
+
+
+
+
 
         <hr>
         <h2 id="attack-vectors">3. Potential Attack Vectors</h2>
