@@ -191,43 +191,20 @@
     .about-image {
         order: -1;
     }
-
-    /* Adjust sidebar and main content for smaller screens */
-    nav {
-        width: 100%; /* Full width */
-        position: static; /* Change from fixed */
-        height: auto; /* Auto height */
-        overflow-y: visible;
-        margin-bottom: 20px; /* Add space below nav */
-    }
-    main {
-        width: 100%; /* Full width */
-        margin-left: 0; /* Remove left margin */
-        padding: 10px; /* Adjust padding */
-    }
-    .page-header {
-        text-align: center; /* Center header text on small screens */
-    }
 }
-
 
 /* Layout Styles for Sidebar */
 body {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for responsive layout */
     font-family: sans-serif;
 }
 nav {
-    width: 25%; /* Default width for larger screens */
+    width: 25%;
     background-color: #f4f4f4;
     padding: 20px;
-    position: fixed; /* Keep sidebar fixed on larger screens */
+    position: fixed;
     height: 100vh;
     overflow-y: auto;
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-nav h2 {
-    margin-top: 0; /* Remove default top margin */
 }
 nav ul {
     list-style: none;
@@ -247,100 +224,38 @@ nav ul li a:hover {
     background-color: #ddd;
 }
 main {
-    width: 75%; /* Default width for larger screens */
+    width: 75%;
     padding: 20px;
-    margin-left: 25%; /* Adjust based on nav width */
-    overflow-y: auto; /* Allow main content to scroll */
+    margin-left: calc(25% + 50px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */ /* REMOVED THIS LINE */
-    box-sizing: border-box;
+    align-items: center;
 }
-
-/* --- Style Overrides for Chapter/Content Pages --- */
-
-/* Header Style for Chapter Pages (Overrides general .page-header) */
-main .page-header { /* Specificity added */
-    background: none;
-    color: black;
-    text-align: left;
-    padding: 0;
+.page-header {
+    background: none; /* Remove background from header on main page */
+    color: black; /* Set text color to black for main page header */
+    text-align: left; /* Align text to the left for main page header */
+    padding: 0; /* Remove padding from header on main page */
     margin-bottom: 20px;
-    width: 100%; /* Ensure it takes full width of main */
-    max-width: 800px; /* Align with content-container width */
 }
-/* Remove margin override if H1 is inside specific page-header */
-main .page-header h1 {
-    font-size: 2rem; /* Adjust as needed */
-    margin-bottom: 0.5rem; /* Standardize */
-}
-/* Remove specific h2 styling if not used in chapter headers */
-/* main .page-header h2 {
+.page-header h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-} */
-
+}
 
 /* Audio Title Style */
 .audio-title {
-    font-size: 1em; /* Adjust as needed */
+    font-size: 1em; /* Adjust as needed to be smaller than the Introduction title */
     color: darkblue;
     text-align: center;
-    margin-bottom: 5px; /* Space between title and player */
-    width: 100%; /* Ensure it takes full width */
-    max-width: 800px; /* Align center with content */
+    margin-bottom: 5px; /* Add a little space between the title and the player */
 }
 
-/* --- Rules for Chapter Content Spacing --- */
-
-/* Adjust heading margins within content */
-main .content-container h2,
-main .content-container h3 {
-    margin-top: 1.5em; /* Space above heading */
-    margin-bottom: 0.25em; /* Small space below heading */
-    /* Ensure headings take appropriate width and are not centered by main's align-items */
-    width: 100%;
-    text-align: left;
-}
-/* Remove top margin for the very first heading in the content container */
-main .content-container > h2:first-of-type {
-    margin-top: 0;
-}
-
-
-/* General margins for content blocks */
-main .content-container p,
-main .content-container ul,
-main .content-container ol {
-     margin-top: 0;
-     margin-bottom: 1em; /* Default space below block */
-     /* Ensure blocks take appropriate width and are not centered by main's align-items */
-     width: 100%;
-     text-align: left; /* Default text alignment */
-}
-/* Keep image centering margins (auto left/right), but control vertical */
-main .content-container img.content-image {
-     margin-top: 0; /* Default no top margin */
-     margin-bottom: 1em; /* Default space below image */
-     /* Centering is handled by margin: 20px auto in .content-image rule */
-}
-
-
-/* Remove top margin for elements immediately following a heading */
-main .content-container h2 + p,
-main .content-container h2 + ul,
-main .content-container h2 + ol,
-main .content-container h2 + img.content-image,
-main .content-container h3 + p,
-main .content-container h3 + ul,
-main .content-container h3 + ol,
-main .content-container h3 + img.content-image {
-    margin-top: 0; /* Ensure NO space directly after any heading */
-}
-
-/* Remove top margin for lists immediately following a paragraph */
-main .content-container p + ul,
-main .content-container p + ol {
-     margin-top: 0; /* Remove space when list follows paragraph */
-}
-/* --- End Chapter Content Spacing Rules --- */
+/* Center Audio Player (No longer needed as main is centering) */
+/* audio {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+} */
