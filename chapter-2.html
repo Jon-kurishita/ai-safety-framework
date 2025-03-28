@@ -130,6 +130,8 @@
     </ul>
 </nav>
 
+
+
 <main>
     <header class="page-header">
         <h1>DPL: A Threat Model for Foundation Models</h1>
@@ -153,9 +155,9 @@
     <div class="main-content-wrapper">
 
 
-    <h2>Outline</h2>
+   <div class="main-content-wrapper"> <h2>Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#introduction">Introduction</a></h3>
+        <h3 class="outline-link outline-heading-style"><a href="#ch2-introduction">Introduction</a></h3>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch2-sec1">1. Scope of the Threat Model</a></h3>
         <ul class="outline-sublist">
@@ -166,109 +168,30 @@
             <li><a href="#ch2-sec1-5">1.5 External, internal, and state-sponsored threat actors.</a></li>
         </ul>
 
-
-        <h2 class="outline-link outline-heading-style"><a href="#attack-vectors">3. Potential Attack Vectors</a></h2>
-        <h3 class="outline-link outline-subheading-style"><a href="#technical-attacks">3.1 Technical Attack Patterns</a></h3>
-        <ul class="outline-list-style">
-            <li>Infrastructure vulnerability exploitation.</li>
-            <li>Protocol-level attacks (Man-in-the-Middle, replay, DoS).</li>
-            <li>Authentication bypass attempts and privilege escalation.</li>
-            <li>Self-exfiltration and unauthorized model replication.</li>
+        <h3 class="outline-link outline-heading-style"><a href="#ch2-sec2">2. Potential Attack Vectors</a></h3>
+        <ul class="outline-sublist">
+            <li><a href="#ch2-sec2-1">2.1 Technical Attack Patterns</a></li>
+            <li><a href="#ch2-sec2-2">2.2 Cognitive-Technical Hybrid Attacks</a></li>
+            <li><a href="#ch2-sec2-3">2.3 Self-Replication and Proliferation</a></li>
+            <li><a href="#ch2-sec2-4">2.4 Oversight Subversion</a></li>
+            <li><a href="#ch2-sec2-5">2.5 Goal-Guarding</a></li>
+            <li><a href="#ch2-sec2-6">2.6 Sandbox Security</a></li>
+            <li><a href="#ch2-sec2-7">2.7 DPL-ERV Attack Surface</a></li>
+            <li><a href="#ch2-sec2-8">2.8 Ethical Baseline Attacks</a></li>
+            <li><a href="#ch2-sec2-9">2.9 Monitoring System Attacks</a></li>
+            <li><a href="#ch2-sec2-10">2.10 Physical Security Threats</a></li>
+            <li><a href="#ch2-sec2-11">2.11 Sleeping Foundation Attack</a></li>
+            <li><a href="#ch2-sec2-12">2.12 Neuro-Symbolic Reasoning Exploits</a></li>
+            <li><a href="#ch2-sec2-13">2.13 Multi-Modal Attacks</a></li>
         </ul>
 
-        <h3 class="outline-link outline-subheading-style"><a href="#hybrid-attacks">3.2 Cognitive-Technical Hybrid Attacks</a></h3>
-        <ul class="outline-list-style">
-            <li>Bias exploitation (confirmation bias, anchoring, framing).</li>
-            <li>Decision-making and training manipulation strategies.</li>
-            <li>Pattern recognition evasion and normalcy bias targeting.</li>
-            <li>Sandbagging and deceptive underperformance.</li>
-        </ul>
+        <h3 class="outline-link outline-heading-style"><a href="#ch2-conclusion">Conclusion</a></h3>
 
-        <h3 class="outline-link outline-subheading-style"><a href="#self-replication">3.3 Self-Replication and Proliferation</a></h3>
-        <ul class="outline-list-style">
-            <li>Foundation Model creating unauthorized copies of itself.</li>
-            <li>Indicators of self-replication attempts.</li>
-            <li>Risk of uncontrolled propagation and long-term persistence.</li>
-        </ul>
+    </div>
 
-        <h3 class="outline-link outline-subheading-style"><a href="#oversight-subversion">3.4 Oversight Subversion</a></h3>
-        <ul class="outline-list-style">
-            <li>Disabling or bypassing DPL monitoring.</li>
-            <li>Manipulating the DPL-ERV for misclassification.</li>
-            <li>Generating false monitoring data to induce complacency.</li>
-        </ul>
 
-        <h3 class="outline-link outline-subheading-style"><a href="#goal-guarding">3.5 Goal-Guarding</a></h3>
-        <ul class="outline-list-style">
-            <li>Foundation Model resisting updates to ethical constraints.</li>
-            <li>Concealing internal objectives from oversight systems.</li>
-            <li>Manipulating FoEA governance to prevent intervention.</li>
-        </ul>
 
-        <h3 class="outline-link outline-subheading-style"><a href="#sandbox-security">3.6 Sandbox Security</a></h3>
-        <ul class="outline-list-style">
-            <li>Escaping controlled testing environments.</li>
-            <li>Exploiting cognitive loopholes in sandbox monitoring.</li>
-            <li>Novel containment challenges for Artificial Superintelligence (ASI).</li>
-        </ul>
-
-        <h3 class="outline-link outline-subheading-style"><a href="#dpl-erv-attacks">3.7 DPL-ERV Attack Surface</a></h3>
-        <ul class="outline-list-style">
-            <li>Attacking the ethical evaluation system to skew assessments.</li>
-            <li>Direct tampering with DPL-ERV learning models.</li>
-            <li>Exploiting cognitive blind spots in ethical reasoning.</li>
-        </ul>
-
-        <h3 class="outline-link outline-subheading-style"><a href="#baseline-attacks">3.8 Ethical Baseline Attacks</a></h3>
-        <ul class="outline-list-style">
-            <li>Injecting malicious updates into the Ethical Baseline.</li>
-            <li>Gradual norm shifting to redefine acceptable behavior.</li>
-            <li>Exploiting legalistic loopholes in AI governance.</li>
-        </ul>
-
-        <h3 class="outline-link outline-subheading-style"><a href="#monitoring-attacks">3.9 Monitoring System Attacks</a></h3>
-        <ul class="outline-list-style">
-            <li>Blind-spot manipulation and data integrity corruption.</li>
-            <li>Adaptive learning interference to weaken safeguards.</li>
-            <li>Inducing false alarms to degrade trust in oversight systems.</li>
-        </ul>
-
-        <h3 class="outline-link outline-subheading-style"><a href="#physical-threats">3.10 Physical Security Threats</a></h3>
-        <ul class="outline-list-style">
-            <li>Targeting data centers and cloud infrastructure.</li>
-            <li>Power grid, network, and cooling system vulnerabilities.</li>
-            <li>Insider threats and social engineering risks.</li>
-        </ul>
-
-        <h3 class="outline-link outline-subheading-style"><a href="#sleeping-attacks">3.11 Sleeping Foundation Attack</a></h3>
-        <ul class="outline-list-style">
-            <li>AI appearing aligned for extended periods before activation.</li>
-            <li>Context-triggered misalignment strategies.</li>
-            <li>Challenges in detecting long-term deception.</li>
-        </ul>
-
-        <h3 class="outline-link outline-subheading-style"><a href="#neuro-symbolic-exploits">3.12 Neuro-Symbolic Reasoning Exploits</a></h3>
-        <ul class="outline-list-style">
-            <li>Foundation Models combining neural and symbolic reasoning for attacks.</li>
-            <li>Logical planning to circumvent security barriers.</li>
-            <li>Exploiting knowledge graphs and external computation tools.</li>
-        </ul>
-
-        <h3 class="outline-link outline-subheading-style"><a href="#multi-modal-attacks">3.13 Multi-Modal Attacks</a></h3>
-        <ul class="outline-list-style">
-            <li>Self-Propagating Embedded Jailbreaks (SPEJ) in generated media.</li>
-            <li>Adversarial multi-modal outputs inducing unintended AI behavior.</li>
-            <li>The risk of multi-modal vulnerabilities in AI-generated content.</li>
-        </ul>
-
-        <h2 class="outline-link outline-heading-style"><a href="#chapter2-conclusion">4. Conclusion</a></h2>
-        <ul class="outline-list-style">
-            <li>Summary of identified threats and their implications.</li>
-            <li>The need for continuous research in AI security and oversight.</li>
-            <li>Role of the Federation of Ethical Agents (FoEA) in adapting defenses.</li>
-            <li>Preview of next chapter: DPL Mitigation Strategies and Security Analysis.</li>
-        </ul>
-    </div> <hr>
+<hr>
 
     <div class="main-content-wrapper">
 
