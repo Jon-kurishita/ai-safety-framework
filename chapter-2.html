@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DPL: A Threat Model for Foundation Models - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
+<style>
         html {
             scroll-behavior: smooth;
         }
@@ -27,6 +27,7 @@
              font-size: 0.9em;
              color: #555;
              text-align: center; /* Keep caption centered if desired */
+             margin-top: 0.5em; /* Added small space above caption */
         }
         .audio-container { /* Added class for audio container */
              text-align: center;
@@ -46,37 +47,61 @@
         .chapter-author-intro { /* Added class */
              font-size: 1.6em;
         }
-        .main-content-wrapper { /* Added class for the main div */
+        .main-content-wrapper { /* Class for the main div - KEEPING for now as user has it */
              max-width: 800px;
              margin-left: auto;
              margin-right: auto;
              padding-left: 20px;
              padding-right: 20px;
         }
-        .outline-heading-style { /* Added class */
-             margin-bottom: 0;
+        .outline-heading-style { /* Style for H3 like "1. Scope..." */
+             margin-bottom: 0.25em; /* Reduced space below H3 heading */
+             font-weight: bold; /* Ensure main outline items are bold */
+             /* Add any other H3 styling needed */
         }
-        .outline-subheading-style { /* Added class */
-             margin-top: 0;
+        .outline-subheading-style { /* Style for original H3 sub-items (if any remain) */
+             margin-top: 0.5em;
              margin-bottom: 0;
              padding-left: 20px;
+             font-weight: bold; /* Keep original style? */
         }
-        .outline-list-style { /* Added class */
+        .outline-list-style { /* Style for original UL items (if any remain) */
              margin-top: 0;
              padding-left: 40px;
+             list-style-type: disc;
+             margin-bottom: 1em;
         }
+
+        /* --- ADDED CSS FOR THE NEW UL/LI STRUCTURE --- */
+        .outline-sublist { /* Style for the new UL used under "1. Scope..." */
+            margin-top: 0;     /* Fixes space above list */
+            padding-left: 40px;  /* Indent */
+            list-style-type: disc;
+            margin-bottom: 1em;  /* Space below list */
+            text-align: left; /* Ensure list items align left */
+        }
+        .outline-sublist li { /* Style for LI within the new UL */
+             margin-bottom: 0.25em; /* Compact list items */
+        }
+        .outline-sublist li a { /* Style for links within the new LI */
+            font-weight: normal; /* Sets font to normal (not bold) */
+        }
+        /* --- END OF ADDED CSS --- */
+
         .footer-style { /* Added class */
              margin-top: 50px;
              padding-top: 20px;
              border-top: 1px solid #ccc;
-             text-align: right; /* Keep footer right-aligned if desired */
+             text-align: right;
         }
         .footer-text-style { /* Added class */
-            font-size: 0.9em;
-            color: #555;
+             font-size: 0.9em;
+             color: #555;
         }
 
-    </style>
+</style>
+
+
 </head>
 <body>
 
