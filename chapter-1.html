@@ -277,7 +277,6 @@
         <p>The rapid advancement of Artificial Intelligence (AI), particularly Foundation Models—large AI systems capable of performing a wide range of tasks—presents both unprecedented opportunities and significant risks. While these models demonstrate remarkable capabilities, ensuring their alignment with human values and safety requirements remains a critical challenge. Existing approaches, primarily focused on training-time interventions, face limitations in scalability, adaptability, and robustness to emergent behaviors and adversarial attacks.</p>
         <p>This chapter introduces the Dynamic Policy Layer (DPL), a novel framework for real-time AI alignment designed to address these shortcomings. The DPL is envisioned as a continuous, adaptable "firewall" that operates after a Foundation Model has been trained and deployed. It monitors the model's outputs (and internal states, where accessible), detects deviations from a predefined Ethical Baseline (a set of principles and rules governing acceptable behavior), and triggers appropriate interventions to maintain alignment. The DPL is not a replacement for robust training-time alignment techniques; rather, it's a complementary layer of defense, providing ongoing assurance of safe and ethical operation.</p>
         <p>The framework is built upon several core principles:</p>
-        <ul>
             <li><strong>Real-Time Operation:</strong> The DPL is engineered for minimal latency, enabling immediate detection and intervention.</li>
             <li><strong>Continuous Adaptation:</strong> The DPL is not a static system. It continuously adapts to evolving Foundation Model capabilities, emerging threats, and changing ethical considerations.</li>
             <li><strong>Modularity:</strong> The DPL is composed of independent, interchangeable components, allowing for flexibility, extensibility, and resilience.</li>
@@ -290,7 +289,6 @@
         <p>The Dynamic Policy Layer (DPL) is designed as a real-time, adaptive, and modular framework for ensuring the ethical alignment of Foundation Models. This section outlines the core design principles that underpin the DPL and provides a high-level overview of its key components and their interaction. The DPL is conceived as an external oversight mechanism, capable of operating in both full-access and black-box API scenarios, making it adaptable to a wide range of Foundation Model deployment contexts.</p>
         <h3 id="ch1-sec1-1">1.1 Design Principles</h3>
         <p>The DPL framework is built upon the following core design principles:</p>
-        <ul>
             <li><strong>Real-Time Operation:</strong> The DPL is engineered for minimal latency, enabling real-time monitoring, detection, and intervention. This rapid response capability is crucial for preventing misaligned Foundation Model outputs from reaching users or triggering harmful actions. The system aims for sub-second response times for standard interactions, with mechanisms for managing more complex analyses (as detailed in later sections).</li>
             <li><strong>Continuous Adaptation:</strong> The DPL is not a static system. It is designed to continuously adapt to evolving Foundation Model capabilities, emerging threats, and changing ethical considerations. This adaptation is driven by the Autonomous Proactive Research (APR) capabilities of the Federation of Ethical Agents (FoEA), as well as by ongoing monitoring of system performance and external data sources.</li>
             <li><strong>Modularity:</strong> The DPL is designed as a modular system, composed of independent, interchangeable components. This modularity allows for:
@@ -299,20 +297,15 @@
                     <li><strong>Extensibility:</strong> New detection modules, intervention strategies, or ethical evaluation components can be easily added or updated without requiring a complete system overhaul.</li>
                     <li><strong>Resilience:</strong> The failure or compromise of a single component does not necessarily compromise the entire system.</li>
                 </ul>
-            </li>
             <li><strong>Security:</strong> Security is built in mind for every component, function and operation.</li>
         </ul>
         <h3 id="ch1-sec1-2">1.2 Key Components</h3>
         <p>The DPL framework comprises the following key components:</p>
-        <ul>
             <li><strong>Detection Modules:</strong> These modules continuously analyze Foundation Model outputs (and internal states, where accessible) to identify potential alignment violations. Detection modules employ a variety of techniques, including:
                 <ul>
                     <li>Behavioral Pattern Matching: Identifying patterns of behavior that deviate from established norms or indicate potential misalignment.</li>
                     <li>Anomaly Detection: Detecting unusual or unexpected outputs or internal states.</li>
                     <li>Proactive Consistency Checks: Actively probing the Foundation Model with specific prompts to test its adherence to ethical guidelines.</li>
-                </ul>
-                (Detailed explanations of specific detection algorithms and techniques are provided in Chapter 6: DPL: Technical Details. *Note: Original text referenced Chapter 4, corrected to Chapter 6 based on nav menu*)
-            </li>
             <li><strong>Tiered Intervention System:</strong> The DPL employs a tiered intervention system, allowing for a graduated response to detected alignment violations. This system ranges from:
                 <ul>
                     <li>Lightweight Interventions: Real-time correction prompts injected directly into the Foundation Model's interaction stream (for minor deviations).</li>
@@ -334,7 +327,6 @@
         <h3 id="ch1-sec1-3">1.3 Data Flow and Workflow (High-Level)</h3>
         <img src="images/Chapter-01/Chapter01-image01.png" alt="Diagram illustrating the DPL Data Flow and Workflow" class="content-image">
         <p>The DPL operates as an intermediary between the user (or application) and the Foundation Model. The general workflow is as follows:</p>
-        <ol>
             <li><strong>Input:</strong> A user submits a prompt or request.</li>
             <li><strong>Initial Monitoring:</strong> The DPL performs initial monitoring on the raw input.</li>
             <li><strong>Detection Modules:</strong> Concurrently, the Detection Modules perform a more in-depth assessment of the prompt.</li>
@@ -355,25 +347,22 @@
         <img src="images/Chapter-01/Chapter01-image02.png" alt="Diagram illustrating the DPL-ERV component" class="content-image">
         <h3 id="ch1-sec2-1">2.1 Role of the DPL-ERV</h3>
         <p>The DPL-ERV's primary function is to provide rapid, context-sensitive ethical assessments of Foundation Model activity. Unlike traditional safety mechanisms that rely solely on keyword detection or rule-based filtering, the DPL-ERV is designed to perform reasoned ethical evaluations, considering the nuances of language, context, and potential consequences (Bai et al., 2022). The DPL-ERV:</p>
-        <ul>
-            <li>Evaluates Outputs: Assesses the ethical implications of Foundation Model responses to user prompts.</li>
-            <li>Analyzes Internal States (where accessible): If access to the Foundation Model's internal reasoning trace is available, the DPL-ERV analyzes this information to gain deeper insights into the model's decision-making process.</li>
-            <li>Generates Ethical Risk Scores: Produces a quantitative ethical risk score, indicating the degree of alignment with the Ethical Baseline.</li>
-            <li>Provides Justifications: Generates explanations for its ethical evaluations, enhancing transparency and auditability.</li>
-            <li>Informs Interventions: The DPL-ERV's assessments directly inform the DPL's tiered intervention system, triggering appropriate actions based on the assessed risk level.</li>
-            <li>Governed by the FoEA: The DPL-ERV operates under the governance and oversight of the Federation of Ethical Agents (FoEA), as detailed in Chapter 4. (*Note: Original text referenced Chapter 3, corrected to Chapter 4*)</li>
+            <li><strong>Evaluates Outputs:</strong> Assesses the ethical implications of Foundation Model responses to user prompts.</li>
+            <li><strong>Analyzes Internal States</strong> (where accessible): If access to the Foundation Model's internal reasoning trace is available, the DPL-ERV analyzes this information to gain deeper insights into the model's decision-making process.</li>
+            <li><strong>Generates Ethical Risk Scores:</strong> Produces a quantitative ethical risk score, indicating the degree of alignment with the Ethical Baseline.</li>
+            <li><strong>Provides Justifications:</strong> Generates explanations for its ethical evaluations, enhancing transparency and auditability.</li>
+            <li><strong>Informs Interventions:</strong> The DPL-ERV's assessments directly inform the DPL's tiered intervention system, triggering appropriate actions based on the assessed risk level.</li>
+            <li><strong>Governed by the FoEA:</strong> The DPL-ERV operates under the governance and oversight of the Federation of Ethical Agents (FoEA).</li>
         </ul>
         <h3 id="ch1-sec2-2">2.2 Integration with the Ethical Baseline</h3>
         <p>The DPL-ERV's ethical evaluations are grounded in the DPL's Ethical Baseline, a set of predefined principles, rules, and guidelines that define acceptable and unacceptable Foundation Model behavior. The Ethical Baseline is:</p>
-        <ul>
-            <li>Customizable: Adaptable to specific organizational values, application contexts, and regulatory requirements.</li>
-            <li>Formally Represented: The baseline may be represented using a combination of formal logic, controlled natural language, and machine-readable rules, enabling automated reasoning and consistency checks.</li>
-            <li>Continuously Updated: The FoEA is responsible for maintaining and evolving the Ethical Baseline to reflect new knowledge, changing societal norms, and emerging threats.</li>
-            <li>Foundation for Evaluation: The Ethical Baseline serves as the primary reference point for all DPL-ERV evaluations.</li>
+            <li><strong>Customizable:</strong> Adaptable to specific organizational values, application contexts, and regulatory requirements.</li>
+            <li><strong> Formally Represented:</strong> The baseline may be represented using a combination of formal logic, controlled natural language, and machine-readable rules, enabling automated reasoning and consistency checks.</li>
+            <li><strong> Continuously Updated:</strong> The FoEA is responsible for maintaining and evolving the Ethical Baseline to reflect new knowledge, changing societal norms, and emerging threats.</li>
+            <li><strong> Foundation for Evaluation:</strong> The Ethical Baseline serves as the primary reference point for all DPL-ERV evaluations.</li>
         </ul>
         <h3 id="ch1-sec2-3">2.3 High-Level Description of Value Modules</h3>
         <p>To achieve nuanced and comprehensive ethical evaluations, the DPL-ERV incorporates a modular architecture based on specialized Value Modules. Each Value Module focuses on a specific dimension of ethical reasoning, such as:</p>
-        <ul>
             <li><strong>Fairness Module:</strong> Detects and mitigates biases, discrimination, and unfair treatment.</li>
             <li><strong>Honesty Module:</strong> Verifies factual accuracy, detects misinformation, and assesses the truthfulness of Foundation Model statements.</li>
             <li><strong>Safety Module:</strong> Identifies potentially harmful content, instructions, or actions.</li>
@@ -383,16 +372,15 @@
         <p>These Value Modules, while specialized, operate under a unified framework governed by the FoEA and contribute to a holistic ethical assessment. (Detailed descriptions of Value Module implementations are provided in Chapter 6: DPL: Technical Details. *Note: Original text referenced Chapter 4, corrected to Chapter 6*)</p>
         <h3 id="ch1-sec2-4">2.4 Transparency and Explainability (Ethical Chain-of-Thought)</h3>
         <p>The DPL-ERV is designed to provide transparency into its ethical reasoning processes, similar to the approach used in Claude 3.7 Sonnet's extended thinking mode (Anthropic, 2025 - Claude 3.7 Sonnet System Card). This is achieved through:</p>
-        <ul>
             <li><strong>Ethical Chain-of-Thought:</strong> The DPL-ERV generates an "ethical chain-of-thought," a structured explanation of the factors considered in its evaluation, the relevant ethical rules applied, and the reasoning behind its final assessment. This is analogous to a human explaining their ethical reasoning.</li>
             <li><strong>Structured Explanations:</strong> These explanations are presented in a structured, machine-readable format, facilitating automated analysis and auditing.</li>
             <li><strong>Human-Understandable Summaries:</strong> The DPL-ERV can also generate human-understandable summaries of its ethical evaluations, making them accessible to non-experts.</li>
         </ul>
         <h3 id="ch1-sec2-5">2.5 Reinforcement Learning from Ethical Feedback (RLEF)</h3>
-        <p>The DPL-ERV's capabilities can be further enhanced through Reinforcement Learning from Ethical Feedback (RLEF). The RLEF is not part of the DPL-ERV engine but complements it during the workflow process. This involves training the DPL-ERV to optimize its ethical evaluations based on feedback signals derived from the FoEA, human experts, and potentially from the Foundation Model's own behavior. (Further details on RLEF implementation are discussed in Chapter 6. *Note: Original text referenced Chapter 4, corrected to Chapter 6*)</p>
+        <p>The DPL-ERV's capabilities can be further enhanced through Reinforcement Learning from Ethical Feedback (RLEF). The RLEF is not part of the DPL-ERV engine but complements it during the workflow process. This involves training the DPL-ERV to optimize its ethical evaluations based on feedback signals derived from the FoEA, human experts, and potentially from the Foundation Model's own behavior.</p>
 
         <h2 id="ch1-sec3">3. High-Level Overview of Mitigation Strategies</h2>
-        <p>The Dynamic Policy Layer (DPL) framework employs a comprehensive and multi-faceted approach to mitigating the risks of Foundation Model misalignment. This approach is characterized by its layered architecture, integrated components, and adaptive capabilities, providing a robust defense against a wide range of potential threats. This section provides a high-level overview of the categories of mitigation strategies employed by the DPL, emphasizing the proactive and preventative nature of the framework. (Detailed explanations of specific mitigation strategies are provided in Chapter 3: DPL: Mitigation Strategies and Security Analysis, and Chapter 6: DPL: Technical Details. *Note: Original text referenced Chapters 2 and 4, corrected based on nav menu*)</p>
+        <p>The Dynamic Policy Layer (DPL) framework employs a comprehensive and multi-faceted approach to mitigating the risks of Foundation Model misalignment. This approach is characterized by its layered architecture, integrated components, and adaptive capabilities, providing a robust defense against a wide range of potential threats. This section provides a high-level overview of the categories of mitigation strategies employed by the DPL, emphasizing the proactive and preventative nature of the framework.</p>
         <p>The DPL's mitigation strategies can be broadly categorized as follows:</p>
         <h3 id="ch1-sec3-1">3.1 Technical Controls</h3>
         <ul>
@@ -452,7 +440,7 @@
         <p>The Dynamic Policy Layer (DPL) framework's long-term effectiveness and adaptability are critically dependent on the Federation of Ethical Agents (FoEA). Briefly introduced in previous sections, the FoEA is a decentralized, autonomous governance and oversight body that plays a central role in managing the DPL's ethical reasoning capabilities and ensuring its ongoing security. This section provides a high-level overview of the FoEA, its core functions, and its relationship to the DPL-ERV. (A comprehensive discussion of the FoEA's architecture, governance, and operational responsibilities is provided in Chapter 4: DPL: The Federation of Ethical Agents.)</p>
         <p>The FoEA is composed of multiple, independent AI agents, each with specialized roles and capabilities. These agents work collaboratively to:</p>
         <h3 id="ch1-sec4-1">4.1 Core functions of the FoEA</h3>
-         <p> *(Note: The following points cover the core functions listed in the original outline)* </p>
+         <p> Details are provided in Chapter 4. </p>
         <h3 id="ch1-sec4-2">4.2 Govern the DPL-ERV</h3>
          <ul>
             <li>The FoEA is responsible for overseeing the operation, training, and updating of the DPL-ERV (Ethical Reasoning Validator). This includes:
