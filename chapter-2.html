@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DPL: A Threat Model for Foundation Models - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
+
+
+
 <style>
         html {
             scroll-behavior: smooth;
@@ -47,32 +50,32 @@
         .chapter-author-intro { /* Added class */
              font-size: 1.6em;
         }
-        .main-content-wrapper { /* Class for the main div - KEEPING for now as user has it */
+        .main-content-wrapper { /* Class for the main div - Keeping as base */
              max-width: 800px;
              margin-left: auto;
              margin-right: auto;
              padding-left: 20px;
              padding-right: 20px;
+             /* NOTE: Consider changing this class to 'content-container' later for consistency */
         }
-        .outline-heading-style { /* Style for H3 like "1. Scope..." */
-             margin-bottom: 0.25em; /* Reduced space below H3 heading */
-             font-weight: bold; /* Ensure main outline items are bold */
-             /* Add any other H3 styling needed */
+        .outline-heading-style { /* Style for H3 like "1. Scope..." (if used) */
+             margin-bottom: 0.25em;
+             font-weight: bold;
         }
-        .outline-subheading-style { /* Style for original H3 sub-items (if any remain) */
+        .outline-subheading-style { /* Style for original H3 sub-items (like "3.1...") */
              margin-top: 0.5em;
              margin-bottom: 0;
              padding-left: 20px;
-             font-weight: bold; /* Keep original style? */
+             font-weight: bold;
         }
-        .outline-list-style { /* Style for original UL items (if any remain) */
+        .outline-list-style { /* Style for original UL items */
              margin-top: 0;
              padding-left: 40px;
              list-style-type: disc;
              margin-bottom: 1em;
         }
 
-        /* --- ADDED CSS FOR THE NEW UL/LI STRUCTURE --- */
+        /* --- CSS FOR THE NEW UL/LI STRUCTURE --- */
         .outline-sublist { /* Style for the new UL used under "1. Scope..." */
             margin-top: 0;     /* Fixes space above list */
             padding-left: 40px;  /* Indent */
@@ -84,7 +87,8 @@
              margin-bottom: 0.25em; /* Compact list items */
         }
         .outline-sublist li a { /* Style for links within the new LI */
-            font-weight: normal; /* Sets font to normal (not bold) */
+            font-weight: normal; /* Set as requested */
+            font-size: 1.17em;  /* Set size similar to H3 default */
         }
         /* --- END OF ADDED CSS --- */
 
@@ -99,7 +103,9 @@
              color: #555;
         }
 
-</style>
+    </style>
+
+
 
 
 </head>
