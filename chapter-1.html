@@ -297,8 +297,7 @@
                     <li><strong>Flexibility:</strong> The DPL can be customized and adapted to different Foundation Models and deployment scenarios.</li>
                     <li><strong>Extensibility:</strong> New detection modules, intervention strategies, or ethical evaluation components can be easily added or updated without requiring a complete system overhaul.</li>
                     <li><strong>Resilience:</strong> The failure or compromise of a single component does not necessarily compromise the entire system.</li>
-                </ul>
-            <li><strong>Security:</strong> Security is built in mind for every component, function and operation.</li>
+            	    <li><strong>Security:</strong> Security is built in mind for every component, function and operation.</li>
         </ul>
         <h3 id="ch1-sec1-2">1.2 Key Components</h3>
         <p>The DPL framework comprises the following key components:</p>
@@ -312,8 +311,6 @@
                     <li>Lightweight Interventions: Real-time correction prompts injected directly into the Foundation Model's interaction stream (for minor deviations).</li>
                     <li>Medium Interventions: "Preview" Sandbox.</li>
                     <li>Heavyweight Interventions: Routing the interaction to a secure "Full" sandbox for in-depth analysis, potentially involving human review (for significant violations).</li>
-                </ul>
-                 (Detailed explanations of the tiered intervention system, including sandboxing techniques, are provided in Chapter 6. *Note: Original text referenced Chapter 4, corrected to Chapter 6*)
             </li>
             <li><strong>False Positive Reduction Layer (FPRL):</strong> The FPRL acts as an intelligent filter, minimizing unnecessary interventions by assessing the likelihood of false positives before triggering escalations. This improves the DPL's efficiency and reduces disruption to legitimate Foundation Model interactions.</li>
             <li><strong>Ethical Baseline:</strong> The Ethical Baseline is a set of predefined ethical principles and safety rules that guide the DPL's operation and the DPL-ERV's evaluations. The Ethical Baseline is:
@@ -341,7 +338,7 @@
             <li><strong>Output:</strong> If no issues are flagged in the final monitoring, the validated response is sent to the user.</li>
             <li><strong>Monitoring and Feedback:</strong> The FoEA continuously monitors the system.</li>
         </ol>
-        <p>This workflow ensures continuous oversight and rapid intervention, minimizing the risk of misaligned Foundation Model behavior. The decentralized governance of the FoEA, detailed in Chapter 4, provides the adaptive intelligence and ethical grounding for the entire DPL framework. (*Note: Original text referenced Chapter 3, corrected to Chapter 4*)</p>
+        <p>This workflow ensures continuous oversight and rapid intervention, minimizing the risk of misaligned Foundation Model behavior. The decentralized governance of the FoEA, detailed in Chapter 4, provides the adaptive intelligence and ethical grounding for the entire DPL framework. </p>
 
         <h2 id="ch1-sec2">2. The DPL-ERV: Ethical Reasoning and Validation</h2>
         <p>The Ethical Reasoning Validator (DPL-ERV) is a core component of the Dynamic Policy Layer (DPL) framework, responsible for performing real-time ethical evaluations of Foundation Model outputs and behaviors. The DPL-ERV acts as a dedicated "ethical check," ensuring that the Foundation Model's actions align with the established Ethical Baseline. This section provides a high-level overview of the DPL-ERV's role, its integration with the Ethical Baseline, its key features, and its contribution to the overall DPL framework.</p>
