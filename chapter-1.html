@@ -56,16 +56,16 @@
             width: 100%;
             max-width: 800px;
             display: block;
-            margin: 20px auto;
+            margin: 20px auto; /* Keep auto margins for centering */
         }
         .outline-heading-style {
-            margin-bottom: 0.25em; /* Space below main heading */
+            margin-bottom: 0.25em; /* Space below main heading in outline*/
         }
         .outline-sublist {
             margin-top: 0;
             padding-left: 40px; /* Indent level */
             list-style-type: disc; /* Or desired bullet */
-            margin-bottom: 1em; /* Space below the sublist */
+            margin-bottom: 1em; /* Space below the sublist in outline */
         }
         .outline-sublist li {
             margin-bottom: 0.25em; /* Compact spacing between items */
@@ -88,6 +88,53 @@
         .audio-title {
          /* Style for Audio Player title if needed */
         }
+
+        /* --- Added Rules for Spacing Refinement --- */
+        .content-container h2,
+        .content-container h3 {
+            /* Adjust bottom margin for headings */
+            margin-top: 1.5em; /* Add some space above headings */
+            margin-bottom: 0.25em; /* Small space after heading */
+        }
+        /* Special case for first heading */
+         .content-container > h2:first-of-type {
+             margin-top: 0;
+         }
+
+
+        .content-container p,
+        .content-container ul,
+        .content-container ol {
+             /* General top/bottom margins for content blocks */
+             margin-top: 0; /* Default no top margin */
+             margin-bottom: 1em; /* Default space below block */
+        }
+        /* Keep image centering margins, but control vertical */
+        .content-container img.content-image {
+             margin-top: 0;
+             margin-bottom: 1em;
+        }
+
+
+        /* Remove top margin for elements immediately following a heading */
+        .content-container h2 + p,
+        .content-container h2 + ul,
+        .content-container h2 + ol,
+        .content-container h2 + img.content-image,
+        .content-container h3 + p,
+        .content-container h3 + ul,
+        .content-container h3 + ol,
+        .content-container h3 + img.content-image {
+            margin-top: 0; /* Ensure NO space directly after a heading */
+        }
+
+        /* Remove top margin for lists immediately following a paragraph */
+        /* This addresses the "such as:" followed by list issue */
+        .content-container p + ul,
+        .content-container p + ol {
+             margin-top: 0; /* Remove space when list follows paragraph */
+        }
+        /* --- End Spacing Refinement --- */
 
     </style>
 </head>
