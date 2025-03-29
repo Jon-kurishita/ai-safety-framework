@@ -145,8 +145,8 @@
         .content-container h3 + ol,
         .content-container h3 + dl,
         .content-container h3 + img.content-image,
-        .content-container h4 + ul,  /* Added h4 rule */
-        .content-container h4 + ol {  /* Added h4 rule */
+        .content-container h4 + ul,
+        .content-container h4 + ol {
             margin-top: 0;
         }
         .content-container p + ul,
@@ -157,6 +157,10 @@
         .content-container p:has(+ ul),
         .content-container p:has(+ ol),
         .content-container p:has(+ dl) {
+            margin-bottom: 0;
+        }
+        .content-container h4:has(+ ul),
+        .content-container h4:has(+ ol) {
             margin-bottom: 0;
         }
     </style>
