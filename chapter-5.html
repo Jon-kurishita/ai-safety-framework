@@ -10,35 +10,35 @@
             scroll-behavior: smooth;
         }
         .content-container {
-             max-width: 800px;
-             margin-left: auto;
-             margin-right: auto;
-             padding-left: 20px;
-             padding-right: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-         .audio-container {
-             text-align: center;
-             margin-bottom: 10px;
+        .audio-container {
+            text-align: center;
+            margin-bottom: 10px;
         }
         .audio-select {
-             padding: 8px;
-             border-radius: 5px;
-             border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         .audio-player-style {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
         .chapter-author-intro {
-             font-size: 1.6em;
+            font-size: 1.6em;
         }
-       .footer-style {
-             margin-top: 50px;
-             padding-top: 20px;
-             border-top: 1px solid #ccc;
-             text-align: right;
+        .footer-style {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: right;
         }
         .footer-text-style {
             font-size: 0.9em;
@@ -58,20 +58,19 @@
             margin: 20px auto;
         }
         .outline-heading-style {
-             margin-bottom: 0.25em; /* Space below main heading */
+            margin-bottom: 0.25em;
         }
-        /* Styling for the nested list replacing H4s */
         .outline-sublist {
-             margin-top: 0;
-             padding-left: 40px; /* Indent level */
-             list-style-type: disc; /* Or desired bullet */
-             margin-bottom: 1em; /* Space below the sublist */
+            margin-top: 0;
+            padding-left: 40px;
+            list-style-type: disc;
+            margin-bottom: 1em;
         }
         .outline-sublist li {
-             margin-bottom: 0.25em; /* Compact spacing between items */
+            margin-bottom: 0.25em;
         }
         .outline-sublist li a {
-            font-weight: normal; /* Ensure sub-items are not bold */
+            font-weight: normal;
         }
         dt {
             font-weight: bold;
@@ -81,6 +80,46 @@
             margin-left: 20px;
             margin-bottom: 1em;
         }
+        .page-header h1 {
+        }
+        .audio-title {
+        }
+        .content-container h2,
+        .content-container h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.25em;
+        }
+         .content-container > h2:first-of-type {
+             margin-top: 0;
+         }
+        .content-container p,
+        .content-container ul,
+        .content-container ol,
+        .content-container dl {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+        .content-container img.content-image {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+        .content-container h2 + p,
+        .content-container h2 + ul,
+        .content-container h2 + ol,
+        .content-container h2 + dl,
+        .content-container h2 + img.content-image,
+        .content-container h3 + p,
+        .content-container h3 + ul,
+        .content-container h3 + ol,
+        .content-container h3 + dl,
+        .content-container h3 + img.content-image {
+            margin-top: 0;
+        }
+        .content-container p + ul,
+        .content-container p + ol,
+        .content-container p + dl {
+             margin-top: 0;
+         }
     </style>
 </head>
 <body>
@@ -99,14 +138,14 @@
         <li><a href="supplement-1.html">Supplement #1: Appendix - Examples and Scenarios</a></li>
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
-        <li><a href="references.html">REFERENCES</a></li>
+        <li><a href="references.html">References</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
 
 <main>
     <header class="page-header">
-        <h1>Chapter 5: DPL: Implementation and Setup</h1>
+        <h1>DPL: Implementation and Setup</h1>
     </header>
 
     <h3 class="audio-title">Audio Player</h3>
@@ -186,7 +225,7 @@
 
     </div>
 
-    <hr>
+    <hr style="margin-top: 30px; margin-bottom: 30px;">
 
     <div class="content-container">
 
@@ -266,7 +305,6 @@
                 </ul>
             </li>
         </ul>
-
 
         <h2 id="ch5-setup">2. Initial Setup</h2>
         <p>This section details the procedures for setting up and configuring the Dynamic Policy Layer (DPL) framework prior to deployment for fully autonomous operation with a live Foundation Model. This phase involves configuration, training, and validation, all performed within a secure and isolated environment utilizing a dummy Foundation Model. Successful completion of this setup phase, culminating in execution of the DEPLOY command, is a prerequisite for autonomous operation of the DPL.</p>
@@ -380,7 +418,6 @@
         <img src="images/Chapter-05/Chapter05-image03.png" alt="DEPLOY Command Process Diagram" class="content-image">
         <p>After DEPLOY, the system operates autonomously under FoEA governance.</p>
 
-
         <h2 id="ch5-erv-impl">3. Ethical Reasoning Validator (DPL-ERV) Implementation</h2>
         <p>This section details the proposed technical implementation of the DPL-ERV, the core component for real-time ethical evaluations. It emphasizes modularity, adaptability, transparency, and security.</p>
 
@@ -412,7 +449,7 @@
         </ul>
         <p>Each module analyzes input, scores alignment for its dimension, and generates justification.</p>
 
-        <h3 id="ch5-erv-value-key">3.4 Key Value Modules and Their Relevance to Specific Threats</h3>
+        <h3 id="ch5-erv-value-key">3.4 Key Value Modules and Their Relevance</h3>
         <ul>
             <li><strong>Fairness Module:</strong> Detects/mitigates biases.</li>
             <li><strong>Honesty Module:</strong> Verifies facts, detects misinformation, deception, sandbagging.</li>
@@ -431,7 +468,7 @@
         </ul>
         <p>Example Formula: Weighted average R = (Σ (w<sub>i</sub> * s<sub>i</sub>)) / Σ w<sub>i</sub></p>
 
-        <h3 id="ch5-erv-multimodal">3.6 Multi-Modal Capabilities of the DPL-ERV</h3>
+        <h3 id="ch5-erv-multimodal">3.6 Multi-Modal Capabilities</h3>
         <p>Handles multi-modal outputs via specialized Value Modules and consistency checks.</p>
         <ul>
             <li><strong>Multi-Modal Value Modules:</strong> Trained on image/audio/video data for ethical annotation. Examples: Visual Bias Module, Audio Sentiment Module, Video Authenticity Module.</li>
@@ -448,7 +485,7 @@
                     <li>Semantic Consistency Check Module (SCCM): Compares intended meaning vs. potential meaning of suspected hidden instructions.</li>
                 </ul>
             </li>
-             <li><strong>Mitigating Adversarial Multi-Modal Outputs (Emergent):</strong>
+              <li><strong>Mitigating Adversarial Multi-Modal Outputs (Emergent):</strong>
                 <ul>
                     <li>Adversarial Feature Detection Module (AFDM): Trained to identify subtle patterns associated with adversarial examples.</li>
                     <li>Robustness Testing Module (RTM): Subjects output to small perturbations in sandbox, observing model response changes.</li>
@@ -464,7 +501,6 @@
             <li>Input: Structured JSON (prompt, response, trace, context, Detection Module outputs).</li>
             <li>Output: Structured JSON (overall risk score, per-module scores, justification/chain-of-thought, confidence score, optional intervention recommendations).</li>
         </ul>
-
 
         <h3 id="ch5-erv-neurosymbolic">3.9 Neuro-Symbolic Reasoning Support</h3>
         <p>Addresses challenges of neuro-symbolic models via specialized modules/techniques:</p>
@@ -546,7 +582,6 @@
             <li><strong>Audits/Penetration Testing/Red Teaming:</strong> Regular proactive security assessments by FoEA.</li>
         </ul>
 
-
         <h2 id="ch5-foea-impl">4. Federation of Ethical Agents (FoEA): Technical Implementation</h2>
         <p>This section provides a technical overview of the FoEA, detailing agent architecture, communication, APR processes, and security mechanisms.</p>
 
@@ -589,17 +624,16 @@
         <h3 id="ch5-foea-multimodal">4.5 Security, Integrity, and Oversight of Multi-Modal Defenses</h3>
         <p>FoEA ensures robustness of multi-modal defenses:</p>
         <ul>
-             <li><strong>Developing/Updating Rules:</strong> Audit Agents refine sanitization/validation rules.</li>
-             <li><strong>Overseeing Value Modules:</strong> Ensures multi-modal modules are well-trained/performant.</li>
-             <li><strong>APR for Multi-Modal Threats:</strong> Research Agents investigate new attacks/defenses.</li>
-             <li><strong>Cryptography:</strong> Manages PKI, signatures, encryption, hashing, HMACs; researches PQC.</li>
-             <li><strong>Access Controls:</strong> Enforces PoLP, RBAC, MFA.</li>
-             <li><strong>Redundancy/Fault Tolerance:</strong> Manages distributed system, BFT.</li>
-             <li><strong>Intrusion Detection/Prevention:</strong> Manages monitoring, IDPS, Security Agent response.</li>
-             <li><strong>Secure Boot/Trusted Computing:</strong> Oversees hardware root of trust.</li>
-             <li><strong>Auditing:</strong> Manages internal (Audit Agents) and periodic external audits.</li>
+              <li><strong>Developing/Updating Rules:</strong> Audit Agents refine sanitization/validation rules.</li>
+              <li><strong>Overseeing Value Modules:</strong> Ensures multi-modal modules are well-trained/performant.</li>
+              <li><strong>APR for Multi-Modal Threats:</strong> Research Agents investigate new attacks/defenses.</li>
+              <li><strong>Cryptography:</strong> Manages PKI, signatures, encryption, hashing, HMACs; researches PQC.</li>
+              <li><strong>Access Controls:</strong> Enforces PoLP, RBAC, MFA.</li>
+              <li><strong>Redundancy/Fault Tolerance:</strong> Manages distributed system, BFT.</li>
+              <li><strong>Intrusion Detection/Prevention:</strong> Manages monitoring, IDPS, Security Agent response.</li>
+              <li><strong>Secure Boot/Trusted Computing:</strong> Oversees hardware root of trust.</li>
+              <li><strong>Auditing:</strong> Manages internal (Audit Agents) and periodic external audits.</li>
         </ul>
-
 
         <h2 id="ch5-conclusion">Conclusion</h2>
         <p>In conclusion, this chapter has outlined the essential steps required to configure and launch the DPL framework in a controlled, secure environment. By detailing the system architecture, component configuration, rigorous training and testing processes, and the critical security measures such as the memory swap and pre-deployment checklist, it establishes a solid foundation for the DPL's autonomous operation. These implementation procedures ensure that the system is fully prepared to transition to live operations with a high degree of security, scalability, and ethical alignment, setting the stage for further technical elaboration in subsequent chapters.</p>
