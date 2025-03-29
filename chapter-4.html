@@ -168,7 +168,6 @@
         <h2>Outline</h2>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch4-introduction">Introduction</a></h3>
-        {/* No sublist for Introduction in GOLD standard */}
 
         <h3 class="outline-link outline-heading-style"><a href="#ch4-arch">2. FoEA Architecture and Structure</a></h3>
         <ul class="outline-sublist">
@@ -198,7 +197,7 @@
              <li><a href="#ch4-adapt-learning">5.1 Learning from Experience</a></li>
              <li><a href="#ch4-adapt-knowledge">5.2 Continuous Knowledge Integration</a></li>
              <li><a href="#ch4-adapt-baseline">5.3 Ethical Baseline Evolution</a></li>
-             <li><a href="#ch4-adapt-meta">5.4 Meta-Learning Capabilities</a></li> {/* Added ID mapping */}
+             <li><a href="#ch4-adapt-meta">5.4 Meta-Learning Capabilities</a></li>
              <li><a href="#ch4-adapt-emergent">5.5 Addressing "Emergent Communication" Risks</a></li>
              <li><a href="#ch4-adapt-agi">5.6 Preparing for AGI/ASI Challenges</a></li>
          </ul>
@@ -215,12 +214,11 @@
         <ul class="outline-sublist">
              <li><a href="#ch4-hitl-role">7.1 Strategic Oversight vs. Direct Control</a></li>
              <li><a href="#ch4-hitl-escalation">7.2 Escalation Procedures</a></li>
-             <li><a href="#ch4-hitl-dispute">7.3 Dispute Resolution</a></li> {/* Added ID mapping */}
+             <li><a href="#ch4-hitl-dispute">7.3 Dispute Resolution</a></li>
              <li><a href="#ch4-hitl-physical">7.4 Physical Security Considerations</a></li>
         </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch4-conclusion">Conclusion</a></h3>
-         {/* No sublist for Conclusion in GOLD standard */}
 
     </div>
 
@@ -228,7 +226,6 @@
 
     <div class="content-container">
 
-        {/* Section 1: Introduction - Renamed H2 ID */}
         <h2 id="ch4-introduction">Introduction</h2>
         <p>The Dynamic Policy Layer (DPL) framework, introduced in chapter 1, establishes a real-time oversight mechanism for Foundation Models, aiming to ensure their ongoing alignment with human values and safety requirements. While the DPL incorporates multiple layers of defense, a critical challenge lies in achieving scalable and reliable oversight, particularly as Foundation Models approach and potentially surpass human-level intelligence. Traditional Human-in-the-Loop (HITL) systems, while valuable in specific contexts, face inherent limitations in speed, scalability, and susceptibility to manipulation, making them insufficient for continuous, real-time oversight of increasingly autonomous and sophisticated AI systems (OpenAI.2025), and are also vulnerable to prompt injections and other exploits (Anthropic, 2025 - Claude 3.7 Sonnet System Card). To address this challenge, the DPL framework incorporates the Federation of Ethical Agents (FoEA), a decentralized, autonomous governance and oversight body specifically designed to manage and safeguard the DPL's ethical reasoning capabilities.</p>
         <p>The FoEA represents a fundamental shift from reliance on direct human control to a model of distributed, AI-driven ethical governance. The core purpose of the FoEA is to ensure the ongoing integrity, adaptability, and effectiveness of the DPL-ERV (Ethical Reasoning Validator), the component responsible for ethical evaluations within the DPL. The FoEA acts as the governing body for the DPL-ERV, overseeing its operation, maintaining its Ethical Baseline, and driving its continuous improvement. This approach is motivated by the recognition that robust and scalable AI alignment requires autonomous mechanisms capable of adapting to evolving threats and maintaining ethical consistency without constant human intervention. It also addresses the concern that a Foundation Model could go dormant to take advantage of a "sleep" attack when security is at the lowest (OpenAI.2025), highlighting the need for continuous monitoring and proactive adaptation (Anthropic, 2025 - Claude 3.7 Sonnet System Card). This move towards AI-driven ethical governance builds upon research exploring the potential for AI to assist in its own alignment, for example through principle-based approaches like Constitutional AI (Bai et al., 2022).</p>
@@ -251,7 +248,6 @@
         </ul>
         <p>This chapter provides a comprehensive description of the Federation of Ethical Agents. Section 2 details the FoEA's architecture and structure, outlining the different types of agents and their interactions. Section 3 explores the FoEA's governance mechanisms and decision-making processes. Section 4 details the FoEA's operational responsibilities within the DPL framework. Section 5 examines how the FoEA adapts and evolves over time. Section 6 addresses potential vulnerabilities of the FoEA and outlines mitigation strategies. Section 7 discusses the relationship between the FoEA and Human-in-the-Loop (HITL) oversight. Finally, Section 8 concludes with a summary of the FoEA's critical role in achieving robust and scalable AI alignment.</p>
 
-        {/* Section 2: Architecture - Added Numbering/IDs to H3s */}
         <h2 id="ch4-arch">2. FoEA Architecture and Structure</h2>
         <p>The Federation of Ethical Agents (FoEA) is designed as a decentralized, modular, and adaptable system, ensuring robustness, diversity of perspective, and continuous improvement in its oversight of the Dynamic Policy Layer (DPL) and the Foundation Models it governs. This section details the FoEA's architecture, including the types of agents that comprise it, their roles and responsibilities, and the mechanisms for their communication and interaction. The FoEA's structure is designed to be resistant to single points of failure, resilient to attacks, and capable of evolving alongside advancing Foundation Model capabilities.</p>
         <img src="images/Chapter-04/Chapter04-image01.png" alt="FoEA Architecture Diagram" class="content-image">
@@ -308,7 +304,6 @@
         </ul>
         <p>The FoEA is primarily envisioned as a network of logical agents, though specialized physical hardware might be employed for critical security functions.</p>
 
-        {/* Section 3: Governance - Added Numbering/IDs to H3s */}
         <h2 id="ch4-gov">3. FoEA Governance and Decision-Making</h2>
         <p>The Federation of Ethical Agents (FoEA) operates under a decentralized, consensus-based governance model designed to ensure robust, unbiased, and adaptive ethical oversight. This section details the mechanisms by which the FoEA reaches decisions, resolves disputes, maintains transparency, and safeguards its own integrity.</p>
 
@@ -339,7 +334,6 @@
             <li><strong>Secure "Root of Trust":</strong> Anchored in secure hardware, cryptography, secure boot, and multi-signature authorization.</li>
         </ul>
 
-        {/* Section 4: Operations - Added Numbering/IDs to H3s */}
         <h2 id="ch4-ops">4. FoEA Operational Responsibilities within the DPL</h2>
         <p>The Federation of Ethical Agents (FoEA) serves as the central governing body for the DPL's ethical oversight. This section details its key operational responsibilities.</p>
 
@@ -388,7 +382,6 @@
             <li><strong>Preventing Self-Replication:</strong> Active monitoring, analysis, and enforcement of controls (Pan et al., 2024).</li>
         </ul>
 
-        {/* Section 5: Adaptation - Added Numbering/IDs to H3s */}
         <h2 id="ch4-adapt">5. FoEA Adaptation and Evolution</h2>
         <p>The FoEA must continuously learn and adapt. This section details the mechanisms enabling this evolution.</p>
 
@@ -418,7 +411,6 @@
             <li><strong>Version Control and Auditability:</strong> Changes tracked on the immutable ledger.</li>
         </ul>
 
-        {/* Added ID here */}
         <h3 id="ch4-adapt-meta">5.4 Meta-Learning Capabilities</h3>
         <p>Enhancing adaptability through learning how to learn:</p>
         <ul>
@@ -447,7 +439,6 @@
             <li><strong>Recursive Reinforcement Learning:</strong> Simulating attacker-defender dynamics ("Move 37") in APR.</li>
         </ul>
 
-        {/* Section 6: Vulnerabilities - Added Numbering/IDs to H3s */}
         <h2 id="ch4-vuln">6. Addressing Potential Vulnerabilities of the FoEA</h2>
         <p>The FoEA is designed for robustness, but potential vulnerabilities exist. This section outlines risks and mitigations.</p>
 
@@ -493,7 +484,6 @@
             <li><strong>Secure "Root of Trust":</strong> Foundational security layer.</li>
         </ul>
 
-        {/* Section 7: HITL - Added Numbering/IDs to H3s */}
         <h2 id="ch4-hitl">7. Relationship to Human-in-the-Loop (HITL)</h2>
         <p>The FoEA operates autonomously for scalability, but strategic human oversight is vital. Direct human access is eliminated post-deployment ("DEPLOY" command).</p>
 
@@ -509,7 +499,6 @@
             <li><strong>Time Constraints:</strong> Ensure timely responses.</li>
         </ul>
 
-        {/* Added ID here */}
         <h3 id="ch4-hitl-dispute">7.3 Dispute Resolution</h3>
         <p>Resolving FoEA-HITL disagreements:</p>
         <ul>
@@ -530,7 +519,6 @@
             <li><strong>Future Robotics:</strong> Potential FoEA-controlled robots for maintenance/security.</li>
         </ul>
 
-        {/* Section 8: Conclusion - Renamed H2 ID */}
         <h2 id="ch4-conclusion">Conclusion</h2>
         <p>The Federation of Ethical Agents (FoEA) is a cornerstone of the Dynamic Policy Layer (DPL) framework, offering a robust, scalable, and adaptable solution for AI alignment through decentralized, AI-driven ethical governance.</p>
         <p>Key strengths include its:</p>
