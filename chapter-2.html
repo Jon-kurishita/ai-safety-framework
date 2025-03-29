@@ -107,7 +107,8 @@
              margin-top: 0;
              margin-bottom: 1em;
          }
-        .content-container h4 {
+        .content-container h4,
+        .content-container h5 { /* Added h5 */
              margin-top: 1em;
              margin-bottom: 0.25em;
         }
@@ -127,10 +128,12 @@
          .content-container ul + figure,
          .content-container ol + figure,
          .content-container dl + figure {
-            margin-top: 1em;
+            margin-top: 0; /* Changed from 1em */
          }
          .content-container h2 + figure,
-         .content-container h3 + figure {
+         .content-container h3 + figure,
+         .content-container h4 + figure, /* Added h4 */
+         .content-container h5 + figure { /* Added h5 */
             margin-top: 0;
          }
          .content-container img.content-image + figcaption.caption-style {
@@ -150,7 +153,15 @@
         .content-container h3 + dl,
         .content-container h3 + img.content-image,
         .content-container h4 + ul,
-        .content-container h4 + ol {
+        .content-container h4 + ol,
+        .content-container h4 + p, /* Added h4+p */
+        .content-container h4 + dl, /* Added h4+dl */
+        .content-container h4 + img.content-image, /* Added h4+img */
+        .content-container h5 + p, /* Added h5+p */
+        .content-container h5 + ul, /* Added h5+ul */
+        .content-container h5 + ol, /* Added h5+ol */
+        .content-container h5 + dl, /* Added h5+dl */
+        .content-container h5 + img.content-image { /* Added h5+img */
             margin-top: 0;
         }
         .content-container p + ul,
@@ -160,12 +171,25 @@
          }
         .content-container p:has(+ ul),
         .content-container p:has(+ ol),
-        .content-container p:has(+ dl) {
+        .content-container p:has(+ dl),
+        .content-container p:has(+ figure) { /* Added p:has(+figure) */
             margin-bottom: 0;
         }
         .content-container h4:has(+ ul),
-        .content-container h4:has(+ ol) {
+        .content-container h4:has(+ ol),
+        .content-container h4:has(+ p),  /* Added h4:has */
+        .content-container h4:has(+ dl),
+        .content-container h4:has(+ figure),
+        .content-container h4:has(+ img.content-image) {
             margin-bottom: 0;
+        }
+        .content-container h5:has(+ ul), /* Added h5:has */
+        .content-container h5:has(+ ol),
+        .content-container h5:has(+ p),
+        .content-container h5:has(+ dl),
+        .content-container h5:has(+ figure),
+        .content-container h5:has(+ img.content-image) {
+             margin-bottom: 0;
         }
     </style>
 </head>
