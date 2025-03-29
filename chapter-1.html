@@ -152,6 +152,11 @@
         .content-container p + dl {
              margin-top: 0;
          }
+        .content-container p:has(+ ul),
+        .content-container p:has(+ ol),
+        .content-container p:has(+ dl) {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -702,7 +707,6 @@
             <li>With Quantum computing, the DPL system will need to be revised.</li>
          </ul>
         <p>These limitations do not invalidate the DPL framework but rather highlight the ongoing challenges in AI safety and the need for continuous research, development, and adaptation. The DPL represents a significant step forward, but it is part of a broader, ongoing effort to ensure the safe and beneficial development of AI.</p>
-
 
         <h2 id="ch1-conclusion">Conclusion</h2>
         <p>The Dynamic Policy Layer (DPL) framework presented in this Chapter represents a significant advancement in the pursuit of safe and ethically aligned Artificial Intelligence. By providing a real-time, adaptive, and multi-layered oversight mechanism for Foundation Models, the DPL addresses critical shortcomings of existing alignment approaches and offers a practical path towards mitigating the risks associated with increasingly powerful AI systems.</p>
