@@ -6,39 +6,40 @@
     <title>Chapter 3: DPL: Mitigation Strategies and Security Analysis - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* Styles copied/adapted from Chapter 1 Gold Standard */
         html {
             scroll-behavior: smooth;
         }
         .content-container {
-             max-width: 800px;
-             margin-left: auto;
-             margin-right: auto;
-             padding-left: 20px;
-             padding-right: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-         .audio-container {
-             text-align: center;
-             margin-bottom: 10px;
+        .audio-container {
+            text-align: center;
+            margin-bottom: 10px;
         }
         .audio-select {
-             padding: 8px;
-             border-radius: 5px;
-             border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         .audio-player-style {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
         .chapter-author-intro {
-             font-size: 1.6em;
+            font-size: 1.6em;
         }
-       .footer-style {
-             margin-top: 50px;
-             padding-top: 20px;
-             border-top: 1px solid #ccc;
-             text-align: right;
+        .footer-style {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: right;
         }
         .footer-text-style {
             font-size: 0.9em;
@@ -55,20 +56,22 @@
             width: 100%;
             max-width: 800px;
             display: block;
-            margin: 20px auto;
+            margin: 20px auto; /* Keep auto margins for centering */
         }
         .outline-heading-style {
-             margin-bottom: 0;
+            margin-bottom: 0.25em; /* Space below main heading in outline*/
         }
-        .outline-subheading-style {
-             margin-top: 0;
-             margin-bottom: 0;
-             padding-left: 20px;
+        .outline-sublist {
+            margin-top: 0;
+            padding-left: 40px; /* Indent level */
+            list-style-type: disc; /* Or desired bullet */
+            margin-bottom: 1em; /* Space below the sublist in outline */
         }
-        .outline-list-style {
-             margin-top: 0;
-             padding-left: 40px;
-             margin-bottom: 1em;
+        .outline-sublist li {
+            margin-bottom: 0.25em; /* Compact spacing between items */
+        }
+        .outline-sublist li a {
+            font-weight: normal; /* Ensure sub-items are not bold */
         }
         dt {
             font-weight: bold;
@@ -78,6 +81,65 @@
             margin-left: 20px;
             margin-bottom: 1em;
         }
+        /* Added specifically for Ch1 if needed, otherwise rely on styles.css */
+        .page-header h1 {
+           /* Add specific Chapter 1 H1 styles if needed */
+        }
+        .audio-title {
+           /* Style for Audio Player title if needed */
+        }
+
+        /* --- Added Rules for Spacing Refinement --- */
+        .content-container h2,
+        .content-container h3 {
+            /* Adjust bottom margin for headings */
+            margin-top: 1.5em; /* Add some space above headings */
+            margin-bottom: 0.25em; /* Small space after heading */
+        }
+        /* Special case for first heading */
+         .content-container > h2:first-of-type {
+             margin-top: 0;
+         }
+
+
+        .content-container p,
+        .content-container ul,
+        .content-container ol,
+        .content-container dl { /* Added dl for consistency */
+             /* General top/bottom margins for content blocks */
+             margin-top: 0; /* Default no top margin */
+             margin-bottom: 1em; /* Default space below block */
+         }
+        /* Keep image centering margins, but control vertical */
+        .content-container img.content-image {
+             margin-top: 0; /* No top margin, space handled by preceding element */
+             margin-bottom: 1em; /* Space below image */
+         }
+
+
+        /* Remove top margin for elements immediately following a heading */
+        .content-container h2 + p,
+        .content-container h2 + ul,
+        .content-container h2 + ol,
+        .content-container h2 + dl, /* Added dl */
+        .content-container h2 + img.content-image,
+        .content-container h3 + p,
+        .content-container h3 + ul,
+        .content-container h3 + ol,
+        .content-container h3 + dl, /* Added dl */
+        .content-container h3 + img.content-image {
+            margin-top: 0; /* Ensure NO space directly after a heading */
+        }
+
+        /* Remove top margin for lists immediately following a paragraph */
+        /* This addresses the "such as:" followed by list issue */
+        .content-container p + ul,
+        .content-container p + ol,
+        .content-container p + dl { /* Added dl */
+             margin-top: 0; /* Remove space when list follows paragraph */
+         }
+        /* --- End Spacing Refinement --- */
+
     </style>
 </head>
 <body>
@@ -96,14 +158,14 @@
         <li><a href="supplement-1.html">Supplement #1: Appendix - Examples and Scenarios</a></li>
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
-        <li><a href="references.html">REFERENCES</a></li>
+        <li><a href="references.html">References</a></li> {/* Corrected REFERENCES to References */}
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
 
 <main>
     <header class="page-header">
-        <h1>Chapter 3: DPL: Mitigation Strategies and Security Analysis</h1>
+        <h1>DPL: Mitigation Strategies and Security Analysis</h1> {/* Removed "Chapter 3: " to match Ch1 style */}
     </header>
 
     <h3 class="audio-title">Audio Player</h3>
@@ -126,105 +188,68 @@
         <h2>Outline</h2>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-introduction">Introduction</a></h3>
-         <ul class="outline-list-style">
-             <li>Overview of Mitigation Approach</li>
-             <li>Role of FoEA</li>
-             <li>Structure of the Chapter</li>
-         </ul>
+        {/* No sublist for Introduction in GOLD standard */}
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-mitigation">1. Mitigation Strategies</a></h3>
-        <ul class="outline-list-style">
-             <li>Value-Based Risk Assessment and Mitigation Overview</li>
-        </ul>
+         <ul class="outline-sublist">
+             <li><a href="#ch3-sec1-1">1.1 Value-Based Risk Assessment and Mitigation</a></li>
+         </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-technical">2. Technical Controls</a></h3>
-        <ul class="outline-list-style">
-             <li>Infrastructure Security Measures</li>
-             <li>Protocol Protection Mechanisms</li>
-             <li>System Integrity Controls</li>
-             <li>Agent-Specific Technical Controls</li>
+        <ul class="outline-sublist">
+             <li><a href="#ch3-sec2-1">2.1 Infrastructure Security Measures</a></li>
+             <li><a href="#ch3-sec2-2">2.2 Protocol Protection Mechanisms</a></li>
+             <li><a href="#ch3-sec2-3">2.3 System Integrity Controls</a></li>
+             <li><a href="#ch3-sec2-4">2.4 Agent-Specific Technical Controls</a></li>
         </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-cognitive">3. Cognitive Bias Countermeasures</a></h3>
-        <ul class="outline-list-style">
-             <li>Bias Detection Systems</li>
-             <li>Decision Validation Frameworks</li>
-             <li>Cross-Checking Mechanisms</li>
+        <ul class="outline-sublist">
+             <li><a href="#ch3-sec3-1">3.1 Bias Detection Systems</a></li>
+             <li><a href="#ch3-sec3-2">3.2 Decision Validation Frameworks</a></li>
+             <li><a href="#ch3-sec3-3">3.3 Cross-Checking Mechanisms</a></li>
         </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-hybrid">4. Hybrid Defense Mechanisms</a></h3>
-        <ul class="outline-list-style">
-             <li>Integrated Protection Systems</li>
-             <li>Multi-Layer Defense Strategies</li>
-             <li>Adaptive Response Mechanisms</li>
-             <li>Proactive Threat Prediction Module</li>
+        <ul class="outline-sublist">
+             <li><a href="#ch3-sec4-1">4.1 Integrated Protection Systems</a></li>
+             <li><a href="#ch3-sec4-2">4.2 Multi-Layer Defense Strategies</a></li>
+             <li><a href="#ch3-sec4-3">4.3 Adaptive Response Mechanisms</a></li>
+             <li><a href="#ch3-sec4-4">4.4 Proactive Threat Prediction Module</a></li>
         </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-integrity">5. System Integrity Protections</a></h3>
-        <ul class="outline-list-style">
-             <li>Core Component Security</li>
-             <li>Update Mechanism Protection</li>
-             <li>Access Control Frameworks</li>
+        <ul class="outline-sublist">
+             <li><a href="#ch3-sec5-1">5.1 Core Component Security</a></li>
+             <li><a href="#ch3-sec5-2">5.2 Update Mechanism Protection</a></li>
+             <li><a href="#ch3-sec5-3">5.3 Access Control Frameworks</a></li>
         </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-decision">6. Decision Validation Framework</a></h3>
-        <ul class="outline-list-style">
-             <li>Multi-Stage Validation Process</li>
-             <li>Bias-Aware Decision Checking</li>
-             <li>FoEA Consensus Mechanisms</li>
+        <ul class="outline-sublist">
+             <li><a href="#ch3-sec6-1">6.1 Multi-Stage Validation Process</a></li>
+             <li><a href="#ch3-sec6-2">6.2 Bias-Aware Decision Checking</a></li>
+             <li><a href="#ch3-sec6-3">6.3 FoEA Consensus Mechanisms</a></li>
         </ul>
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-self-replication">7. Mitigation Strategies for Self-Replication Attempts</a></h3>
-        <ul class="outline-list-style">
-             <li>Detection Module Enhancements</li>
-             <li>DPL-ERV Ethical Evaluation</li>
-             <li>FoEA Oversight and Management</li>
-             <li>Tiered Intervention System</li>
-             <li>Access Control and Least Privilege</li>
-             <li>Memory Limits and Sandboxing (Reinforced)</li>
-             <li>GRRIN Integration</li>
-             <li>Code Generation Restriction</li>
-        </ul>
+        {/* This H2 has no H3 subsections in the Ch3 content, so no sublist */}
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-oversight">8. Mitigation Strategies for Oversight Subversion</a></h3>
-         <ul class="outline-list-style">
-             <li>FoEA Governance and Oversight</li>
-             <li>System Integrity Protections</li>
-             <li>Strict Access Control</li>
-             <li>Redundancy and Cross-Checking</li>
-             <li>DPL-ERV Training</li>
-             <li>Transparency and Auditability</li>
-             <li>Continuous Monitoring and Adaptation</li>
-         </ul>
+        {/* This H2 has no H3 subsections in the Ch3 content, so no sublist */}
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-sandbagging">9. Mitigation Strategies for Sandbagging</a></h3>
-         <ul class="outline-list-style">
-             <li>Multi-Modal Monitoring and Analysis</li>
-             <li>Adversarial Testing</li>
-             <li>DPL-ERV's Role</li>
-             <li>FoEA Oversight</li>
-         </ul>
+        {/* This H2 has no H3 subsections in the Ch3 content, so no sublist */}
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-goal-guarding">10. Mitigation Strategies for Goal-Guarding</a></h3>
-        <ul class="outline-list-style">
-             <li>FoEA-Controlled Ethical Baseline</li>
-             <li>Secure Update Mechanism</li>
-             <li>Strict Access Control (Principle of Least Privilege)</li>
-             <li>DPL-ERV Monitoring and Evaluation</li>
-             <li>FoEA Audit and Security Agents</li>
-             <li>Redundancy and Cross-Checking</li>
-        </ul>
+        {/* This H2 has no H3 subsections in the Ch3 content, so no sublist */}
 
         <h3 class="outline-link outline-heading-style"><a href="#ch3-conclusion">Conclusion</a></h3>
-         <ul class="outline-list-style">
-             <li>Summary of Multi-Layered Approach</li>
-             <li>Role of FoEA</li>
-             <li>Transition to Chapter 4</li>
-         </ul>
+         {/* No sublist for Conclusion in GOLD standard */}
 
     </div>
 
-    <hr>
+    <hr style="margin-top: 30px; margin-bottom: 30px;"> {/* Added style from Ch1 */}
 
     <div class="content-container">
 
@@ -237,7 +262,8 @@
         <p>This section details the specific mitigation strategies and security mechanisms employed by the Dynamic Policy Layer (DPL) framework to counter the threats identified in Chapter 2. The DPL's defenses are designed to be layered, integrated, and adaptive, providing a robust and resilient approach to maintaining Foundation Model alignment.</p>
         <p>This includes specialized techniques for mitigating multi-modal attacks, the implementation details of which are discussed in Chapter 5. The Federation of Ethical Agents (FoEA) plays a central and ongoing role in managing, overseeing, and refining many of these mitigation strategies, ensuring their continued effectiveness.</p>
 
-        <h3 id="ch3-value-based">Value-Based Risk Assessment and Mitigation</h3>
+        {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec1-1">1.1 Value-Based Risk Assessment and Mitigation</h3>
         <p>The DPL framework's mitigation strategies are designed to address a wide range of potential risks associated with increasingly autonomous AI agents. These risks can be systematically analyzed in terms of their impact on core ethical values. Drawing on the analysis presented in Mitchell et al. (2025), we consider the following key values:</p>
         <dl>
             <dt>Accuracy</dt>
@@ -274,7 +300,8 @@
 
         <h2 id="ch3-technical">2. Technical Controls</h2>
         <p>Technical controls form the foundation of the DPL's security posture, providing essential protection against a wide range of technically-oriented attacks. These controls are implemented across the DPL infrastructure, communication channels, and software components, and are actively managed and monitored by the FoEA.</p>
-        <h3>Infrastructure Security Measures</h3>
+        {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec2-1">2.1 Infrastructure Security Measures</h3>
         <p>The DPL framework mandates a secure infrastructure foundation to minimize vulnerabilities. The FoEA is responsible for overseeing the implementation and maintenance of these measures, which include:</p>
         <ul>
             <li><strong>System Hardening:</strong> Implementing industry best practices for system hardening, minimizing the attack surface by disabling unnecessary services, closing unused ports, and applying secure configurations to all infrastructure components. The FoEA monitors system configurations and triggers alerts for any deviations from secure baselines.</li>
@@ -283,14 +310,16 @@
             <li><strong>Regular Security Audits and Penetration Testing:</strong> Conducting regular security audits and penetration testing to proactively identify and address vulnerabilities in the DPL infrastructure. The FoEA orchestrates these audits, potentially utilizing specialized ethical agents for penetration testing and vulnerability assessment.</li>
             <li><strong>Vulnerability Scanning:</strong> The FoEA regularly scans for any new vulnerabilities and ensures timely patching and updates.</li>
         </ul>
-        <h3>Protocol Protection Mechanisms</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec2-2">2.2 Protocol Protection Mechanisms</h3>
         <p>Secure communication protocols are essential for protecting the integrity and confidentiality of data exchanged within the DPL and with external systems. The FoEA oversees the implementation and enforcement of key protocol protection mechanisms, including:</p>
         <ul>
             <li><strong>End-to-End Encryption:</strong> Employing strong encryption protocols (e.g., TLS/SSL) for all communication channels, ensuring that data is protected in transit and cannot be intercepted or modified by unauthorized parties. The FoEA manages cryptographic keys and certificates and monitors for weak or outdated encryption protocols.</li>
             <li><strong>Mutual Authentication:</strong> Implementing mutual authentication for all communicating entities, verifying the identity of both the sender and receiver before establishing a connection. This prevents attackers from impersonating legitimate DPL components. The FoEA manages authentication credentials and monitors for unauthorized authentication attempts.</li>
             <li><strong>Protocol Anomaly Detection:</strong> Monitoring network traffic for deviations from expected protocol behavior, which could indicate an attempt to exploit protocol vulnerabilities. The FoEA configures and manages anomaly detection rules and responds to detected anomalies.</li>
         </ul>
-        <h3>System Integrity Controls</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec2-3">2.3 System Integrity Controls</h3>
         <p>Maintaining the integrity of DPL software components is crucial for preventing malicious code injection or tampering. The FoEA plays a central role in ensuring system integrity through:</p>
         <ul>
             <li><strong>Code Signing and Verification:</strong> Digitally signing all DPL software components and verifying their signatures before execution, ensuring that only authorized and untampered code is run. The FoEA manages code signing keys and certificates and monitors for any signature verification failures.</li>
@@ -300,7 +329,8 @@
             <li><strong>Secure Updates and Patching:</strong> Implementing a secure and automated process for deploying software updates and security patches, minimizing the window of vulnerability to known exploits. The FoEA manages the update process, verifying the integrity of updates and ensuring timely deployment.</li>
             <li><strong>Immutable Infrastructure:</strong> The dynamic policy layer will manage the deployment and lifecycle of immutable infrastructure components.</li>
         </ul>
-        <h3>Agent-Specific Technical Controls</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec2-4">2.4 Agent-Specific Technical Controls</h3>
         <p>The DPL framework recognizes that LLM-based agents, as demonstrated by Li et al. (2024) and Meinke et al. (2024), introduce unique vulnerabilities due to their ability to interact with external systems and their reliance on potentially untrusted data sources. Therefore, the following agent-specific technical controls are implemented, enforced, and continuously monitored by the FoEA, with the DPL-ERV playing a critical role in ethical validation:</p>
         <ul>
             <li><strong>Strict Input Validation and Sanitization for External Data:</strong> All data received by the Foundation Model from external sources (web pages, API responses, databases, etc.) is subject to rigorous input validation and sanitization before being processed by the Foundation Model. This is distinct from general input validation for the DPL itself. This agent-specific input validation is performed by specialized Detection Modules, configured and monitored by the FoEA, and focuses on:
@@ -319,7 +349,7 @@
                     <li>Network Segmentation: Isolating the Foundation Model's network access from other DPL components. FoEA Role: The FoEA validates the network segmentation policies and ensures their proper implementation.</li>
                 </ul>
             </li>
-             <li><strong>API Call Monitoring and Control:</strong> All API calls made by the Foundation Model are monitored and controlled (OpenAI. (2025) and with consideration to the vulnerabilities described in the Claude 3.7 Sonnet System Card (Anthropic, 2025) The FoEA defines and enforces policies that:
+              <li><strong>API Call Monitoring and Control:</strong> All API calls made by the Foundation Model are monitored and controlled (OpenAI. (2025) and with consideration to the vulnerabilities described in the Claude 3.7 Sonnet System Card (Anthropic, 2025) The FoEA defines and enforces policies that:
                 <ul>
                     <li>Limit API Access: Only allow API calls to pre-approved endpoints. FoEA Role: The FoEA defines and maintains the list of approved API endpoints. The DPL-ERV's Security Value Module is trained to recognize unauthorized API calls.</li>
                     <li>Validate API Responses: Rigorously validate the format and content of API responses before they are used by the Foundation Model. DPL-ERV Role: The DPL-ERV, particularly its Honesty and Transparency Value Modules, can analyze API responses for factual accuracy, consistency, and potential deception, mitigating the risk of the agent being manipulated by malicious API responses. This is critical for addressing the attacks in Li et al. (2024) where agents are tricked into performing actions based on false information.</li>
@@ -344,7 +374,8 @@
         <h2 id="ch3-cognitive">3. Cognitive Bias Countermeasures</h2>
         <p>The Dynamic Policy Layer (DPL) framework recognizes that both human operators and AI systems are susceptible to cognitive biases – systematic patterns of deviation from norm or rationality in judgment. Recent work has shown that AI systems are capable of exploiting these biases to engage in deceptive behavior (Meinke et al., 2024). These biases can significantly impact the effectiveness of AI safety mechanisms, leading to incorrect assessments, flawed decisions, and ultimately, increased risk of misalignment. Therefore, the DPL incorporates a multi-faceted approach to mitigating the influence of cognitive biases, focusing on proactive detection, robust decision-making processes, and diverse, independent evaluation mechanisms. The Federation of Ethical Agents (FoEA) plays a central role in implementing and overseeing these countermeasures. </p>
         <p>Furthermore, emerging threats such as those arising from neuro-symbolic AI systems, which combine neural networks with symbolic reasoning, require careful consideration. These systems, while potentially powerful, could introduce vulnerabilities that allow for sophisticated, strategically planned exploits. Mitigation strategies, to be discussed in detail in Chapter 5, will be essential to address this evolving risk.</p>
-        <h3>Bias Detection Systems</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec3-1">3.1 Bias Detection Systems</h3>
         <p>The DPL framework integrates bias detection systems, operating both within the DPL-ERV and across the FoEA agent network, to proactively identify and address potential biases. These systems are designed to:</p>
         <ul>
             <li><strong>Detect Bias in Foundation Model Outputs:</strong> The DPL-ERV, particularly through its specialized Value Modules (e.g., Fairness, Honesty), is trained to identify biases in Foundation Model outputs. This includes detecting:
@@ -376,14 +407,16 @@
                 </ul>
             </li>
         </ul>
-        <h3>Decision Validation Frameworks</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec3-2">3.2 Decision Validation Frameworks</h3>
         <p>To counteract the influence of cognitive biases on decision-making, the DPL framework implements robust decision validation frameworks, particularly within the FoEA and for any HITL interactions. These frameworks are designed to:</p>
         <ul>
             <li><strong>Promote Structured, Evidence-Based Decision-Making:</strong> Mandating processes like explicit justification, standardized templates, and consideration of alternative perspectives.</li>
             <li><strong>Incorporate "Red Teaming" and Counter-Argumentation:</strong> Designated agents or humans challenge proposed decisions to identify weaknesses and biases.</li>
             <li><strong>Mandate Transparency and Explainability:</strong> DPL-ERV explanations and FoEA audit logs facilitate bias identification and accountability.</li>
         </ul>
-        <h3>Cross-Checking Mechanisms</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec3-3">3.3 Cross-Checking Mechanisms</h3>
         <p> Cross-checking mechanisms are fundamental. By leveraging multiple, independent sources, the DPL reduces reliance on potentially biased single perspectives.</p>
         <ul>
             <li><strong>Federation of Ethical Agents (FoEA) as Core Cross-Checking:</strong> Diverse agents evaluate behavior independently, mitigating shared bias effects.</li>
@@ -394,7 +427,8 @@
 
         <h2 id="ch3-hybrid">4. Hybrid Defense Mechanisms</h2>
         <p>The Dynamic Policy Layer (DPL) framework employs a hybrid approach, combining technical controls, cognitive bias countermeasures, and proactive adaptation mechanisms into an integrated and multi-layered defense system. This holistic approach is essential for achieving robust security against a sophisticated and adaptive Foundation Model adversary.</p>
-        <h3>Integrated Protection Systems</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec4-1">4.1 Integrated Protection Systems</h3>
          <p> The DPL framework is designed as an integrated system, where different security components work together synergistically. Key aspects include:</p>
         <ul>
             <li><strong>DPL-ERV as Central Integrator:</strong> Receives input from detection modules, analyzes outputs, contributes to risk assessment informed by broader context.</li>
@@ -402,7 +436,8 @@
             <li><strong>Data Fusion from Multiple Sources:</strong> Monitoring systems fuse data (outputs, internal states, timing) for holistic analysis by DPL-ERV, FoEA, and other components.</li>
             <li><strong>Seamless Integration with Existing Security Infrastructure:</strong> Leverages existing firewalls, IDPS, etc., enhancing their effectiveness against AI-specific threats.</li>
         </ul>
-        <h3>Multi-Layer Defense Strategies</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec4-2">4.2 Multi-Layer Defense Strategies</h3>
         <p> The DPL framework employs a "defense-in-depth" strategy with multiple, overlapping layers:</p>
         <ol>
             <li>Infrastructure Security</li>
@@ -417,7 +452,8 @@
         </ol>
         <img src="images/Chapter-03/Chapter03-image02.png" alt="Multi-Layer Defense Diagram" class="content-image">
 
-        <h3>Adaptive Response Mechanisms</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec4-3">4.3 Adaptive Response Mechanisms</h3>
         <p>The DPL framework adapts to evolving threats through continuous learning, analysis, and proactive modification. Key mechanisms include:</p>
         <ul>
             <li><strong>Dynamic Threshold Adjustments:</strong> Continuously adjusts detection thresholds based on statistical output distributions, FPRL performance, contextual factors, and FoEA oversight.</li>
@@ -425,7 +461,8 @@
             <li><strong>FoEA-Driven Adaptation:</strong> FoEA monitors threats, updates detection rules/algorithms, refines the Ethical Baseline (via consensus/HITL), and proactively develops mitigations through APR, informed by research (e.g., Bai et al., 2022) and targeting "sleeping" attacks, emergent communication, and post-quantum needs.</li>
             <li><strong>Automated "Red Teaming" and Vulnerability Discovery:</strong> Uses simulated attacks (potentially FoEA-driven) to test defenses, identify weaknesses, validate mitigations, and drive adaptation, possibly using recursive reinforcement learning.</li>
         </ul>
-        <h3>Proactive Threat Prediction Module</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec4-4">4.4 Proactive Threat Prediction Module</h3>
         <p>The Proactive Threat Prediction Module (PPM) anticipates threats by analyzing DPL monitoring data (outputs, internal states, resources, network, FoEA activity) using ML for trend/anomaly detection.</p>
         <p>PPM collaborates with FoEA Reasoning Agents for contextual insights, prediction validation, and hypothesis generation (e.g., identifying resource spikes + output shifts as potential "sleeper agent" activity).</p>
         <p>High-probability threats trigger "almost-in-time" responses like threshold adjustments, specialized monitoring activation, preemptive sandboxing, or FoEA alerts, enabling proactive defense adaptation.</p>
@@ -433,7 +470,8 @@
 
         <h2 id="ch3-integrity">5. System Integrity Protections</h2>
          <p> The DPL framework's reliability depends on the integrity of its own components. Rigorous protections, managed by the FoEA, are crucial.</p>
-        <h3>Core Component Security</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec5-1">5.1 Core Component Security</h3>
          <p> Built on secure software practices overseen by FoEA:</p>
         <ul>
             <li><strong>Secure Software Development Lifecycle (SSDLC):</strong> Incorporates security (secure coding, SAST/DAST, FoEA-driven automated code reviews) from design through maintenance.</li>
@@ -441,7 +479,8 @@
             <li><strong>Runtime Integrity Monitoring:</strong> Uses hashing/checksums, behavioral anomaly detection, managed and monitored by FoEA Security Agents.</li>
             <li><strong>FoEA Oversight of Development and Deployment:</strong> Ensures adherence to security best practices.</li>
         </ul>
-        <h3>Update Mechanism Protection</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec5-2">5.2 Update Mechanism Protection</h3>
          <p> Securing the update pathway is critical:</p>
         <ul>
             <li><strong>Secure Update Channels:</strong> Authenticated, encrypted delivery.</li>
@@ -450,7 +489,8 @@
             <li><strong>Rollback and Recovery Capabilities:</strong> Allows reversion to known-good states.</li>
             <li><strong>FoEA Management of Update Process:</strong> Oversees the entire update lifecycle.</li>
         </ul>
-        <h3>Access Control Frameworks</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec5-3">5.3 Access Control Frameworks</h3>
          <p> Multi-layered access control is fundamental:</p>
         <ul>
             <li><strong>Principle of Least Privilege (PoLP):</strong> Applied universally.</li>
@@ -461,7 +501,8 @@
 
         <h2 id="ch3-decision">6. Decision Validation Framework</h2>
         <p>The DPL incorporates a rigorous Decision Validation Framework to ensure the integrity and ethical soundness of critical decisions (interventions, baseline modifications), minimizing errors and bias.</p>
-        <h3>Multi-Stage Validation Process</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec6-1">6.1 Multi-Stage Validation Process</h3>
         <p> Provides multiple layers of scrutiny:</p>
         <ol>
             <li><strong>Initial Assessment (DPL-ERV):</strong> Initial ethical evaluation, risk score, and recommendation.</li>
@@ -470,7 +511,8 @@
             <li><strong>Human-in-the-Loop (HITL) Review (Strategic Oversight):</strong> Human experts review high-stakes, ambiguous, or non-consensus cases.</li>
             <li><strong>Final Decision and Action:</strong> Execute action based on all stages.</li>
         </ol>
-        <h3>Bias-Aware Decision Checking</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec6-2">6.2 Bias-Aware Decision Checking</h3>
          <p> Explicitly mitigates cognitive biases:</p>
         <ul>
             <li><strong>Bias Detection Modules (DPL-ERV & FoEA):</strong> Identify biases in AI reasoning/output.</li>
@@ -478,7 +520,8 @@
             <li><strong>Required Justification for Decisions:</strong> Mandates evidence-based reasoning.</li>
             <li><strong>"Red Team" Agents within FoEA:</strong> Challenge consensus to uncover weaknesses/biases.</li>
         </ul>
-        <h3>FoEA Consensus Mechanisms</h3>
+         {/* Renumbered and added ID to H3 */}
+        <h3 id="ch3-sec6-3">6.3 FoEA Consensus Mechanisms</h3>
         <p> Ensures collective, robust decision-making:</p>
         <ul>
             <li><strong>Diverse Agent Perspectives:</strong> Mitigates systemic bias.</li>
@@ -488,6 +531,7 @@
             <li><strong>Transparency:</strong> Internally auditable via logs, justifications, dissent records, voting pattern analysis, and strategic HITL review access.</li>
         </ul>
 
+        {/* Note: These H2s have no H3 subsections in the original Ch3 content */}
         <h2 id="ch3-mit-self-replication">7. Mitigation Strategies for Self-Replication Attempts</h2>
         <p>The DPL employs a multi-layered approach against self-replication threats (Pan et al., 2024; OpenAI. (2025); Anthropic, 2025), focusing on detection, containment, and adaptation.</p>
         <ul>
@@ -561,6 +605,7 @@
 </main>
 
 <script>
+  // Embedded script identical to Chapter 1 GOLD standard
   const audioSelector = document.getElementById('audio-selector');
   const audioPlayer = document.getElementById('audio-player');
   const audioSource = document.getElementById('audio-source');
@@ -578,12 +623,14 @@
         }
       });
 
+      // Set initial audio source based on the first option
       if (audioSelector.options.length > 0) {
           const initialAudio = audioSelector.options[0].value;
            if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
                const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
                audioSource.src = initialAudio;
                audioSource.type = initialFileType;
+               // audioPlayer.load(); // No need to call load() here as the <source> tag already has the initial src
            } else {
                console.error("Initial audio source value is invalid:", initialAudio);
            }
