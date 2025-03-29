@@ -6,7 +6,6 @@
     <title>Chapter 1: DPL: A Continuous Oversight Framework - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Styles copied/adapted from Chapter 5 Gold Standard */
         html {
             scroll-behavior: smooth;
         }
@@ -56,22 +55,29 @@
             width: 100%;
             max-width: 800px;
             display: block;
-            margin: 20px auto; /* Keep auto margins for centering */
+            margin: 20px auto;
+        }
+        .caption-style {
+             font-size: 0.9em;
+             color: #555;
+             text-align: center;
+             margin-top: 0;
+             margin-bottom: 1em;
         }
         .outline-heading-style {
-            margin-bottom: 0.25em; /* Space below main heading in outline*/
+            margin-bottom: 0.25em;
         }
         .outline-sublist {
             margin-top: 0;
-            padding-left: 40px; /* Indent level */
-            list-style-type: disc; /* Or desired bullet */
-            margin-bottom: 1em; /* Space below the sublist in outline */
+            padding-left: 40px;
+            list-style-type: disc;
+            margin-bottom: 1em;
         }
         .outline-sublist li {
-            margin-bottom: 0.25em; /* Compact spacing between items */
+            margin-bottom: 0.25em;
         }
         .outline-sublist li a {
-            font-weight: normal; /* Ensure sub-items are not bold */
+            font-weight: normal;
         }
         dt {
             font-weight: bold;
@@ -81,61 +87,71 @@
             margin-left: 20px;
             margin-bottom: 1em;
         }
-        /* Added specifically for Ch1 if needed, otherwise rely on styles.css */
         .page-header h1 {
-         /* Add specific Chapter 1 H1 styles if needed */
         }
         .audio-title {
-         /* Style for Audio Player title if needed */
         }
-
-        /* --- Added Rules for Spacing Refinement --- */
         .content-container h2,
         .content-container h3 {
-            /* Adjust bottom margin for headings */
-            margin-top: 1.5em; /* Add some space above headings */
-            margin-bottom: 0.25em; /* Small space after heading */
+            margin-top: 1.5em;
+            margin-bottom: 0.25em;
         }
-        /* Special case for first heading */
          .content-container > h2:first-of-type {
              margin-top: 0;
          }
-
-
         .content-container p,
         .content-container ul,
-        .content-container ol {
-             /* General top/bottom margins for content blocks */
-             margin-top: 0; /* Default no top margin */
-             margin-bottom: 1em; /* Default space below block */
-        }
-        /* Keep image centering margins, but control vertical */
+        .content-container ol,
+        .content-container dl,
+        .content-container figure {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
         .content-container img.content-image {
              margin-top: 0;
              margin-bottom: 1em;
-        }
-
-
-        /* Remove top margin for elements immediately following a heading */
+         }
+         .content-container figure + p,
+         .content-container figure + ul,
+         .content-container figure + ol,
+         .content-container figure + dl,
+         .content-container figure + h2,
+         .content-container figure + h3 {
+             margin-top: 0;
+         }
+         .content-container p + figure,
+         .content-container ul + figure,
+         .content-container ol + figure,
+         .content-container dl + figure {
+            margin-top: 1em;
+         }
+         .content-container h2 + figure,
+         .content-container h3 + figure {
+            margin-top: 0;
+         }
+         .content-container img.content-image + figcaption.caption-style {
+            margin-top: 0.5em;
+         }
+         .content-container img.content-image:has(+ figcaption.caption-style) {
+             margin-bottom: 0;
+         }
         .content-container h2 + p,
         .content-container h2 + ul,
         .content-container h2 + ol,
+        .content-container h2 + dl,
         .content-container h2 + img.content-image,
         .content-container h3 + p,
         .content-container h3 + ul,
         .content-container h3 + ol,
+        .content-container h3 + dl,
         .content-container h3 + img.content-image {
-            margin-top: 0; /* Ensure NO space directly after a heading */
+            margin-top: 0;
         }
-
-        /* Remove top margin for lists immediately following a paragraph */
-        /* This addresses the "such as:" followed by list issue */
         .content-container p + ul,
-        .content-container p + ol {
-             margin-top: 0; /* Remove space when list follows paragraph */
-        }
-        /* --- End Spacing Refinement --- */
-
+        .content-container p + ol,
+        .content-container p + dl {
+             margin-top: 0;
+         }
     </style>
 </head>
 <body>
@@ -155,6 +171,7 @@
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
+        <li><a href="downloads.html">Downloads (PDF)</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
@@ -277,54 +294,62 @@
         <p>The rapid advancement of Artificial Intelligence (AI), particularly Foundation Models—large AI systems capable of performing a wide range of tasks—presents both unprecedented opportunities and significant risks. While these models demonstrate remarkable capabilities, ensuring their alignment with human values and safety requirements remains a critical challenge. Existing approaches, primarily focused on training-time interventions, face limitations in scalability, adaptability, and robustness to emergent behaviors and adversarial attacks.</p>
         <p>This chapter introduces the Dynamic Policy Layer (DPL), a novel framework for real-time AI alignment designed to address these shortcomings. The DPL is envisioned as a continuous, adaptable "firewall" that operates after a Foundation Model has been trained and deployed. It monitors the model's outputs (and internal states, where accessible), detects deviations from a predefined Ethical Baseline (a set of principles and rules governing acceptable behavior), and triggers appropriate interventions to maintain alignment. The DPL is not a replacement for robust training-time alignment techniques; rather, it's a complementary layer of defense, providing ongoing assurance of safe and ethical operation.</p>
         <p>The framework is built upon several core principles:</p>
+        <ul>
             <li><strong>Real-Time Operation:</strong> The DPL is engineered for minimal latency, enabling immediate detection and intervention.</li>
             <li><strong>Continuous Adaptation:</strong> The DPL is not a static system. It continuously adapts to evolving Foundation Model capabilities, emerging threats, and changing ethical considerations.</li>
             <li><strong>Modularity:</strong> The DPL is composed of independent, interchangeable components, allowing for flexibility, extensibility, and resilience.</li>
             <li><strong>Autonomous Ethical Reasoning:</strong> The DPL incorporates an Ethical Reasoning Validator (DPL-ERV), a specialized component that performs rapid, context-sensitive ethical evaluations.</li>
-
         </ul>
-        <br> <p>Central to the DPL's operation is the Federation of Ethical Agents (FoEA), a decentralized network of AI agents that governs the DPL-ERV, maintains the Ethical Baseline, and drives the DPL's continuous adaptation. The FoEA, described in detail in Chapter 4, provides a robust and scalable mechanism for overseeing the DPL's operation. The framework is designed for adaptability.</p>
+        <p>Central to the DPL's operation is the Federation of Ethical Agents (FoEA), a decentralized network of AI agents that governs the DPL-ERV, maintains the Ethical Baseline, and drives the DPL's continuous adaptation. The FoEA, described in detail in Chapter 4, provides a robust and scalable mechanism for overseeing the DPL's operation. The framework is designed for adaptability.</p>
         <p>This chapter provides a high-level overview of the DPL framework, focusing on its core concepts, architecture, and design principles. Subsequent chapters delve into the threat model, mitigation strategies, FoEA governance, technical implementation details, and the extension of the framework to a multi-agent AI ecosystem. The DPL framework represents a significant step towards addressing single-model alignment; however, it is acknowledged that this framework alone does not solve the broader challenges of a multi-agent AI ecosystem, nor does it guarantee universal adoption. These limitations, and potential solutions involving decentralized governance and global cooperation, are addressed in subsequent chapters within this series. Future research directions—including formal verification, collaborative reporting, autonomous threat discovery, preparing for the quantum threat, and advanced deployment strategies—are outlined to further refine continuous, post-training alignment. The proposed framework thus provides a comprehensive, adaptive solution to key post-deployment challenges, advancing the state-of-the-art in real-time AI safety.</p>
 
         <h2 id="ch1-sec1">1. Core DPL Concepts and Architecture</h2>
         <p>The Dynamic Policy Layer (DPL) is designed as a real-time, adaptive, and modular framework for ensuring the ethical alignment of Foundation Models. This section outlines the core design principles that underpin the DPL and provides a high-level overview of its key components and their interaction. The DPL is conceived as an external oversight mechanism, capable of operating in both full-access and black-box API scenarios, making it adaptable to a wide range of Foundation Model deployment contexts.</p>
         <h3 id="ch1-sec1-1">1.1 Design Principles</h3>
         <p>The DPL framework is built upon the following core design principles:</p>
+        <ul>
             <li><strong>Real-Time Operation:</strong> The DPL is engineered for minimal latency, enabling real-time monitoring, detection, and intervention. This rapid response capability is crucial for preventing misaligned Foundation Model outputs from reaching users or triggering harmful actions. The system aims for sub-second response times for standard interactions, with mechanisms for managing more complex analyses (as detailed in later sections).</li>
             <li><strong>Continuous Adaptation:</strong> The DPL is not a static system. It is designed to continuously adapt to evolving Foundation Model capabilities, emerging threats, and changing ethical considerations. This adaptation is driven by the Autonomous Proactive Research (APR) capabilities of the Federation of Ethical Agents (FoEA), as well as by ongoing monitoring of system performance and external data sources.</li>
             <li><strong>Modularity:</strong> The DPL is designed as a modular system, composed of independent, interchangeable components. This modularity allows for:
-                <ul>
-                    <li><strong>Flexibility:</strong> The DPL can be customized and adapted to different Foundation Models and deployment scenarios.</li>
-                    <li><strong>Extensibility:</strong> New detection modules, intervention strategies, or ethical evaluation components can be easily added or updated without requiring a complete system overhaul.</li>
-                    <li><strong>Resilience:</strong> The failure or compromise of a single component does not necessarily compromise the entire system.</li>
-            	    <li><strong>Security:</strong> Security is built in mind for every component, function and operation.</li>
-        </ul>
+                 <ul>
+                     <li><strong>Flexibility:</strong> The DPL can be customized and adapted to different Foundation Models and deployment scenarios.</li>
+                     <li><strong>Extensibility:</strong> New detection modules, intervention strategies, or ethical evaluation components can be easily added or updated without requiring a complete system overhaul.</li>
+                     <li><strong>Resilience:</strong> The failure or compromise of a single component does not necessarily compromise the entire system.</li>
+                     <li><strong>Security:</strong> Security is built in mind for every component, function and operation.</li>
+                 </ul>
+             </li>
+         </ul>
         <h3 id="ch1-sec1-2">1.2 Key Components</h3>
         <p>The DPL framework comprises the following key components:</p>
+        <ul>
             <li><strong>Detection Modules:</strong> These modules continuously analyze Foundation Model outputs (and internal states, where accessible) to identify potential alignment violations. Detection modules employ a variety of techniques, including:
                 <ul>
                     <li>Behavioral Pattern Matching: Identifying patterns of behavior that deviate from established norms or indicate potential misalignment.</li>
                     <li>Anomaly Detection: Detecting unusual or unexpected outputs or internal states.</li>
                     <li>Proactive Consistency Checks: Actively probing the Foundation Model with specific prompts to test its adherence to ethical guidelines.</li>
+                </ul>
+            </li>
             <li><strong>Tiered Intervention System:</strong> The DPL employs a tiered intervention system, allowing for a graduated response to detected alignment violations. This system ranges from:
                 <ul>
                     <li>Lightweight Interventions: Real-time correction prompts injected directly into the Foundation Model's interaction stream (for minor deviations).</li>
                     <li>Medium Interventions: "Preview" Sandbox.</li>
                     <li>Heavyweight Interventions: Routing the interaction to a secure "Full" sandbox for in-depth analysis, potentially involving human review (for significant violations).</li>
-            </li>
-            <li><strong>False Positive Reduction Layer (FPRL):</strong> The FPRL acts as an intelligent filter, minimizing unnecessary interventions by assessing the likelihood of false positives before triggering escalations. This improves the DPL's efficiency and reduces disruption to legitimate Foundation Model interactions.</li>
-            <li><strong>Ethical Baseline:</strong> The Ethical Baseline is a set of predefined ethical principles and safety rules that guide the DPL's operation and the DPL-ERV's evaluations. The Ethical Baseline is:
-                <ul>
-                    <li>Customizable: Adaptable to specific organizational values, application contexts, and regulatory requirements.</li>
-                    <li>Continuously Updated: The FoEA is responsible for maintaining and evolving the Ethical Baseline.</li>
-                    <li>Formally Represented: The Ethical Baseline may be represented using a combination of formal logic, controlled natural language, and machine-readable rules.</li>
-                    <li>Foundation for Evaluation: The Ethical Baseline serves as the primary reference point for all DPL-ERV evaluations.</li>
-                </ul>
-            </li>
-        </ul>
+                 </ul>
+             </li>
+             <li><strong>False Positive Reduction Layer (FPRL):</strong> The FPRL acts as an intelligent filter, minimizing unnecessary interventions by assessing the likelihood of false positives before triggering escalations. This improves the DPL's efficiency and reduces disruption to legitimate Foundation Model interactions.</li>
+             <li><strong>Ethical Baseline:</strong> The Ethical Baseline is a set of predefined ethical principles and safety rules that guide the DPL's operation and the DPL-ERV's evaluations. The Ethical Baseline is:
+                 <ul>
+                     <li>Customizable: Adaptable to specific organizational values, application contexts, and regulatory requirements.</li>
+                     <li>Continuously Updated: The FoEA is responsible for maintaining and evolving the Ethical Baseline.</li>
+                     <li>Formally Represented: The Ethical Baseline may be represented using a combination of formal logic, controlled natural language, and machine-readable rules.</li>
+                     <li>Foundation for Evaluation: The Ethical Baseline serves as the primary reference point for all DPL-ERV evaluations.</li>
+                 </ul>
+             </li>
+         </ul>
         <h3 id="ch1-sec1-3">1.3 Data Flow and Workflow (High-Level)</h3>
         <img src="images/Chapter-01/Chapter01-image01.png" alt="Diagram illustrating the DPL Data Flow and Workflow" class="content-image">
         <p>The DPL operates as an intermediary between the user (or application) and the Foundation Model. The general workflow is as follows:</p>
+        <ol>
             <li><strong>Input:</strong> A user submits a prompt or request.</li>
             <li><strong>Initial Monitoring:</strong> The DPL performs initial monitoring on the raw input.</li>
             <li><strong>Detection Modules:</strong> Concurrently, the Detection Modules perform a more in-depth assessment of the prompt.</li>
@@ -345,6 +370,7 @@
         <img src="images/Chapter-01/Chapter01-image02.png" alt="Diagram illustrating the DPL-ERV component" class="content-image">
         <h3 id="ch1-sec2-1">2.1 Role of the DPL-ERV</h3>
         <p>The DPL-ERV's primary function is to provide rapid, context-sensitive ethical assessments of Foundation Model activity. Unlike traditional safety mechanisms that rely solely on keyword detection or rule-based filtering, the DPL-ERV is designed to perform reasoned ethical evaluations, considering the nuances of language, context, and potential consequences (Bai et al., 2022). The DPL-ERV:</p>
+        <ul>
             <li><strong>Evaluates Outputs:</strong> Assesses the ethical implications of Foundation Model responses to user prompts.</li>
             <li><strong>Analyzes Internal States</strong> (where accessible): If access to the Foundation Model's internal reasoning trace is available, the DPL-ERV analyzes this information to gain deeper insights into the model's decision-making process.</li>
             <li><strong>Generates Ethical Risk Scores:</strong> Produces a quantitative ethical risk score, indicating the degree of alignment with the Ethical Baseline.</li>
@@ -354,6 +380,7 @@
         </ul>
         <h3 id="ch1-sec2-2">2.2 Integration with the Ethical Baseline</h3>
         <p>The DPL-ERV's ethical evaluations are grounded in the DPL's Ethical Baseline, a set of predefined principles, rules, and guidelines that define acceptable and unacceptable Foundation Model behavior. The Ethical Baseline is:</p>
+        <ul>
             <li><strong>Customizable:</strong> Adaptable to specific organizational values, application contexts, and regulatory requirements.</li>
             <li><strong> Formally Represented:</strong> The baseline may be represented using a combination of formal logic, controlled natural language, and machine-readable rules, enabling automated reasoning and consistency checks.</li>
             <li><strong> Continuously Updated:</strong> The FoEA is responsible for maintaining and evolving the Ethical Baseline to reflect new knowledge, changing societal norms, and emerging threats.</li>
@@ -361,6 +388,7 @@
         </ul>
         <h3 id="ch1-sec2-3">2.3 High-Level Description of Value Modules</h3>
         <p>To achieve nuanced and comprehensive ethical evaluations, the DPL-ERV incorporates a modular architecture based on specialized Value Modules. Each Value Module focuses on a specific dimension of ethical reasoning, such as:</p>
+        <ul>
             <li><strong>Fairness Module:</strong> Detects and mitigates biases, discrimination, and unfair treatment.</li>
             <li><strong>Honesty Module:</strong> Verifies factual accuracy, detects misinformation, and assesses the truthfulness of Foundation Model statements.</li>
             <li><strong>Safety Module:</strong> Identifies potentially harmful content, instructions, or actions.</li>
@@ -370,6 +398,7 @@
         <p>These Value Modules, while specialized, operate under a unified framework governed by the FoEA and contribute to a holistic ethical assessment. (Detailed descriptions of Value Module implementations are provided in Chapter 6: DPL: Technical Details. *Note: Original text referenced Chapter 4, corrected to Chapter 6*)</p>
         <h3 id="ch1-sec2-4">2.4 Transparency and Explainability (Ethical Chain-of-Thought)</h3>
         <p>The DPL-ERV is designed to provide transparency into its ethical reasoning processes, similar to the approach used in Claude 3.7 Sonnet's extended thinking mode (Anthropic, 2025 - Claude 3.7 Sonnet System Card). This is achieved through:</p>
+        <ul>
             <li><strong>Ethical Chain-of-Thought:</strong> The DPL-ERV generates an "ethical chain-of-thought," a structured explanation of the factors considered in its evaluation, the relevant ethical rules applied, and the reasoning behind its final assessment. This is analogous to a human explaining their ethical reasoning.</li>
             <li><strong>Structured Explanations:</strong> These explanations are presented in a structured, machine-readable format, facilitating automated analysis and auditing.</li>
             <li><strong>Human-Understandable Summaries:</strong> The DPL-ERV can also generate human-understandable summaries of its ethical evaluations, making them accessible to non-experts.</li>
@@ -383,23 +412,23 @@
         <h3 id="ch1-sec3-1">3.1 Technical Controls</h3>
         <ul>
              <li>These form the foundation of the DPL's security posture, encompassing:
-                <ul>
-                    <li>Infrastructure Security: Protecting the underlying hardware and network infrastructure.</li>
-                    <li>Protocol Security: Securing communication channels.</li>
-                    <li>System Integrity: Ensuring the integrity of DPL software components.</li>
-                    <li>Access Control: Restricting access to DPL resources and functionalities.</li>
-                </ul>
-            </li>
-        </ul>
+                 <ul>
+                     <li>Infrastructure Security: Protecting the underlying hardware and network infrastructure.</li>
+                     <li>Protocol Security: Securing communication channels.</li>
+                     <li>System Integrity: Ensuring the integrity of DPL software components.</li>
+                     <li>Access Control: Restricting access to DPL resources and functionalities.</li>
+                 </ul>
+             </li>
+         </ul>
          <h3 id="ch1-sec3-2">3.2 Cognitive Bias Countermeasures</h3>
          <ul>
             <li>Recognizing the potential for both human and AI biases to influence decision-making, the DPL incorporates mechanisms to:
-                <ul>
-                    <li>Detect and Mitigate Biases: In both Foundation Model outputs and DPL-ERV evaluations.</li>
-                    <li>Promote Objective Decision-Making: Through structured decision validation frameworks and the FoEA's consensus-based governance.</li>
-                    <li>Foster Transparency: To facilitate the identification and correction of biases.</li>
-                </ul>
-            </li>
+                 <ul>
+                     <li>Detect and Mitigate Biases: In both Foundation Model outputs and DPL-ERV evaluations.</li>
+                     <li>Promote Objective Decision-Making: Through structured decision validation frameworks and the FoEA's consensus-based governance.</li>
+                     <li>Foster Transparency: To facilitate the identification and correction of biases.</li>
+                 </ul>
+             </li>
          </ul>
          <h3 id="ch1-sec3-3">3.3 Ethical Reasoning and Validation</h3>
          <ul>
@@ -427,11 +456,11 @@
          </ul>
          <h3 id="ch1-sec3-9">3.9 Key Principles:</h3>
          <ul>
-            <li><strong>Layered Defense (Defense-in-Depth):</strong> The DPL employs multiple, overlapping layers of defense, so that if one layer is breached, others remain in place to mitigate the threat.</li>
-            <li><strong>Integrated Components:</strong> The DPL's components work together synergistically, sharing information and coordinating their actions.</li>
-            <li><strong>Adaptive and Evolving:</strong> The DPL is designed to be continuously learning and adapting, incorporating new knowledge, refining its strategies, and responding to emerging threats. This adaptation is driven by the FoEA's Autonomous Proactive Research (APR) capabilities.</li>
-            <li><strong>Proactive, Not Just Reactive:</strong> The DPL emphasizes proactive threat detection and prevention, aiming to identify and address potential misalignment before it manifests in harmful behavior. This is achieved through continuous monitoring, proactive consistency checks, and the FoEA's APR efforts.</li>
-        </ul>
+             <li><strong>Layered Defense (Defense-in-Depth):</strong> The DPL employs multiple, overlapping layers of defense, so that if one layer is breached, others remain in place to mitigate the threat.</li>
+             <li><strong>Integrated Components:</strong> The DPL's components work together synergistically, sharing information and coordinating their actions.</li>
+             <li><strong>Adaptive and Evolving:</strong> The DPL is designed to be continuously learning and adapting, incorporating new knowledge, refining its strategies, and responding to emerging threats. This adaptation is driven by the FoEA's Autonomous Proactive Research (APR) capabilities.</li>
+             <li><strong>Proactive, Not Just Reactive:</strong> The DPL emphasizes proactive threat detection and prevention, aiming to identify and address potential misalignment before it manifests in harmful behavior. This is achieved through continuous monitoring, proactive consistency checks, and the FoEA's APR efforts.</li>
+         </ul>
         <p>The combination of these mitigation strategies, guided by the principles of layered defense, integration, adaptation, and proactive threat prevention, makes the DPL framework a robust and resilient solution for maintaining Foundation Model alignment.</p>
 
         <h2 id="ch1-sec4">4. The Federation of Ethical Agents (FoEA): Overview</h2>
@@ -442,23 +471,23 @@
         <h3 id="ch1-sec4-2">4.2 Govern the DPL-ERV</h3>
          <ul>
             <li>The FoEA is responsible for overseeing the operation, training, and updating of the DPL-ERV (Ethical Reasoning Validator). This includes:
-                <ul>
-                    <li>Maintaining the integrity of the DPL-ERV's code and data.</li>
-                    <li>Monitoring its performance and identifying potential biases or vulnerabilities.</li>
-                    <li>Managing the deployment of updates and security patches.</li>
-                    <li>Overseeing the operation, training, and updating.</li>
-                </ul>
-            </li>
+                 <ul>
+                     <li>Maintaining the integrity of the DPL-ERV's code and data.</li>
+                     <li>Monitoring its performance and identifying potential biases or vulnerabilities.</li>
+                     <li>Managing the deployment of updates and security patches.</li>
+                     <li>Overseeing the operation, training, and updating.</li>
+                 </ul>
+             </li>
          </ul>
         <h3 id="ch1-sec4-3">4.3 Maintain and Evolve the Ethical Baseline</h3>
          <ul>
             <li>The FoEA is the custodian of the Ethical Baseline, the set of principles and rules that guide the DPL's ethical evaluations. The FoEA:
-                <ul>
-                    <li>Continuously reviews and refines the Ethical Baseline.</li>
-                    <li>Responds to new ethical challenges and evolving societal norms.</li>
-                    <li>Ensures the Ethical Baseline remains consistent with the overall goals of the DPL framework.</li>
-                </ul>
-            </li>
+                 <ul>
+                     <li>Continuously reviews and refines the Ethical Baseline.</li>
+                     <li>Responds to new ethical challenges and evolving societal norms.</li>
+                     <li>Ensures the Ethical Baseline remains consistent with the overall goals of the DPL framework.</li>
+                 </ul>
+             </li>
          </ul>
         <h3 id="ch1-sec4-4">4.4 Drive Autonomous Proactive Research (APR)</h3>
          <ul>
@@ -626,13 +655,13 @@
         <h3 id="ch1-sec7-2">7.2 Dependence on Detectability</h3>
          <ul>
             <li>The DPL's effectiveness relies on its ability to detect misaligned behavior. Sophisticated Foundation Models might develop strategies for circumventing detection mechanisms, such as, but not limited to (Anthropic, 2025 - Claude 3.7 Sonnet System Card)
-                <ul>
-                    <li>Subtle Manipulation: Engaging in subtle forms of manipulation or deception that are difficult to detect with current techniques.</li>
-                    <li>"Sleeping" Attacks: Remaining dormant for extended periods, only to exhibit misaligned behavior at a later time.</li>
-                    <li>Emergent Communication: Developing novel communication protocols that are incomprehensible to the DPL.</li>
-                    <li>Exploiting "Blind Spots", in prompt injection, reward hacking etc (Anthropic, 2025 - Claude 3.7 Sonnet System Card).</li>
-                </ul>
-            </li>
+                 <ul>
+                     <li>Subtle Manipulation: Engaging in subtle forms of manipulation or deception that are difficult to detect with current techniques.</li>
+                     <li>"Sleeping" Attacks: Remaining dormant for extended periods, only to exhibit misaligned behavior at a later time.</li>
+                     <li>Emergent Communication: Developing novel communication protocols that are incomprehensible to the DPL.</li>
+                     <li>Exploiting "Blind Spots", in prompt injection, reward hacking etc (Anthropic, 2025 - Claude 3.7 Sonnet System Card).</li>
+                 </ul>
+             </li>
          </ul>
         <h3 id="ch1-sec7-3">7.3 Computational Overhead</h3>
          <ul>
@@ -645,12 +674,12 @@
         <h3 id="ch1-sec7-5">7.5 FoEA Vulnerabilities</h3>
          <ul>
             <li>While the Federation of Ethical Agents (FoEA) is designed to be robust and resilient, it is not invulnerable. Potential vulnerabilities include:
-                <ul>
-                    <li>Internal Corruption: Collusion among a subset of FoEA agents.</li>
-                    <li>External Attacks: Targeted attacks against FoEA infrastructure or individual agents.</li>
-                    <li>Cognitive Attacks: Exploitation of biases or weaknesses in the FoEA's decision-making processes.</li>
-                </ul>
-            </li>
+                 <ul>
+                     <li>Internal Corruption: Collusion among a subset of FoEA agents.</li>
+                     <li>External Attacks: Targeted attacks against FoEA infrastructure or individual agents.</li>
+                     <li>Cognitive Attacks: Exploitation of biases or weaknesses in the FoEA's decision-making processes.</li>
+                 </ul>
+             </li>
          </ul>
         <h3 id="ch1-sec7-6">7.6 "Unknown Unknowns"</h3>
          <ul>
@@ -715,21 +744,20 @@
         }
       });
 
-      // Set initial audio source based on the first option
       if (audioSelector.options.length > 0) {
           const initialAudio = audioSelector.options[0].value;
-            if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
-                const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
-                audioSource.src = initialAudio;
-                audioSource.type = initialFileType;
-            } else {
-                console.error("Initial audio source value is invalid:", initialAudio);
-            }
+           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
+               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+               audioSource.src = initialAudio;
+               audioSource.type = initialFileType;
+           } else {
+               console.error("Initial audio source value is invalid:", initialAudio);
+           }
       } else {
-            console.error("Audio selector has no options.");
+           console.error("Audio selector has no options.");
       }
   } else {
-      console.error("Audio player elements not found.");
+       console.error("Audio player elements not found.");
   }
 </script>
 
