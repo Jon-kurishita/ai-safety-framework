@@ -107,6 +107,10 @@
              margin-top: 0;
              margin-bottom: 1em;
          }
+        .content-container h4 {
+             margin-top: 1em;
+             margin-bottom: 0.25em;
+        }
         .content-container img.content-image {
              margin-top: 0;
              margin-bottom: 1em;
@@ -144,7 +148,9 @@
         .content-container h3 + ul,
         .content-container h3 + ol,
         .content-container h3 + dl,
-        .content-container h3 + img.content-image {
+        .content-container h3 + img.content-image,
+        .content-container h4 + ul,
+        .content-container h4 + ol {
             margin-top: 0;
         }
         .content-container p + ul,
@@ -152,6 +158,15 @@
         .content-container p + dl {
              margin-top: 0;
          }
+        .content-container p:has(+ ul),
+        .content-container p:has(+ ol),
+        .content-container p:has(+ dl) {
+            margin-bottom: 0;
+        }
+        .content-container h4:has(+ ul),
+        .content-container h4:has(+ ol) {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -171,6 +186,7 @@
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
+        <li><a href="downloads.html">Downloads (PDF)</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
@@ -1049,7 +1065,7 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      console.error("Audio player elements not found.");
+       console.error("Audio player elements not found.");
   }
 </script>
 
