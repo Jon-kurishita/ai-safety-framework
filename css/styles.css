@@ -212,8 +212,8 @@
 
 /* Layout Styles for Sidebar */
 body {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for responsive layout */
+    /* display: flex; <-- Removed as it might conflict with fixed nav positioning */
+    /* flex-wrap: wrap; <-- Removed */
     font-family: sans-serif;
 }
 nav {
@@ -224,6 +224,9 @@ nav {
     height: 100vh;
     overflow-y: auto;
     box-sizing: border-box; /* Include padding in width calculation */
+    top: 0; /* Ensure it aligns to the top */
+    left: 0; /* Ensure it aligns to the left */
+    z-index: 1000; /* Ensure nav is on top */
 }
 nav h2 {
     margin-top: 0; /* Remove default top margin */
@@ -249,11 +252,12 @@ main {
     width: 75%; /* Default width for larger screens */
     padding: 20px;
     margin-left: 25%; /* Adjust based on nav width */
-    overflow-y: auto; /* Allow main content to scroll */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* <--- THIS WAS THE ORIGINAL STATE */
+    /* overflow-y: auto; <-- Might not be needed if body scrolls */
     box-sizing: border-box;
+    /* The following properties were removed: */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
 }
 
 /* --- Style Overrides for Chapter/Content Pages --- */
@@ -262,16 +266,21 @@ main {
 main .page-header { /* Specificity added */
     background: none;
     color: black;
-    text-align: left; /* Original state might have been left */
-    padding: 0;
+    text-align: left; /* Reset text-align if needed */
+    padding: 0; /* Reset padding */
     margin-bottom: 20px;
     width: 100%; /* Ensure it takes full width of main */
-    max-width: 800px; /* Align with content-container width */
+    max-width: 800px; /* Align with content-container width if present */
+    /* Add margin: auto if you want this header centered */
+    margin-left: auto;
+    margin-right: auto;
 }
 /* Remove margin override if H1 is inside specific page-header */
 main .page-header h1 {
     font-size: 2rem; /* Adjust as needed */
     margin-bottom: 0.5rem; /* Standardize */
+    /* Add text-align: center; if you want chapter titles centered */
+     text-align: center;
 }
 
 
@@ -283,14 +292,42 @@ main .page-header h1 {
     margin-bottom: 5px; /* Space between title and player */
     width: 100%; /* Ensure it takes full width */
     max-width: 800px; /* Align center with content */
+    margin-left: auto; /* Center the title block */
+    margin-right: auto; /* Center the title block */
 }
 
-/* Center Audio Player (Commented out as main was handling centering) */
-/* audio {
+/* You might need rules for .content-container if it's not defined elsewhere */
+.content-container {
+    max-width: 800px; /* Or your preferred max width */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Takes available width up to max-width */
+}
+
+/* Ensure audio player is centered if needed */
+audio.audio-player-style { /* Use the class you assigned */
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
-} */
+    margin-bottom: 20px; /* Existing style */
+    max-width: 800px; /* Match content width */
+    width: 100%; /* Make it responsive within the container */
+}
 
-/* --- NO SPACING RULES ADDED HERE IN ORIGINAL --- */
+/* Add rule for centering outline heading */
+.outline-heading {
+    text-align: center;
+}
+
+/* Add rule for centering case study headings (already existed, ensure text-align is present) */
+.case-study-content h2 {
+    text-align: center;
+}
+
+/* Consider adding explicit styles for footer inside main */
+main footer.footer-style {
+     max-width: 800px; /* Match content width */
+     margin-left: auto;
+     margin-right: auto;
+     width: 100%;
+}
