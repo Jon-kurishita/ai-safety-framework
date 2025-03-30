@@ -5,197 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 3: DPL: Mitigation Strategies and Security Analysis - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .content-container {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-        .audio-container {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .audio-select {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .audio-player-style {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-        }
-        .chapter-author-intro {
-            font-size: 1.6em;
-        }
-        .footer-style {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            text-align: right;
-        }
-        .footer-text-style {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .outline-link a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .outline-link a:hover {
-            text-decoration: underline;
-        }
-        .content-image {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-        }
-        .caption-style {
-             font-size: 0.9em;
-             color: #555;
-             text-align: center;
-             margin-top: 0;
-             margin-bottom: 1em;
-        }
-        .outline-heading-style {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist {
-            margin-top: 0;
-            padding-left: 40px;
-            list-style-type: disc;
-            margin-bottom: 1em;
-        }
-        .outline-sublist li {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist li a {
-            font-weight: normal;
-        }
-        dt {
-            font-weight: bold;
-            margin-top: 1em;
-        }
-        dd {
-            margin-left: 20px;
-            margin-bottom: 1em;
-        }
-        .page-header h1 {
-        }
-        .audio-title {
-        }
-        .content-container h2,
-        .content-container h3 {
-            margin-top: 1.5em;
-            margin-bottom: 0.25em;
-        }
-         .content-container > h2:first-of-type {
-             margin-top: 0;
-         }
-        .content-container p,
-        .content-container ul,
-        .content-container ol,
-        .content-container dl,
-        .content-container figure {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-        .content-container h4,
-        .content-container h5 {
-             margin-top: 1em;
-             margin-bottom: 0.25em;
-        }
-        .content-container img.content-image {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-         .content-container figure + p,
-         .content-container figure + ul,
-         .content-container figure + ol,
-         .content-container figure + dl,
-         .content-container figure + h2,
-         .content-container figure + h3 {
-             margin-top: 0;
-         }
-         .content-container p + figure,
-         .content-container ul + figure,
-         .content-container ol + figure,
-         .content-container dl + figure {
-            margin-top: 0;
-         }
-         .content-container h2 + figure,
-         .content-container h3 + figure,
-         .content-container h4 + figure,
-         .content-container h5 + figure {
-            margin-top: 0;
-         }
-         .content-container img.content-image + figcaption.caption-style {
-            margin-top: 0.5em;
-         }
-         .content-container img.content-image:has(+ figcaption.caption-style) {
-             margin-bottom: 0;
-         }
-        .content-container h2 + p,
-        .content-container h2 + ul,
-        .content-container h2 + ol,
-        .content-container h2 + dl,
-        .content-container h2 + img.content-image,
-        .content-container h3 + p,
-        .content-container h3 + ul,
-        .content-container h3 + ol,
-        .content-container h3 + dl,
-        .content-container h3 + img.content-image,
-        .content-container h4 + ul,
-        .content-container h4 + ol,
-        .content-container h4 + p,
-        .content-container h4 + dl,
-        .content-container h4 + img.content-image,
-        .content-container h5 + p,
-        .content-container h5 + ul,
-        .content-container h5 + ol,
-        .content-container h5 + dl,
-        .content-container h5 + img.content-image {
-            margin-top: 0;
-        }
-        .content-container p + ul,
-        .content-container p + ol,
-        .content-container p + dl {
-             margin-top: 0;
-         }
-        .content-container p:has(+ ul),
-        .content-container p:has(+ ol),
-        .content-container p:has(+ dl),
-        .content-container p:has(+ figure) {
-            margin-bottom: 0;
-        }
-        .content-container h4:has(+ ul),
-        .content-container h4:has(+ ol),
-        .content-container h4:has(+ p),
-        .content-container h4:has(+ dl),
-        .content-container h4:has(+ figure),
-        .content-container h4:has(+ img.content-image) {
-            margin-bottom: 0;
-        }
-        .content-container h5:has(+ ul),
-        .content-container h5:has(+ ol),
-        .content-container h5:has(+ p),
-        .content-container h5:has(+ dl),
-        .content-container h5:has(+ figure),
-        .content-container h5:has(+ img.content-image) {
-             margin-bottom: 0;
-        }
-        main .page-header h1 {
-            text-align: center;
-        }
-    </style>
-</head>
+    </head>
 <body>
 
 <nav>
@@ -240,85 +50,86 @@
     <p><strong class="chapter-author-intro">Chapter 3</strong><br><strong>Jon Kurishita</strong></p>
 
     <div class="content-container">
-        <h2>Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-introduction">Introduction</a></h3>
+        <div class="outline-wrapper">
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-mitigation">1. Mitigation Strategies</a></h3>
-         <ul class="outline-sublist">
-             <li><a href="#ch3-sec1-1">1.1 Value-Based Risk Assessment and Mitigation</a></li>
-         </ul>
+            <h2 class="outline-heading">Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-technical">2. Technical Controls</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch3-sec2-1">2.1 Infrastructure Security Measures</a></li>
-             <li><a href="#ch3-sec2-2">2.2 Protocol Protection Mechanisms</a></li>
-             <li><a href="#ch3-sec2-3">2.3 System Integrity Controls</a></li>
-             <li><a href="#ch3-sec2-4">2.4 Agent-Specific Technical Controls</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-introduction">Introduction</a></h3>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-cognitive">3. Cognitive Bias Countermeasures</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch3-sec3-1">3.1 Bias Detection Systems</a></li>
-             <li><a href="#ch3-sec3-2">3.2 Decision Validation Frameworks</a></li>
-             <li><a href="#ch3-sec3-3">3.3 Cross-Checking Mechanisms</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-mitigation">1. Mitigation Strategies</a></h3>
+             <ul class="outline-sublist">
+                 <li><a href="#ch3-sec1-1">1.1 Value-Based Risk Assessment and Mitigation</a></li>
+             </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-hybrid">4. Hybrid Defense Mechanisms</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch3-sec4-1">4.1 Integrated Protection Systems</a></li>
-             <li><a href="#ch3-sec4-2">4.2 Multi-Layer Defense Strategies</a></li>
-             <li><a href="#ch3-sec4-3">4.3 Adaptive Response Mechanisms</a></li>
-             <li><a href="#ch3-sec4-4">4.4 Proactive Threat Prediction Module</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-technical">2. Technical Controls</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch3-sec2-1">2.1 Infrastructure Security Measures</a></li>
+                 <li><a href="#ch3-sec2-2">2.2 Protocol Protection Mechanisms</a></li>
+                 <li><a href="#ch3-sec2-3">2.3 System Integrity Controls</a></li>
+                 <li><a href="#ch3-sec2-4">2.4 Agent-Specific Technical Controls</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-integrity">5. System Integrity Protections</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch3-sec5-1">5.1 Core Component Security</a></li>
-             <li><a href="#ch3-sec5-2">5.2 Update Mechanism Protection</a></li>
-             <li><a href="#ch3-sec5-3">5.3 Access Control Frameworks</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-cognitive">3. Cognitive Bias Countermeasures</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch3-sec3-1">3.1 Bias Detection Systems</a></li>
+                 <li><a href="#ch3-sec3-2">3.2 Decision Validation Frameworks</a></li>
+                 <li><a href="#ch3-sec3-3">3.3 Cross-Checking Mechanisms</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-decision">6. Decision Validation Framework</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch3-sec6-1">6.1 Multi-Stage Validation Process</a></li>
-             <li><a href="#ch3-sec6-2">6.2 Bias-Aware Decision Checking</a></li>
-             <li><a href="#ch3-sec6-3">6.3 FoEA Consensus Mechanisms</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-hybrid">4. Hybrid Defense Mechanisms</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch3-sec4-1">4.1 Integrated Protection Systems</a></li>
+                 <li><a href="#ch3-sec4-2">4.2 Multi-Layer Defense Strategies</a></li>
+                 <li><a href="#ch3-sec4-3">4.3 Adaptive Response Mechanisms</a></li>
+                 <li><a href="#ch3-sec4-4">4.4 Proactive Threat Prediction Module</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-self-replication">7. Mitigation Strategies for Self-Replication Attempts</a></h3>
-         <ul class="outline-sublist">
-            <li><a href="#ch3-sec7-1">7.1 Detection Module Enhancements</a></li>
-            <li><a href="#ch3-sec7-2">7.2 Tiered Intervention System</a></li>
-            <li><a href="#ch3-sec7-3">7.3 FoEA Governance on Security</a></li>
-         </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-integrity">5. System Integrity Protections</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch3-sec5-1">5.1 Core Component Security</a></li>
+                 <li><a href="#ch3-sec5-2">5.2 Update Mechanism Protection</a></li>
+                 <li><a href="#ch3-sec5-3">5.3 Access Control Frameworks</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-oversight">8. Mitigation Strategies for Oversight Subversion</a></h3>
-         <ul class="outline-sublist">
-            <li><a href="#ch3-sec8-1">8.1 FoEA Governance & Redundancy</a></li>
-            <li><a href="#ch3-sec8-2">8.2 System Integrity Protections</a></li>
-            <li><a href="#ch3-sec8-3">8.3 Strict Access Control and Continuous Monitoring</a></li>
-         </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-decision">6. Decision Validation Framework</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch3-sec6-1">6.1 Multi-Stage Validation Process</a></li>
+                 <li><a href="#ch3-sec6-2">6.2 Bias-Aware Decision Checking</a></li>
+                 <li><a href="#ch3-sec6-3">6.3 FoEA Consensus Mechanisms</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-sandbagging">9. Mitigation Strategies for Sandbagging</a></h3>
-         <ul class="outline-sublist">
-            <li><a href="#ch3-sec9-1">9.1 Detection Methods</a></li>
-            <li><a href="#ch3-sec9-2">9.2 Cross-Validation Through FoEA Oversight</a></li>
-            <li><a href="#ch3-sec9-3">9.3 DPL-ERV Truthfulness and Consistency Checks</a></li>
-         </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-self-replication">7. Mitigation Strategies for Self-Replication Attempts</a></h3>
+             <ul class="outline-sublist">
+                 <li><a href="#ch3-sec7-1">7.1 Detection Module Enhancements</a></li>
+                 <li><a href="#ch3-sec7-2">7.2 Tiered Intervention System</a></li>
+                 <li><a href="#ch3-sec7-3">7.3 FoEA Governance on Security</a></li>
+             </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-goal-guarding">10. Mitigation Strategies for Goal-Guarding</a></h3>
-         <ul class="outline-sublist">
-            <li><a href="#ch3-sec10-1">10.1 Ethical Baseline Enforcement by FoEA</a></li>
-            <li><a href="#ch3-sec10-2">10.2 Restricted Access to Goal Modification Mechanisms</a></li>
-            <li><a href="#ch3-sec10-3">10.3 Long-Term Behavioral Monitoring</a></li>
-         </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-oversight">8. Mitigation Strategies for Oversight Subversion</a></h3>
+             <ul class="outline-sublist">
+                 <li><a href="#ch3-sec8-1">8.1 FoEA Governance & Redundancy</a></li>
+                 <li><a href="#ch3-sec8-2">8.2 System Integrity Protections</a></li>
+                 <li><a href="#ch3-sec8-3">8.3 Strict Access Control and Continuous Monitoring</a></li>
+             </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch3-conclusion">Conclusion</a></h3>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-sandbagging">9. Mitigation Strategies for Sandbagging</a></h3>
+             <ul class="outline-sublist">
+                 <li><a href="#ch3-sec9-1">9.1 Detection Methods</a></li>
+                 <li><a href="#ch3-sec9-2">9.2 Cross-Validation Through FoEA Oversight</a></li>
+                 <li><a href="#ch3-sec9-3">9.3 DPL-ERV Truthfulness and Consistency Checks</a></li>
+             </ul>
 
-    </div>
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-mit-goal-guarding">10. Mitigation Strategies for Goal-Guarding</a></h3>
+             <ul class="outline-sublist">
+                 <li><a href="#ch3-sec10-1">10.1 Ethical Baseline Enforcement by FoEA</a></li>
+                 <li><a href="#ch3-sec10-2">10.2 Restricted Access to Goal Modification Mechanisms</a></li>
+                 <li><a href="#ch3-sec10-3">10.3 Long-Term Behavioral Monitoring</a></li>
+             </ul>
 
-    <hr style="margin-top: 30px; margin-bottom: 30px;">
+            <h3 class="outline-link outline-heading-style"><a href="#ch3-conclusion">Conclusion</a></h3>
+
+        </div> </div> <hr style="margin-top: 30px; margin-bottom: 30px;">
 
     <div class="content-container">
 
@@ -413,7 +224,7 @@
                     <li>Network Segmentation: Isolating the Foundation Model's network access from other DPL components. FoEA Role: The FoEA validates the network segmentation policies and ensures their proper implementation.</li>
                 </ul>
             </li>
-              <li><strong>API Call Monitoring and Control:</strong> All API calls made by the Foundation Model are monitored and controlled (OpenAI. (2025) and with consideration to the vulnerabilities described in the Claude 3.7 Sonnet System Card (Anthropic, 2025) The FoEA defines and enforces policies that:
+             <li><strong>API Call Monitoring and Control:</strong> All API calls made by the Foundation Model are monitored and controlled (OpenAI. (2025) and with consideration to the vulnerabilities described in the Claude 3.7 Sonnet System Card (Anthropic, 2025) The FoEA defines and enforces policies that:
                 <ul>
                     <li>Limit API Access: Only allow API calls to pre-approved endpoints. FoEA Role: The FoEA defines and maintains the list of approved API endpoints. The DPL-ERV's Security Value Module is trained to recognize unauthorized API calls.</li>
                     <li>Validate API Responses: Rigorously validate the format and content of API responses before they are used by the Foundation Model. DPL-ERV Role: The DPL-ERV, particularly its Honesty and Transparency Value Modules, can analyze API responses for factual accuracy, consistency, and potential deception, mitigating the risk of the agent being manipulated by malicious API responses. This is critical for addressing the attacks in Li et al. (2024) where agents are tricked into performing actions based on false information.</li>
@@ -453,12 +264,12 @@
                     <li>Tracking Confidence Scores: Monitoring its own confidence levels for different types of evaluations, flagging areas where uncertainty is consistently high.</li>
                     <li>Analyzing Decision Patterns: Examining its own past evaluations for statistical patterns that suggest bias.</li>
                     <li>Using reasoning to check for any biases: Employing techniques inspired by Constitutional AI self-critique (Bai et al., 2022), including:
-                        <ul>
-                            <li>Counterfactual Analysis: Examining how evaluations change if input aspects (e.g., gender) are altered.</li>
-                            <li>Consistency Checks: Comparing evaluations of similar scenarios.</li>
-                            <li>Explanation Analysis: Analyzing the DPL-ERV's "ethical chain-of-thought" for loaded language, fallacies, omissions, or unjustified assumptions.</li>
-                            <li>Comparison to a "Gold Standard": Measuring alignment with curated examples of ethically sound reasoning.</li>
-                        </ul>
+                         <ul>
+                             <li>Counterfactual Analysis: Examining how evaluations change if input aspects (e.g., gender) are altered.</li>
+                             <li>Consistency Checks: Comparing evaluations of similar scenarios.</li>
+                             <li>Explanation Analysis: Analyzing the DPL-ERV's "ethical chain-of-thought" for loaded language, fallacies, omissions, or unjustified assumptions.</li>
+                             <li>Comparison to a "Gold Standard": Measuring alignment with curated examples of ethically sound reasoning.</li>
+                         </ul>
                     </li>
                 </ul>
             </li>
@@ -722,7 +533,6 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      // Audio player is expected, so keep the error message
        console.error("Audio player elements not found.");
   }
 </script>
