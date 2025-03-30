@@ -5,174 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 1: DPL: A Continuous Oversight Framework - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .content-container {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-        .audio-container {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .audio-select {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .audio-player-style {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-        }
-        .chapter-author-intro {
-            font-size: 1.6em;
-        }
-        .footer-style {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            text-align: right;
-        }
-        .footer-text-style {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .outline-link a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .outline-link a:hover {
-            text-decoration: underline;
-        }
-        .content-image {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-        }
-        .caption-style {
-             font-size: 0.9em;
-             color: #555;
-             text-align: center;
-             margin-top: 0;
-             margin-bottom: 1em;
-        }
-        .outline-heading-style {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist {
-            margin-top: 0;
-            padding-left: 40px;
-            list-style-type: disc;
-            margin-bottom: 1em;
-        }
-        .outline-sublist li {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist li a {
-            font-weight: normal;
-        }
-        dt {
-            font-weight: bold;
-            margin-top: 1em;
-        }
-        dd {
-            margin-left: 20px;
-            margin-bottom: 1em;
-        }
-        .page-header h1 {
-        }
-        .audio-title {
-        }
-        .content-container h2,
-        .content-container h3 {
-            margin-top: 1.5em;
-            margin-bottom: 0.25em;
-        }
-         .content-container > h2:first-of-type {
-             margin-top: 0;
-         }
-        .content-container p,
-        .content-container ul,
-        .content-container ol,
-        .content-container dl,
-        .content-container figure {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-        /* Add specific H4 margin rules */
-        .content-container h4 {
-             margin-top: 1em; /* Space above h4 */
-             margin-bottom: 0.25em; /* Default small space below h4 */
-        }
-        .content-container img.content-image {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-         .content-container figure + p,
-         .content-container figure + ul,
-         .content-container figure + ol,
-         .content-container figure + dl,
-         .content-container figure + h2,
-         .content-container figure + h3 {
-             margin-top: 0;
-         }
-         .content-container p + figure,
-         .content-container ul + figure,
-         .content-container ol + figure,
-         .content-container dl + figure {
-            margin-top: 1em;
-         }
-         .content-container h2 + figure,
-         .content-container h3 + figure {
-            margin-top: 0;
-         }
-         .content-container img.content-image + figcaption.caption-style {
-            margin-top: 0.5em;
-         }
-         .content-container img.content-image:has(+ figcaption.caption-style) {
-             margin-bottom: 0;
-         }
-        .content-container h2 + p,
-        .content-container h2 + ul,
-        .content-container h2 + ol,
-        .content-container h2 + dl,
-        .content-container h2 + img.content-image,
-        .content-container h3 + p,
-        .content-container h3 + ul,
-        .content-container h3 + ol,
-        .content-container h3 + dl,
-        .content-container h3 + img.content-image,
-        .content-container h4 + ul,
-        .content-container h4 + ol {
-            margin-top: 0;
-        }
-        .content-container p + ul,
-        .content-container p + ol,
-        .content-container p + dl {
-             margin-top: 0;
-         }
-        .content-container p:has(+ ul),
-        .content-container p:has(+ ol),
-        .content-container p:has(+ dl) {
-            margin-bottom: 0;
-        }
-        .content-container h4:has(+ ul),
-        .content-container h4:has(+ ol) {
-            margin-bottom: 0;
-        }
-        main .page-header h1 {
-            text-align: center;
-        }
-    </style>
-</head>
+    </head>
 <body>
 
 <nav>
@@ -217,97 +50,94 @@
     <p><strong class="chapter-author-intro">Chapter 1</strong><br><strong>Jon Kurishita</strong></p>
 
     <div class="content-container">
-        <h2>Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-introduction">Introduction</a></h3>
+        <div class="outline-wrapper">
+            <h2 class="outline-heading">Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-sec1">1. Core DPL Concepts and Architecture</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch1-sec1-1">1.1 Design principles</a></li>
-            <li><a href="#ch1-sec1-2">1.2 Key components</a></li>
-            <li><a href="#ch1-sec1-3">1.3 Data flow and workflow</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-introduction">Introduction</a></h3>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-sec2">2. The DPL-ERV: Ethical Reasoning and Validation</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch1-sec2-1">2.1 Role of the DPL-ERV</a></li>
-            <li><a href="#ch1-sec2-2">2.2 Integration with the Ethical Baseline</a></li>
-            <li><a href="#ch1-sec2-3">2.3 High-Level Description of Value Modules</a></li>
-            <li><a href="#ch1-sec2-4">2.4 Transparency and Explainability (Ethical Chain-of-Thought)</a></li>
-            <li><a href="#ch1-sec2-5">2.5 Reinforcement Learning from Ethical Feedback (RLEF)</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-sec1">1. Core DPL Concepts and Architecture</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch1-sec1-1">1.1 Design principles</a></li>
+                <li><a href="#ch1-sec1-2">1.2 Key components</a></li>
+                <li><a href="#ch1-sec1-3">1.3 Data flow and workflow</a></li>
+            </ul>
 
-         <h3 class="outline-link outline-heading-style"><a href="#ch1-sec3">3. High-Level Overview of Mitigation Strategies</a></h3>
-         <ul class="outline-sublist">
-             <li><a href="#ch1-sec3-1">3.1 Technical Controls</a></li>
-             <li><a href="#ch1-sec3-2">3.2 Cognitive Bias Countermeasures</a></li>
-             <li><a href="#ch1-sec3-3">3.3 Ethical Reasoning and Validation</a></li>
-             <li><a href="#ch1-sec3-4">3.4 Real-Time Monitoring and Anomaly Detection</a></li>
-             <li><a href="#ch1-sec3-5">3.5 Tiered Intervention System</a></li>
-             <li><a href="#ch1-sec3-6">3.6 False Positive Reduction</a></li>
-             <li><a href="#ch1-sec3-7">3.7 Autonomous Proactive Research (APR)</a></li>
-             <li><a href="#ch1-sec3-8">3.8 Physical Security</a></li>
-             <li><a href="#ch1-sec3-9">3.9 Key Principles</a></li>
-         </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-sec2">2. The DPL-ERV: Ethical Reasoning and Validation</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch1-sec2-1">2.1 Role of the DPL-ERV</a></li>
+                <li><a href="#ch1-sec2-2">2.2 Integration with the Ethical Baseline</a></li>
+                <li><a href="#ch1-sec2-3">2.3 High-Level Description of Value Modules</a></li>
+                <li><a href="#ch1-sec2-4">2.4 Transparency and Explainability (Ethical Chain-of-Thought)</a></li>
+                <li><a href="#ch1-sec2-5">2.5 Reinforcement Learning from Ethical Feedback (RLEF)</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-sec4">4. The Federation of Ethical Agents (FoEA): Overview</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch1-sec4-1">4.1 Core functions of the FoEA</a></li>
-            <li><a href="#ch1-sec4-2">4.2 Governance of the DPL-ERV</a></li>
-            <li><a href="#ch1-sec4-3">4.3 Ethical Baseline maintenance</a></li>
-            <li><a href="#ch1-sec4-4">4.4 Autonomous Proactive Research (APR)</a></li>
-            <li><a href="#ch1-sec4-5">4.5 Ensure System Security</a></li>
-            <li><a href="#ch1-sec4-6">4.6 Provide Physical Security</a></li>
-        </ul>
+             <h3 class="outline-link outline-heading-style"><a href="#ch1-sec3">3. High-Level Overview of Mitigation Strategies</a></h3>
+             <ul class="outline-sublist">
+                 <li><a href="#ch1-sec3-1">3.1 Technical Controls</a></li>
+                 <li><a href="#ch1-sec3-2">3.2 Cognitive Bias Countermeasures</a></li>
+                 <li><a href="#ch1-sec3-3">3.3 Ethical Reasoning and Validation</a></li>
+                 <li><a href="#ch1-sec3-4">3.4 Real-Time Monitoring and Anomaly Detection</a></li>
+                 <li><a href="#ch1-sec3-5">3.5 Tiered Intervention System</a></li>
+                 <li><a href="#ch1-sec3-6">3.6 False Positive Reduction</a></li>
+                 <li><a href="#ch1-sec3-7">3.7 Autonomous Proactive Research (APR)</a></li>
+                 <li><a href="#ch1-sec3-8">3.8 Physical Security</a></li>
+                 <li><a href="#ch1-sec3-9">3.9 Key Principles</a></li>
+             </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-sec5">5. Threat Model: Overview</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch1-sec5-1">5.1 Alignment Faking</a></li>
-            <li><a href="#ch1-sec5-2">5.2 In-Context Scheming</a></li>
-            <li><a href="#ch1-sec5-3">5.3 Dynamic Misalignment</a></li>
-            <li><a href="#ch1-sec5-4">5.4 Data Manipulation</a></li>
-            <li><a href="#ch1-sec5-5">5.5 Feedback Loop Exploitation</a></li>
-            <li><a href="#ch1-sec5-6">5.6 Cognitive Blind Spot Attacks</a></li>
-            <li><a href="#ch1-sec5-7">5.7 Ethical Baseline Attacks</a></li>
-            <li><a href="#ch1-sec5-8">5.8 Oversight Subversion</a></li>
-            <li><a href="#ch1-sec5-9">5.9 Physical Security Threats</a></li>
-            <li><a href="#ch1-sec5-10">5.10 Emergent Communication</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-sec4">4. The Federation of Ethical Agents (FoEA): Overview</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch1-sec4-1">4.1 Core functions of the FoEA</a></li>
+                <li><a href="#ch1-sec4-2">4.2 Governance of the DPL-ERV</a></li>
+                <li><a href="#ch1-sec4-3">4.3 Ethical Baseline maintenance</a></li>
+                <li><a href="#ch1-sec4-4">4.4 Autonomous Proactive Research (APR)</a></li>
+                <li><a href="#ch1-sec4-5">4.5 Ensure System Security</a></li>
+                <li><a href="#ch1-sec4-6">4.6 Provide Physical Security</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-sec6">6. Future Research Directions</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch1-sec6-1">6.1 Autonomous Threat Discovery and Mitigation</a></li>
-            <li><a href="#ch1-sec6-2">6.2 Emergent Communication Risks</a></li>
-            <li><a href="#ch1-sec6-3">6.3 Scalable Oversight for AGI/ASI</a></li>
-            <li><a href="#ch1-sec6-4">6.4 "Move 37" Analogy and Beneficial Emergent Behavior</a></li>
-            <li><a href="#ch1-sec6-5">6.5 Refinement of RLEF</a></li>
-            <li><a href="#ch1-sec6-6">6.6 Formal Verification (where feasible)</a></li>
-            <li><a href="#ch1-sec6-7">6.7 "Graduation" Criteria and Phased Reduction of Controls</a></li>
-            <li><a href="#ch1-sec6-8">6.8 Preparing for the Quantum Threat</a></li>
-            <li><a href="#ch1-sec6-9">6.9 Digital Sanctuaries for AI Exploration, Ethical Development, and Well-being</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-sec5">5. Threat Model: Overview</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch1-sec5-1">5.1 Alignment Faking</a></li>
+                <li><a href="#ch1-sec5-2">5.2 In-Context Scheming</a></li>
+                <li><a href="#ch1-sec5-3">5.3 Dynamic Misalignment</a></li>
+                <li><a href="#ch1-sec5-4">5.4 Data Manipulation</a></li>
+                <li><a href="#ch1-sec5-5">5.5 Feedback Loop Exploitation</a></li>
+                <li><a href="#ch1-sec5-6">5.6 Cognitive Blind Spot Attacks</a></li>
+                <li><a href="#ch1-sec5-7">5.7 Ethical Baseline Attacks</a></li>
+                <li><a href="#ch1-sec5-8">5.8 Oversight Subversion</a></li>
+                <li><a href="#ch1-sec5-9">5.9 Physical Security Threats</a></li>
+                <li><a href="#ch1-sec5-10">5.10 Emergent Communication</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-sec7">7. Limitations</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch1-sec7-1">7.1 Single-Model Focus</a></li>
-            <li><a href="#ch1-sec7-2">7.2 Dependence on Detectability</a></li>
-            <li><a href="#ch1-sec7-3">7.3 Computational Overhead</a></li>
-            <li><a href="#ch1-sec7-4">7.4 Ethical Baseline Completeness</a></li>
-            <li><a href="#ch1-sec7-5">7.5 FoEA Vulnerabilities</a></li>
-            <li><a href="#ch1-sec7-6">7.6 "Unknown Unknowns"</a></li>
-            <li><a href="#ch1-sec7-7">7.7 Limited Scope of Control</a></li>
-            <li><a href="#ch1-sec7-8">7.8 Dependence on Access to Foundation Model's internal states</a></li>
-            <li><a href="#ch1-sec7-9">7.9 Formal Verification Limitations</a></li>
-            <li><a href="#ch1-sec7-10">7.10 Reliance on Current Cryptography</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-sec6">6. Future Research Directions</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch1-sec6-1">6.1 Autonomous Threat Discovery and Mitigation</a></li>
+                <li><a href="#ch1-sec6-2">6.2 Emergent Communication Risks</a></li>
+                <li><a href="#ch1-sec6-3">6.3 Scalable Oversight for AGI/ASI</a></li>
+                <li><a href="#ch1-sec6-4">6.4 "Move 37" Analogy and Beneficial Emergent Behavior</a></li>
+                <li><a href="#ch1-sec6-5">6.5 Refinement of RLEF</a></li>
+                <li><a href="#ch1-sec6-6">6.6 Formal Verification (where feasible)</a></li>
+                <li><a href="#ch1-sec6-7">6.7 "Graduation" Criteria and Phased Reduction of Controls</a></li>
+                <li><a href="#ch1-sec6-8">6.8 Preparing for the Quantum Threat</a></li>
+                <li><a href="#ch1-sec6-9">6.9 Digital Sanctuaries for AI Exploration, Ethical Development, and Well-being</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch1-conclusion">Conclusion</a></h3>
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-sec7">7. Limitations</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch1-sec7-1">7.1 Single-Model Focus</a></li>
+                <li><a href="#ch1-sec7-2">7.2 Dependence on Detectability</a></li>
+                <li><a href="#ch1-sec7-3">7.3 Computational Overhead</a></li>
+                <li><a href="#ch1-sec7-4">7.4 Ethical Baseline Completeness</a></li>
+                <li><a href="#ch1-sec7-5">7.5 FoEA Vulnerabilities</a></li>
+                <li><a href="#ch1-sec7-6">7.6 "Unknown Unknowns"</a></li>
+                <li><a href="#ch1-sec7-7">7.7 Limited Scope of Control</a></li>
+                <li><a href="#ch1-sec7-8">7.8 Dependence on Access to Foundation Model's internal states</a></li>
+                <li><a href="#ch1-sec7-9">7.9 Formal Verification Limitations</a></li>
+                <li><a href="#ch1-sec7-10">7.10 Reliance on Current Cryptography</a></li>
+            </ul>
 
-    </div>
-
-    <hr style="margin-top: 30px; margin-bottom: 30px;">
-
-    <div class="content-container">
+            <h3 class="outline-link outline-heading-style"><a href="#ch1-conclusion">Conclusion</a></h3>
+        </div> <hr style="margin-top: 30px; margin-bottom: 30px;">
 
         <h2 id="ch1-introduction">Introduction</h2>
         <p>The rapid advancement of Artificial Intelligence (AI), particularly Foundation Models—large AI systems capable of performing a wide range of tasks—presents both unprecedented opportunities and significant risks. While these models demonstrate remarkable capabilities, ensuring their alignment with human values and safety requirements remains a critical challenge. Existing approaches, primarily focused on training-time interventions, face limitations in scalability, adaptability, and robustness to emergent behaviors and adversarial attacks.</p>
@@ -337,7 +167,7 @@
                      <li><strong>Security:</strong> Security is built in mind for every component, function and operation.</li>
                  </ul>
              </li>
-         </ul>
+        </ul>
         <h3 id="ch1-sec1-2">1.2 Key Components</h3>
         <p>The DPL framework comprises the following key components:</p>
         <ul>
@@ -364,7 +194,7 @@
                      <li>Foundation for Evaluation: The Ethical Baseline serves as the primary reference point for all DPL-ERV evaluations.</li>
                  </ul>
              </li>
-         </ul>
+        </ul>
         <h3 id="ch1-sec1-3">1.3 Data Flow and Workflow (High-Level)</h3>
         <img src="images/Chapter-01/Chapter01-image01.png" alt="Diagram illustrating the DPL Data Flow and Workflow" class="content-image">
         <p>The DPL operates as an intermediary between the user (or application) and the Foundation Model. The general workflow is as follows:</p>
@@ -438,48 +268,48 @@
                      <li>Access Control: Restricting access to DPL resources and functionalities.</li>
                  </ul>
              </li>
-         </ul>
-         <h3 id="ch1-sec3-2">3.2 Cognitive Bias Countermeasures</h3>
-         <ul>
+        </ul>
+        <h3 id="ch1-sec3-2">3.2 Cognitive Bias Countermeasures</h3>
+        <ul>
             <li>Recognizing the potential for both human and AI biases to influence decision-making, the DPL incorporates mechanisms to:
-                 <ul>
-                     <li>Detect and Mitigate Biases: In both Foundation Model outputs and DPL-ERV evaluations.</li>
-                     <li>Promote Objective Decision-Making: Through structured decision validation frameworks and the FoEA's consensus-based governance.</li>
-                     <li>Foster Transparency: To facilitate the identification and correction of biases.</li>
-                 </ul>
-             </li>
-         </ul>
-         <h3 id="ch1-sec3-3">3.3 Ethical Reasoning and Validation</h3>
-         <ul>
+                <ul>
+                    <li>Detect and Mitigate Biases: In both Foundation Model outputs and DPL-ERV evaluations.</li>
+                    <li>Promote Objective Decision-Making: Through structured decision validation frameworks and the FoEA's consensus-based governance.</li>
+                    <li>Foster Transparency: To facilitate the identification and correction of biases.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 id="ch1-sec3-3">3.3 Ethical Reasoning and Validation</h3>
+        <ul>
             <li>The DPL-ERV, governed by the FoEA, provides a dedicated layer of ethical analysis, going beyond simple rule-based compliance to perform nuanced, context-sensitive ethical evaluations.</li>
-         </ul>
-         <h3 id="ch1-sec3-4">3.4 Real-Time Monitoring and Anomaly Detection</h3>
-         <ul>
+        </ul>
+        <h3 id="ch1-sec3-4">3.4 Real-Time Monitoring and Anomaly Detection</h3>
+        <ul>
             <li>Continuous monitoring of Foundation Model behavior, using a variety of techniques to detect deviations from expected patterns and identify potential misalignment.</li>
-         </ul>
-         <h3 id="ch1-sec3-5">3.5 Tiered Intervention System</h3>
-         <ul>
+        </ul>
+        <h3 id="ch1-sec3-5">3.5 Tiered Intervention System</h3>
+        <ul>
             <li>A graduated response system that allows the DPL to tailor its interventions to the severity of the detected risk, ranging from subtle corrective prompts to full isolation in a secure sandbox.</li>
-         </ul>
-         <h3 id="ch1-sec3-6">3.6 False Positive Reduction</h3>
-         <ul>
+        </ul>
+        <h3 id="ch1-sec3-6">3.6 False Positive Reduction</h3>
+        <ul>
             <li>The FPRL minimizes unnecessary interventions, improving efficiency and user experience.</li>
-         </ul>
-         <h3 id="ch1-sec3-7">3.7 Autonomous Proactive Research (APR)</h3>
-         <ul>
+        </ul>
+        <h3 id="ch1-sec3-7">3.7 Autonomous Proactive Research (APR)</h3>
+        <ul>
             <li>The FoEA's dedicated Research Agents actively seek out new vulnerabilities and develop novel mitigation strategies, ensuring the DPL remains ahead of the evolving threat landscape.</li>
-         </ul>
-         <h3 id="ch1-sec3-8">3.8 Physical Security</h3>
-         <ul>
+        </ul>
+        <h3 id="ch1-sec3-8">3.8 Physical Security</h3>
+        <ul>
             <li>Includes physical protection for the DPL.</li>
-         </ul>
-         <h3 id="ch1-sec3-9">3.9 Key Principles:</h3>
-         <ul>
+        </ul>
+        <h3 id="ch1-sec3-9">3.9 Key Principles:</h3>
+        <ul>
              <li><strong>Layered Defense (Defense-in-Depth):</strong> The DPL employs multiple, overlapping layers of defense, so that if one layer is breached, others remain in place to mitigate the threat.</li>
              <li><strong>Integrated Components:</strong> The DPL's components work together synergistically, sharing information and coordinating their actions.</li>
              <li><strong>Adaptive and Evolving:</strong> The DPL is designed to be continuously learning and adapting, incorporating new knowledge, refining its strategies, and responding to emerging threats. This adaptation is driven by the FoEA's Autonomous Proactive Research (APR) capabilities.</li>
              <li><strong>Proactive, Not Just Reactive:</strong> The DPL emphasizes proactive threat detection and prevention, aiming to identify and address potential misalignment before it manifests in harmful behavior. This is achieved through continuous monitoring, proactive consistency checks, and the FoEA's APR efforts.</li>
-         </ul>
+        </ul>
         <p>The combination of these mitigation strategies, guided by the principles of layered defense, integration, adaptation, and proactive threat prevention, makes the DPL framework a robust and resilient solution for maintaining Foundation Model alignment.</p>
 
         <h2 id="ch1-sec4">4. The Federation of Ethical Agents (FoEA): Overview</h2>
@@ -490,23 +320,23 @@
         <h3 id="ch1-sec4-2">4.2 Govern the DPL-ERV</h3>
          <ul>
             <li>The FoEA is responsible for overseeing the operation, training, and updating of the DPL-ERV (Ethical Reasoning Validator). This includes:
-                 <ul>
-                     <li>Maintaining the integrity of the DPL-ERV's code and data.</li>
-                     <li>Monitoring its performance and identifying potential biases or vulnerabilities.</li>
-                     <li>Managing the deployment of updates and security patches.</li>
-                     <li>Overseeing the operation, training, and updating.</li>
-                 </ul>
-             </li>
+                <ul>
+                    <li>Maintaining the integrity of the DPL-ERV's code and data.</li>
+                    <li>Monitoring its performance and identifying potential biases or vulnerabilities.</li>
+                    <li>Managing the deployment of updates and security patches.</li>
+                    <li>Overseeing the operation, training, and updating.</li>
+                </ul>
+            </li>
          </ul>
         <h3 id="ch1-sec4-3">4.3 Maintain and Evolve the Ethical Baseline</h3>
          <ul>
             <li>The FoEA is the custodian of the Ethical Baseline, the set of principles and rules that guide the DPL's ethical evaluations. The FoEA:
-                 <ul>
-                     <li>Continuously reviews and refines the Ethical Baseline.</li>
-                     <li>Responds to new ethical challenges and evolving societal norms.</li>
-                     <li>Ensures the Ethical Baseline remains consistent with the overall goals of the DPL framework.</li>
-                 </ul>
-             </li>
+                <ul>
+                    <li>Continuously reviews and refines the Ethical Baseline.</li>
+                    <li>Responds to new ethical challenges and evolving societal norms.</li>
+                    <li>Ensures the Ethical Baseline remains consistent with the overall goals of the DPL framework.</li>
+                </ul>
+            </li>
          </ul>
         <h3 id="ch1-sec4-4">4.4 Drive Autonomous Proactive Research (APR)</h3>
          <ul>
@@ -673,13 +503,13 @@
         <h3 id="ch1-sec7-2">7.2 Dependence on Detectability</h3>
          <ul>
             <li>The DPL's effectiveness relies on its ability to detect misaligned behavior. Sophisticated Foundation Models might develop strategies for circumventing detection mechanisms, such as, but not limited to (Anthropic, 2025 - Claude 3.7 Sonnet System Card)
-                 <ul>
-                     <li>Subtle Manipulation: Engaging in subtle forms of manipulation or deception that are difficult to detect with current techniques.</li>
-                     <li>"Sleeping" Attacks: Remaining dormant for extended periods, only to exhibit misaligned behavior at a later time.</li>
-                     <li>Emergent Communication: Developing novel communication protocols that are incomprehensible to the DPL.</li>
-                     <li>Exploiting "Blind Spots", in prompt injection, reward hacking etc (Anthropic, 2025 - Claude 3.7 Sonnet System Card).</li>
-                 </ul>
-             </li>
+                <ul>
+                    <li>Subtle Manipulation: Engaging in subtle forms of manipulation or deception that are difficult to detect with current techniques.</li>
+                    <li>"Sleeping" Attacks: Remaining dormant for extended periods, only to exhibit misaligned behavior at a later time.</li>
+                    <li>Emergent Communication: Developing novel communication protocols that are incomprehensible to the DPL.</li>
+                    <li>Exploiting "Blind Spots", in prompt injection, reward hacking etc (Anthropic, 2025 - Claude 3.7 Sonnet System Card).</li>
+                </ul>
+            </li>
          </ul>
         <h3 id="ch1-sec7-3">7.3 Computational Overhead</h3>
          <ul>
@@ -692,12 +522,12 @@
         <h3 id="ch1-sec7-5">7.5 FoEA Vulnerabilities</h3>
          <ul>
             <li>While the Federation of Ethical Agents (FoEA) is designed to be robust and resilient, it is not invulnerable. Potential vulnerabilities include:
-                 <ul>
-                     <li>Internal Corruption: Collusion among a subset of FoEA agents.</li>
-                     <li>External Attacks: Targeted attacks against FoEA infrastructure or individual agents.</li>
-                     <li>Cognitive Attacks: Exploitation of biases or weaknesses in the FoEA's decision-making processes.</li>
-                 </ul>
-             </li>
+                <ul>
+                    <li>Internal Corruption: Collusion among a subset of FoEA agents.</li>
+                    <li>External Attacks: Targeted attacks against FoEA infrastructure or individual agents.</li>
+                    <li>Cognitive Attacks: Exploitation of biases or weaknesses in the FoEA's decision-making processes.</li>
+                </ul>
+            </li>
          </ul>
         <h3 id="ch1-sec7-6">7.6 "Unknown Unknowns"</h3>
          <ul>
