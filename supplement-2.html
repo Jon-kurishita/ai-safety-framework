@@ -6,41 +6,40 @@
     <title>Supplement #2: Case studies for the DPL framework - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
 
-
     <style>
         html {
             scroll-behavior: smooth;
         }
         .content-container {
-             max-width: 800px;
-             margin-left: auto;
-             margin-right: auto;
-             padding-left: 20px;
-             padding-right: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-         .audio-container {
-             text-align: center;
-             margin-bottom: 10px;
+        .audio-container {
+            text-align: center;
+            margin-bottom: 10px;
         }
         .audio-select {
-             padding: 8px;
-             border-radius: 5px;
-             border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         .audio-player-style {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
         .chapter-author-intro {
-             font-size: 1.6em;
+            font-size: 1.6em;
         }
-       .footer-style {
-             margin-top: 50px;
-             padding-top: 20px;
-             border-top: 1px solid #ccc;
-             text-align: right;
+        .footer-style {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: right;
         }
         .footer-text-style {
             font-size: 0.9em;
@@ -63,39 +62,41 @@
         .toc-list strong {
             margin-right: 0.5em;
         }
+        .outline-heading {
+             text-align: center;
+        }
         .case-study-content h2 {
             margin-top: 2.5em;
             border-bottom: 1px solid #ccc;
             padding-bottom: 0.3em;
-            margin-bottom: 0.5em; /* Reduced margin */
+            margin-bottom: 0.5em;
+            text-align: center;
         }
         .case-study-content h3 {
             margin-top: 2em;
-            margin-bottom: 0.25em; /* Reduced margin */
+            margin-bottom: 0.25em;
         }
-         .case-study-content h4 {
+        .case-study-content h4 {
             margin-top: 1.5em;
-            margin-bottom: 0.1em; /* Reduced margin */
+            margin-bottom: 0.1em;
         }
-        /* Reduce top margin for elements directly following headings */
         .case-study-content h2 + p, .case-study-content h2 + ul,
         .case-study-content h3 + p, .case-study-content h3 + ul,
         .case-study-content h4 + p, .case-study-content h4 + ul {
-            margin-top: 0.25em; /* Adjust as needed for desired minimal space */
+            margin-top: 0.25em;
         }
         .case-study-content .citation + h3,
         .case-study-content p + h3,
         .case-study-content ul + h3,
         .case-study-content blockquote + h3 {
-             margin-top: 2em; /* Keep original top margin for headings not immediately after another */
+             margin-top: 2em;
         }
-         .case-study-content .citation + h4,
-         .case-study-content p + h4,
-         .case-study-content ul + h4,
-         .case-study-content blockquote + h4 {
-             margin-top: 1.5em; /* Keep original top margin for headings not immediately after another */
+        .case-study-content .citation + h4,
+        .case-study-content p + h4,
+        .case-study-content ul + h4,
+        .case-study-content blockquote + h4 {
+             margin-top: 1.5em;
         }
-
         dt {
             font-weight: bold;
             margin-top: 1em;
@@ -109,7 +110,7 @@
             border-left: 3px solid #ccc;
             padding-left: 15px;
             font-style: italic;
-            margin-top: 0.25em; /* Reduce space above blockquote */
+            margin-top: 0.25em;
             margin-bottom: 1em;
         }
         .citation {
@@ -118,11 +119,10 @@
             margin-top: 0.5em;
             margin-bottom: 1.5em;
         }
-       main .page-header h1 {
+        main .page-header h1 {
             text-align: center;
         }
     </style>
-
 
 </head>
 <body>
@@ -169,7 +169,7 @@
 
     <div class="content-container">
 
-        <h2>Outline</h2>
+        <h2 class="outline-heading">Outline</h2>
         <ul class="toc-list">
             <li><a href="#case1"><strong>Case Study 1:</strong> OWASP Top 10 for LLM Applications</a></li>
             <li><a href="#case2"><strong>Case Study 2:</strong> Monitoring Reasoning Models for Misbehavior</a></li>
