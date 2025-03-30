@@ -225,7 +225,10 @@
         font-size: 1em;
     }
     main .page-header {
-        margin-bottom: 15px; /* Restore some margin for small screens */
+        margin-bottom: 15px;
+    }
+    .audio-title {
+         margin-top: 15px; /* Add some top margin back on small screens */
     }
 }
 
@@ -233,7 +236,7 @@ body {
     font-family: sans-serif;
 }
 nav {
-    width: 480px; /* Increased width */
+    width: 480px;
     background-color: #f4f4f4;
     padding: 20px;
     position: fixed;
@@ -260,14 +263,14 @@ nav ul li a {
     display: block;
     padding: 8px;
     border-radius: 5px;
-    font-size: 0.9em; /* Kept reduced font size */
+    font-size: 0.9em;
 }
 nav ul li a:hover {
     background-color: #ddd;
 }
 main {
     padding: 20px;
-    margin-left: 480px; /* Matches new nav width */
+    margin-left: 480px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -293,13 +296,14 @@ main > .content-container {
 main .page-header {
     background: none;
     color: black;
-    margin-bottom: 5px; /* Reduced bottom margin */
+    margin-bottom: 5px; /* Kept small bottom margin */
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
 }
 main .page-header h1 {
     font-size: 2rem;
+    margin-top: 0; /* Explicitly remove top margin */
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -308,6 +312,7 @@ main .page-header h1 {
     font-size: 1em;
     color: darkblue;
     text-align: center;
+    margin-top: 0; /* Explicitly remove top margin */
     margin-bottom: 5px;
     width: 100%;
     max-width: 800px;
@@ -316,6 +321,7 @@ main .page-header h1 {
 
 .audio-container {
      text-align: center;
+     margin-top: 0; /* Remove default margin */
      margin-bottom: 10px;
      width: 100%;
      max-width: 800px;
@@ -329,6 +335,7 @@ main .page-header h1 {
 
 .audio-player-style {
     display: block;
+    margin-top: 0; /* Remove default margin */
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -348,7 +355,6 @@ main > hr:first-of-type {
     margin-bottom: 0.25em;
 }
 
-/* Style for the P tag containing author info, centered by main */
 main > p:has(> .chapter-author-intro) {
     width: 100%;
     max-width: 800px;
