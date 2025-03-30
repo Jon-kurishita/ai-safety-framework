@@ -10,35 +10,35 @@
             scroll-behavior: smooth;
         }
         .content-container {
-             max-width: 800px;
-             margin-left: auto;
-             margin-right: auto;
-             padding-left: 20px;
-             padding-right: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-         .audio-container {
-             text-align: center;
-             margin-bottom: 10px;
+        .audio-container {
+            text-align: center;
+            margin-bottom: 10px;
         }
         .audio-select {
-             padding: 8px;
-             border-radius: 5px;
-             border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         .audio-player-style {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
         .chapter-author-intro {
-             font-size: 1.6em;
+            font-size: 1.6em;
         }
-       .footer-style {
-             margin-top: 50px;
-             padding-top: 20px;
-             border-top: 1px solid #ccc;
-             text-align: right;
+        .footer-style {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: right;
         }
         .footer-text-style {
             font-size: 0.9em;
@@ -57,17 +57,24 @@
             display: block;
             margin: 20px auto;
         }
-        .outline-heading-style {
-             margin-bottom: 0.25em;
-        }
-        .outline-sublist {
+        .caption-style {
+             font-size: 0.9em;
+             color: #555;
+             text-align: center;
              margin-top: 0;
-             padding-left: 40px;
-             list-style-type: disc;
              margin-bottom: 1em;
         }
+        .outline-heading-style {
+            margin-bottom: 0.25em;
+        }
+        .outline-sublist {
+            margin-top: 0;
+            padding-left: 40px;
+            list-style-type: disc;
+            margin-bottom: 1em;
+        }
         .outline-sublist li {
-             margin-bottom: 0.25em;
+            margin-bottom: 0.25em;
         }
         .outline-sublist li a {
             font-weight: normal;
@@ -79,6 +86,110 @@
         dd {
             margin-left: 20px;
             margin-bottom: 1em;
+        }
+        .page-header h1 {
+        }
+        .audio-title {
+        }
+        .content-container h2,
+        .content-container h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.25em;
+        }
+         .content-container > h2:first-of-type {
+             margin-top: 0;
+         }
+        .content-container p,
+        .content-container ul,
+        .content-container ol,
+        .content-container dl,
+        .content-container figure {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+        .content-container h4,
+        .content-container h5 {
+             margin-top: 1em;
+             margin-bottom: 0.25em;
+        }
+        .content-container img.content-image {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+         .content-container figure + p,
+         .content-container figure + ul,
+         .content-container figure + ol,
+         .content-container figure + dl,
+         .content-container figure + h2,
+         .content-container figure + h3 {
+             margin-top: 0;
+         }
+         .content-container p + figure,
+         .content-container ul + figure,
+         .content-container ol + figure,
+         .content-container dl + figure {
+            margin-top: 0;
+         }
+         .content-container h2 + figure,
+         .content-container h3 + figure,
+         .content-container h4 + figure,
+         .content-container h5 + figure {
+            margin-top: 0;
+         }
+         .content-container img.content-image + figcaption.caption-style {
+            margin-top: 0.5em;
+         }
+         .content-container img.content-image:has(+ figcaption.caption-style) {
+             margin-bottom: 0;
+         }
+        .content-container h2 + p,
+        .content-container h2 + ul,
+        .content-container h2 + ol,
+        .content-container h2 + dl,
+        .content-container h2 + img.content-image,
+        .content-container h3 + p,
+        .content-container h3 + ul,
+        .content-container h3 + ol,
+        .content-container h3 + dl,
+        .content-container h3 + img.content-image,
+        .content-container h4 + ul,
+        .content-container h4 + ol,
+        .content-container h4 + p,
+        .content-container h4 + dl,
+        .content-container h4 + img.content-image,
+        .content-container h5 + p,
+        .content-container h5 + ul,
+        .content-container h5 + ol,
+        .content-container h5 + dl,
+        .content-container h5 + img.content-image {
+            margin-top: 0;
+        }
+        .content-container p + ul,
+        .content-container p + ol,
+        .content-container p + dl {
+             margin-top: 0;
+         }
+        .content-container p:has(+ ul),
+        .content-container p:has(+ ol),
+        .content-container p:has(+ dl),
+        .content-container p:has(+ figure) {
+            margin-bottom: 0;
+        }
+        .content-container h4:has(+ ul),
+        .content-container h4:has(+ ol),
+        .content-container h4:has(+ p),
+        .content-container h4:has(+ dl),
+        .content-container h4:has(+ figure),
+        .content-container h4:has(+ img.content-image) {
+            margin-bottom: 0;
+        }
+        .content-container h5:has(+ ul),
+        .content-container h5:has(+ ol),
+        .content-container h5:has(+ p),
+        .content-container h5:has(+ dl),
+        .content-container h5:has(+ figure),
+        .content-container h5:has(+ img.content-image) {
+             margin-bottom: 0;
         }
     </style>
 </head>
@@ -99,13 +210,14 @@
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
+        <li><a href="downloads.html">Downloads (PDF)</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
 
 <main>
     <header class="page-header">
-        <h1>Chapter 6: DPL: Technical Details</h1>
+        <h1>DPL: Technical Details</h1>
     </header>
 
     <h3 class="audio-title">Audio Player</h3>
@@ -170,7 +282,7 @@
 
     </div>
 
-    <hr>
+    <hr style="margin-top: 30px; margin-bottom: 30px;">
 
     <div class="content-container">
 
@@ -304,7 +416,6 @@
             </li>
         </ul>
 
-
         <h3 id="ch6-comp-multimodal">1.8 Mitigating Strategies for Multi-Modal Attacks</h3>
         <p>Multi-layered defense against attacks using images, audio, video.</p>
         <h4>Output Sanitization and Validation (All Modalities)</h4>
@@ -335,7 +446,6 @@
         </ul>
         <img src="images/Chapter-06/Chapter06-image02.png" alt="Cross-Modal Covert Channel Mitigation Diagram" class="content-image">
 
-
         <h3 id="ch6-comp-escalation">1.10 Escalation Logic and Intervention Procedures</h3>
         <p>Defines transitions between intervention levels, managed dynamically by FoEA.</p>
         <img src="images/Chapter-06/Chapter06-image03.png" alt="DPL Escalation Logic Flowchart" class="content-image">
@@ -344,7 +454,6 @@
             <li><strong>Example Logic Flow:</strong> Uses thresholds on risk scores (adjusted by FPLS and context) to determine intervention level (none, lightweight, preview sandbox, full sandbox, HITL review).</li>
             <li><strong>Integration with FPRL and DPL-ERV:</strong> FPLS mitigates risk score; DPL-ERV evaluations are key inputs. FoEA manages all thresholds, parameters, and logic flows.</li>
         </ul>
-
 
         <h3 id="ch6-comp-fprl">1.11 False Positive Reduction Layer (FPRL)</h3>
         <p>Intelligent filter calculating False Positive Likelihood Score (FPLS) to minimize unnecessary interventions, managed by FoEA.</p>
@@ -361,7 +470,6 @@
         <p>ML model outputs probability, adjusted by statistical analysis and logical flows.</p>
         <h4>Integration with Intervention System</h4>
         <p>FPLS mitigates the aggregated risk score (e.g., Adjusted Risk = Risk - FPLS * k). FoEA determines function and thresholds.</p>
-
 
         <h2 id="ch6-data">2. Data Storage and Management</h2>
         <p>Robust, secure data storage is essential for DPL functions (monitoring, evaluation, intervention, adaptation, auditing), overseen by FoEA.</p>
@@ -418,7 +526,6 @@
             <li><strong>Monitoring & Rollback (Autonomous):</strong> FoEA monitors post-deployment; triggers automatic rollback via consensus if issues detected.</li>
         </ol>
         <img src="images/Chapter-06/Chapter06-image05.png" alt="DPL Secure Update Process Diagram" class="content-image">
-
 
         <h3 id="ch6-updates-specific">3.2 Specific Component Updates</h3>
         <p>Process applies universally, but scrutiny varies:</p>
@@ -487,7 +594,6 @@
         <p>Furthermore, we outlined the requirements and potential technologies for robust Data Storage and Management, emphasizing security, privacy, and auditability. The chapter detailed the secure, primarily autonomous Update Mechanisms crucial for the DPL's adaptability, highlighting the FoEA's central role in validation and deployment. Finally, we described the comprehensive Access Control System built on Zero Trust, Least Privilege, RBAC, and strong authentication, again emphasizing the FoEA's governance and enforcement responsibilities.</p>
         <p>These technical elements, when integrated, form a layered, adaptive, and resilient system designed for real‑time AI oversight in secure environments. While presented conceptually, they offer a blueprint for building and implementing the DPL, acknowledging that continuous research, development, and adaptation managed by the FoEA are essential for addressing the evolving landscape of AI capabilities and threats. The next chapter shifts focus to the broader ecosystem, exploring the concepts of AI Domains and the Global Rapid Response and Intelligence Network (GRRIN).</p>
 
-
     </div>
 
     <footer class="footer-style">
@@ -527,7 +633,8 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      console.error("Audio player elements not found.");
+      // Audio player is expected, so keep the error message
+       console.error("Audio player elements not found.");
   }
 </script>
 
