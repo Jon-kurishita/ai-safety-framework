@@ -1,4 +1,3 @@
-/* Page Header Styles */
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x400/?business') no-repeat center center/cover;
     color: white;
@@ -181,6 +180,7 @@
     margin-bottom: 1rem;
 }
 
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .about-grid,
@@ -198,43 +198,54 @@
         height: auto; /* Auto height */
         overflow-y: visible;
         margin-bottom: 20px; /* Add space below nav */
-        /* Ensure box-sizing is consistent or reset if needed */
-        box-sizing: border-box;
+        z-index: auto; /* Reset z-index */
     }
     main {
         width: 100%; /* Full width */
         margin-left: 0; /* Remove left margin */
         padding: 10px; /* Adjust padding */
-        /* Ensure box-sizing is consistent or reset if needed */
-        box-sizing: border-box;
+        /* Reset flex properties if needed, though width 100% might suffice */
+        display: block; /* Reset display */
     }
     .page-header {
         text-align: center; /* Center header text on small screens */
+    }
+    /* Ensure content container takes full width on small screens */
+    main > .content-container {
+        align-self: auto; /* Reset align-self */
+        width: 100%;
+        max-width: none; /* Allow full width */
+        padding-left: 10px; /* Consistent padding with main */
+        padding-right: 10px;
+    }
+     /* Adjust audio player for small screens if needed */
+    .audio-player-style {
+        max-width: 100%; /* Allow full width on small screens */
     }
 }
 
 
 /* Layout Styles for Sidebar */
 body {
-    /* REMOVED display: flex; */
-    /* REMOVED flex-wrap: wrap; */
+    /* display: flex; */ /* Removed */
+    /* flex-wrap: wrap; */ /* Removed */
     font-family: sans-serif;
 }
 nav {
-    /* Use a fixed pixel width instead of percentage */
-    width: 250px; /* ADJUST THIS VALUE AS DESIRED */
+    /* --- CHANGE 1: Wider Fixed Width --- */
+    width: 320px; /* Increased width - ADJUST AS NEEDED */
     background-color: #f4f4f4;
     padding: 20px;
     position: fixed; /* Keep sidebar fixed on larger screens */
     height: 100vh;
     overflow-y: auto;
     box-sizing: border-box; /* Include padding in width calculation */
-    top: 0; /* Explicitly set top */
-    left: 0; /* Explicitly set left */
-    z-index: 1000; /* Ensure nav stays on top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top */
 }
 nav h2 {
-    margin-top: 0; /* Remove default top margin */
+    margin-top: 0;
 }
 nav ul {
     list-style: none;
@@ -254,87 +265,141 @@ nav ul li a:hover {
     background-color: #ddd;
 }
 main {
-    /* REMOVED width: 75%; -- Let the browser calculate width */
+    /* REMOVED width: 75%; */
     padding: 20px;
-    /* Set margin-left to match the FIXED pixel width of nav */
-    margin-left: 250px; /* ADJUST THIS VALUE TO MATCH NAV WIDTH */
-    overflow-y: auto; /* Allow main content to scroll IF needed, often body scroll is preferred */
-    /* REMOVED display: flex; */
-    /* REMOVED flex-direction: column; */
-    /* REMOVED align-items: center; */
+    /* --- CHANGE 1b: Matching Margin --- */
+    margin-left: 320px; /* MUST MATCH NAV WIDTH */
+    /* overflow-y: auto; */ /* Removed, let body scroll */
+    /* --- CHANGE 2: Keep Flex Centering for elements like Author/Audio --- */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
-    /* Add min-height to ensure footer is pushed down if content is short */
-    min-height: 100vh;
-    display: block; /* Ensure it behaves as a standard block */
+    min-height: 100vh; /* Help push footer down */
+}
+
+/* General Content Container (ensure consistent definition) */
+.content-container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%; /* Necessary for align-self:stretch to work correctly */
+    box-sizing: border-box;
+    text-align: left; /* Ensure text inside aligns left by default */
 }
 
 /* --- Style Overrides for Chapter/Content Pages --- */
-/* These styles seem specific to elements *within* main, which is fine */
 
-/* Header Style for Chapter Pages (Overrides general .page-header) */
-main .page-header { /* Specificity added */
-    background: none;
-    color: black;
-    text-align: left; /* Default alignment for content within */
-    padding: 0; /* Reset padding */
-    margin-bottom: 20px;
-    width: 100%; /* Allow it to fill the main area's width */
-    max-width: 800px; /* Align with content-container width */
-    margin-left: auto; /* Center the header block */
-    margin-right: auto; /* Center the header block */
-    box-sizing: border-box; /* Ensure padding doesn't add to width */
+/* --- CHANGE 2b: Override centering ONLY for the main content block --- */
+/* Use high specificity to target .content-container only when direct child of main */
+main > .content-container {
+    align-self: stretch; /* Override align-items: center from main */
 }
 
+/* Header Style within Main */
+main .page-header {
+    background: none;
+    color: black;
+    /* padding: 0; */ /* Keep padding if desired for spacing */
+    margin-bottom: 20px;
+    width: 100%; /* Takes width from flex context */
+    max-width: 800px; /* Limit width */
+    /* Centering is handled by main's align-items: center */
+    /* margin-left: auto; */ /* Not needed with flex centering */
+    /* margin-right: auto; */ /* Not needed with flex centering */
+    box-sizing: border-box;
+}
 main .page-header h1 {
-    font-size: 2rem; /* Adjust as needed */
-    margin-bottom: 0.5rem; /* Standardize */
-    text-align: center; /* Center the title text within the header */
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center; /* Ensure H1 text is centered */
 }
 
 
 /* Audio Title Style */
 .audio-title {
-    font-size: 1em; /* Adjust as needed */
+    font-size: 1em;
     color: darkblue;
     text-align: center;
-    margin-bottom: 5px; /* Space between title and player */
-    width: 100%; /* Takes full available width */
-    max-width: 800px; /* Centered within main */
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 5px;
+    width: 100%; /* Allow centering via main's flex */
+    max-width: 800px; /* Consistent max width */
     box-sizing: border-box;
 }
 
-/* Audio Player Style - Ensure it centers correctly */
+/* Audio Container Style */
+.audio-container {
+     text-align: center; /* Already set */
+     margin-bottom: 10px; /* Already set */
+     width: 100%; /* Allow centering via main's flex */
+     max-width: 800px; /* Consistent max width */
+     box-sizing: border-box;
+}
+
+/* --- CHANGE 3: Control Audio Player Width --- */
 .audio-player-style {
-     display: block; /* Already block */
-     margin-left: auto; /* Already auto */
-     margin-right: auto; /* Already auto */
-     margin-bottom: 20px; /* Already set */
-     width: 100%; /* Make it responsive */
-     max-width: 800px; /* Limit width to match content */
-     box-sizing: border-box;
- }
-
-/* --- NO SPACING RULES ADDED HERE IN ORIGINAL --- */
-/* Add rule for potentially missing .content-container styles if needed globally */
-/* (This might already be in your HTML pages' internal styles) */
-.content-container {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px; /* Added from your HTML */
-    padding-right: 20px; /* Added from your HTML */
-    width: 100%; /* Ensures it tries to fill available space before centering */
+    display: block;
+    margin-left: auto; /* Still useful within flex item */
+    margin-right: auto; /* Still useful within flex item */
+    margin-bottom: 20px;
+    width: 100%; /* Allow it to fill its allocated space */
+    max-width: 600px; /* SET MAX WIDTH TO PREVENT STRETCHING - ADJUST VALUE */
     box-sizing: border-box;
 }
 
-/* Footer Style - Ensure it positions correctly relative to main */
-main footer.footer-style {
-     max-width: 800px; /* Match content width */
-     margin-left: auto;
-     margin-right: auto;
+/* Ensure HR and Author line are also constrained and centered */
+main > hr:first-of-type { /* Assuming it's the first HR */
      width: 100%;
+     max-width: 800px;
+     margin-top: 20px; /* Add some space */
+     margin-bottom: 20px;
+     /* Centering handled by main's flex */
+}
+
+/* Add this class to the <p> containing author info in HTML */
+.author-line {
+    width: 100%;
+    max-width: 800px;
+    text-align: center; /* Center text within the paragraph */
+     /* Centering of the block handled by main's flex */
+     margin-top: 0; /* Adjust spacing as needed */
+     margin-bottom: 20px; /* Add space before content */
+}
+.author-line .chapter-author-intro { /* Style the strong tag */
+    font-size: 1.6em; /* Your existing style */
+    display: block; /* Ensure it takes its own line */
+    margin-bottom: 0.25em; /* Space between lines */
+}
+
+
+/* Ensure footer aligns correctly */
+main footer.footer-style {
+     width: 100%;
+     max-width: 800px; /* Match content width */
+     margin-top: 50px; /* Existing style */
+     padding-top: 20px; /* Existing style */
+     border-top: 1px solid #ccc; /* Existing style */
+     text-align: right; /* Existing style */
      box-sizing: border-box;
-     /* text-align: right; */ /* Already has this from internal style? Add if needed */
+      /* Centering of the block handled by main's flex */
+}
+
+/* Add rules for centered Outline/Case Study headers if needed */
+/* These were added in Supplement 2's internal styles - include here for consistency */
+.outline-heading {
+    text-align: center;
+    width: 100%; /* Allow centering via main's flex */
+    max-width: 800px;
+    margin-bottom: 1em; /* Add some space */
+}
+.case-study-content h2 { /* From Supplement 2 internal style */
+    text-align: center;
+    margin-top: 2.5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.5em;
+    width: 100%; /* Allow centering via main's flex */
+    max-width: 800px;
 }
