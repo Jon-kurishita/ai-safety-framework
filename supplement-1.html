@@ -212,6 +212,7 @@
             list-style-type: none;
             padding-left: 0;
             margin-bottom: 2em;
+            text-align: center; /* Centered the list items */
         }
         .appendix-toc li {
             margin-bottom: 0.5em;
@@ -766,14 +767,14 @@
       });
 
       if (audioSelector.options.length > 0) {
-          const initialAudio = audioSelector.options[0].value;
-           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
-               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
-               audioSource.src = initialAudio;
-               audioSource.type = initialFileType;
-           } else {
-               console.error("Initial audio source value is invalid:", initialAudio);
-           }
+           const initialAudio = audioSelector.options[0].value;
+            if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
+                const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+                audioSource.src = initialAudio;
+                audioSource.type = initialFileType;
+            } else {
+                console.error("Initial audio source value is invalid:", initialAudio);
+            }
       } else {
            console.error("Audio selector has no options.");
       }
