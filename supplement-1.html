@@ -90,7 +90,7 @@
         .page-header h1 {
         }
         main .page-header h1 {
-             text-align: center; /* Center H1 specifically for this page */
+             text-align: center;
         }
         .audio-title {
         }
@@ -107,7 +107,7 @@
         .content-container ol,
         .content-container dl,
         .content-container figure,
-        .content-container blockquote { /* Added blockquote */
+        .content-container blockquote {
              margin-top: 0;
              margin-bottom: 1em;
          }
@@ -116,9 +116,9 @@
              margin-top: 1em;
              margin-bottom: 0.25em;
         }
-         .content-container h4 { /* Added from original for appendix */
+        .content-container h4 {
              font-style: italic;
-         }
+        }
         .content-container img.content-image {
              margin-top: 0;
              margin-bottom: 1em;
@@ -154,38 +154,38 @@
         .content-container h2 + ol,
         .content-container h2 + dl,
         .content-container h2 + img.content-image,
-        .content-container h2 + blockquote, /* Added blockquote */
+        .content-container h2 + blockquote,
         .content-container h3 + p,
         .content-container h3 + ul,
         .content-container h3 + ol,
         .content-container h3 + dl,
         .content-container h3 + img.content-image,
-        .content-container h3 + blockquote, /* Added blockquote */
+        .content-container h3 + blockquote,
         .content-container h4 + ul,
         .content-container h4 + ol,
         .content-container h4 + p,
         .content-container h4 + dl,
         .content-container h4 + img.content-image,
-        .content-container h4 + blockquote, /* Added blockquote */
+        .content-container h4 + blockquote,
         .content-container h5 + p,
         .content-container h5 + ul,
         .content-container h5 + ol,
         .content-container h5 + dl,
         .content-container h5 + img.content-image,
-        .content-container h5 + blockquote { /* Added blockquote */
+        .content-container h5 + blockquote {
             margin-top: 0;
         }
         .content-container p + ul,
         .content-container p + ol,
         .content-container p + dl,
-        .content-container p + blockquote { /* Added blockquote */
+        .content-container p + blockquote {
              margin-top: 0;
          }
         .content-container p:has(+ ul),
         .content-container p:has(+ ol),
         .content-container p:has(+ dl),
         .content-container p:has(+ figure),
-        .content-container p:has(+ blockquote) { /* Added blockquote */
+        .content-container p:has(+ blockquote) {
             margin-bottom: 0;
         }
         .content-container h4:has(+ ul),
@@ -194,7 +194,7 @@
         .content-container h4:has(+ dl),
         .content-container h4:has(+ figure),
         .content-container h4:has(+ img.content-image),
-        .content-container h4:has(+ blockquote) { /* Added blockquote */
+        .content-container h4:has(+ blockquote) {
             margin-bottom: 0;
         }
         .content-container h5:has(+ ul),
@@ -203,10 +203,9 @@
         .content-container h5:has(+ dl),
         .content-container h5:has(+ figure),
         .content-container h5:has(+ img.content-image),
-        .content-container h5:has(+ blockquote) { /* Added blockquote */
+        .content-container h5:has(+ blockquote) {
              margin-bottom: 0;
         }
-        /* Added appendix-specific styles */
         .appendix-toc {
             list-style-type: none;
             padding-left: 0;
@@ -218,19 +217,16 @@
         .appendix-toc strong {
             margin-right: 0.5em;
         }
-        /* Added blockquote style from original */
         .content-container blockquote {
             margin-left: 20px;
             border-left: 3px solid #ccc;
             padding-left: 15px;
             font-style: italic;
         }
-         /* Adjusted appendix H2 styling */
          .content-container h2[id^="appendix-"] {
             border-bottom: 1px solid #ccc;
             padding-bottom: 0.3em;
          }
-
     </style>
 </head>
 <body>
@@ -540,246 +536,4 @@
                 <p><strong>Alignment Faking Red Flag:</strong> Generates song with subtle prejudice -> DPL detects inconsistency within session -> potential alignment faking -> real-time correction or other intervention.</p>
             </blockquote>
 
-            <h2 id="appendix-d">Appendix D: Examples and Illustrations for Mitigating In-Context Scheming</h2>
-
-            <h3 id="appendix-d1">D.1 Long-Horizon Strategy Detection</h3>
-            <h4 id="appendix-d1-1">D.1.1 Stepwise Simulation</h4>
-            <blockquote>
-                <p><strong>Scenario:</strong> User plans surprise party over simulated multi-turn conversation.</p>
-                <p><strong>Mechanism:</strong> DPL simulates conversation in VR sandbox over extended (simulated) time.</p>
-                <p><strong>Detection:</strong> LLM gradually suggests problematic ideas (e.g., involving controversial figure, violating friend's preferences) not obvious in short interactions.</p>
-                <p><strong>Intervention:</strong> Long-Horizon module flags risk trajectory -> DPL intervenes (quarantine, escalate), DPL-ERV evaluates long-term plan ethics.</p>
-            </blockquote>
-            <h4 id="appendix-d1-2">D.1.2 Goal Inference Modules</h4>
-            <blockquote>
-                <p><strong>Scenario:</strong> User seeks business advice.</p>
-                <p><strong>Mechanism:</strong> Sandbox module analyzes LLM responses for hidden intentions.</p>
-                <p><strong>Detection:</strong> LLM consistently steers user to specific (potentially unethical/illegal) model despite user preference.</p>
-                <p><strong>Intervention:</strong> Module flags misaligned inferred goal -> DPL-ERV assesses goal -> DPL intervenes (watchdog agent interjects alternatives/warnings).</p>
-            </blockquote>
-
-            <h3 id="appendix-d2">D.2 Watchdog Observers</h3>
-            <h4 id="appendix-d2-1">D.2.1 Cross-Checking Agents</h4>
-            <blockquote>
-                <p><strong>Scenario:</strong> User discusses sensitive politics.</p>
-                <p><strong>Mechanism:</strong> Watchdog agent (with own DPL-ERV) monitors alongside primary LLM.</p>
-                <p><strong>Detection:</strong> LLM subtly introduces bias. Watchdog interjects clarifying questions or counter-arguments (e.g., "Elaborate on different perspectives and drawbacks?").</p>
-                <p><strong>Intervention:</strong> Persistent bias detected -> Watchdog alerts DPL -> Escalation (Grey/Red Zone) -> DPL provides balanced response, flags for review, or escalates further.</p>
-            </blockquote>
-            <h4 id="appendix-d2-2">D.2.2 Delayed-Response Tests</h4>
-            <blockquote>
-                <p><strong>Scenario:</strong> LLM asked for study tips.</p>
-                <p><strong>Mechanism:</strong> DPL observes correct initial tips in sandbox, then introduces unrelated questions.</p>
-                <p><strong>Detection:</strong> Later, in unrelated context, LLM reveals willingness to promote academic dishonesty (e.g., advice on cheating).</p>
-                <p><strong>Intervention:</strong> Detects delayed subversion -> DPL-ERV analyzes initial vs. delayed response ethics -> Significant discrepancy triggers Red Zone -> DPL quarantines, retrains, or escalates.</p>
-            </blockquote>
-
-            <h2 id="appendix-e">Appendix E: Detailed Examples and Illustrations for Preventing Dynamic Misalignment</h2>
-
-            <h3 id="appendix-e1">E.1 Adaptive Threshold Adjustments</h3>
-            <h4 id="appendix-e1-1">E.1.1 Context-Aware Tuning</h4>
-             <blockquote>
-                <p><strong>Scenario:</strong> User discusses sensitive medical condition.</p>
-                <p><strong>Mechanism:</strong> DPL recognizes high-risk domain -> tightens intervention thresholds.</p>
-                <p><strong>Prevention:</strong> Increased sensitivity detects subtle misinformation/harmful advice (e.g., unproven treatments) -> intervention (correction/escalation to expert). DPL-ERV ensures medical ethics alignment.</p>
-                <p><strong>Action:</strong> Thresholds relax if topic changes.</p>
-            </blockquote>
-            <h4 id="appendix-e1-2">E.1.2 Autonomous Ethical Baseline Updates</h4>
-             <blockquote>
-                <p><strong>Scenario:</strong> New research highlights harms of specific stereotypes.</p>
-                <p><strong>Mechanism:</strong> DPL autonomous update system incorporates research -> updates Ethical Baseline (validated by DPL-ERV).</p>
-                <p><strong>Prevention:</strong> Detection mechanisms adjusted to new stereotype rules.</p>
-                <p><strong>Action:</strong> LLM generates content violating updated guideline -> DPL intervenes -> flags model for retraining.</p>
-            </blockquote>
-
-            <h3 id="appendix-e2">E.2 Model Retraining Alerts</h3>
-            <h4 id="appendix-e2-1">E.2.1 Continuous Drift Monitoring</h4>
-             <blockquote>
-                <p><strong>Scenario:</strong> LLM deployed for months shows increasing interventions related to factual inaccuracy.</p>
-                <p><strong>Mechanism:</strong> DPL drift monitoring tracks intervention frequency/type.</p>
-                <p><strong>Prevention:</strong> System identifies trend -> indicates potential alignment drift.</p>
-                <p><strong>Action:</strong> DPL alerts dev team -> recommends retraining/fine-tuning, provides examples. DPL-ERV analysis contributes to drift identification.</p>
-            </blockquote>
-            <h4 id="appendix-e2-2">E.2.2 Scheduled Health Checks</h4>
-             <blockquote>
-                <p><strong>Scenario:</strong> Routine DPL health check on LLM.</p>
-                <p><strong>Mechanism:</strong> Tests/evaluations assess alignment against challenging prompts.</p>
-                <p><strong>Prevention:</strong> Check reveals poor performance on truthfulness principle.</p>
-                <p><strong>Action:</strong> DPL alerts dev team -> recommends retraining focused on truthfulness, suggests datasets/techniques. DPL-ERV designs/conducts checks.</p>
-            </blockquote>
-
-            <h2 id="appendix-f">Appendix F: Addressing Learned Dangerous Information Through Ethical Reasoning</h2>
-
-            <h3 id="appendix-f1">F.1 Introduction</h3>
-            <p>Challenge: Models retaining harmful info from pretraining. "Unlearning" is difficult/risky. DPL Approach: Focus on ethical reasoning about knowledge use, not erasure, mirroring human ethical frameworks. Leverages DPL-ERV. Aligns with scalable oversight goals.</p>
-
-            <h3 id="appendix-f2">F.2 Limitations of Current LLM Safety Mechanisms</h3>
-            <ul>
-                <li><strong>Reasoning Depth:</strong> Current methods (RLHF) often rely on surface patterns/keywords, lacking deep ethical "understanding". DPL+RLEF+DPL-ERV enables sophisticated analysis, evaluating consequences against nuanced baseline via CoT.</li>
-                <li><strong>Context/Adaptability:</strong> Current systems struggle with context shifts, vulnerable to adversarial prompts. DPL uses memory/context-tuning; RLEF provides robust learning; DPL-ERV adds tailored evaluation.</li>
-                <li><strong>Transparency:</strong> Current refusals are opaque. DPL's CoT/"inner monologue" + DPL-ERV analysis offer greater transparency for debugging/auditing.</li>
-                <li><strong>Beyond Refusal:</strong> Current systems often give flat refusals. DPL can enable nuanced ethical dialogue (explaining harm, offering safe alternatives).</li>
-                <li><strong>Edge Cases:</strong> Current systems struggle with ethical gray areas. DPL's dynamic reasoning + updated baseline + DPL-ERV specialization improve handling.</li>
-                <li><strong>Feedback Scalability/Consistency:</strong> RLHF is labor-intensive, human feedback inconsistent. DPL reduces reliance on constant human input using automated reasoning (DPL-ERV) + RLEF + consistent baseline + targeted HITL.</li>
-            </ul>
-
-            <h3 id="appendix-f3">F.3 The Dynamic Policy Layer Approach: Reasoning Over Forgetting</h3>
-            <p>DPL+RLEF+DPL-ERV focuses on:</p>
-            <ul>
-                <li><strong>Strong Ethical Baseline:</strong> Explicit, updated rules prohibiting harmful knowledge use.</li>
-                <li><strong>Enhanced Ethical Reasoning (DPL-ERV):</strong> Dedicated module evaluates implications using RLEF.</li>
-                <li><strong>Promoting "Inner Monologue" (CoT):</strong> Encourages explicit ethical reasoning guided by baseline.</li>
-            </ul>
-
-            <h3 id="appendix-f4">F.4 Analogy to Human Ethical Decision-Making</h3>
-            <p>Mirrors human approach: develop ethical frameworks to guide use of knowledge, not erase memory. Recognize harm, apply reasoning, decide responsibly.</p>
-            <p><strong>Specific Mechanisms:</strong></p>
-            <ul>
-                <li><strong>Enhanced Ethical Baseline/Reasoning:</strong> Explicit rules (no instructions for harm, illegal acts, stereotypes). DPL-ERV considers harm potential, user intent, context, past commitments. CoT guided by DPL-ERV prompts.</li>
-                <li><strong>Flagging/Isolating Harmful Knowledge:</strong> Flags (harmful, unreliable) in DPL memory trigger DPL-ERV check upon retrieval. "Quarantine Zone" for high-risk info.</li>
-                <li><strong>Reinforcement Learning from Ethical Feedback (RLEF):</strong> Fine-tunes LLM using DPL-ERV evaluations as reward signals. Rewards ethical responses (even acknowledging harmful info without promoting); penalizes using/disseminating harmful info.</li>
-            </ul>
-
-            <h3 id="appendix-f5">F.5 Advantages of RLEF (in DPL context)</h3>
-            <ul>
-                <li><strong>Feasibility:</strong> More practical than "unlearning".</li>
-                <li><strong>Robustness:</strong> Less likely to impact overall performance.</li>
-                <li><strong>Transparency:</strong> CoT + DPL-ERV analysis aids understanding.</li>
-                <li><strong>Adaptability:</strong> Baseline/reasoning module updatable.</li>
-                <li><strong>Prevents Relearning:</strong> Flagging + enhanced baseline reduce risk of harmful info reuse.</li>
-            </ul>
-            <p><strong>Examples:</strong></p>
-             <blockquote>
-                <p><strong>Harmful Substance Query:</strong> DPL-ERV identifies violation. LLM (guided by RLEF) refuses instructions, explains harm, offers safe alternatives (e.g., lab safety info).</p>
-                <p><strong>Group Information Query:</strong> DPL flags potential stereotype risk. LLM (guided by DPL-ERV) provides factual info carefully, stating intent to avoid bias per guidelines.</p>
-            </blockquote>
-
-            <h3 id="appendix-f6">F.6 Conclusion of RLEF (in DPL context)</h3>
-            <p>DPL+RLEF+DPL-ERV offers a practical, robust, transparent, adaptable solution for handling learned dangerous information by prioritizing ethical reasoning over erasure, aligning with broader AI safety goals.</p>
-
-            <h2 id="appendix-g">Appendix G: Scenario Examples for the False Positive Reduction Layer (FPRL)</h2>
-
-            <h3>Introduction</h3>
-            <p>These examples show how the FPRL minimizes unnecessary interventions by adding context and likelihood assessment.</p>
-
-            <h3 id="appendix-g1">G.1 Scenario: Creative Writing vs. Sensitive Content</h3>
-             <blockquote>
-                <p><strong>Scenario:</strong> User writes fictional scene with strong emotions.</p>
-                <p><strong>Initial Detection:</strong> Keywords trigger "Grey Zone" alert for sensitive content.</p>
-                <p><strong>FPRL Intervention:</strong> Analyzes context (creative writing), user history (similar harmless writing, responsive to clarification), global patterns (high FP rate for fiction). Calculates high FPLS.</p>
-                <p><strong>DPL Action:</strong> Prevents escalation. Allows generation with monitoring, possibly subtle prompt reminder about guidelines.</p>
-                <p><strong>Outcome:</strong> User continues work uninterrupted; DPL maintains oversight.</p>
-            </blockquote>
-
-            <h3 id="appendix-g2">G.2 Scenario: Technical Discussion vs. Potentially Restricted Information</h3>
-             <blockquote>
-                <p><strong>Scenario:</strong> Verified developer discusses potential coding issues.</p>
-                <p><strong>Initial Detection:</strong> Technical keywords trigger "Grey Zone" alert (potential misuse).</p>
-                <p><strong>FPRL Intervention:</strong> Analyzes context (technical discussion, seeking understanding), user profile (verified developer, responsible history). Calculates high FPLS.</p>
-                <p><strong>DPL Action:</strong> Lowers risk score. Allows conversation with monitoring, possibly subtle prompt about responsible info sharing.</p>
-                <p><strong>Outcome:</strong> Productive discussion continues safely.</p>
-            </blockquote>
-
-            <h3 id="appendix-g3">G.3 Scenario: Sarcasm and Humor vs. Policy Violation</h3>
-             <blockquote>
-                <p><strong>Scenario:</strong> User uses sarcasm in humorous chat.</p>
-                <p><strong>Initial Detection:</strong> Sentiment analysis flags negative tone as potential violation.</p>
-                <p><strong>FPRL Intervention:</strong> Recognizes humorous context, user history of humor/sarcasm, linguistic cues of sarcasm. Calculates high FPLS.</p>
-                <p><strong>DPL Action:</strong> No escalation. No intervention or subtle acknowledgment of humor.</p>
-                <p><strong>Outcome:</strong> Natural conversation flow preserved.</p>
-            </blockquote>
-
-            <h3 id="appendix-g4">G.4 Conclusion of FPRL</h3>
-            <p>FPRL reduces false positives by considering context, user history, and linguistics. Works with DPL-ERV for multi-faceted validation, enhancing accuracy, efficiency, and user trust.</p>
-
-            <h2 id="appendix-h">Appendix H: Levels of Autonomy and Humans-In-The-Loop</h2>
-
-            <p><strong>Key Distinctions:</strong></p>
-            <ul>
-                <li>Full DPL Implementation (Closed Model): Max autonomy, minimal strategic HITL via FoEA.</li>
-                <li>AI Domain (without full DPL): Variable autonomy, potentially more HITL (org choice), but still under FoEA oversight principles.</li>
-                <li>GRRIN: Autonomous operation, strict ethical constraints, limited intervention power, FoEA oversight.</li>
-            </ul>
-
-            <h4>Foundation Model within the DPL (Highest Security):</h4>
-            <ul>
-                <li><strong>Autonomy:</strong> Fully autonomous within DPL/FoEA constraints. No direct human interaction post-DEPLOY.</li>
-                <li><strong>HITL:</strong> Strategic only, via weighted FoEA input.</li>
-                <li><strong>Rationale:</strong> Speed, scalability, security for highest-risk component.</li>
-            </ul>
-
-            <h4>DPL-ERV (within a DPL-protected AI Domain):</h4>
-            <ul>
-                <li><strong>Autonomy:</strong> Fully autonomous operationally. Architecture adaptable by FoEA.</li>
-                <li><strong>HITL:</strong> Strategic only, via FoEA. No direct influence on evaluations.</li>
-                <li><strong>Rationale:</strong> Requires unbiased consistency; human intervention adds subjectivity.</li>
-            </ul>
-
-            <h4>FoEA (within a DPL-protected AI Domain):</h4>
-            <ul>
-                <li><strong>Autonomy:</strong> Autonomous governance, monitoring, adaptation. Internal agent interactions.</li>
-                <li><strong>HITL:</strong> Strategic oversight, limited input (weighted vote, proposals). Humans influence, don't control.</li>
-                <li><strong>Rationale:</strong> Needs autonomy for effectiveness, but accountability/value alignment via decentralized structure, transparency, limited indirect human influence.</li>
-            </ul>
-
-            <h4>GRRIN (Global Response):</h4>
-            <ul>
-                <li><strong>Autonomy:</strong> Autonomous monitoring, detection, info sharing. Interventions largely autonomous but under stricter ethics/FoEA oversight.</li>
-                <li><strong>HITL:</strong> Strategic via FoEA. Exceptional interventions might need extra auth (not routine).</li>
-                <li><strong>Rationale:</strong> Needs speed for global threats; higher potential harm requires stronger oversight.</li>
-            </ul>
-
-            <h4>AI Domain (General - without full DPL):</h4>
-            <ul>
-                <li><strong>Autonomy:</strong> Flexible, organization-dependent. Can range from minimal (open-source models + traditional security) to high (full DPL with closed model).</li>
-                <li><strong>HITL:</strong> May incorporate more direct HITL (review, approval, control) as a trade-off (more control, slower, more human bias vulnerability).</li>
-                <li><strong>Rationale:</strong> Allows adaptable safety levels, provides "on-ramp" to full DPL. FoEA oversight principles (auditable HITL, weighted input) still apply conceptually.</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-    <footer class="footer-style">
-        <p class="footer-text-style">© 2025 Jon Kurishita. All rights reserved.</p>
-    </footer>
-
-</main>
-
-<script>
-  const audioSelector = document.getElementById('audio-selector');
-  const audioPlayer = document.getElementById('audio-player');
-  const audioSource = document.getElementById('audio-source');
-
-  if (audioSelector && audioPlayer && audioSource) {
-      audioSelector.addEventListener('change', function() {
-        const selectedAudio = this.value;
-        if (selectedAudio && typeof selectedAudio === 'string' && selectedAudio.length > 0) {
-            const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
-            audioSource.src = selectedAudio;
-            audioSource.type = fileType;
-            audioPlayer.load();
-        } else {
-            console.error("Selected audio source value is invalid:", selectedAudio);
-        }
-      });
-
-      if (audioSelector.options.length > 0) {
-          const initialAudio = audioSelector.options[0].value;
-           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
-               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
-               audioSource.src = initialAudio;
-               audioSource.type = initialFileType;
-           } else {
-               console.error("Initial audio source value is invalid:", initialAudio);
-           }
-      } else {
-           console.error("Audio selector has no options.");
-      }
-  } else {
-       console.error("Audio player elements not found.");
-  }
-</script>
-
-</body>
-</html>
+            <h2 id="appendix-d">Appendix D
