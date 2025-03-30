@@ -221,9 +221,11 @@
     main footer.footer-style {
          max-width: 100%;
     }
-     /* Reset nav link font size if needed for small screens */
     nav ul li a {
-        font-size: 1em; /* Or initial default size */
+        font-size: 1em;
+    }
+    main .page-header {
+        margin-bottom: 15px; /* Restore some margin for small screens */
     }
 }
 
@@ -231,7 +233,7 @@ body {
     font-family: sans-serif;
 }
 nav {
-    width: 420px; /* Increased width slightly more */
+    width: 480px; /* Increased width */
     background-color: #f4f4f4;
     padding: 20px;
     position: fixed;
@@ -258,14 +260,14 @@ nav ul li a {
     display: block;
     padding: 8px;
     border-radius: 5px;
-    font-size: 0.9em; /* Reduced font size */
+    font-size: 0.9em; /* Kept reduced font size */
 }
 nav ul li a:hover {
     background-color: #ddd;
 }
 main {
     padding: 20px;
-    margin-left: 420px; /* Matches new nav width */
+    margin-left: 480px; /* Matches new nav width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -291,7 +293,7 @@ main > .content-container {
 main .page-header {
     background: none;
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 5px; /* Reduced bottom margin */
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
@@ -329,7 +331,6 @@ main .page-header h1 {
     display: block;
     margin-bottom: 20px;
     box-sizing: border-box;
-    /* Width is now implicitly determined by browser default */
 }
 
 main > hr:first-of-type {
@@ -341,7 +342,22 @@ main > hr:first-of-type {
      border-top: 1px solid #ccc;
 }
 
-/* Removed .author-line rule as requested */
+.chapter-author-intro {
+    font-size: 1.6em;
+    display: block;
+    margin-bottom: 0.25em;
+}
+
+/* Style for the P tag containing author info, centered by main */
+main > p:has(> .chapter-author-intro) {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
 main footer.footer-style {
      width: 100%;
@@ -373,9 +389,6 @@ main footer.footer-style {
     max-width: 800px;
 }
 
-.chapter-author-intro {
-    font-size: 1.6em;
-}
 .outline-link a {
     text-decoration: none;
     color: inherit;
