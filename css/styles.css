@@ -199,7 +199,7 @@
         margin-left: 0;
         padding: 10px;
         display: block;
-        min-height: auto; /* Reset min-height */
+        min-height: auto;
         box-sizing: border-box;
     }
     .page-header {
@@ -216,7 +216,7 @@
         max-width: 100%;
     }
     .author-line {
-         max-width: 100%; /* Ensure full width on small screens */
+         max-width: 100%;
     }
     main > hr:first-of-type {
          max-width: 100%;
@@ -230,7 +230,7 @@ body {
     font-family: sans-serif;
 }
 nav {
-    width: 320px;
+    width: 400px;
     background-color: #f4f4f4;
     padding: 20px;
     position: fixed;
@@ -263,7 +263,7 @@ nav ul li a:hover {
 }
 main {
     padding: 20px;
-    margin-left: 320px;
+    margin-left: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -325,11 +325,7 @@ main .page-header h1 {
 
 .audio-player-style {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
     box-sizing: border-box;
 }
 
@@ -348,7 +344,7 @@ main > hr:first-of-type {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
-    padding: 0 20px; /* Match main padding */
+    padding: 0 20px;
     box-sizing: border-box;
 }
 .author-line .chapter-author-intro {
@@ -387,9 +383,8 @@ main footer.footer-style {
     max-width: 800px;
 }
 
-/* Ensure styles from internal style blocks are present if needed globally */
 .chapter-author-intro {
-    font-size: 1.6em; /* Already covered in .author-line rule */
+    font-size: 1.6em;
 }
 .outline-link a {
     text-decoration: none;
