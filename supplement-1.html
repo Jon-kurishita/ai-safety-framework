@@ -212,10 +212,14 @@
             list-style-type: none;
             padding-left: 0;
             margin-bottom: 2em;
-            text-align: center; /* Centered the list items */
+            /* text-align: center; */ /* Removed text centering */
+            max-width: 60%; /* Added max-width for centering */
+            margin-left: auto; /* Added for block centering */
+            margin-right: auto; /* Added for block centering */
         }
         .appendix-toc li {
             margin-bottom: 0.5em;
+            /* Text inside li will now align left by default */
         }
         .appendix-toc strong {
             margin-right: 0.5em;
