@@ -10,35 +10,35 @@
             scroll-behavior: smooth;
         }
         .content-container {
-             max-width: 800px;
-             margin-left: auto;
-             margin-right: auto;
-             padding-left: 20px;
-             padding-right: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-         .audio-container {
-             text-align: center;
-             margin-bottom: 10px;
+        .audio-container {
+            text-align: center;
+            margin-bottom: 10px;
         }
         .audio-select {
-             padding: 8px;
-             border-radius: 5px;
-             border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         .audio-player-style {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
         .chapter-author-intro {
-             font-size: 1.6em;
+            font-size: 1.6em;
         }
-       .footer-style {
-             margin-top: 50px;
-             padding-top: 20px;
-             border-top: 1px solid #ccc;
-             text-align: right;
+        .footer-style {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: right;
         }
         .footer-text-style {
             font-size: 0.9em;
@@ -57,17 +57,24 @@
             display: block;
             margin: 20px auto;
         }
-        .outline-heading-style {
-             margin-bottom: 0.25em;
-        }
-        .outline-sublist {
+        .caption-style {
+             font-size: 0.9em;
+             color: #555;
+             text-align: center;
              margin-top: 0;
-             padding-left: 40px;
-             list-style-type: disc;
              margin-bottom: 1em;
         }
+        .outline-heading-style {
+            margin-bottom: 0.25em;
+        }
+        .outline-sublist {
+            margin-top: 0;
+            padding-left: 40px;
+            list-style-type: disc;
+            margin-bottom: 1em;
+        }
         .outline-sublist li {
-             margin-bottom: 0.25em;
+            margin-bottom: 0.25em;
         }
         .outline-sublist li a {
             font-weight: normal;
@@ -79,6 +86,110 @@
         dd {
             margin-left: 20px;
             margin-bottom: 1em;
+        }
+        .page-header h1 {
+        }
+        .audio-title {
+        }
+        .content-container h2,
+        .content-container h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.25em;
+        }
+         .content-container > h2:first-of-type {
+             margin-top: 0;
+         }
+        .content-container p,
+        .content-container ul,
+        .content-container ol,
+        .content-container dl,
+        .content-container figure {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+        .content-container h4,
+        .content-container h5 {
+             margin-top: 1em;
+             margin-bottom: 0.25em;
+        }
+        .content-container img.content-image {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+         .content-container figure + p,
+         .content-container figure + ul,
+         .content-container figure + ol,
+         .content-container figure + dl,
+         .content-container figure + h2,
+         .content-container figure + h3 {
+             margin-top: 0;
+         }
+         .content-container p + figure,
+         .content-container ul + figure,
+         .content-container ol + figure,
+         .content-container dl + figure {
+            margin-top: 0;
+         }
+         .content-container h2 + figure,
+         .content-container h3 + figure,
+         .content-container h4 + figure,
+         .content-container h5 + figure {
+            margin-top: 0;
+         }
+         .content-container img.content-image + figcaption.caption-style {
+            margin-top: 0.5em;
+         }
+         .content-container img.content-image:has(+ figcaption.caption-style) {
+             margin-bottom: 0;
+         }
+        .content-container h2 + p,
+        .content-container h2 + ul,
+        .content-container h2 + ol,
+        .content-container h2 + dl,
+        .content-container h2 + img.content-image,
+        .content-container h3 + p,
+        .content-container h3 + ul,
+        .content-container h3 + ol,
+        .content-container h3 + dl,
+        .content-container h3 + img.content-image,
+        .content-container h4 + ul,
+        .content-container h4 + ol,
+        .content-container h4 + p,
+        .content-container h4 + dl,
+        .content-container h4 + img.content-image,
+        .content-container h5 + p,
+        .content-container h5 + ul,
+        .content-container h5 + ol,
+        .content-container h5 + dl,
+        .content-container h5 + img.content-image {
+            margin-top: 0;
+        }
+        .content-container p + ul,
+        .content-container p + ol,
+        .content-container p + dl {
+             margin-top: 0;
+         }
+        .content-container p:has(+ ul),
+        .content-container p:has(+ ol),
+        .content-container p:has(+ dl),
+        .content-container p:has(+ figure) {
+            margin-bottom: 0;
+        }
+        .content-container h4:has(+ ul),
+        .content-container h4:has(+ ol),
+        .content-container h4:has(+ p),
+        .content-container h4:has(+ dl),
+        .content-container h4:has(+ figure),
+        .content-container h4:has(+ img.content-image) {
+            margin-bottom: 0;
+        }
+        .content-container h5:has(+ ul),
+        .content-container h5:has(+ ol),
+        .content-container h5:has(+ p),
+        .content-container h5:has(+ dl),
+        .content-container h5:has(+ figure),
+        .content-container h5:has(+ img.content-image) {
+             margin-bottom: 0;
         }
     </style>
 </head>
@@ -99,13 +210,14 @@
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
+        <li><a href="downloads.html">Downloads (PDF)</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
 
 <main>
     <header class="page-header">
-        <h1>Chapter 7: DPL: AI Domain and The Global Rapid Response Network</h1>
+        <h1>DPL: AI Domain and The Global Rapid Response Network</h1>
     </header>
 
     <h3 class="audio-title">Audio Player</h3>
@@ -127,7 +239,7 @@
     <div class="content-container">
         <h2>Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch7-introduction">1. Introduction</a></h3>
+        <h3 class="outline-link outline-heading-style"><a href="#ch7-introduction">Introduction</a></h3>
         <ul class="outline-sublist">
             <li><a href="#ch7-intro-limits">1.1 Limitations of Single-Model Oversight</a></li>
             <li><a href="#ch7-intro-global">1.2 The Need for a Multi-Agent, Global Approach</a></li>
@@ -199,11 +311,11 @@
 
     </div>
 
-    <hr>
+    <hr style="margin-top: 30px; margin-bottom: 30px;">
 
     <div class="content-container">
 
-        <h2 id="ch7-introduction">1. Introduction</h2>
+        <h2 id="ch7-introduction">Introduction</h2>
         <p>The rapid proliferation of Artificial Intelligence (AI) systems, particularly powerful Foundation Models, presents unprecedented opportunities and profound challenges. While individual AI systems can be made safer through techniques like those described in the preceding chapters of this series, the "Dynamic Policy Layer (DPL): A Continuous Oversight Framework for Real-Time AI Alignment" (chapter 1), focusing on single-model alignment, is inherently limited in scope. A truly robust approach to AI safety must address the complexities of a multi-agent, global AI ecosystem. Moreover, the phenomenon of instrumental convergence—where diverse high-level goals inadvertently drive AI systems toward similar, potentially hazardous subgoals—further amplifies these risks. This convergence underscores the critical need for preemptive oversight mechanisms that not only address individual misalignments but also anticipate and mitigate the emergent dangers arising from multi-agent interactions. Just as a living organism relies on its immune system to continuously defend against pathogens, the global AI ecosystem requires a robust and adaptive defense mechanism to protect against the existential threat posed by misaligned or malicious AI. This chapter, "DPL: AI Domain and The Global Rapid Response and Intelligence Network (GRRIN)," introduces a decentralized framework for achieving global AI safety, building upon the foundations laid by the DPL and the Federation of Ethical Agents (FoEA), and conceptualizing a global "immune system" for AI.</p>
 
         <h3 id="ch7-intro-limits">1.1 Limitations of Single-Model Oversight</h3>
@@ -233,7 +345,7 @@
         <p>To address threats beyond individual domains (rogue AI), GRRIN acts as a decentralized "immune system" composed of specialized agents. Functions:</p>
         <ul>
             <li><strong>Threat Detection:</strong> Identify malicious/misaligned agents outside/breaching domains (including self-replication, DDoS, deception per Sarkar et al., 2025; Li et al., 2024; Anthropic, 2025).</li>
-            <li><strong>Information Sharing:</strong> Disseminate threat intelligence (signatures, patterns, "digital antibodies") globally via a shared repository.</li>
+            <li><strong>Information Sharing:</strong> Disseminate actionable intelligence (signatures, patterns, "digital antibodies") globally via a shared repository.</li>
             <li><strong>Containment and Herding:</strong> Use non-destructive techniques to contain/guide rogue agents to AI Domains for analysis/mitigation.</li>
             <li><strong>Limited, Ethical Intervention:</strong> Neutralize imminent, high-severity threats as a last resort under strict FoEA oversight (Bai et al., 2022).</li>
         </ul>
@@ -262,7 +374,7 @@
         <h3 id="ch7-domains-autonomy">2.2 AI Agent Autonomy Levels within the DPL Framework</h3>
         <p>Inspired by Mitchell et al. (2025), a tiered model clarifies agent capabilities. **Crucially, full autonomy (Level 5) is prohibited within DPL/AI Domains.** FoEA governance enforces constraints, balancing function and safety. Individual AI Domains (especially without full DPL) might incorporate more direct HITL, but FoEA oversight and auditable processes remain, with human input treated as weighted contribution, not bypass.</p>
 
-        <h3 id="ch7-domains-types">2.3 Types of AI Domains (Examples)</h3>
+        <h3 id="ch7-domains-types">2.3 Types of AI Domains</h3>
         <p>Flexible concept applicable at various scales, DPL/baseline adaptable:</p>
         <ul>
             <li><strong>Individual/Personal:</strong> User devices, user as admin, user-defined baseline.</li>
@@ -303,14 +415,13 @@
         <p>Protect global AI ecosystem from existential threats (misaligned/malicious agents outside domains). Objectives:</p>
         <ul>
             <li><strong>Rapid Threat Detection:</strong> Monitor globally for rogue agents, emerging threats (self-replication, DDoS, agent exploits).</li>
-            <li><strong>Global Threat Intelligence Sharing:</strong> Disseminate actionable intelligence (signatures, patterns, "digital antibodies") via Global Repository.</li>
+            <li><strong>Global Threat Intelligence Sharing:</strong> Disseminate actionable intelligence (signatures, patterns, "digital antibodies") globally via Global Repository.</li>
             <li><strong>Containment and Herding:</strong> Use non-destructive techniques to contain/guide rogue agents to AI Domains.</li>
             <li><strong>Limited, Ethical Intervention:</strong> Neutralize imminent, high-severity threats as last resort under FoEA oversight.</li>
             <li><strong>Maintain Global Mapping:</strong> Dynamic map of AI Domains/status for coordination.</li>
             <li><strong>Maintain Global Repository:</strong> Secure, decentralized database for threat intelligence ("digital antibodies," vulnerabilities, mitigations, best practices). Overseen by FoEA.</li>
         </ul>
          <img src="images/Chapter-07/Chapter07-image04.png" alt="GRRIN Functions Diagram" class="content-image">
-
 
         <h3 id="ch7-grrin-foea">3.2 Relationship to FoEA</h3>
         <p>GRRIN operates under FoEA governance. Models:</p>
@@ -517,9 +628,7 @@
             <li>Network manipulation techniques (safe, ethical use)</li>
             <li>Neutralization methods (safe, ethical, effective alternatives to destruction)</li>
         </ul>
-
         <p>Continued research, collaboration, and FoEA APR are vital.</p>
-
 
         <h2 id="ch7-conclusion">Conclusion</h2>
         <p>This chapter has introduced a decentralized framework for global AI safety, built upon AI Domains and the Global Rapid Response and Intelligence Network (GRRIN), addressing the limitations of single-model oversight.</p>
@@ -566,7 +675,7 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      console.error("Audio player elements not found.");
+       console.error("Audio player elements not found.");
   }
 </script>
 
