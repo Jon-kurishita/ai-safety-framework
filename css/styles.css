@@ -204,7 +204,6 @@
     }
     .page-header {
         text-align: center;
-        padding: 2rem 0; /* Restore some padding for global header on small screens */
     }
     main > .content-container {
         align-self: auto;
@@ -226,11 +225,10 @@
         font-size: 1em;
     }
     main .page-header {
-        padding: 1rem 0; /* Add modest padding for main headers on small screens */
         margin-bottom: 15px;
     }
     .audio-title {
-         margin-top: 15px;
+         margin-top: 15px; /* Add some top margin back on small screens */
     }
 }
 
@@ -298,15 +296,14 @@ main > .content-container {
 main .page-header {
     background: none;
     color: black;
-    padding: 0; /* Explicitly remove padding */
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Kept small bottom margin */
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
 }
 main .page-header h1 {
     font-size: 2rem;
-    margin-top: 0;
+    margin-top: 0; /* Explicitly remove top margin */
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -315,7 +312,7 @@ main .page-header h1 {
     font-size: 1em;
     color: darkblue;
     text-align: center;
-    margin-top: 0;
+    margin-top: 0; /* Explicitly remove top margin */
     margin-bottom: 5px;
     width: 100%;
     max-width: 800px;
@@ -324,7 +321,7 @@ main .page-header h1 {
 
 .audio-container {
      text-align: center;
-     margin-top: 0;
+     margin-top: 0; /* Remove default margin */
      margin-bottom: 10px;
      width: 100%;
      max-width: 800px;
@@ -338,7 +335,7 @@ main .page-header h1 {
 
 .audio-player-style {
     display: block;
-    margin-top: 0;
+    margin-top: 0; /* Remove default margin */
     margin-bottom: 20px;
     box-sizing: border-box;
 }
