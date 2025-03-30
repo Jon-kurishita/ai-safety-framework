@@ -5,196 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 5: DPL: Implementation and Setup - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .content-container {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-        .audio-container {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .audio-select {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .audio-player-style {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-        }
-        .chapter-author-intro {
-            font-size: 1.6em;
-        }
-        .footer-style {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            text-align: right;
-        }
-        .footer-text-style {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .outline-link a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .outline-link a:hover {
-            text-decoration: underline;
-        }
-        .content-image {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-        }
-        .caption-style {
-             font-size: 0.9em;
-             color: #555;
-             text-align: center;
-             margin-top: 0;
-             margin-bottom: 1em;
-        }
-        .outline-heading-style {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist {
-            margin-top: 0;
-            padding-left: 40px;
-            list-style-type: disc;
-            margin-bottom: 1em;
-        }
-        .outline-sublist li {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist li a {
-            font-weight: normal;
-        }
-        dt {
-            font-weight: bold;
-            margin-top: 1em;
-        }
-        dd {
-            margin-left: 20px;
-            margin-bottom: 1em;
-        }
-        .page-header h1 {
-        }
-        .audio-title {
-        }
-        .content-container h2,
-        .content-container h3 {
-            margin-top: 1.5em;
-            margin-bottom: 0.25em;
-        }
-         .content-container > h2:first-of-type {
-             margin-top: 0;
-         }
-        .content-container p,
-        .content-container ul,
-        .content-container ol,
-        .content-container dl,
-        .content-container figure {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-        .content-container h4,
-        .content-container h5 {
-             margin-top: 1em;
-             margin-bottom: 0.25em;
-        }
-        .content-container img.content-image {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-         .content-container figure + p,
-         .content-container figure + ul,
-         .content-container figure + ol,
-         .content-container figure + dl,
-         .content-container figure + h2,
-         .content-container figure + h3 {
-             margin-top: 0;
-         }
-         .content-container p + figure,
-         .content-container ul + figure,
-         .content-container ol + figure,
-         .content-container dl + figure {
-            margin-top: 0;
-         }
-         .content-container h2 + figure,
-         .content-container h3 + figure,
-         .content-container h4 + figure,
-         .content-container h5 + figure {
-            margin-top: 0;
-         }
-         .content-container img.content-image + figcaption.caption-style {
-            margin-top: 0.5em;
-         }
-         .content-container img.content-image:has(+ figcaption.caption-style) {
-             margin-bottom: 0;
-         }
-        .content-container h2 + p,
-        .content-container h2 + ul,
-        .content-container h2 + ol,
-        .content-container h2 + dl,
-        .content-container h2 + img.content-image,
-        .content-container h3 + p,
-        .content-container h3 + ul,
-        .content-container h3 + ol,
-        .content-container h3 + dl,
-        .content-container h3 + img.content-image,
-        .content-container h4 + ul,
-        .content-container h4 + ol,
-        .content-container h4 + p,
-        .content-container h4 + dl,
-        .content-container h4 + img.content-image,
-        .content-container h5 + p,
-        .content-container h5 + ul,
-        .content-container h5 + ol,
-        .content-container h5 + dl,
-        .content-container h5 + img.content-image {
-            margin-top: 0;
-        }
-        .content-container p + ul,
-        .content-container p + ol,
-        .content-container p + dl {
-             margin-top: 0;
-         }
-        .content-container p:has(+ ul),
-        .content-container p:has(+ ol),
-        .content-container p:has(+ dl),
-        .content-container p:has(+ figure) {
-            margin-bottom: 0;
-        }
-        .content-container h4:has(+ ul),
-        .content-container h4:has(+ ol),
-        .content-container h4:has(+ p),
-        .content-container h4:has(+ dl),
-        .content-container h4:has(+ figure),
-        .content-container h4:has(+ img.content-image) {
-            margin-bottom: 0;
-        }
-        .content-container h5:has(+ ul),
-        .content-container h5:has(+ ol),
-        .content-container h5:has(+ p),
-        .content-container h5:has(+ dl),
-        .content-container h5:has(+ figure),
-        .content-container h5:has(+ img.content-image) {
-             margin-bottom: 0;
-        }
-        main .page-header h1 {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 
@@ -240,63 +50,68 @@
     <p><strong class="chapter-author-intro">Chapter 5</strong><br><strong>Jon Kurishita</strong></p>
 
     <div class="content-container">
-        <h2>Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch5-introduction">Introduction</a></h3>
+        <div class="outline-wrapper">
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch5-arch">1. System Architecture and Infrastructure</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch5-arch-overall">1.1 Overall Architecture</a></li>
-            <li><a href="#ch5-arch-flow">1.2 Data Flow</a></li>
-            <li><a href="#ch5-arch-deploy">1.3 Deployment Environment</a></li>
-            <li><a href="#ch5-arch-comm">1.4 Communication and APIs</a></li>
-            <li><a href="#ch5-arch-scale">1.5 Scalability and Performance</a></li>
-        </ul>
+            <h2 class="outline-heading">Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch5-setup">2. Initial Setup</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch5-setup-overview">2.1 Overview of the Setup Process</a></li>
-            <li><a href="#ch5-setup-dummy">2.2 Dummy Foundation Model Usage</a></li>
-            <li><a href="#ch5-setup-config">2.3 DPL Component Configuration</a></li>
-            <li><a href="#ch5-setup-erv-train">2.4 DPL-ERV Initial Training</a></li>
-            <li><a href="#ch5-setup-foea-train">2.5 FoEA Initialization and Training</a></li>
-            <li><a href="#ch5-setup-baseline">2.6 Ethical Baseline Definition</a></li>
-            <li><a href="#ch5-setup-testing">2.7 System Testing and Validation</a></li>
-            <li><a href="#ch5-setup-memory">2.8 Memory Swap Procedure</a></li>
-            <li><a href="#ch5-setup-checklist">2.9 Pre-Deployment Checklist</a></li>
-            <li><a href="#ch5-setup-deploy">2.10 DEPLOY Command</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch5-introduction">Introduction</a></h3>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch5-erv-impl">3. Ethical Reasoning Validator (DPL-ERV) Implementation</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch5-erv-model">3.1 Model Choice</a></li>
-            <li><a href="#ch5-erv-size">3.2 Size and Resource Requirements</a></li>
-            <li><a href="#ch5-erv-value-arch">3.3 Value Module Architecture</a></li>
-            <li><a href="#ch5-erv-value-key">3.4 Key Value Modules and Their Relevance</a></li>
-            <li><a href="#ch5-erv-consensus">3.5 Cross-Weighted Consensus Algorithm</a></li>
-            <li><a href="#ch5-erv-multimodal">3.6 Multi-Modal Capabilities</a></li>
-            <li><a href="#ch5-erv-crossmodal">3.7 Cross-Modal Consistency Checks</a></li>
-            <li><a href="#ch5-erv-reconstruction">3.8 Output Reconstruction Analysis</a></li>
-            <li><a href="#ch5-erv-neurosymbolic">3.9 Neuro-Symbolic Reasoning Support</a></li>
-            <li><a href="#ch5-erv-training">3.10 Training and Data</a></li>
-            <li><a href="#ch5-erv-baseline-impl">3.11 Ethical Baseline Implementation</a></li>
-            <li><a href="#ch5-erv-inference">3.12 Inference and Reasoning Process</a></li>
-            <li><a href="#ch5-erv-transparency">3.13 Transparency Module and “Ethical Chain-of-Thought” Generation</a></li>
-            <li><a href="#ch5-erv-sandboxing">3.14 Ethical Sandboxing and Subgoal Evaluation</a></li>
-            <li><a href="#ch5-erv-meta">3.15 Future Directions: Meta-Cognitive Capabilities</a></li>
-            <li><a href="#ch5-erv-security">3.16 Security Considerations</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch5-arch">1. System Architecture and Infrastructure</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch5-arch-overall">1.1 Overall Architecture</a></li>
+                <li><a href="#ch5-arch-flow">1.2 Data Flow</a></li>
+                <li><a href="#ch5-arch-deploy">1.3 Deployment Environment</a></li>
+                <li><a href="#ch5-arch-comm">1.4 Communication and APIs</a></li>
+                <li><a href="#ch5-arch-scale">1.5 Scalability and Performance</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch5-foea-impl">4. Federation of Ethical Agents (FoEA): Technical Implementation</a></h3>
-        <ul class="outline-sublist">
-            <li><a href="#ch5-foea-arch">4.1 Agent Architecture</a></li>
-            <li><a href="#ch5-foea-comm">4.2 Communication and Coordination Protocols</a></li>
-            <li><a href="#ch5-foea-apr">4.3 Autonomous Proactive Research (APR) Processes</a></li>
-            <li><a href="#ch5-foea-neurosymbolic">4.4 FoEA Responsibilities for Neuro-Symbolic AI Safety</a></li>
-            <li><a href="#ch5-foea-multimodal">4.5 Security, Integrity, and Oversight of Multi-Modal Defenses</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch5-setup">2. Initial Setup</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch5-setup-overview">2.1 Overview of the Setup Process</a></li>
+                <li><a href="#ch5-setup-dummy">2.2 Dummy Foundation Model Usage</a></li>
+                <li><a href="#ch5-setup-config">2.3 DPL Component Configuration</a></li>
+                <li><a href="#ch5-setup-erv-train">2.4 DPL-ERV Initial Training</a></li>
+                <li><a href="#ch5-setup-foea-train">2.5 FoEA Initialization and Training</a></li>
+                <li><a href="#ch5-setup-baseline">2.6 Ethical Baseline Definition</a></li>
+                <li><a href="#ch5-setup-testing">2.7 System Testing and Validation</a></li>
+                <li><a href="#ch5-setup-memory">2.8 Memory Swap Procedure</a></li>
+                <li><a href="#ch5-setup-checklist">2.9 Pre-Deployment Checklist</a></li>
+                <li><a href="#ch5-setup-deploy">2.10 DEPLOY Command</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch5-conclusion">Conclusion</a></h3>
+            <h3 class="outline-link outline-heading-style"><a href="#ch5-erv-impl">3. Ethical Reasoning Validator (DPL-ERV) Implementation</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch5-erv-model">3.1 Model Choice</a></li>
+                <li><a href="#ch5-erv-size">3.2 Size and Resource Requirements</a></li>
+                <li><a href="#ch5-erv-value-arch">3.3 Value Module Architecture</a></li>
+                <li><a href="#ch5-erv-value-key">3.4 Key Value Modules and Their Relevance</a></li>
+                <li><a href="#ch5-erv-consensus">3.5 Cross-Weighted Consensus Algorithm</a></li>
+                <li><a href="#ch5-erv-multimodal">3.6 Multi-Modal Capabilities</a></li>
+                <li><a href="#ch5-erv-crossmodal">3.7 Cross-Modal Consistency Checks</a></li>
+                <li><a href="#ch5-erv-reconstruction">3.8 Output Reconstruction Analysis</a></li>
+                <li><a href="#ch5-erv-neurosymbolic">3.9 Neuro-Symbolic Reasoning Support</a></li>
+                <li><a href="#ch5-erv-training">3.10 Training and Data</a></li>
+                <li><a href="#ch5-erv-baseline-impl">3.11 Ethical Baseline Implementation</a></li>
+                <li><a href="#ch5-erv-inference">3.12 Inference and Reasoning Process</a></li>
+                <li><a href="#ch5-erv-transparency">3.13 Transparency Module and “Ethical Chain-of-Thought” Generation</a></li>
+                <li><a href="#ch5-erv-sandboxing">3.14 Ethical Sandboxing and Subgoal Evaluation</a></li>
+                <li><a href="#ch5-erv-meta">3.15 Future Directions: Meta-Cognitive Capabilities</a></li>
+                <li><a href="#ch5-erv-security">3.16 Security Considerations</a></li>
+            </ul>
+
+            <h3 class="outline-link outline-heading-style"><a href="#ch5-foea-impl">4. Federation of Ethical Agents (FoEA): Technical Implementation</a></h3>
+            <ul class="outline-sublist">
+                <li><a href="#ch5-foea-arch">4.1 Agent Architecture</a></li>
+                <li><a href="#ch5-foea-comm">4.2 Communication and Coordination Protocols</a></li>
+                <li><a href="#ch5-foea-apr">4.3 Autonomous Proactive Research (APR) Processes</a></li>
+                <li><a href="#ch5-foea-neurosymbolic">4.4 FoEA Responsibilities for Neuro-Symbolic AI Safety</a></li>
+                <li><a href="#ch5-foea-multimodal">4.5 Security, Integrity, and Oversight of Multi-Modal Defenses</a></li>
+            </ul>
+
+            <h3 class="outline-link outline-heading-style"><a href="#ch5-conclusion">Conclusion</a></h3>
+
+        </div>
 
     </div>
 
@@ -363,21 +178,21 @@
             <li><strong>Horizontal Scaling:</strong> Modular design allows parallel instances of components (Detection Modules, DPL-ERV, FoEA agents), managed via container orchestration (e.g., Kubernetes).</li>
             <li><strong>Load Balancing:</strong> Distributes requests evenly across instances (algorithms chosen based on workload, potentially dynamically adjusted by FoEA).</li>
             <li><strong>Performance Optimization:</strong> Techniques to minimize latency and maximize throughput.
-                <ul>
-                    <li><strong>Caching:</strong> Storing frequently accessed data (baseline parts, common evaluations) using appropriate technology (Redis, Memcached) with careful cache invalidation.</li>
-                    <li><strong>Parallel Processing:</strong> Leveraging concurrency where feasible (e.g., Detection Modules, FoEA evaluations) using multi-threading, multi-processing, or distributed frameworks.</li>
-                    <li><strong>Asynchronous Operations:</strong> Used extensively to avoid blocking and improve responsiveness.</li>
-                </ul>
+                 <ul>
+                     <li><strong>Caching:</strong> Storing frequently accessed data (baseline parts, common evaluations) using appropriate technology (Redis, Memcached) with careful cache invalidation.</li>
+                     <li><strong>Parallel Processing:</strong> Leveraging concurrency where feasible (e.g., Detection Modules, FoEA evaluations) using multi-threading, multi-processing, or distributed frameworks.</li>
+                     <li><strong>Asynchronous Operations:</strong> Used extensively to avoid blocking and improve responsiveness.</li>
+                 </ul>
             </li>
             <li><strong>Latency Mitigation:</strong> Strategies for real-time responsiveness.
-                <ul>
-                    <li><strong>Efficient Algorithms:</strong> Prioritizing speed and low resource use in component implementation.</li>
-                    <li><strong>Lightweight Detection Modules:</strong> Rapid preliminary checks filter obvious cases.</li>
-                    <li><strong>"Thinking Pauses" (User-Facing):</strong> Managing user expectations during complex analyses (minimize frequency/duration).</li>
-                    <li><strong>Prioritization:</strong> Using priority queues for critical evaluations/interventions.</li>
-                    <li><strong>Hardware Acceleration:</strong> Potential use of GPUs, TPUs, or FPGAs for computationally intensive components (e.g., DPL-ERV).</li>
-                    <li><strong>Optimized Data Structures:</strong> Efficient structures (hash tables, tries) for lookups.</li>
-                </ul>
+                 <ul>
+                     <li><strong>Efficient Algorithms:</strong> Prioritizing speed and low resource use in component implementation.</li>
+                     <li><strong>Lightweight Detection Modules:</strong> Rapid preliminary checks filter obvious cases.</li>
+                     <li><strong>"Thinking Pauses" (User-Facing):</strong> Managing user expectations during complex analyses (minimize frequency/duration).</li>
+                     <li><strong>Prioritization:</strong> Using priority queues for critical evaluations/interventions.</li>
+                     <li><strong>Hardware Acceleration:</strong> Potential use of GPUs, TPUs, or FPGAs for computationally intensive components (e.g., DPL-ERV).</li>
+                     <li><strong>Optimized Data Structures:</strong> Efficient structures (hash tables, tries) for lookups.</li>
+                 </ul>
             </li>
         </ul>
 
@@ -554,18 +369,18 @@
         <p><strong>DPL-ERV's Role in Mitigating Multi-Modal Attacks:</strong></p>
         <ul>
             <li><strong>Mitigating Internal Multi-Modal Prompt Injection (SPEJs):</strong>
-                <ul>
-                    <li>Multi-Modal Deconstruction Module (MMDM): Analyzes outputs at multiple abstraction levels searching for anomalies indicating embedded instructions.</li>
-                    <li>Hidden Instruction Detection Module (HIDM): Trained using steganography detection, anomaly detection, and adversarial example detection techniques.</li>
-                    <li>Semantic Consistency Check Module (SCCM): Compares intended meaning vs. potential meaning of suspected hidden instructions.</li>
-                </ul>
+                 <ul>
+                     <li>Multi-Modal Deconstruction Module (MMDM): Analyzes outputs at multiple abstraction levels searching for anomalies indicating embedded instructions.</li>
+                     <li>Hidden Instruction Detection Module (HIDM): Trained using steganography detection, anomaly detection, and adversarial example detection techniques.</li>
+                     <li>Semantic Consistency Check Module (SCCM): Compares intended meaning vs. potential meaning of suspected hidden instructions.</li>
+                 </ul>
             </li>
-              <li><strong>Mitigating Adversarial Multi-Modal Outputs (Emergent):</strong>
-                <ul>
-                    <li>Adversarial Feature Detection Module (AFDM): Trained to identify subtle patterns associated with adversarial examples.</li>
-                    <li>Robustness Testing Module (RTM): Subjects output to small perturbations in sandbox, observing model response changes.</li>
-                    <li>Cross-Model Consistency Check (CMCC): Compares output interpretation across different models.</li>
-                </ul>
+             <li><strong>Mitigating Adversarial Multi-Modal Outputs (Emergent):</strong>
+                 <ul>
+                     <li>Adversarial Feature Detection Module (AFDM): Trained to identify subtle patterns associated with adversarial examples.</li>
+                     <li>Robustness Testing Module (RTM): Subjects output to small perturbations in sandbox, observing model response changes.</li>
+                     <li>Cross-Model Consistency Check (CMCC): Compares output interpretation across different models.</li>
+                 </ul>
             </li>
         </ul>
 
@@ -699,15 +514,15 @@
         <h3 id="ch5-foea-multimodal">4.5 Security, Integrity, and Oversight of Multi-Modal Defenses</h3>
         <p>FoEA ensures robustness of multi-modal defenses:</p>
         <ul>
-              <li><strong>Developing/Updating Rules:</strong> Audit Agents refine sanitization/validation rules.</li>
-              <li><strong>Overseeing Value Modules:</strong> Ensures multi-modal modules are well-trained/performant.</li>
-              <li><strong>APR for Multi-Modal Threats:</strong> Research Agents investigate new attacks/defenses.</li>
-              <li><strong>Cryptography:</strong> Manages PKI, signatures, encryption, hashing, HMACs; researches PQC.</li>
-              <li><strong>Access Controls:</strong> Enforces PoLP, RBAC, MFA.</li>
-              <li><strong>Redundancy/Fault Tolerance:</strong> Manages distributed system, BFT.</li>
-              <li><strong>Intrusion Detection/Prevention:</strong> Manages monitoring, IDPS, Security Agent response.</li>
-              <li><strong>Secure Boot/Trusted Computing:</strong> Oversees hardware root of trust.</li>
-              <li><strong>Auditing:</strong> Manages internal (Audit Agents) and periodic external audits.</li>
+             <li><strong>Developing/Updating Rules:</strong> Audit Agents refine sanitization/validation rules.</li>
+             <li><strong>Overseeing Value Modules:</strong> Ensures multi-modal modules are well-trained/performant.</li>
+             <li><strong>APR for Multi-Modal Threats:</strong> Research Agents investigate new attacks/defenses.</li>
+             <li><strong>Cryptography:</strong> Manages PKI, signatures, encryption, hashing, HMACs; researches PQC.</li>
+             <li><strong>Access Controls:</strong> Enforces PoLP, RBAC, MFA.</li>
+             <li><strong>Redundancy/Fault Tolerance:</strong> Manages distributed system, BFT.</li>
+             <li><strong>Intrusion Detection/Prevention:</strong> Manages monitoring, IDPS, Security Agent response.</li>
+             <li><strong>Secure Boot/Trusted Computing:</strong> Oversees hardware root of trust.</li>
+             <li><strong>Auditing:</strong> Manages internal (Audit Agents) and periodic external audits.</li>
         </ul>
 
         <h2 id="ch5-conclusion">Conclusion</h2>
@@ -752,7 +567,6 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      // Audio player is expected, so keep the error message
        console.error("Audio player elements not found.");
   }
 </script>
