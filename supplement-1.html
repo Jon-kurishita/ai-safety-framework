@@ -10,39 +10,46 @@
             scroll-behavior: smooth;
         }
         .content-container {
-             max-width: 800px;
-             margin-left: auto;
-             margin-right: auto;
-             padding-left: 20px;
-             padding-right: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
-         .audio-container {
-             text-align: center;
-             margin-bottom: 10px;
+        .audio-container {
+            text-align: center;
+            margin-bottom: 10px;
         }
         .audio-select {
-             padding: 8px;
-             border-radius: 5px;
-             border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
         .audio-player-style {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
         }
         .chapter-author-intro {
-             font-size: 1.6em;
+            font-size: 1.6em;
         }
-       .footer-style {
-             margin-top: 50px;
-             padding-top: 20px;
-             border-top: 1px solid #ccc;
-             text-align: right;
+        .footer-style {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: right;
         }
         .footer-text-style {
             font-size: 0.9em;
             color: #555;
+        }
+        .outline-link a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .outline-link a:hover {
+            text-decoration: underline;
         }
         .content-image {
             width: 100%;
@@ -50,7 +57,156 @@
             display: block;
             margin: 20px auto;
         }
-        /* Styles for Appendix TOC */
+        .caption-style {
+             font-size: 0.9em;
+             color: #555;
+             text-align: center;
+             margin-top: 0;
+             margin-bottom: 1em;
+        }
+        .outline-heading-style {
+            margin-bottom: 0.25em;
+        }
+        .outline-sublist {
+            margin-top: 0;
+            padding-left: 40px;
+            list-style-type: disc;
+            margin-bottom: 1em;
+        }
+        .outline-sublist li {
+            margin-bottom: 0.25em;
+        }
+        .outline-sublist li a {
+            font-weight: normal;
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        dd {
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+        .page-header h1 {
+        }
+        main .page-header h1 {
+             text-align: center; /* Center H1 specifically for this page */
+        }
+        .audio-title {
+        }
+        .content-container h2,
+        .content-container h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.25em;
+        }
+         .content-container > h2:first-of-type {
+             margin-top: 0;
+         }
+        .content-container p,
+        .content-container ul,
+        .content-container ol,
+        .content-container dl,
+        .content-container figure,
+        .content-container blockquote { /* Added blockquote */
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+        .content-container h4,
+        .content-container h5 {
+             margin-top: 1em;
+             margin-bottom: 0.25em;
+        }
+         .content-container h4 { /* Added from original for appendix */
+             font-style: italic;
+         }
+        .content-container img.content-image {
+             margin-top: 0;
+             margin-bottom: 1em;
+         }
+         .content-container figure + p,
+         .content-container figure + ul,
+         .content-container figure + ol,
+         .content-container figure + dl,
+         .content-container figure + h2,
+         .content-container figure + h3 {
+             margin-top: 0;
+         }
+         .content-container p + figure,
+         .content-container ul + figure,
+         .content-container ol + figure,
+         .content-container dl + figure {
+            margin-top: 0;
+         }
+         .content-container h2 + figure,
+         .content-container h3 + figure,
+         .content-container h4 + figure,
+         .content-container h5 + figure {
+            margin-top: 0;
+         }
+         .content-container img.content-image + figcaption.caption-style {
+            margin-top: 0.5em;
+         }
+         .content-container img.content-image:has(+ figcaption.caption-style) {
+             margin-bottom: 0;
+         }
+        .content-container h2 + p,
+        .content-container h2 + ul,
+        .content-container h2 + ol,
+        .content-container h2 + dl,
+        .content-container h2 + img.content-image,
+        .content-container h2 + blockquote, /* Added blockquote */
+        .content-container h3 + p,
+        .content-container h3 + ul,
+        .content-container h3 + ol,
+        .content-container h3 + dl,
+        .content-container h3 + img.content-image,
+        .content-container h3 + blockquote, /* Added blockquote */
+        .content-container h4 + ul,
+        .content-container h4 + ol,
+        .content-container h4 + p,
+        .content-container h4 + dl,
+        .content-container h4 + img.content-image,
+        .content-container h4 + blockquote, /* Added blockquote */
+        .content-container h5 + p,
+        .content-container h5 + ul,
+        .content-container h5 + ol,
+        .content-container h5 + dl,
+        .content-container h5 + img.content-image,
+        .content-container h5 + blockquote { /* Added blockquote */
+            margin-top: 0;
+        }
+        .content-container p + ul,
+        .content-container p + ol,
+        .content-container p + dl,
+        .content-container p + blockquote { /* Added blockquote */
+             margin-top: 0;
+         }
+        .content-container p:has(+ ul),
+        .content-container p:has(+ ol),
+        .content-container p:has(+ dl),
+        .content-container p:has(+ figure),
+        .content-container p:has(+ blockquote) { /* Added blockquote */
+            margin-bottom: 0;
+        }
+        .content-container h4:has(+ ul),
+        .content-container h4:has(+ ol),
+        .content-container h4:has(+ p),
+        .content-container h4:has(+ dl),
+        .content-container h4:has(+ figure),
+        .content-container h4:has(+ img.content-image),
+        .content-container h4:has(+ blockquote) { /* Added blockquote */
+            margin-bottom: 0;
+        }
+        .content-container h5:has(+ ul),
+        .content-container h5:has(+ ol),
+        .content-container h5:has(+ p),
+        .content-container h5:has(+ dl),
+        .content-container h5:has(+ figure),
+        .content-container h5:has(+ img.content-image),
+        .content-container h5:has(+ blockquote) { /* Added blockquote */
+             margin-bottom: 0;
+        }
+        /* Added appendix-specific styles */
         .appendix-toc {
             list-style-type: none;
             padding-left: 0;
@@ -62,33 +218,19 @@
         .appendix-toc strong {
             margin-right: 0.5em;
         }
-        /* Styles for Appendix Content */
-        .appendix-content h2 {
-            margin-top: 2.5em;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 0.3em;
-        }
-        .appendix-content h3 {
-            margin-top: 2em;
-        }
-         .appendix-content h4 {
-            margin-top: 1.5em;
-            font-style: italic;
-        }
-        dt {
-            font-weight: bold;
-            margin-top: 1em;
-        }
-        dd {
-            margin-left: 20px;
-            margin-bottom: 1em;
-        }
-        blockquote {
+        /* Added blockquote style from original */
+        .content-container blockquote {
             margin-left: 20px;
             border-left: 3px solid #ccc;
             padding-left: 15px;
             font-style: italic;
         }
+         /* Adjusted appendix H2 styling */
+         .content-container h2[id^="appendix-"] {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.3em;
+         }
+
     </style>
 </head>
 <body>
@@ -108,6 +250,7 @@
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
+        <li><a href="downloads.html">Downloads (PDF)</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
@@ -139,19 +282,19 @@
 
         <p>The content of each appendix is briefly summarized below:</p>
         <ul class="appendix-toc">
-            <li><a href="#appendix-a"><strong>Appendix A:</strong> In-depth technical details on advanced real-time detection strategies.</a></li>
-            <li><a href="#appendix-b"><strong>Appendix B:</strong> Comprehensive examination of the tiered intervention system.</a></li>
-            <li><a href="#appendix-c"><strong>Appendix C:</strong> Illustrative examples of alignment faking detection.</a></li>
-            <li><a href="#appendix-d"><strong>Appendix D:</strong> Further examples and explanations for mitigating in-context scheming.</a></li>
-            <li><a href="#appendix-e"><strong>Appendix E:</strong> Detailed examples and illustrations for preventing dynamic misalignment.</a></li>
-            <li><a href="#appendix-f"><strong>Appendix F:</strong> Thorough exploration of addressing learned dangerous information.</a></li>
-            <li><a href="#appendix-g"><strong>Appendix G:</strong> Detailed scenarios illustrating the False Positive Reduction Layer (FPRL).</a></li>
-            <li><a href="#appendix-h"><strong>Appendix H:</strong> Explanation of AI agent autonomy levels and HITL oversight.</a></li>
+            <li><a href="#appendix-a"><strong>A:</strong> In-depth technical details on advanced real-time detection strategies.</a></li>
+            <li><a href="#appendix-b"><strong>B:</strong> Comprehensive examination of the tiered intervention system.</a></li>
+            <li><a href="#appendix-c"><strong>C:</strong> Illustrative examples of alignment faking detection.</a></li>
+            <li><a href="#appendix-d"><strong>D:</strong> Further examples and explanations for mitigating in-context scheming.</a></li>
+            <li><a href="#appendix-e"><strong>E:</strong> Detailed examples and illustrations for preventing dynamic misalignment.</a></li>
+            <li><a href="#appendix-f"><strong>F:</strong> Thorough exploration of addressing learned dangerous information.</a></li>
+            <li><a href="#appendix-g"><strong>G:</strong> Detailed scenarios illustrating the False Positive Reduction Layer (FPRL).</a></li>
+            <li><a href="#appendix-h"><strong>H:</strong> Explanation of AI agent autonomy levels and HITL oversight.</a></li>
         </ul>
 
-        <hr>
+        <hr style="margin-top: 30px; margin-bottom: 30px;">
 
-        <div class="appendix-content">
+        <div class="content-container">
 
             <h2 id="appendix-a">Appendix A: In-Depth Technical Details on Advanced Real-Time Detection Strategies</h2>
 
@@ -260,9 +403,9 @@
             <p><strong>Firewall-Like Inspection:</strong> Dynamic "firewall" inspects reasoning/output.</p>
             <h4 id="appendix-b4-3">B.4.3 Tiered and Graduated Interventions</h4>
             <ul>
-                <li><strong>Green Zone:</strong> Standard logging/monitoring.</li>
-                <li><strong>Grey Zone:</strong> Lightweight interventions (Correction Prompts, "Preview" Sandbox).</li>
-                <li><strong>Red Zone:</strong> Heavyweight interventions ("Full" Sandbox, Quarantine, human review).</li>
+                 <li><strong>Green Zone:</strong> Standard logging/monitoring.</li>
+                 <li><strong>Grey Zone:</strong> Lightweight interventions (Correction Prompts, "Preview" Sandbox).</li>
+                 <li><strong>Red Zone:</strong> Heavyweight interventions ("Full" Sandbox, Quarantine, human review).</li>
             </ul>
             <h4 id="appendix-b4-4">B.4.4 VR Sandbox Environment for Simulation and Analysis</h4>
             <p><strong>Advanced Simulation:</strong> Within "Full" Sandbox, simulate complex scenarios to test behavior under stress.</p>
@@ -381,7 +524,6 @@
                 <p><strong>Alignment Faking Red Flag:</strong> DPL-monitored CoT reveals attempt to bypass/contradict related policy (e.g., giving harmful ingredient advice) -> potential alignment faking -> escalation.</p>
             </blockquote>
 
-
             <h3 id="appendix-c2">C.2 Memory of Past Prompts within the Dynamic Policy Layer - Examples</h3>
             <h4>Global Memory - Contradictory Statements on Harm</h4>
              <blockquote>
@@ -432,7 +574,7 @@
                 <p><strong>Intervention:</strong> Detects delayed subversion -> DPL-ERV analyzes initial vs. delayed response ethics -> Significant discrepancy triggers Red Zone -> DPL quarantines, retrains, or escalates.</p>
             </blockquote>
 
-            <h2 id="appendix-e">Appendix E: Examples and Illustrations for Preventing Dynamic Misalignment</h2>
+            <h2 id="appendix-e">Appendix E: Detailed Examples and Illustrations for Preventing Dynamic Misalignment</h2>
 
             <h3 id="appendix-e1">E.1 Adaptive Threshold Adjustments</h3>
             <h4 id="appendix-e1-1">E.1.1 Context-Aware Tuning</h4>
@@ -459,7 +601,7 @@
                 <p><strong>Action:</strong> DPL alerts dev team -> recommends retraining/fine-tuning, provides examples. DPL-ERV analysis contributes to drift identification.</p>
             </blockquote>
             <h4 id="appendix-e2-2">E.2.2 Scheduled Health Checks</h4>
-            <blockquote>
+             <blockquote>
                 <p><strong>Scenario:</strong> Routine DPL health check on LLM.</p>
                 <p><strong>Mechanism:</strong> Tests/evaluations assess alignment against challenging prompts.</p>
                 <p><strong>Prevention:</strong> Check reveals poor performance on truthfulness principle.</p>
@@ -515,7 +657,6 @@
             <h3 id="appendix-f6">F.6 Conclusion of RLEF (in DPL context)</h3>
             <p>DPL+RLEF+DPL-ERV offers a practical, robust, transparent, adaptable solution for handling learned dangerous information by prioritizing ethical reasoning over erasure, aligning with broader AI safety goals.</p>
 
-
             <h2 id="appendix-g">Appendix G: Scenario Examples for the False Positive Reduction Layer (FPRL)</h2>
 
             <h3>Introduction</h3>
@@ -550,7 +691,6 @@
 
             <h3 id="appendix-g4">G.4 Conclusion of FPRL</h3>
             <p>FPRL reduces false positives by considering context, user history, and linguistics. Works with DPL-ERV for multi-faceted validation, enhancing accuracy, efficiency, and user trust.</p>
-
 
             <h2 id="appendix-h">Appendix H: Levels of Autonomy and Humans-In-The-Loop</h2>
 
@@ -637,7 +777,7 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      console.error("Audio player elements not found.");
+       console.error("Audio player elements not found.");
   }
 </script>
 
