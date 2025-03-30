@@ -215,14 +215,15 @@
     .audio-player-style {
         max-width: 100%;
     }
-    .author-line {
-         max-width: 100%;
-    }
     main > hr:first-of-type {
          max-width: 100%;
     }
     main footer.footer-style {
          max-width: 100%;
+    }
+     /* Reset nav link font size if needed for small screens */
+    nav ul li a {
+        font-size: 1em; /* Or initial default size */
     }
 }
 
@@ -230,7 +231,7 @@ body {
     font-family: sans-serif;
 }
 nav {
-    width: 400px;
+    width: 420px; /* Increased width slightly more */
     background-color: #f4f4f4;
     padding: 20px;
     position: fixed;
@@ -257,13 +258,14 @@ nav ul li a {
     display: block;
     padding: 8px;
     border-radius: 5px;
+    font-size: 0.9em; /* Reduced font size */
 }
 nav ul li a:hover {
     background-color: #ddd;
 }
 main {
     padding: 20px;
-    margin-left: 400px;
+    margin-left: 420px; /* Matches new nav width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -327,6 +329,7 @@ main .page-header h1 {
     display: block;
     margin-bottom: 20px;
     box-sizing: border-box;
+    /* Width is now implicitly determined by browser default */
 }
 
 main > hr:first-of-type {
@@ -338,20 +341,7 @@ main > hr:first-of-type {
      border-top: 1px solid #ccc;
 }
 
-.author-line {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-.author-line .chapter-author-intro {
-    font-size: 1.6em;
-    display: block;
-    margin-bottom: 0.25em;
-}
+/* Removed .author-line rule as requested */
 
 main footer.footer-style {
      width: 100%;
