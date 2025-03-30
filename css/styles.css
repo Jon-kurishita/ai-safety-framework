@@ -213,6 +213,11 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+     /* Ensure outline wrapper takes full width on small screens */
+    .outline-wrapper {
+        max-width: none; /* Remove max-width constraint */
+        margin-bottom: 1.5em;
+    }
     .audio-player-style {
         max-width: 100%;
     }
@@ -233,7 +238,7 @@
          margin-top: 15px;
     }
     .intro-heading-center {
-         text-align: center; /* Keep centered on small screens if desired */
+         text-align: center;
     }
 }
 
@@ -296,6 +301,14 @@ main {
 
 main > .content-container {
     align-self: stretch;
+}
+
+/* ADDED RULE FOR OUTLINE WRAPPER */
+.outline-wrapper {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
 }
 
 main .page-header {
@@ -387,7 +400,7 @@ main footer.footer-style {
 .outline-heading {
     text-align: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 800px; /* Allow title to span width if needed */
     margin-bottom: 1em;
 }
 .case-study-content h2 {
@@ -400,7 +413,6 @@ main footer.footer-style {
     max-width: 800px;
 }
 
-/* ADDED RULE FOR CENTERING SPECIFIC INTRO HEADING */
 .intro-heading-center {
     text-align: center;
 }
