@@ -10,7 +10,6 @@
     margin-bottom: 1rem;
 }
 
-/* About Page Styles */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -32,7 +31,6 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Team Section */
 #team {
     padding: 5rem 0;
 }
@@ -81,7 +79,6 @@
     color: var(--dark-color);
 }
 
-/* Contact Page Styles */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -150,7 +147,6 @@
     margin-top: 0.5rem;
 }
 
-/* Services Page Styles */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -180,8 +176,6 @@
     margin-bottom: 1rem;
 }
 
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     .about-grid,
     .contact-grid {
@@ -191,58 +185,61 @@
     .about-image {
         order: -1;
     }
-    /* Adjust sidebar and main content for smaller screens */
      nav {
-        width: 100%; /* Full width */
-        position: static; /* Change from fixed */
-        height: auto; /* Auto height */
+        width: 100%;
+        position: static;
+        height: auto;
         overflow-y: visible;
-        margin-bottom: 20px; /* Add space below nav */
-        z-index: auto; /* Reset z-index */
+        margin-bottom: 20px;
+        z-index: auto;
+        box-sizing: border-box;
     }
     main {
-        width: 100%; /* Full width */
-        margin-left: 0; /* Remove left margin */
-        padding: 10px; /* Adjust padding */
-        /* Reset flex properties if needed, though width 100% might suffice */
-        display: block; /* Reset display */
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+        display: block;
+        min-height: auto; /* Reset min-height */
+        box-sizing: border-box;
     }
     .page-header {
-        text-align: center; /* Center header text on small screens */
+        text-align: center;
     }
-    /* Ensure content container takes full width on small screens */
     main > .content-container {
-        align-self: auto; /* Reset align-self */
+        align-self: auto;
         width: 100%;
-        max-width: none; /* Allow full width */
-        padding-left: 10px; /* Consistent padding with main */
+        max-width: none;
+        padding-left: 10px;
         padding-right: 10px;
     }
-     /* Adjust audio player for small screens if needed */
     .audio-player-style {
-        max-width: 100%; /* Allow full width on small screens */
+        max-width: 100%;
+    }
+    .author-line {
+         max-width: 100%; /* Ensure full width on small screens */
+    }
+    main > hr:first-of-type {
+         max-width: 100%;
+    }
+    main footer.footer-style {
+         max-width: 100%;
     }
 }
 
-
-/* Layout Styles for Sidebar */
 body {
-    /* display: flex; */ /* Removed */
-    /* flex-wrap: wrap; */ /* Removed */
     font-family: sans-serif;
 }
 nav {
-    /* --- CHANGE 1: Wider Fixed Width --- */
-    width: 320px; /* Increased width - ADJUST AS NEEDED */
+    width: 320px;
     background-color: #f4f4f4;
     padding: 20px;
-    position: fixed; /* Keep sidebar fixed on larger screens */
+    position: fixed;
     height: 100vh;
     overflow-y: auto;
-    box-sizing: border-box; /* Include padding in width calculation */
+    box-sizing: border-box;
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000;
 }
 nav h2 {
     margin-top: 0;
@@ -265,141 +262,251 @@ nav ul li a:hover {
     background-color: #ddd;
 }
 main {
-    /* REMOVED width: 75%; */
     padding: 20px;
-    /* --- CHANGE 1b: Matching Margin --- */
-    margin-left: 320px; /* MUST MATCH NAV WIDTH */
-    /* overflow-y: auto; */ /* Removed, let body scroll */
-    /* --- CHANGE 2: Keep Flex Centering for elements like Author/Audio --- */
+    margin-left: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    min-height: 100vh; /* Help push footer down */
+    min-height: 100vh;
 }
 
-/* General Content Container (ensure consistent definition) */
 .content-container {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
-    width: 100%; /* Necessary for align-self:stretch to work correctly */
+    width: 100%;
     box-sizing: border-box;
-    text-align: left; /* Ensure text inside aligns left by default */
+    text-align: left;
 }
 
-/* --- Style Overrides for Chapter/Content Pages --- */
-
-/* --- CHANGE 2b: Override centering ONLY for the main content block --- */
-/* Use high specificity to target .content-container only when direct child of main */
 main > .content-container {
-    align-self: stretch; /* Override align-items: center from main */
+    align-self: stretch;
 }
 
-/* Header Style within Main */
 main .page-header {
     background: none;
     color: black;
-    /* padding: 0; */ /* Keep padding if desired for spacing */
     margin-bottom: 20px;
-    width: 100%; /* Takes width from flex context */
-    max-width: 800px; /* Limit width */
-    /* Centering is handled by main's align-items: center */
-    /* margin-left: auto; */ /* Not needed with flex centering */
-    /* margin-right: auto; */ /* Not needed with flex centering */
+    width: 100%;
+    max-width: 800px;
     box-sizing: border-box;
 }
 main .page-header h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    text-align: center; /* Ensure H1 text is centered */
+    text-align: center;
 }
 
-
-/* Audio Title Style */
 .audio-title {
     font-size: 1em;
     color: darkblue;
     text-align: center;
     margin-bottom: 5px;
-    width: 100%; /* Allow centering via main's flex */
-    max-width: 800px; /* Consistent max width */
+    width: 100%;
+    max-width: 800px;
     box-sizing: border-box;
 }
 
-/* Audio Container Style */
 .audio-container {
-     text-align: center; /* Already set */
-     margin-bottom: 10px; /* Already set */
-     width: 100%; /* Allow centering via main's flex */
-     max-width: 800px; /* Consistent max width */
-     box-sizing: border-box;
-}
-
-/* --- CHANGE 3: Control Audio Player Width --- */
-.audio-player-style {
-    display: block;
-    margin-left: auto; /* Still useful within flex item */
-    margin-right: auto; /* Still useful within flex item */
-    margin-bottom: 20px;
-    width: 100%; /* Allow it to fill its allocated space */
-    max-width: 600px; /* SET MAX WIDTH TO PREVENT STRETCHING - ADJUST VALUE */
-    box-sizing: border-box;
-}
-
-/* Ensure HR and Author line are also constrained and centered */
-main > hr:first-of-type { /* Assuming it's the first HR */
+     text-align: center;
+     margin-bottom: 10px;
      width: 100%;
      max-width: 800px;
-     margin-top: 20px; /* Add some space */
-     margin-bottom: 20px;
-     /* Centering handled by main's flex */
+     box-sizing: border-box;
+}
+.audio-select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-/* Add this class to the <p> containing author info in HTML */
+.audio-player-style {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+main > hr:first-of-type {
+     width: 100%;
+     max-width: 800px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     border: 0;
+     border-top: 1px solid #ccc;
+}
+
 .author-line {
     width: 100%;
     max-width: 800px;
-    text-align: center; /* Center text within the paragraph */
-     /* Centering of the block handled by main's flex */
-     margin-top: 0; /* Adjust spacing as needed */
-     margin-bottom: 20px; /* Add space before content */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 0 20px; /* Match main padding */
+    box-sizing: border-box;
 }
-.author-line .chapter-author-intro { /* Style the strong tag */
-    font-size: 1.6em; /* Your existing style */
-    display: block; /* Ensure it takes its own line */
-    margin-bottom: 0.25em; /* Space between lines */
+.author-line .chapter-author-intro {
+    font-size: 1.6em;
+    display: block;
+    margin-bottom: 0.25em;
 }
 
-
-/* Ensure footer aligns correctly */
 main footer.footer-style {
      width: 100%;
-     max-width: 800px; /* Match content width */
-     margin-top: 50px; /* Existing style */
-     padding-top: 20px; /* Existing style */
-     border-top: 1px solid #ccc; /* Existing style */
-     text-align: right; /* Existing style */
+     max-width: 800px;
+     margin-top: 50px;
+     padding-top: 20px;
+     border-top: 1px solid #ccc;
+     text-align: right;
      box-sizing: border-box;
-      /* Centering of the block handled by main's flex */
+}
+.footer-text-style {
+    font-size: 0.9em;
+    color: #555;
 }
 
-/* Add rules for centered Outline/Case Study headers if needed */
-/* These were added in Supplement 2's internal styles - include here for consistency */
 .outline-heading {
     text-align: center;
-    width: 100%; /* Allow centering via main's flex */
+    width: 100%;
     max-width: 800px;
-    margin-bottom: 1em; /* Add some space */
+    margin-bottom: 1em;
 }
-.case-study-content h2 { /* From Supplement 2 internal style */
+.case-study-content h2 {
     text-align: center;
     margin-top: 2.5em;
     border-bottom: 1px solid #ccc;
     padding-bottom: 0.3em;
     margin-bottom: 0.5em;
-    width: 100%; /* Allow centering via main's flex */
+    width: 100%;
     max-width: 800px;
+}
+
+/* Ensure styles from internal style blocks are present if needed globally */
+.chapter-author-intro {
+    font-size: 1.6em; /* Already covered in .author-line rule */
+}
+.outline-link a {
+    text-decoration: none;
+    color: inherit;
+}
+.outline-link a:hover {
+    text-decoration: underline;
+}
+.content-image {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 20px auto;
+}
+.caption-style {
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+.outline-heading-style {
+    margin-bottom: 0.25em;
+}
+.outline-sublist {
+    margin-top: 0;
+    padding-left: 40px;
+    list-style-type: disc;
+    margin-bottom: 1em;
+}
+.outline-sublist li {
+    margin-bottom: 0.25em;
+}
+.outline-sublist li a {
+    font-weight: normal;
+}
+dt {
+    font-weight: bold;
+    margin-top: 1em;
+}
+dd {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+.content-container h2,
+.content-container h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.25em;
+}
+.content-container > h2:first-of-type {
+    margin-top: 0;
+}
+.content-container p,
+.content-container ul,
+.content-container ol,
+.content-container dl,
+.content-container figure {
+     margin-top: 0;
+     margin-bottom: 1em;
+}
+.content-container h4 {
+     margin-top: 1em;
+     margin-bottom: 0.25em;
+}
+.content-container img.content-image {
+     margin-top: 0;
+     margin-bottom: 1em;
+}
+.content-container figure + p,
+.content-container figure + ul,
+.content-container figure + ol,
+.content-container figure + dl,
+.content-container figure + h2,
+.content-container figure + h3 {
+     margin-top: 0;
+}
+.content-container p + figure,
+.content-container ul + figure,
+.content-container ol + figure,
+.content-container dl + figure {
+   margin-top: 1em;
+}
+.content-container h2 + figure,
+.content-container h3 + figure {
+   margin-top: 0;
+}
+.content-container img.content-image + figcaption.caption-style {
+   margin-top: 0.5em;
+}
+.content-container img.content-image:has(+ figcaption.caption-style) {
+     margin-bottom: 0;
+}
+.content-container h2 + p,
+.content-container h2 + ul,
+.content-container h2 + ol,
+.content-container h2 + dl,
+.content-container h2 + img.content-image,
+.content-container h3 + p,
+.content-container h3 + ul,
+.content-container h3 + ol,
+.content-container h3 + dl,
+.content-container h3 + img.content-image,
+.content-container h4 + ul,
+.content-container h4 + ol {
+     margin-top: 0;
+}
+.content-container p + ul,
+.content-container p + ol,
+.content-container p + dl {
+      margin-top: 0;
+}
+.content-container p:has(+ ul),
+.content-container p:has(+ ol),
+.content-container p:has(+ dl) {
+     margin-bottom: 0;
+}
+.content-container h4:has(+ ul),
+.content-container h4:has(+ ol) {
+     margin-bottom: 0;
 }
