@@ -57,6 +57,13 @@
             display: block;
             margin: 20px auto;
         }
+        .caption-style {
+             font-size: 0.9em;
+             color: #555;
+             text-align: center;
+             margin-top: 0;
+             margin-bottom: 1em;
+        }
         .outline-heading-style {
             margin-bottom: 0.25em;
         }
@@ -95,13 +102,45 @@
         .content-container p,
         .content-container ul,
         .content-container ol,
-        .content-container dl {
+        .content-container dl,
+        .content-container figure {
              margin-top: 0;
              margin-bottom: 1em;
          }
+        .content-container h4,
+        .content-container h5 {
+             margin-top: 1em;
+             margin-bottom: 0.25em;
+        }
         .content-container img.content-image {
              margin-top: 0;
              margin-bottom: 1em;
+         }
+         .content-container figure + p,
+         .content-container figure + ul,
+         .content-container figure + ol,
+         .content-container figure + dl,
+         .content-container figure + h2,
+         .content-container figure + h3 {
+             margin-top: 0;
+         }
+         .content-container p + figure,
+         .content-container ul + figure,
+         .content-container ol + figure,
+         .content-container dl + figure {
+            margin-top: 0;
+         }
+         .content-container h2 + figure,
+         .content-container h3 + figure,
+         .content-container h4 + figure,
+         .content-container h5 + figure {
+            margin-top: 0;
+         }
+         .content-container img.content-image + figcaption.caption-style {
+            margin-top: 0.5em;
+         }
+         .content-container img.content-image:has(+ figcaption.caption-style) {
+             margin-bottom: 0;
          }
         .content-container h2 + p,
         .content-container h2 + ul,
@@ -112,7 +151,17 @@
         .content-container h3 + ul,
         .content-container h3 + ol,
         .content-container h3 + dl,
-        .content-container h3 + img.content-image {
+        .content-container h3 + img.content-image,
+        .content-container h4 + ul,
+        .content-container h4 + ol,
+        .content-container h4 + p,
+        .content-container h4 + dl,
+        .content-container h4 + img.content-image,
+        .content-container h5 + p,
+        .content-container h5 + ul,
+        .content-container h5 + ol,
+        .content-container h5 + dl,
+        .content-container h5 + img.content-image {
             margin-top: 0;
         }
         .content-container p + ul,
@@ -120,6 +169,28 @@
         .content-container p + dl {
              margin-top: 0;
          }
+        .content-container p:has(+ ul),
+        .content-container p:has(+ ol),
+        .content-container p:has(+ dl),
+        .content-container p:has(+ figure) {
+            margin-bottom: 0;
+        }
+        .content-container h4:has(+ ul),
+        .content-container h4:has(+ ol),
+        .content-container h4:has(+ p),
+        .content-container h4:has(+ dl),
+        .content-container h4:has(+ figure),
+        .content-container h4:has(+ img.content-image) {
+            margin-bottom: 0;
+        }
+        .content-container h5:has(+ ul),
+        .content-container h5:has(+ ol),
+        .content-container h5:has(+ p),
+        .content-container h5:has(+ dl),
+        .content-container h5:has(+ figure),
+        .content-container h5:has(+ img.content-image) {
+             margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -139,6 +210,7 @@
         <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
         <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
         <li><a href="references.html">References</a></li>
+        <li><a href="downloads.html">Downloads (PDF)</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
@@ -677,7 +749,8 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      console.error("Audio player elements not found.");
+      // Audio player is expected, so keep the error message
+       console.error("Audio player elements not found.");
   }
 </script>
 
