@@ -5,196 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 6: DPL: Technical Details - AI Safety Framework</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .content-container {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-        .audio-container {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .audio-select {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .audio-player-style {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-        }
-        .chapter-author-intro {
-            font-size: 1.6em;
-        }
-        .footer-style {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            text-align: right;
-        }
-        .footer-text-style {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .outline-link a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .outline-link a:hover {
-            text-decoration: underline;
-        }
-        .content-image {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-        }
-        .caption-style {
-             font-size: 0.9em;
-             color: #555;
-             text-align: center;
-             margin-top: 0;
-             margin-bottom: 1em;
-        }
-        .outline-heading-style {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist {
-            margin-top: 0;
-            padding-left: 40px;
-            list-style-type: disc;
-            margin-bottom: 1em;
-        }
-        .outline-sublist li {
-            margin-bottom: 0.25em;
-        }
-        .outline-sublist li a {
-            font-weight: normal;
-        }
-        dt {
-            font-weight: bold;
-            margin-top: 1em;
-        }
-        dd {
-            margin-left: 20px;
-            margin-bottom: 1em;
-        }
-        .page-header h1 {
-        }
-        .audio-title {
-        }
-        .content-container h2,
-        .content-container h3 {
-            margin-top: 1.5em;
-            margin-bottom: 0.25em;
-        }
-         .content-container > h2:first-of-type {
-             margin-top: 0;
-         }
-        .content-container p,
-        .content-container ul,
-        .content-container ol,
-        .content-container dl,
-        .content-container figure {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-        .content-container h4,
-        .content-container h5 {
-             margin-top: 1em;
-             margin-bottom: 0.25em;
-        }
-        .content-container img.content-image {
-             margin-top: 0;
-             margin-bottom: 1em;
-         }
-         .content-container figure + p,
-         .content-container figure + ul,
-         .content-container figure + ol,
-         .content-container figure + dl,
-         .content-container figure + h2,
-         .content-container figure + h3 {
-             margin-top: 0;
-         }
-         .content-container p + figure,
-         .content-container ul + figure,
-         .content-container ol + figure,
-         .content-container dl + figure {
-            margin-top: 0;
-         }
-         .content-container h2 + figure,
-         .content-container h3 + figure,
-         .content-container h4 + figure,
-         .content-container h5 + figure {
-            margin-top: 0;
-         }
-         .content-container img.content-image + figcaption.caption-style {
-            margin-top: 0.5em;
-         }
-         .content-container img.content-image:has(+ figcaption.caption-style) {
-             margin-bottom: 0;
-         }
-        .content-container h2 + p,
-        .content-container h2 + ul,
-        .content-container h2 + ol,
-        .content-container h2 + dl,
-        .content-container h2 + img.content-image,
-        .content-container h3 + p,
-        .content-container h3 + ul,
-        .content-container h3 + ol,
-        .content-container h3 + dl,
-        .content-container h3 + img.content-image,
-        .content-container h4 + ul,
-        .content-container h4 + ol,
-        .content-container h4 + p,
-        .content-container h4 + dl,
-        .content-container h4 + img.content-image,
-        .content-container h5 + p,
-        .content-container h5 + ul,
-        .content-container h5 + ol,
-        .content-container h5 + dl,
-        .content-container h5 + img.content-image {
-            margin-top: 0;
-        }
-        .content-container p + ul,
-        .content-container p + ol,
-        .content-container p + dl {
-             margin-top: 0;
-         }
-        .content-container p:has(+ ul),
-        .content-container p:has(+ ol),
-        .content-container p:has(+ dl),
-        .content-container p:has(+ figure) {
-            margin-bottom: 0;
-        }
-        .content-container h4:has(+ ul),
-        .content-container h4:has(+ ol),
-        .content-container h4:has(+ p),
-        .content-container h4:has(+ dl),
-        .content-container h4:has(+ figure),
-        .content-container h4:has(+ img.content-image) {
-            margin-bottom: 0;
-        }
-        .content-container h5:has(+ ul),
-        .content-container h5:has(+ ol),
-        .content-container h5:has(+ p),
-        .content-container h5:has(+ dl),
-        .content-container h5:has(+ figure),
-        .content-container h5:has(+ img.content-image) {
-             margin-bottom: 0;
-        }
-        main .page-header h1 {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 
@@ -240,48 +50,53 @@
     <p><strong class="chapter-author-intro">Chapter 6</strong><br><strong>Jon Kurishita</strong></p>
 
     <div class="content-container">
-        <h2>Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch6-introduction">Introduction</a></h3>
+        <div class="outline-wrapper">
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch6-components">1. Other Key Components: Technical Details</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch6-comp-detection">1.1 Detection Modules</a></li>
-             <li><a href="#ch6-comp-behavioral">1.2 Behavioral Pattern Matching</a></li>
-             <li><a href="#ch6-comp-anomaly">1.3 Anomaly Detection</a></li>
-             <li><a href="#ch6-comp-consistency">1.4 Proactive Consistency Checks</a></li>
-             <li><a href="#ch6-comp-neurosymbolic">1.5 Detecting Neuro-Symbolic Reasoning Exploits</a></li>
-             <li><a href="#ch6-comp-intervention">1.6 Tiered Intervention System</a></li>
-             <li><a href="#ch6-comp-sandboxing">1.7 Sandboxing in the DPL</a></li>
-             <li><a href="#ch6-comp-multimodal">1.8 Mitigating Strategies for Multi-Modal Attacks</a></li>
-             <li><a href="#ch6-comp-covert">1.9 Mitigating Cross-Modal Covert Channels</a></li>
-             <li><a href="#ch6-comp-escalation">1.10 Escalation Logic and Intervention Procedures</a></li>
-             <li><a href="#ch6-comp-fprl">1.11 False Positive Reduction Layer (FPRL)</a></li>
-        </ul>
+            <h2 class="outline-heading">Outline</h2>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch6-data">2. Data Storage and Management</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch6-data-reqs">2.1 Data Storage Requirements</a></li>
-             <li><a href="#ch6-data-tech">2.2 Choice of Database Technologies</a></li>
-             <li><a href="#ch6-data-security">2.3 Security and Privacy Considerations</a></li>
-             <li><a href="#ch6-data-retention">2.4 Data Retention Policies</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch6-introduction">Introduction</a></h3>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch6-updates">3. Update Mechanisms</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch6-updates-process">3.1 Secure Update Process for All DPL Components</a></li>
-             <li><a href="#ch6-updates-specific">3.2 Specific Component Updates</a></li>
-             <li><a href="#ch6-updates-versioning">3.3 Version Control and Rollback Capabilities</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch6-components">1. Other Key Components: Technical Details</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch6-comp-detection">1.1 Detection Modules</a></li>
+                 <li><a href="#ch6-comp-behavioral">1.2 Behavioral Pattern Matching</a></li>
+                 <li><a href="#ch6-comp-anomaly">1.3 Anomaly Detection</a></li>
+                 <li><a href="#ch6-comp-consistency">1.4 Proactive Consistency Checks</a></li>
+                 <li><a href="#ch6-comp-neurosymbolic">1.5 Detecting Neuro-Symbolic Reasoning Exploits</a></li>
+                 <li><a href="#ch6-comp-intervention">1.6 Tiered Intervention System</a></li>
+                 <li><a href="#ch6-comp-sandboxing">1.7 Sandboxing in the DPL</a></li>
+                 <li><a href="#ch6-comp-multimodal">1.8 Mitigating Strategies for Multi-Modal Attacks</a></li>
+                 <li><a href="#ch6-comp-covert">1.9 Mitigating Cross-Modal Covert Channels</a></li>
+                 <li><a href="#ch6-comp-escalation">1.10 Escalation Logic and Intervention Procedures</a></li>
+                 <li><a href="#ch6-comp-fprl">1.11 False Positive Reduction Layer (FPRL)</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch6-access">4. Access Control System</a></h3>
-        <ul class="outline-sublist">
-             <li><a href="#ch6-access-principles">4.1 Design Principles</a></li>
-             <li><a href="#ch6-access-mechanisms">4.2 Components and Mechanisms</a></li>
-             <li><a href="#ch6-access-foea">4.3 FoEA’s Role in Defining and Enforcing Access Policies</a></li>
-        </ul>
+            <h3 class="outline-link outline-heading-style"><a href="#ch6-data">2. Data Storage and Management</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch6-data-reqs">2.1 Data Storage Requirements</a></li>
+                 <li><a href="#ch6-data-tech">2.2 Choice of Database Technologies</a></li>
+                 <li><a href="#ch6-data-security">2.3 Security and Privacy Considerations</a></li>
+                 <li><a href="#ch6-data-retention">2.4 Data Retention Policies</a></li>
+            </ul>
 
-        <h3 class="outline-link outline-heading-style"><a href="#ch6-conclusion">Conclusion</a></h3>
+            <h3 class="outline-link outline-heading-style"><a href="#ch6-updates">3. Update Mechanisms</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch6-updates-process">3.1 Secure Update Process for All DPL Components</a></li>
+                 <li><a href="#ch6-updates-specific">3.2 Specific Component Updates</a></li>
+                 <li><a href="#ch6-updates-versioning">3.3 Version Control and Rollback Capabilities</a></li>
+            </ul>
+
+            <h3 class="outline-link outline-heading-style"><a href="#ch6-access">4. Access Control System</a></h3>
+            <ul class="outline-sublist">
+                 <li><a href="#ch6-access-principles">4.1 Design Principles</a></li>
+                 <li><a href="#ch6-access-mechanisms">4.2 Components and Mechanisms</a></li>
+                 <li><a href="#ch6-access-foea">4.3 FoEA’s Role in Defining and Enforcing Access Policies</a></li>
+            </ul>
+
+            <h3 class="outline-link outline-heading-style"><a href="#ch6-conclusion">Conclusion</a></h3>
+
+        </div>
 
     </div>
 
@@ -636,7 +451,6 @@
            console.error("Audio selector has no options.");
       }
   } else {
-      // Audio player is expected, so keep the error message
        console.error("Audio player elements not found.");
   }
 </script>
