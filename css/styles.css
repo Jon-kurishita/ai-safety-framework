@@ -213,9 +213,8 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-     /* Ensure outline wrapper takes full width on small screens */
     .outline-wrapper {
-        max-width: none; /* Remove max-width constraint */
+        max-width: none;
         margin-bottom: 1.5em;
     }
     .audio-player-style {
@@ -303,7 +302,6 @@ main > .content-container {
     align-self: stretch;
 }
 
-/* ADDED RULE FOR OUTLINE WRAPPER */
 .outline-wrapper {
     max-width: 650px;
     margin-left: auto;
@@ -400,7 +398,7 @@ main footer.footer-style {
 .outline-heading {
     text-align: center;
     width: 100%;
-    max-width: 800px; /* Allow title to span width if needed */
+    max-width: 800px;
     margin-bottom: 1em;
 }
 .case-study-content h2 {
@@ -496,14 +494,14 @@ dd {
 .content-container ul + figure,
 .content-container ol + figure,
 .content-container dl + figure {
-   margin-top: 1em;
+    margin-top: 1em;
 }
 .content-container h2 + figure,
 .content-container h3 + figure {
-   margin-top: 0;
+    margin-top: 0;
 }
 .content-container img.content-image + figcaption.caption-style {
-   margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 .content-container img.content-image:has(+ figcaption.caption-style) {
      margin-bottom: 0;
@@ -525,7 +523,7 @@ dd {
 .content-container p + ul,
 .content-container p + ol,
 .content-container p + dl {
-      margin-top: 0;
+     margin-top: 0;
 }
 .content-container p:has(+ ul),
 .content-container p:has(+ ol),
@@ -536,3 +534,28 @@ dd {
 .content-container h4:has(+ ol) {
      margin-bottom: 0;
 }
+
+/* === Styles Specific to About Page === */
+#page-about .page-header h2 {
+    font-size: 1.5em;
+}
+
+#page-about main .contact-info,
+#page-about main .project-info {
+    margin-left: 0;
+}
+
+ #page-about main .contact-info h3,
+ #page-about main .project-info h3 {
+    margin-bottom: 0.3em;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ #page-about main .contact-info ul,
+ #page-about main .project-info ul {
+    margin-top: 0.3em;
+    padding-left: 20px;
+    margin-left: 0;
+}
+/* === End of About Page Specific Styles === */
