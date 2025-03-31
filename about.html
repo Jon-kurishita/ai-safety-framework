@@ -3,37 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jon Kurishita - About</title> <link rel="stylesheet" href="css/styles.css">
+    <title>Jon Kurishita - About</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Example CSS to create a left sidebar and adjust spacing */
-        /* You might need to adjust selectors based on your existing styles.css */
-
-        main {
-            display: flex; /* Use flexbox for layout */
-            flex-direction: row-reverse; /* Puts the second child (main content) first visually */
-            gap: 2em; /* Adds space between sidebar and main content */
+        .page-header h2 {
+            font-size: 1.8em;
         }
 
-        .sidebar {
-            flex: 1; /* Sidebar takes up 1 part of the space */
-            /* Remove any existing margin/padding causing right alignment if necessary */
-             margin-left: 0;
-             padding-left: 0;
+        main section h3 {
+            margin-bottom: 0.3em;
         }
 
-        .main-content {
-            flex: 3; /* Main content takes up 3 parts of the space */
-        }
-
-        /* Reduce space for Contacts heading and list */
-        .sidebar h3 {
-            margin-bottom: 0.3em; /* Adjust as needed */
-        }
-
-        .sidebar ul {
-            margin-top: 0.3em; /* Adjust as needed */
-            /* If using default list styling, you might want padding: */
-            /* padding-left: 20px; */
+        main section ul {
+            margin-top: 0.3em;
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -56,33 +39,32 @@
     </ul>
 </nav>
     <main>
-        <div class="main-content">
-            <header class="page-header">
-                <h2>Jon Kurishita</h2> </header>
-            <section>
-                <p>Today, as an independent freelance AI Security Engineer, I dedicate my time to deeply exploring AI safety and alignment, leveraging my expertise and passion to tackle emerging challenges thoughtfully and proactively.</p>
-                <p>As a bilingual Japanese citizen residing in the tranquil prefecture of Ibaraki-ken, Japan, I find inspiration in my serene surroundings to reflect on complex security and AI alignment issues.</p>
-                <p>Beyond AI research and security consulting, I am passionately developing the game project <strong>Redsun2020:REVISE</strong>, anticipated to release in 2026, merging creativity with cutting-edge technology.</p>
-            </section>
-        </div>
+        <header class="page-header">
+            <h2>Jon Kurishita</h2>
+        </header>
 
-        <aside class="sidebar">
-            <section>
-                <h3>Contacts</h3> <ul>
-                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jonkurishita">Jon Kurishita</a></li>
-                    <li><strong>Discord:</strong> <a href="http://discordapp.com/users/354555129380339722">Jon_Kurishita</a></li>
-                    <li><strong>Email:</strong> <a href="mailto:jon.kurishita@gmail.com">jon.kurishita@gmail.com</a></li>
-                </ul>
-            </section>
+        <section>
+            <p>Today, as an independent freelance AI Security Engineer, I dedicate my time to deeply exploring AI safety and alignment, leveraging my expertise and passion to tackle emerging challenges thoughtfully and proactively.</p>
+            <p>As a bilingual Japanese citizen residing in the tranquil prefecture of Ibaraki-ken, Japan, I find inspiration in my serene surroundings to reflect on complex security and AI alignment issues.</p>
+            <p>Beyond AI research and security consulting, I am passionately developing the game project Redsun2020:REVISE, anticipated to release in 2026, merging creativity with cutting-edge technology.</p>
+        </section>
 
-            <section>
-                <h3>My Projects</h3>
-                <ul>
-                    <li><strong>AI Music Channel:</strong> <a href="https://www.youtube.com/@KurishitaHouseMix">Kurishita House Mix</a></li>
-                    <li><strong>Game Project:</strong> <a href="https://www.nexusmods.com/deusex/mods/72">Redsun2020:REVISE</a></li>
-                </ul>
-            </section>
-        </aside>
+        <section>
+            <h3>Contacts</h3>
+            <ul>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jonkurishita">Jon Kurishita</a></li>
+                <li><strong>Discord:</strong> <a href="http://discordapp.com/users/354555129380339722">Jon_Kurishita</a></li>
+                <li><strong>Email:</strong> <a href="mailto:jon.kurishita@gmail.com">jon.kurishita@gmail.com</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>My Projects</h3>
+            <ul>
+                <li><strong>AI Music Channel:</strong> <a href="https://www.youtube.com/@KurishitaHouseMix">Kurishita House Mix</a></li>
+                <li><strong>Game Project:</strong> <a href="https://www.nexusmods.com/deusex/mods/72">Redsun2020:REVISE</a></li>
+            </ul>
+        </section>
     </main>
 </body>
 </html>
