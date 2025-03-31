@@ -239,6 +239,14 @@
     .intro-heading-center {
          text-align: center;
     }
+    /* Adjust profile picture float/size for smaller screens */
+    #page-about main section:first-of-type .profile-picture {
+        float: none; /* Remove float */
+        display: block; /* Make it a block element */
+        margin: 0 auto 15px auto; /* Center horizontally, add bottom margin */
+        width: 150px; /* Optionally reduce size */
+        height: 150px;
+    }
 }
 
 body {
@@ -536,7 +544,6 @@ dd {
 }
 
 /* === Styles Specific to About Page === */
-/* Cleaned syntax and added align-self */
 #page-about .page-header h2 {
     font-size: 1.5em;
 }
@@ -544,10 +551,10 @@ dd {
 #page-about main .contact-info,
 #page-about main .project-info {
     margin-left: 0;
-    align-self: flex-start; /* ADDED: Align these blocks to the start (left) */
-    width: 100%; /* ADDED: Ensure they take up available width */
-    max-width: 800px; /* ADDED: Match other content containers */
-    box-sizing: border-box; /* ADDED: Include padding in width calculation */
+    align-self: flex-start;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
 }
 
 #page-about main .contact-info h3,
@@ -560,7 +567,24 @@ dd {
 #page-about main .contact-info ul,
 #page-about main .project-info ul {
     margin-top: 0.3em;
-    padding-left: 20px; /* Standard list indentation */
+    padding-left: 20px;
     margin-left: 0;
+}
+
+#page-about main section:first-of-type .profile-picture {
+    float: right;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+#page-about main section:first-of-type::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 /* === End of About Page Specific Styles === */
