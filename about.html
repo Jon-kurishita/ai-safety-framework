@@ -6,21 +6,31 @@
     <title>Jon Kurishita - About</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .page-header h2 {
-            font-size: 1.8em;
+        #page-about .page-header h2 {
+            font-size: 1.5em;
         }
 
-        main section h3 {
+        #page-about main .contact-info,
+        #page-about main .project-info {
+            margin-left: 5%;
+        }
+
+         #page-about main .contact-info h3,
+         #page-about main .project-info h3 {
             margin-bottom: 0.3em;
+            margin-left: 0;
+            padding-left: 0;
         }
 
-        main section ul {
+         #page-about main .contact-info ul,
+         #page-about main .project-info ul {
             margin-top: 0.3em;
             padding-left: 20px;
+            margin-left: 0;
         }
     </style>
 </head>
-<body>
+<body id="page-about">
 <nav>
     <h2>AI Alignment Series</h2>
     <ul>
@@ -49,7 +59,7 @@
             <p>Beyond AI research and security consulting, I am passionately developing the game project Redsun2020:REVISE, anticipated to release in 2026, merging creativity with cutting-edge technology.</p>
         </section>
 
-        <section>
+        <section class="contact-info">
             <h3>Contacts</h3>
             <ul>
                 <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jonkurishita">Jon Kurishita</a></li>
@@ -58,7 +68,7 @@
             </ul>
         </section>
 
-        <section>
+        <section class="project-info">
             <h3>My Projects</h3>
             <ul>
                 <li><strong>AI Music Channel:</strong> <a href="https://www.youtube.com/@KurishitaHouseMix">Kurishita House Mix</a></li>
