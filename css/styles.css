@@ -536,6 +536,7 @@ dd {
 }
 
 /* === Styles Specific to About Page === */
+/* Cleaned syntax and added align-self */
 #page-about .page-header h2 {
     font-size: 1.5em;
 }
@@ -543,19 +544,23 @@ dd {
 #page-about main .contact-info,
 #page-about main .project-info {
     margin-left: 0;
+    align-self: flex-start; /* ADDED: Align these blocks to the start (left) */
+    width: 100%; /* ADDED: Ensure they take up available width */
+    max-width: 800px; /* ADDED: Match other content containers */
+    box-sizing: border-box; /* ADDED: Include padding in width calculation */
 }
 
- #page-about main .contact-info h3,
- #page-about main .project-info h3 {
+#page-about main .contact-info h3,
+#page-about main .project-info h3 {
     margin-bottom: 0.3em;
     margin-left: 0;
     padding-left: 0;
 }
 
- #page-about main .contact-info ul,
- #page-about main .project-info ul {
+#page-about main .contact-info ul,
+#page-about main .project-info ul {
     margin-top: 0.3em;
-    padding-left: 20px;
+    padding-left: 20px; /* Standard list indentation */
     margin-left: 0;
 }
 /* === End of About Page Specific Styles === */
