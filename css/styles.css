@@ -1,9 +1,10 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
-    --nav-bg-color: #f4f4f4;
-    --nav-text-color: #333333;
-    --nav-link-hover-bg: #dddddd;
+    /* Nav variables no longer strictly needed if nav is hardcoded */
+    /* --nav-bg-color: #f4f4f4; */
+    /* --nav-text-color: #333333; */
+    /* --nav-link-hover-bg: #dddddd; */
     --link-color: #0066cc;
     --link-hover-color: #004c99;
     --section-bg-color: transparent;
@@ -19,9 +20,10 @@
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #e0e0e0;
-    --nav-bg-color: #1e1e1e;
-    --nav-text-color: #e0e0e0;
-    --nav-link-hover-bg: #333333;
+    /* Nav variables overrides removed/ignored as nav is hardcoded */
+    /* --nav-bg-color: #1e1e1e; */
+    /* --nav-text-color: #e0e0e0; */
+    /* --nav-link-hover-bg: #333333; */
     --link-color: #8ab4f8;
     --link-hover-color: #aecbfa;
     --section-bg-color: transparent;
@@ -41,9 +43,10 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* --- Navigation Styles (Hardcoded Light Theme) --- */
 nav {
     width: 480px;
-    background-color: var(--nav-bg-color);
+    background-color: #f4f4f4; /* Hardcoded light */
     padding: 20px;
     position: fixed;
     height: 100vh;
@@ -52,13 +55,13 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    /* No transition needed */
 }
 
 nav h2 {
     margin-top: 0;
-    color: var(--nav-text-color);
-    transition: color 0.3s ease;
+    color: #333333; /* Hardcoded light */
+    /* No transition needed */
 }
 
 nav ul {
@@ -72,17 +75,35 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--nav-text-color);
+    color: #333333; /* Hardcoded light */
     display: block;
     padding: 8px;
     border-radius: 5px;
     font-size: 0.9em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* No transition needed for theme colors */
 }
 
 nav ul li a:hover {
-    background-color: var(--nav-link-hover-bg);
+    background-color: #dddddd; /* Hardcoded light hover */
 }
+
+#theme-toggle-button {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 8px 15px;
+    cursor: pointer;
+    border: 1px solid #cccccc; /* Hardcoded light border */
+    background-color: #f4f4f4; /* Hardcoded light background */
+    color: #333333; /* Hardcoded light text */
+    border-radius: 5px;
+    /* No transition needed for theme colors */
+}
+
+#theme-toggle-button:hover {
+    background-color: #dddddd; /* Hardcoded light hover */
+}
+/* --- End Navigation Styles --- */
+
 
 main {
     padding: 20px;
@@ -92,21 +113,21 @@ main {
     align-items: center;
     box-sizing: border-box;
     min-height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg-color); /* Uses variable */
+    color: var(--text-color); /* Uses variable */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main a {
-    color: var(--link-color);
+    color: var(--link-color); /* Uses variable */
 }
 main a:hover {
-    color: var(--link-hover-color);
+    color: var(--link-hover-color); /* Uses variable */
 }
 
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x400/?business') no-repeat center center/cover;
-    color: var(--header-bg-image-text-color);
+    color: var(--header-bg-image-text-color); /* Uses variable (kept white) */
     text-align: center;
     padding: 5rem 0;
 }
@@ -187,10 +208,14 @@ main a:hover {
 }
 
 .team-member .social-icons a {
-    background-color: var(--nav-bg-color);
+    background-color: #e0e0e0; /* Adjusted to a light grey, could use a variable if needed elsewhere */
     color: var(--dark-color, var(--dark-color-placeholder));
     transition: background-color 0.3s ease;
 }
+body.dark-mode .team-member .social-icons a {
+     background-color: #333333; /* Darker background for icons in dark mode */
+}
+
 
 .contact-grid {
     display: grid;
@@ -574,22 +599,8 @@ dd {
      margin-bottom: 0;
 }
 
-#theme-toggle-button {
-    display: block;
-    margin: 20px auto 0 auto;
-    padding: 8px 15px;
-    cursor: pointer;
-    border: 1px solid var(--border-color);
-    background-color: var(--nav-bg-color);
-    color: var(--nav-text-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-#theme-toggle-button:hover {
-    background-color: var(--nav-link-hover-bg);
-}
-
+/* Specific styles for #page-about */
+/* These will only apply on about.html */
 #page-about main .contact-info,
 #page-about main .project-info {
     margin-left: 0;
@@ -597,8 +608,8 @@ dd {
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
-    background-color: var(--section-bg-color);
-    color: var(--text-color);
+    background-color: var(--section-bg-color); /* Uses variable */
+    color: var(--text-color); /* Uses variable */
 }
 
 #page-about main .contact-info h3,
@@ -606,7 +617,7 @@ dd {
     margin-bottom: 0.3em;
     margin-left: 0;
     padding-left: 0;
-    color: var(--text-color);
+    color: var(--text-color); /* Uses variable */
 }
 
 #page-about main .contact-info ul,
@@ -614,7 +625,7 @@ dd {
     margin-top: 0.3em;
     padding-left: 20px;
     margin-left: 0;
-    color: var(--text-color);
+    color: var(--text-color); /* Uses variable */
 }
 
 #page-about main .profile-picture {
@@ -651,6 +662,8 @@ dd {
         margin-bottom: 20px;
         z-index: auto;
         box-sizing: border-box;
+        /* Ensure nav background remains light */
+        background-color: #f4f4f4 !important;
     }
     main {
         width: 100%;
@@ -686,7 +699,11 @@ dd {
     }
     nav ul li a {
         font-size: 1em;
+         color: #333333 !important; /* Ensure nav text remains dark */
     }
+     nav h2 {
+         color: #333333 !important; /* Ensure nav title remains dark */
+     }
     main .page-header {
         padding: 1rem 0;
         margin-bottom: 15px;
@@ -707,5 +724,13 @@ dd {
     }
     #theme-toggle-button {
         margin: 10px auto;
+         /* Ensure button remains light */
+         background-color: #f4f4f4 !important;
+         color: #333333 !important;
+         border-color: #cccccc !important;
     }
+     #theme-toggle-button:hover {
+         background-color: #dddddd !important;
+     }
 }
+
