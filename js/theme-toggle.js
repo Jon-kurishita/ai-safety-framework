@@ -1,4 +1,4 @@
-test(function() {
+(function() {
     const themeToggleButton = document.getElementById('theme-toggle-button');
     const body = document.body;
     const currentTheme = localStorage.getItem('theme');
