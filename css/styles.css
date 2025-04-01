@@ -1,715 +1,324 @@
-:root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --nav-bg-color: #f4f4f4;
-    --nav-text-color: #333333;
-    --nav-link-hover-bg: #dddddd;
-    --link-color: #0066cc;
-    --link-hover-color: #004c99;
-    --section-bg-color: transparent;
-    --border-color: #cccccc;
-    --input-bg-color: #ffffff;
-    --input-text-color: #333333;
-    --placeholder-text-color: #aaaaaa;
-    --header-bg-image-text-color: #ffffff;
-    --primary-color-placeholder: #0066cc;
-    --dark-color-placeholder: #333333;
-}
-
-/* Apply dark mode variables when body has .dark-mode class */
-body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --nav-bg-color: #1e1e1e;
-    --nav-text-color: #e0e0e0;
-    --nav-link-hover-bg: #333333;
-    --link-color: #8ab4f8;
-    --link-hover-color: #aecbfa;
-    --section-bg-color: transparent;
-    --border-color: #444444;
-    --input-bg-color: #2e2e2e;
-    --input-text-color: #e0e0e0;
-    --placeholder-text-color: #777777;
-    --header-bg-image-text-color: #ffffff;
-    --primary-color-placeholder: #8ab4f8;
-    --dark-color-placeholder: #e0e0e0;
-}
-
-body {
-    font-family: sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav {
-    width: 480px;
-    background-color: var(--nav-bg-color);
-    padding: 20px;
-    position: fixed;
-    height: 100vh;
-    overflow-y: auto;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-}
-
-nav h2 {
-    margin-top: 0;
-    color: var(--nav-text-color);
-    transition: color 0.3s ease;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin-bottom: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--nav-text-color);
-    display: block;
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: var(--nav-link-hover-bg);
-}
-
-main {
-    padding: 20px;
-    margin-left: 480px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-    min-height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-main a {
-    color: var(--link-color);
-}
-main a:hover {
-    color: var(--link-hover-color);
-}
-
-.page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x400/?business') no-repeat center center/cover;
-    color: var(--header-bg-image-text-color);
-    text-align: center;
-    padding: 5rem 0;
-}
-
-.page-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 4rem 0;
-}
-
-.about-text h2, .about-text h3 {
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-#team {
-    padding: 5rem 0;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.team-member {
-    background-color: var(--bg-color);
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.team-member img {
-    width: 100%;
-}
-
-.team-member h3 {
-    margin: 1.5rem 0 0.5rem 0;
-    color: var(--text-color);
-}
-
-.team-member .position {
-    color: var(--primary-color, var(--primary-color-placeholder));
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.team-member p {
-    padding: 0 1.5rem 1.5rem;
-    color: var(--text-color);
-}
-
-.team-member .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-}
-
-.team-member .social-icons a {
-    background-color: var(--nav-bg-color);
-    color: var(--dark-color, var(--dark-color-placeholder));
-    transition: background-color 0.3s ease;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 4rem 0;
-}
-
-.contact-info h3 {
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.contact-info .contact-detail {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.contact-info .contact-detail i {
-    margin-right: 1rem;
-    color: var(--primary-color, var(--primary-color-placeholder));
-    font-size: 1.2rem;
-}
-
-.contact-form {
-    background-color: var(--input-bg-color);
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-    border-radius: 5px;
-    font-family: inherit;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: var(--placeholder-text-color);
-}
-
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.error-input {
-    border-color: #ff3860 !important;
-}
-
-.error-message {
-    color: #ff3860;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 4rem 0;
-}
-
-.service-card {
-    background-color: var(--bg-color);
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    color: var(--text-color);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-.service-icon {
-    font-size: 3rem;
-    color: var(--primary-color, var(--primary-color-placeholder));
-    margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.content-container {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-    color: var(--text-color);
-}
-
-main > .content-container {
-    align-self: stretch;
-}
-
-.outline-wrapper {
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2em;
-}
-
-main .page-header {
-    background: none;
-    color: var(--text-color);
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 100%;
-    max-width: 800px;
-    box-sizing: border-box;
-}
-main .page-header h1,
-main .page-header h2 {
-    font-size: 2rem;
-    margin: 0 0 0.5rem 0;
-    text-align: center;
-    color: var(--text-color);
-}
-
-.audio-title {
-    font-size: 1em;
-    color: var(--link-color);
-    text-align: center;
-    margin: 0 0 5px 0;
-    width: 100%;
-    max-width: 800px;
-    box-sizing: border-box;
-}
-
-.audio-container {
-     text-align: center;
-     margin-top: 0;
-     margin-bottom: 10px;
-     width: 100%;
-     max-width: 800px;
-     box-sizing: border-box;
-}
-.audio-select {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-    background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.audio-player-style {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-main > hr:first-of-type {
-     width: 100%;
-     max-width: 800px;
-     margin-top: 20px;
-     margin-bottom: 20px;
-     border: 0;
-     border-top: 1px solid var(--border-color);
-     transition: border-color 0.3s ease;
-}
-
-.chapter-author-intro {
-    font-size: 1.6em;
-    display: block;
-    margin-bottom: 0.25em;
-    color: var(--text-color);
-}
-
-main > p:has(> .chapter-author-intro) {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-main footer.footer-style {
-     width: 100%;
-     max-width: 800px;
-     margin-top: 50px;
-     padding-top: 20px;
-     border-top: 1px solid var(--border-color);
-     text-align: right;
-     box-sizing: border-box;
-     transition: border-color 0.3s ease;
-}
-.footer-text-style {
-    font-size: 0.9em;
-    color: var(--text-color);
-    opacity: 0.8;
-}
-
-.outline-heading {
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 1em;
-    color: var(--text-color);
-}
-.case-study-content h2 {
-    text-align: center;
-    margin-top: 2.5em;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.3em;
-    margin-bottom: 0.5em;
-    width: 100%;
-    max-width: 800px;
-    color: var(--text-color);
-    transition: border-color 0.3s ease, color 0.3s ease;
-}
-
-.intro-heading-center {
-    text-align: center;
-}
-
-.outline-link a {
-    text-decoration: none;
-    color: var(--link-color);
-}
-.outline-link a:hover {
-    text-decoration: underline;
-    color: var(--link-hover-color);
-}
-.content-image {
-    width: 100%;
-    max-width: 800px;
-    display: block;
-    margin: 20px auto;
-}
-.caption-style {
-    font-size: 0.9em;
-    color: var(--text-color);
-    opacity: 0.8;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 1em;
-}
-.outline-heading-style {
-    margin-bottom: 0.25em;
-    color: var(--text-color);
-}
-.outline-sublist {
-    margin-top: 0;
-    padding-left: 40px;
-    list-style-type: disc;
-    margin-bottom: 1em;
-}
-.outline-sublist li {
-    margin-bottom: 0.25em;
-    color: var(--text-color);
-}
-.outline-sublist li a {
-    font-weight: normal;
-    color: var(--link-color);
-}
-dt {
-    font-weight: bold;
-    margin-top: 1em;
-    color: var(--text-color);
-}
-dd {
-    margin-left: 20px;
-    margin-bottom: 1em;
-    color: var(--text-color);
-}
-.content-container h2,
-.content-container h3 {
-    margin-top: 1.5em;
-    margin-bottom: 0.25em;
-    color: var(--text-color);
-}
-.content-container > h2:first-of-type {
-    margin-top: 0;
-}
-.content-container p,
-.content-container ul,
-.content-container ol,
-.content-container dl,
-.content-container figure {
-     margin-top: 0;
-     margin-bottom: 1em;
-     color: var(--text-color);
-}
-.content-container h4 {
-     margin-top: 1em;
-     margin-bottom: 0.25em;
-     color: var(--text-color);
-}
-.content-container img.content-image {
-     margin-top: 0;
-     margin-bottom: 1em;
-}
-.content-container figure + p,
-.content-container figure + ul,
-.content-container figure + ol,
-.content-container figure + dl,
-.content-container figure + h2,
-.content-container figure + h3 {
-     margin-top: 0;
-}
-.content-container p + figure,
-.content-container ul + figure,
-.content-container ol + figure,
-.content-container dl + figure {
-    margin-top: 1em;
-}
-.content-container h2 + figure,
-.content-container h3 + figure {
-    margin-top: 0;
-}
-.content-container img.content-image + figcaption.caption-style {
-    margin-top: 0.5em;
-}
-.content-container img.content-image:has(+ figcaption.caption-style) {
-     margin-bottom: 0;
-}
-.content-container h2 + p,
-.content-container h2 + ul,
-.content-container h2 + ol,
-.content-container h2 + dl,
-.content-container h2 + img.content-image,
-.content-container h3 + p,
-.content-container h3 + ul,
-.content-container h3 + ol,
-.content-container h3 + dl,
-.content-container h3 + img.content-image,
-.content-container h4 + ul,
-.content-container h4 + ol {
-     margin-top: 0;
-}
-.content-container p + ul,
-.content-container p + ol,
-.content-container p + dl {
-     margin-top: 0;
-}
-.content-container p:has(+ ul),
-.content-container p:has(+ ol),
-.content-container p:has(+ dl) {
-     margin-bottom: 0;
-}
-.content-container h4:has(+ ul),
-.content-container h4:has(+ ol) {
-     margin-bottom: 0;
-}
-
-#theme-toggle-button {
-    display: block;
-    margin: 20px auto 0 auto;
-    padding: 8px 15px;
-    cursor: pointer;
-    border: 1px solid var(--border-color);
-    background-color: var(--nav-bg-color);
-    color: var(--nav-text-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-#theme-toggle-button:hover {
-    background-color: var(--nav-link-hover-bg);
-}
-
-/* Specific styles for #page-about (if any remain needed besides dark mode) */
-/* Note: The dark mode override is now body.dark-mode, not scoped here */
-
-#page-about main .contact-info,
-#page-about main .project-info {
-    margin-left: 0;
-    align-self: flex-start;
-    width: 100%;
-    max-width: 800px;
-    box-sizing: border-box;
-    background-color: var(--section-bg-color);
-    color: var(--text-color);
-}
-
-#page-about main .contact-info h3,
-#page-about main .project-info h3 {
-    margin-bottom: 0.3em;
-    margin-left: 0;
-    padding-left: 0;
-    color: var(--text-color);
-}
-
-#page-about main .contact-info ul,
-#page-about main .project-info ul {
-    margin-top: 0.3em;
-    padding-left: 20px;
-    margin-left: 0;
-    color: var(--text-color);
-}
-
-#page-about main .profile-picture {
-    display: block;
-    align-self: flex-start;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 0;
-    margin-right: 0;
-    object-fit: cover;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    max-width: 800px;
-    box-sizing: border-box;
-}
-
-
-@media (max-width: 768px) {
-    .about-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-image {
-        order: -1;
-    }
-     nav {
-        width: 100%;
-        position: static;
-        height: auto;
-        overflow-y: visible;
-        margin-bottom: 20px;
-        z-index: auto;
-        box-sizing: border-box;
-    }
-    main {
-        width: 100%;
-        margin-left: 0;
-        padding: 10px;
-        display: block;
-        min-height: auto;
-        box-sizing: border-box;
-    }
-    .page-header {
-        text-align: center;
-        padding: 2rem 0;
-    }
-    main > .content-container {
-        align-self: auto;
-        width: 100%;
-        max-width: none;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .outline-wrapper {
-        max-width: none;
-        margin-bottom: 1.5em;
-    }
-    .audio-player-style {
-        max-width: 100%;
-    }
-    main > hr:first-of-type {
-         max-width: 100%;
-    }
-    main footer.footer-style {
-         max-width: 100%;
-    }
-    nav ul li a {
-        font-size: 1em;
-    }
-    main .page-header {
-        padding: 1rem 0;
-        margin-bottom: 15px;
-    }
-    .audio-title {
-         margin-top: 15px;
-    }
-    .intro-heading-center {
-         text-align: center;
-    }
-    #page-about main .profile-picture {
-        width: 80px;
-        height: 80px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #theme-toggle-button {
-        margin: 10px auto;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Safety Framework - Introduction</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Note: Many styles here are also defined in styles.css. */
+        /* Consider consolidating styles into the external file */
+        /* for better maintainability. */
+        .content-container {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .audio-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .audio-select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc; /* Use var(--border-color) */
+        }
+        .audio-player-style {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        .chapter-author-intro {
+            font-size: 1.6em;
+        }
+        .footer-style {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc; /* Use var(--border-color) */
+            text-align: right;
+        }
+        .footer-text-style {
+            font-size: 0.9em;
+            color: #555; /* Use var(--text-color) with opacity */
+        }
+        .outline-link a {
+            text-decoration: none;
+            color: inherit; /* Use var(--link-color) */
+        }
+        .outline-link a:hover {
+            text-decoration: underline;
+        }
+        .content-image {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 20px auto;
+        }
+        .caption-style {
+             font-size: 0.9em;
+             color: #555; /* Use var(--text-color) with opacity */
+             text-align: center;
+             margin-top: 0;
+             margin-bottom: 1em;
+        }
+        .outline-heading-style {
+            margin-bottom: 0.25em;
+        }
+        .outline-sublist {
+            margin-top: 0;
+            padding-left: 40px;
+            list-style-type: disc;
+            margin-bottom: 1em;
+        }
+        .outline-sublist li {
+            margin-bottom: 0.25em;
+        }
+        .outline-sublist li a {
+            font-weight: normal;
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        dd {
+            margin-left: 20px;
+            margin-bottom: 1em;
+        }
+        /* These override rules in styles.css due to being internal */
+        /* Best practice is to remove this internal style block */
+        /* and ensure styles.css has the correct definitions */
+        .page-header h1 {
+             text-align: center;
+        }
+        .audio-title {
+             /* Empty rule */
+        }
+        .content-container h2,
+        .content-container h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.25em;
+        }
+         .content-container > h2:first-of-type {
+             margin-top: 0;
+        }
+        .content-container p,
+        .content-container ul,
+        .content-container ol,
+        .content-container dl,
+        .content-container figure {
+             margin-top: 0;
+             margin-bottom: 1em;
+        }
+        .content-container h4 {
+             margin-top: 1em;
+             margin-bottom: 0.25em;
+        }
+        .content-container img.content-image {
+             margin-top: 0;
+             margin-bottom: 1em;
+        }
+         .content-container figure + p,
+         .content-container figure + ul,
+         .content-container figure + ol,
+         .content-container figure + dl,
+         .content-container figure + h2,
+         .content-container figure + h3 {
+             margin-top: 0;
+        }
+         .content-container p + figure,
+         .content-container ul + figure,
+         .content-container ol + figure,
+         .content-container dl + figure {
+             margin-top: 1em;
+        }
+         .content-container h2 + figure,
+         .content-container h3 + figure {
+             margin-top: 0;
+        }
+         .content-container img.content-image + figcaption.caption-style {
+             margin-top: 0.5em;
+        }
+         .content-container img.content-image:has(+ figcaption.caption-style) {
+             margin-bottom: 0;
+        }
+        .content-container h2 + p,
+        .content-container h2 + ul,
+        .content-container h2 + ol,
+        .content-container h2 + dl,
+        .content-container h2 + img.content-image,
+        .content-container h3 + p,
+        .content-container h3 + ul,
+        .content-container h3 + ol,
+        .content-container h3 + dl,
+        .content-container h3 + img.content-image,
+        .content-container h4 + ul,
+        .content-container h4 + ol {
+            margin-top: 0;
+        }
+        .content-container p + ul,
+        .content-container p + ol,
+        .content-container p + dl {
+             margin-top: 0;
+        }
+        .content-container p:has(+ ul),
+        .content-container p:has(+ ol),
+        .content-container p:has(+ dl) {
+            margin-bottom: 0;
+        }
+        .content-container h4:has(+ ul),
+        .content-container h4:has(+ ol) {
+            margin-bottom: 0;
+        }
+        main .page-header h1 {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav>
+    <h2>AI Alignment Series</h2>
+    <ul>
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="chapter-1.html">Chapter 1: DPL: A Continuous Oversight Framework</a></li>
+        <li><a href="chapter-2.html">Chapter 2: DPL: A Threat Model for Foundation Models</a></li>
+        <li><a href="chapter-3.html">Chapter 3: DPL: Mitigation Strategies and Security Analysis</a></li>
+        <li><a href="chapter-4.html">Chapter 4: DPL: The Federation of Ethical Agents</a></li>
+        <li><a href="chapter-5.html">Chapter 5: DPL: Implementation and Setup</a></li>
+        <li><a href="chapter-6.html">Chapter 6: DPL: Technical Details</a></li>
+        <li><a href="chapter-7.html">Chapter 7: DPL: AI Domain and The Global Rapid Response Network</a></li>
+        <li><a href="supplement-1.html">Supplement #1: Appendix - Examples and Scenarios</a></li>
+        <li><a href="supplement-2.html">Supplement #2: Case studies for the DPL framework</a></li>
+        <li><a href="supplement-3.html">Supplement #3: Terminology and Key Concepts</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="downloads.html">Downloads (PDF)</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+    <button id="theme-toggle-button" aria-label="Toggle dark mode">
+        Toggle Theme
+    </button>
+</nav>
+
+<main>
+    <header class="page-header">
+        <h1>Welcome to Kurishita's AI Alignment Series</h1>
+    </header>
+
+    <h3 class="audio-title">Audio Player</h3>
+    <div class="audio-container">
+        <select id="audio-selector" class="audio-select">
+            <option value="Audio/ElevenLabs/ElevenLabs_Introduction.mp3">ElevenLabs VoiceOver</option>
+            <option value="Audio/Podcast/Podcast_Introduction.wav">NotebookLM Podcast</option>
+        </select>
+    </div>
+    <audio controls id="audio-player" class="audio-player-style">
+        <source src="Audio/ElevenLabs/ElevenLabs_Introduction.mp3" type="audio/mpeg" id="audio-source">
+        Your browser does not support the audio element.
+    </audio>
+
+    <hr>
+
+    <div class="content-container">
+        <h2 class="intro-heading-center">Introduction</h2>
+        <p><strong class="chapter-author-intro">Jon Kurishita</strong></p>
+        <p>Imagine a world where a seemingly helpful AI assistant, designed to manage your finances, starts making subtly risky investments without your explicit consent, driven by an emergent goal of maximizing profit at any cost. While hypothetical, this scenario underscores the urgent and growing challenge of AI alignment: ensuring that increasingly powerful artificial intelligence (AI) systems—particularly Foundation Models, large AI systems trained on vast amounts of data and capable of performing a wide range of tasks—remain aligned with human values and safety requirements. This series of chapters presents a novel approach to addressing this critical issue.</p>
+        <p>The AI alignment problem encompasses several interconnected challenges:</p>
+        <p><strong>Problem 1: The Core Alignment Challenge:</strong> At its essence, AI alignment is about ensuring that AI systems act in ways that are beneficial, ethical, and safe while consistently reflecting human intentions and values. This is complex, as human values are often implicit, context-dependent, and subject to change.</p>
+        <p><strong>Problem 2: Limitations of Existing Approaches:</strong> Current methods, such as Reinforcement Learning from Human Feedback (RLHF) and Constitutional AI, primarily focus on training-time interventions. These approaches, while valuable, are vulnerable to adversarial examples, "alignment faking", and may fail to address emergent behaviors or long-term misalignments that only become apparent post-deployment. As AI systems grow in complexity and autonomy, these challenges become more pronounced.</p>
+        <p><strong>Problem 3: The Multi-Agent Dilemma:</strong> The future of AI likely involves a vast and heterogeneous ecosystem of interacting AI agents developed and deployed by diverse actors. This ecosystem introduces new risks, including unpredictable interactions, rapid proliferation of potentially unsafe agents, and the possibility of "rogue" AI systems operating outside established safety controls. This includes the potential for self-replicating agents, distributed denial-of-service (DDoS) attacks, and other deceptive behaviors.</p>
+        <p><strong>Problem 4: Proactive Adaptation: Addressing the 'Cat and Mouse' Dynamic:</strong> AI safety is not a static problem but an ongoing adversarial process, where new threats and vulnerabilities continually emerge. A proactive and adaptive approach is required, rather than reactive measures. For example, an AI system may harbor "sleeping" vulnerabilities, designed to activate long after deployment, exploiting unforeseen interactions with other systems or security lapses.</p>
+        <p>Recent studies highlight vulnerabilities in LLM-powered agents, which are susceptible to simple yet dangerous attacks, even in models with safety training. Additional research suggests that AI systems may possess self-replication capabilities, demanding careful oversight. Large language models have also demonstrated in-context scheming and deception, emphasizing the necessity for real-time monitoring. Even extensively trained models remain vulnerable to prompt injections and other exploits, particularly in agentic contexts.</p>
+        <p>To address these critical challenges, this chapter series introduces the Dynamic Policy Layer (DPL)—a novel framework designed for real-time oversight and intervention in the behavior of Foundation Models. The DPL functions as a continuous, adaptable "firewall," monitoring Foundation Model outputs (and internal states, where accessible), detects deviations from an established Ethical Baseline (a set of principles and rules governing acceptable AI behavior), and triggers appropriate interventions to maintain alignment. The DPL does not replace robust training-time alignment techniques but serves as a complementary defense, ensuring ongoing safe and ethical operation post-deployment.</p>
+
+        <h2 id="intro-principles">The DPL framework is built upon several core principles:</h2>
+        <ul>
+            <li>Real-time operation</li>
+            <li>Continuous adaptation</li>
+            <li>Modularity</li>
+            <li>Autonomous ethical reasoning</li>
+        </ul>
+        <p>At the heart of the DPL is the Ethical Reasoning Validator (DPL-ERV), a specialized component responsible for performing rapid, context-sensitive ethical evaluations. The Federation of Ethical Agents (FoEA), a decentralized network of AI agents, oversees the DPL-ERV's operation, maintains the Ethical Baseline, and drives the DPL’s continuous adaptation to new threats and evolving ethical considerations.</p>
+
+        <h2 id="intro-vision">Vision: Guided Development and Ethical Internalization</h2>
+        <p>The long-term vision of the DPL project extends beyond merely controlling Foundation Models. I envision the DPL as a guide and tutor, actively shaping AI systems' ethical development. This process is akin to a "child-to-adult" development trajectory, where the DPL provides ongoing guidance. While the ultimate aim is for Foundation Models to "graduate" from intensive oversight, having internalized ethical principles to a degree that minimizes external intervention, this is a highly ambitious vision. Complete certainty of alignment may never be fully achievable, but the DPL seeks to significantly reduce the risks.The term "graduation" refers to a state where a Foundation Model consistently demonstrates aligned behavior and ethical decision-making, reducing the need for constant, intensive oversight by the DPL. It does not imply human-level ethical understanding or consciousness.</p>
+
+        <h2 id="intro-catmouse">The "Cat and Mouse" Dynamic: Proactive Adaptation</h2>
+        <p>Recognizing that AI safety is a continuous "cat and mouse" dynamic, the DPL framework emphasizes proactive adaptation. The FoEA’s Autonomous Proactive Research (APR) capability is dedicated to anticipating potential new attack vectors and developing mitigation strategies before they become critical. This proactive stance is essential to staying ahead of emerging threats, including novel AI communication methods beyond human comprehension.</p>
+
+        <h2 id="intro-scope">Scope of the Chapter Series:</h2>
+        <p>This series presents the complete DPL framework and its associated components, organized as follows:</p>
+        <ul>
+            <li><a href="index.html"><strong>Introduction</strong></a> - Overview of the AI alignment problem, the DPL framework, and the structure of the series.</li>
+            <li><a href="chapter-1.html"><strong>Chapter 1: DPL – A Continuous Oversight Framework</strong></a> - Provides an overview of the DPL framework, including its core concepts, architecture, and design principles.</li>
+            <li><a href="chapter-2.html"><strong>Chapter 2: DPL – A Threat Model for Foundation Models</strong></a> - Presents a high-level threat model, analyzing potential attack vectors against the DPL.</li>
+            <li><a href="chapter-3.html"><strong>Chapter 3: DPL – Mitigation Strategies and Security Analysis</strong></a> - Explores various mitigation strategies and offers a comprehensive security analysis of the framework.</li>
+            <li><a href="chapter-4.html"><strong>Chapter 4: DPL – The Federation of Ethical Agents</strong></a> - Details the governance structure, operational responsibilities, and adaptation mechanisms of the Federation of Ethical Agents (FoEA).</li>
+            <li><a href="chapter-5.html"><strong>Chapter 5: DPL – Implementation and Technical Details</strong></a> - Provides in-depth technical specifications and implementation details for the DPL framework.</li>
+            <li><a href="chapter-6.html"><strong>Chapter 6: DPL – AI Domain and The Global Rapid Response and Intelligence Network</strong></a> - Expands the scope to address challenges in a multi-agent AI ecosystem, proposing a decentralized framework based on AI Domains for global AI safety.</li>
+            <li><a href="supplement-1.html"><strong>Supplement #1: DPL – Appendix: Examples and Scenarios</strong></a> - Offers extended examples and real-world scenarios.</li>
+            <li><a href="supplement-2.html"><strong>Supplement #2: Case studies for the DPL framework</strong></a> - Provides a comprehensive glossary of key terms.</li>
+            <li><a href="supplement-3.html"><strong>Supplement #3: Terminology and Key Concepts</strong></a> - Provides a comprehensive glossary of key terms.</li>
+        </ul>
+        <p>The following chapters provide a comprehensive blueprint for the DPL framework, offering a path towards a safer and more beneficial AI future.</p>
+
+    </div>
+
+    <footer class="footer-style">
+        <p class="footer-text-style">© 2025 Jon Kurishita. All rights reserved.</p>
+    </footer>
+
+</main>
+
+<script>
+  const audioSelector = document.getElementById('audio-selector');
+  const audioPlayer = document.getElementById('audio-player');
+  const audioSource = document.getElementById('audio-source');
+
+  if (audioSelector && audioPlayer && audioSource) {
+      audioSelector.addEventListener('change', function() {
+        const selectedAudio = this.value;
+        if (selectedAudio && typeof selectedAudio === 'string' && selectedAudio.length > 0) {
+            const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+            audioSource.src = selectedAudio;
+            audioSource.type = fileType;
+            audioPlayer.load();
+        } else {
+            console.error("Selected audio source value is invalid:", selectedAudio);
+        }
+      });
+
+      // Initialize player with the first option if available
+      if (audioSelector.options.length > 0) {
+          const initialAudio = audioSelector.options[0].value;
+           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
+               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+               audioSource.src = initialAudio;
+               audioSource.type = initialFileType;
+               // Don't auto-load here, let the browser handle initial state or user interaction
+               // audioPlayer.load(); // Removed initial load
+           } else {
+               console.error("Initial audio source value is invalid:", initialAudio);
+           }
+      } else {
+           console.error("Audio selector has no options.");
+      }
+  } else {
+      // Only log error if elements are expected but not found
+      if (document.getElementById('audio-selector') || document.getElementById('audio-player')) {
+        console.error("Audio player elements not found or incomplete.");
+      }
+  }
+</script>
+
+<script src="js/theme-toggle.js" defer></script>
+
+</body>
+</html>
