@@ -16,7 +16,6 @@
     --dark-color-placeholder: #333333;
 }
 
-/* Apply dark mode variables when body has .dark-mode class */
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #e0e0e0;
@@ -590,9 +589,6 @@ dd {
 #theme-toggle-button:hover {
     background-color: var(--nav-link-hover-bg);
 }
-
-/* Specific styles for #page-about (if any remain needed besides dark mode) */
-/* Note: The dark mode override is now body.dark-mode, not scoped here */
 
 #page-about main .contact-info,
 #page-about main .project-info {
