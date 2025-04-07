@@ -38,13 +38,32 @@
         <h1>Navigating the Precipice: Steering AI Alignment with Urgency and Caution</h1> 
     </header>
 
+    
+    <h3 class="audio-title">Audio Player</h3>
+    <div class="audio-container">
+        <select id="audio-selector" class="audio-select">
+            
+            <option value="../Audio/ElevenLabs/ElevenLabs_BlogPost-2.mp3">ElevenLabs VoiceOver</option> 
+            <option value="../Audio/podcast/Podcast_blogpost-2.wav">NotebookLM Podcast</option> 
+        </select>
+    </div>
+    <audio controls id="audio-player" class="audio-player-style">
+        
+        <source src="../Audio/ElevenLabs/ElevenLabs_BlogPost-2.mp3" type="audio/mpeg" id="audio-source"> 
+        Your browser does not support the audio element.
+    </audio>
+
+    
+    <hr> 
+
     <div class="content-container blog-post"> 
 
         <p class="post-meta">
             <em>Posted by Jon Kurishita on: <time datetime="2025-04-07">April 7, 2025</time></em> 
         </p>
 
-        <hr>
+        
+        <hr> 
 
         <div class="post-content">
             
@@ -69,6 +88,47 @@
     </footer>
 
 </main>
+
+
+<script>
+  const audioSelector = document.getElementById('audio-selector');
+  const audioPlayer = document.getElementById('audio-player');
+  const audioSource = document.getElementById('audio-source');
+
+  if (audioSelector && audioPlayer && audioSource) {
+      audioSelector.addEventListener('change', function() {
+        const selectedAudio = this.value;
+        if (selectedAudio && typeof selectedAudio === 'string' && selectedAudio.length > 0) {
+            const fileType = selectedAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+            audioSource.src = selectedAudio;
+            audioSource.type = fileType;
+            audioPlayer.load();
+        } else {
+            console.error("Selected audio source value is invalid:", selectedAudio);
+        }
+      });
+
+      
+      if (audioSelector.options.length > 0) {
+          const initialAudio = audioSelector.options[0].value;
+           if (initialAudio && typeof initialAudio === 'string' && initialAudio.length > 0) {
+               const initialFileType = initialAudio.endsWith('.wav') ? 'audio/wav' : 'audio/mpeg';
+               audioSource.src = initialAudio;
+               audioSource.type = initialFileType;
+               
+           } else {
+               console.error("Initial audio source value is invalid:", initialAudio);
+           }
+      } else {
+           console.error("Audio selector has no options.");
+      }
+  } else {
+      
+      if (document.getElementById('audio-selector') || document.getElementById('audio-player')) {
+        console.error("Audio player elements not found or incomplete.");
+      }
+  }
+</script>
 
 <script src="../js/theme-toggle.js" defer></script> 
 
