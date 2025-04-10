@@ -335,11 +335,21 @@
             <li><strong>FoEA-Driven Adaptation:</strong> FoEA monitors threats, updates detection rules/algorithms, refines the Ethical Baseline (via consensus/HITL), and proactively develops mitigations through APR, informed by research (e.g., Bai et al., 2022) and targeting "sleeping" attacks, emergent communication, and post-quantum needs.</li>
             <li><strong>Automated "Red Teaming" and Vulnerability Discovery:</strong> Uses simulated attacks (potentially FoEA-driven) to test defenses, identify weaknesses, validate mitigations, and drive adaptation, possibly using recursive reinforcement learning.</li>
         </ul>
+
+
         <h3 id="ch3-sec4-4">4.4 Proactive Threat Prediction Module</h3>
-        <p>The Proactive Threat Prediction Module (PPM) anticipates threats by analyzing DPL monitoring data (outputs, internal states, resources, network, FoEA activity) using ML for trend/anomaly detection.</p>
-        <p>PPM collaborates with FoEA Reasoning Agents for contextual insights, prediction validation, and hypothesis generation (e.g., identifying resource spikes + output shifts as potential "sleeper agent" activity).</p>
-        <p>High-probability threats trigger "almost-in-time" responses like threshold adjustments, specialized monitoring activation, preemptive sandboxing, or FoEA alerts, enabling proactive defense adaptation.</p>
+        <p>The Dynamic Policy Layer (DPL) incorporates a Proactive Threat Prediction Module (PPM) to anticipate and mitigate potential AI threats before they fully materialize. This module enhances real-time AI alignment by leveraging machine learning to analyze DPL monitoring data, identifying trends and anomalies that may precede malicious activity.
+</p>
+
+        <p>The PPM continuously processes data streams from various sources, including Foundation Model outputs, internal state dynamics, resource utilization patterns, network traffic, and FoEA agent activity. Time-series analysis and predictive modeling techniques 
+are employed to detect subtle shifts and deviations from established baselines. Crucially, the PPM collaborates with FoEA Reasoning Agents. These agents provide contextual insights, validate predictions, and generate hypotheses about potential attack vectors. For instance, the PPM might flag a gradual increase in resource usage coupled with a shift in output patterns. FoEA agents could then identify this as a potential "sleeper agent" activation.
+</p>
+
+        <p>Upon detecting a high-probability threat, the PPM triggers "almost-in-time" responses. This may involve adjusting detection thresholds, activating specialized monitoring, preemptively sandboxing interactions, or alerting FoEA agents for targeted audits. This proactive approach allows the DPL to adapt its defenses before a full-scale attack occurs.</p>
+
         <img src="images/Chapter-03/Chapter03-image03.png" alt="PPM Data Flow and Interactions Diagram" class="content-image">
+
+
 
         <h2 id="ch3-integrity">5. System Integrity Protections</h2>
          <p> The DPL framework's reliability depends on the integrity of its own components. Rigorous protections, managed by the FoEA, are crucial.</p>
