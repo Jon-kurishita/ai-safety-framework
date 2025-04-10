@@ -337,17 +337,19 @@
         </ul>
 
 
-        <h3 id="ch3-sec4-4">4.4 Proactive Threat Prediction Module</h3>
-        <p>The Dynamic Policy Layer (DPL) incorporates a Proactive Threat Prediction Module (PPM) to anticipate and mitigate potential AI threats before they fully materialize. This module enhances real-time AI alignment by leveraging machine learning to analyze DPL monitoring data, identifying trends and anomalies that may precede malicious activity.
-</p>
 
-        <p>The PPM continuously processes data streams from various sources, including Foundation Model outputs, internal state dynamics, resource utilization patterns, network traffic, and FoEA agent activity. Time-series analysis and predictive modeling techniques 
-are employed to detect subtle shifts and deviations from established baselines. Crucially, the PPM collaborates with FoEA Reasoning Agents. These agents provide contextual insights, validate predictions, and generate hypotheses about potential attack vectors. For instance, the PPM might flag a gradual increase in resource usage coupled with a shift in output patterns. FoEA agents could then identify this as a potential "sleeper agent" activation.
-</p>
 
-        <p>Upon detecting a high-probability threat, the PPM triggers "almost-in-time" responses. This may involve adjusting detection thresholds, activating specialized monitoring, preemptively sandboxing interactions, or alerting FoEA agents for targeted audits. This proactive approach allows the DPL to adapt its defenses before a full-scale attack occurs.</p>
+<h3 id="ch3-sec4-4">4.4 Proactive Threat Prediction Module</h3>
+        <p>The Dynamic Policy Layer (DPL) incorporates a Proactive Threat Prediction Module (PPM) designed to enhance real-time AI alignment by anticipating and mitigating potential threats before they fully manifest. This module analyzes the continuous streams of monitoring data generated within the DPL framework to identify subtle precursors to malicious activity or undesirable emergent behaviors.</p>
 
+        <p>The PPM processes diverse, time-ordered data streams, including Foundation Model outputs (e.g., semantic shifts, sentiment changes), internal state dynamics (where accessible), resource utilization patterns (CPU, memory), network traffic characteristics (volume, destinations), and FoEA agent activity logs (e.g., voting patterns, alert frequencies). Central to the PPM's analytical capability is the application of <strong>Time-Series Analysis</strong>. This technique involves statistically analyzing sequences of data points indexed chronologically to extract meaningful patterns, trends, and anomalies. Specifically within the PPM, time-series analysis is employed to establish dynamic baselines by characterizing the normal operational behavior over time; detect anomalous deviations such as sudden spikes, drops, or significant departures from established temporal patterns; identify subtle trends like gradual drifts that might signify incipient risks; and inform predictive models by providing processed temporal features to forecast near-term system states and flag potential divergence from safe operational envelopes.</p>
+
+        <p>Crucially, the insights derived from time-series analysis are not interpreted in isolation. The PPM collaborates closely with FoEA Reasoning Agents. These agents receive the detected anomalies and trends from the PPM, providing essential contextual interpretation, validating the potential significance of statistical deviations, and generating hypotheses about underlying causes or potential attack vectors. For instance, the PPM might detect a statistically significant trend of increasing resource usage correlated with specific input types; FoEA agents would then analyze this pattern contextually to differentiate between legitimate demanding tasks and potential resource exhaustion attacks or nascent self-replication attempts.</p>
+
+        <p>Upon identifying a high-probability threat precursor, validated by FoEA reasoning, the PPM triggers preemptive, "almost-in-time" responses. These adaptive measures may include dynamically adjusting DPL-ERV detection thresholds, activating more resource-intensive specialized monitoring routines, preemptively routing suspect interactions to a secure sandbox for deeper analysis, or directly alerting specific FoEA agents for targeted audits or interventions. This proactive capability allows the DPL to adapt its defenses based on predictive indicators, aiming to neutralize threats before they can cause significant harm.</p>
         <img src="images/Chapter-03/Chapter03-image03.png" alt="PPM Data Flow and Interactions Diagram" class="content-image">
+
+
 
 
 
