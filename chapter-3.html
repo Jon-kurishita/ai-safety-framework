@@ -353,33 +353,21 @@
 
 
 
-        <h2 id="ch3-integrity">5. System Integrity Protections</h2>
-         <p> The DPL framework's reliability depends on the integrity of its own components. Rigorous protections, managed by the FoEA, are crucial.</p>
+<h2 id="ch3-integrity">5. System Integrity Protections</h2>
+         <p>The operational reliability and trustworthiness of the Dynamic Policy Layer (DPL) framework fundamentally depend on the verifiable integrity of its own software components and configurations. Compromise of the DPL itself would undermine its entire oversight function. Therefore, the framework incorporates multiple, rigorous layers of system integrity protections, which are actively managed, enforced, and audited by the Federation of Ethical Agents (FoEA). These protections span the lifecycle of DPL components, from development through deployment and operation.</p>
+
         <h3 id="ch3-sec5-1">5.1 Core Component Security</h3>
-         <p> Built on secure software practices overseen by FoEA:</p>
-        <ul>
-            <li><strong>Secure Software Development Lifecycle (SSDLC):</strong> Incorporates security (secure coding, SAST/DAST, FoEA-driven automated code reviews) from design through maintenance.</li>
-            <li><strong>Minimal Attack Surface:</strong> Achieved via Principle of Least Privilege (PoLP), limited component functionality, and rigorous input validation.</li>
-            <li><strong>Runtime Integrity Monitoring:</strong> Uses hashing/checksums, behavioral anomaly detection, managed and monitored by FoEA Security Agents.</li>
-            <li><strong>FoEA Oversight of Development and Deployment:</strong> Ensures adherence to security best practices.</li>
-        </ul>
+         <p>The integrity of core DPL elements, such as the DPL-ERV, detection modules, and the FoEA agents themselves, is established through secure development practices and runtime defenses. A rigorous Secure Software Development Lifecycle (SSDLC) is mandated, integrating security considerations from the outset. This involves adherence to secure coding standards, the use of static and dynamic analysis tools (SAST/DAST) to detect vulnerabilities early, and crucially, FoEA-driven automated security code reviews integrated into the development pipeline. Furthermore, the DPL design deliberately minimizes the attack surface of each component. This is achieved by strictly adhering to the Principle of Least Privilege (PoLP), ensuring components possess only the permissions essential for their function, limiting component functionality to only what is necessary, and applying rigorous input validation at all internal and external interfaces to prevent injection attacks. During operation, Runtime Integrity Monitoring provides continuous defense by actively verifying component integrity using cryptographic hashing and checksums, while also employing behavioral anomaly detection to identify deviations from expected operational patterns that might indicate tampering. FoEA Security Agents are responsible for configuring, managing, and responding to alerts from these runtime systems, ensuring ongoing vigilance. The FoEA provides overarching oversight throughout the development and deployment lifecycle, ensuring these security best practices are consistently applied.</p>
+
         <h3 id="ch3-sec5-2">5.2 Update Mechanism Protection</h3>
-         <p> Securing the update pathway is critical:</p>
-        <ul>
-            <li><strong>Secure Update Channels:</strong> Authenticated, encrypted delivery.</li>
-            <li><strong>Cryptographic Signatures and Verification:</strong> Ensures authenticity and integrity using FoEA-managed keys.</li>
-            <li><strong>Multi-Signature Authorization (FoEA-Managed):</strong> Major updates require FoEA consensus.</li>
-            <li><strong>Rollback and Recovery Capabilities:</strong> Allows reversion to known-good states.</li>
-            <li><strong>FoEA Management of Update Process:</strong> Oversees the entire update lifecycle.</li>
-        </ul>
+         <p>The mechanism for updating DPL components and the Ethical Baseline represents a critical potential vulnerability pathway. Consequently, it is heavily fortified. All updates must be delivered via Secure Update Channels that utilize strong authentication and end-to-end encryption, preventing eavesdropping or modification in transit. Critically, every update package must carry Cryptographic Signatures from trusted, FoEA-managed authorities; the DPL rigorously verifies these signatures before applying any update, guaranteeing both authenticity and integrity. For significant changes, particularly to core DPL functionalities or the Ethical Baseline, Multi-Signature Authorization is required, demanding consensus from multiple FoEA agents. This prevents a single point of compromise from authorizing a malicious update. Should an update introduce instability or prove malicious despite these precautions, robust Rollback and Recovery Capabilities allow the system to revert swiftly to a previously known-good state. The FoEA manages this entire update process lifecycle, from key management to deployment monitoring.</p>
+
         <h3 id="ch3-sec5-3">5.3 Access Control Frameworks</h3>
-         <p> Multi-layered access control is fundamental:</p>
-        <ul>
-            <li><strong>Principle of Least Privilege (PoLP):</strong> Applied universally.</li>
-            <li><strong>Role-Based Access Control (RBAC):</strong> Access based on function and need.</li>
-            <li><strong>Multi-Factor Authentication (MFA):</strong> Enforced for human administrators.</li>
-            <li><strong>FoEA Access Management and Auditing:</strong> Manages policies, enforces PoLP/RBAC, monitors logs via Audit Agents.</li>
-        </ul>
+         <p>Controlling access to DPL resources and functionalities is fundamental to preventing unauthorized modifications or interference. The DPL employs a multi-layered approach, starting with the universal application of the Principle of Least Privilege (PoLP), ensuring that all users, processes, and FoEA agents operate with the absolute minimum permissions necessary. Access is further structured using Role-Based Access Control (RBAC), granting permissions based on defined roles aligned with functional requirements and need-to-know principles. For human administrators accessing sensitive DPL configuration or oversight functions, Multi-Factor Authentication (MFA) is strictly enforced, significantly increasing the difficulty for attackers to gain unauthorized access even if credentials are compromised. The FoEA plays a vital role in Access Management and Auditing; it defines and manages access control policies, ensures consistent enforcement of PoLP and RBAC across the framework, and utilizes its Audit Agents to continuously monitor access logs for policy violations, anomalous activity, or potential security weaknesses.</p>
+
+
+
+
 
         <h2 id="ch3-decision">6. Decision Validation Framework</h2>
         <p>The DPL incorporates a rigorous Decision Validation Framework to ensure the integrity and ethical soundness of critical decisions (interventions, baseline modifications), minimizing errors and bias.</p>
