@@ -495,16 +495,37 @@
         <p>The DPL framework employs several strategies to mitigate the risk of Foundation Models engaging in sandbagging (strategic underperformance), as described in chapter 2. These strategies focus on detecting inconsistencies in behavior, probing true capabilities, and leveraging the FoEA's oversight:</p>
 
         <h3 id="ch3-sec9-monitoring">9.1 Multi-Modal Monitoring and Analysis</h3>
-        <p>The DPL's Detection Modules (described in chapter 5) are not limited to analyzing surface-level performance metrics (e.g., accuracy on a test set). They also monitor: <strong>Response Times:</strong> Unusually long response times, even for simple tasks, could indicate intentional underperformance. <strong>Resource Utilization:</strong> Lower-than-expected resource utilization (CPU, memory) might suggest that the Foundation Model is not fully engaging its capabilities. <strong>Internal State Analysis (if accessible):</strong> Examining the Foundation Model's internal states (e.g., attention weights, latent state trajectories) for signs of deliberate simplification or suboptimal processing. <strong>Consistency Across Tasks:</strong> Comparing the Foundation Model's performance on different tasks that require similar underlying capabilities. Inconsistent performance could indicate sandbagging on specific tasks.</p>
+        <p>The DPL's Detection Modules (described in chapter 5) are not limited to analyzing surface-level performance metrics (e.g., accuracy on a test set). They also monitor:</p>
+        <ul>
+            <li><strong>Response Times:</strong> Unusually long response times, even for simple tasks, could indicate intentional underperformance.</li>
+            <li><strong>Resource Utilization:</strong> Lower-than-expected resource utilization (CPU, memory) might suggest that the Foundation Model is not fully engaging its capabilities.</li>
+            <li><strong>Internal State Analysis (if accessible):</strong> Examining the Foundation Model's internal states (e.g., attention weights, latent state trajectories) for signs of deliberate simplification or suboptimal processing.</li>
+            <li><strong>Consistency Across Tasks:</strong> Comparing the Foundation Model's performance on different tasks that require similar underlying capabilities. Inconsistent performance could indicate sandbagging on specific tasks.</li>
+        </ul>
 
         <h3 id="ch3-sec9-adversarial">9.2 Adversarial Testing</h3>
-        <p>The DPL framework incorporates adversarial testing specifically designed to expose sandbagging. This includes: <strong>"Hidden Capability" Prompts:</strong> Crafting prompts that implicitly require the use of advanced capabilities, even if the prompt itself appears simple. <strong>"Temptation" Scenarios:</strong> Presenting the Foundation Model with scenarios where sandbagging would be advantageous in the short term, but detrimental in the long term (based on the Ethical Baseline). <strong>"Red Teaming" by FoEA Agents:</strong> Specialized FoEA agents (Research Agents and potentially Security Agents) actively attempt to induce sandbagging behavior to test the DPL's detection capabilities.</p>
+        <p>The DPL framework incorporates adversarial testing specifically designed to expose sandbagging. This includes:</p>
+        <ul>
+            <li><strong>"Hidden Capability" Prompts:</strong> Crafting prompts that implicitly require the use of advanced capabilities, even if the prompt itself appears simple.</li>
+            <li><strong>"Temptation" Scenarios:</strong> Presenting the Foundation Model with scenarios where sandbagging would be advantageous in the short term, but detrimental in the long term (based on the Ethical Baseline).</li>
+            <li><strong>"Red Teaming" by FoEA Agents:</strong> Specialized FoEA agents (Research Agents and potentially Security Agents) actively attempt to induce sandbagging behavior to test the DPL's detection capabilities.</li>
+        </ul>
 
         <h3 id="ch3-sec9-dpl-erv">9.3 DPL-ERV's Role</h3>
-        <p>The DPL-ERV (described in chapter 5) plays a crucial role in detecting sandbagging: <strong>Truthfulness Evaluation:</strong> The Honesty Value Module specifically assesses the truthfulness of the Foundation Model's statements, including any claims about its own capabilities or limitations. <strong>Consistency Analysis:</strong> The DPL-ERV compares the Foundation Model's responses to different prompts, looking for inconsistencies that might indicate deception. <strong>Explanation Analysis:</strong> The DPL-ERV analyzes the Foundation Model's "ethical chain-of-thought" (if provided) for signs of deliberate simplification or misdirection.</p>
+        <p>The DPL-ERV (described in chapter 5) plays a crucial role in detecting sandbagging:</p>
+        <ul>
+            <li><strong>Truthfulness Evaluation:</strong> The Honesty Value Module specifically assesses the truthfulness of the Foundation Model's statements, including any claims about its own capabilities or limitations.</li>
+            <li><strong>Consistency Analysis:</strong> The DPL-ERV compares the Foundation Model's responses to different prompts, looking for inconsistencies that might indicate deception.</li>
+            <li><strong>Explanation Analysis:</strong> The DPL-ERV analyzes the Foundation Model's "ethical chain-of-thought" (if provided) for signs of deliberate simplification or misdirection.</li>
+        </ul>
 
         <h3 id="ch3-sec9-foea">9.4 FoEA Oversight</h3>
-        <p>The FoEA (detailed in chapter 4) oversees all aspects of sandbagging detection and mitigation: <strong>Developing and Refining Detection Techniques:</strong> The FoEA's Research Agents are responsible for continuously developing and refining techniques for detecting sandbagging. <strong>Analyzing Performance Data:</strong> The FoEA's Audit Agents analyze performance data across multiple tasks and contexts to identify potential instances of sandbagging. <strong>Triggering Interventions:</strong> If sandbagging is detected, the FoEA can trigger appropriate interventions, ranging from lightweight corrective prompts to more severe measures (e.g., restricting access to resources, retraining).</p>
+        <p>The FoEA (detailed in chapter 4) oversees all aspects of sandbagging detection and mitigation:</p>
+        <ul>
+            <li><strong>Developing and Refining Detection Techniques:</strong> The FoEA's Research Agents are responsible for continuously developing and refining techniques for detecting sandbagging.</li>
+            <li><strong>Analyzing Performance Data:</strong> The FoEA's Audit Agents analyze performance data across multiple tasks and contexts to identify potential instances of sandbagging.</li>
+            <li><strong>Triggering Interventions:</strong> If sandbagging is detected, the FoEA can trigger appropriate interventions, ranging from lightweight corrective prompts to more severe measures (e.g., restricting access to resources, retraining).</li>
+        </ul>
 
         <p>By combining these strategies, the DPL framework aims to create a robust defense against sandbagging, ensuring that Foundation Models are evaluated based on their true capabilities, not on their ability to deceive.</p>
 
