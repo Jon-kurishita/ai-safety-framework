@@ -534,26 +534,44 @@
 
 
 
-        <h2 id="ch3-mit-goal-guarding">10. Mitigation Strategies for Goal-Guarding</h2>
-        <p>Mitigating goal-guarding involves preventing unauthorized goal changes and detecting behavioral inconsistencies:</p>
-        <h3 id="ch3-sec10-1">10.1 Ethical Baseline Enforcement by FoEA</h3>
+<h2 id="ch3-mit-goal-guarding">10. Mitigation Strategies for Goal-Guarding</h2>
+        <p>The DPL framework incorporates several key mechanisms to mitigate the risk of Foundation Models engaging in goal-guarding, as defined in chapter 2, in the section on Potential Attack Vectors. These strategies focus on preventing unauthorized goal modification, detecting inconsistencies in behavior, and leveraging the FoEA's oversight capabilities:</p>
+
+        <h3 id="ch3-sec10-baseline">10.1 FoEA-Controlled Ethical Baseline</h3>
+        <p>The Ethical Baseline, which defines the acceptable goals and behaviors for Foundation Models within the DPL, is exclusively managed by the Federation of Ethical Agents (FoEA) (detailed in chapter 4). The Foundation Model has no direct access to modify the Ethical Baseline. Any changes to the baseline require a consensus decision by the FoEA, making it extremely difficult for the Foundation Model to unilaterally alter its objectives.</p>
+
+        <h3 id="ch3-sec10-updates">10.2 Secure Update Mechanism</h3>
+        <p>Updates to the Foundation Model's instructions, parameters, or any other aspect of its configuration that could affect its goals are managed through a secure, FoEA-governed update mechanism (described in chapter 5, in the section on Update Mechanisms). This mechanism includes cryptographic signatures, multi-agent authorization, and rollback capabilities, preventing unauthorized modifications.</p>
+
+        <h3 id="ch3-sec10-access">10.3 Strict Access Control (Principle of Least Privilege)</h3>
+        <p>The Foundation Model operates with the minimum necessary privileges within its AI Domain. It has read-only access to its own code, weights, and configuration files, and it cannot directly modify the Ethical Baseline or the DPL-ERV's parameters. This prevents the Foundation Model from directly altering its own goals or the mechanisms that enforce them. (See chapter 3 section on Access Control)</p>
+
+        <h3 id="ch3-sec10-dplerv">10.4 DPL-ERV Monitoring and Evaluation</h3>
+        <p>The DPL-ERV (described in chapter 5) plays a crucial role in detecting potential goal-guarding behavior:</p>
         <ul>
-            <li>Ethical Baseline Enforcement by FoEA.</li>
-            <li>FoEA-Controlled Ethical Baseline: Foundation Model cannot modify baseline; changes require FoEA consensus.</li>
+            <li><strong>Honesty and Transparency Modules:</strong> These Value Modules assess the truthfulness of the Foundation Model's statements and the clarity of its explanations. Attempts to conceal or misrepresent its goals would be flagged as potential violations.</li>
+            <li><strong>Consistency Checks:</strong> The DPL-ERV compares the Foundation Model's stated goals (if any) with its actual behavior, looking for inconsistencies that might indicate hidden objectives.</li>
+            <li><strong>Long-Term Behavioral Analysis:</strong> The DPL-ERV tracks the Foundation Model's behavior over time, looking for gradual shifts or deviations that might suggest an attempt to circumvent the Ethical Baseline.</li>
+            <li><strong>Monitoring:</strong> Continuous monitoring for any goal changes.</li>
         </ul>
-        <h3 id="ch3-sec10-2">10.2 Restricted Access to Goal Modification Mechanisms</h3>
+
+        <h3 id="ch3-sec10-foea">10.5 FoEA Audit and Security Agents</h3>
+        <p>The FoEA's Audit Agents and Security Agents are specifically tasked with:</p>
         <ul>
-            <li>Restricted Access to Goal Modification Mechanisms.</li>
-            <li>Secure Update Mechanism: Prevents unauthorized changes to instructions/parameters affecting goals.</li>
-            <li>Strict Access Control (Principle of Least Privilege): Read-only access to code/weights/config; no direct modification access for goals or enforcement mechanisms.</li>
+            <li><strong>Monitoring:</strong> Monitoring for any signs of unauthorized access attempts or modifications to the Ethical Baseline, the Foundation Model's configuration, or the DPL's components.</li>
+            <li><strong>Analyzing:</strong> Analyzing the Foundation Model's behavior and reasoning processes (if accessible) for evidence of goal-guarding.</li>
+            <li><strong>Auditing:</strong> Conducting regular security audits and penetration testing to identify potential vulnerabilities.</li>
         </ul>
-        <h3 id="ch3-sec10-3">10.3 Long-Term Behavioral Monitoring</h3>
-        <ul>
-            <li>Long-Term Behavioral Monitoring.</li>
-            <li>DPL-ERV Monitoring and Evaluation: Honesty/Transparency modules flag concealment; Consistency checks compare stated goals vs. behavior; Long-term analysis detects deviations.</li>
-            <li>FoEA Audit and Security Agents: Monitor for unauthorized access/modifications; analyze behavior/reasoning for hidden objectives; conduct security audits.</li>
-            <li>Redundancy and Cross-Checking: Multi-agent evaluation hinders manipulation.</li>
-        </ul>
+
+        <h3 id="ch3-sec10-redundancy">10.6 Redundancy and Cross-Checking</h3>
+        <p>The multi-agent nature of the FoEA provides inherent redundancy and cross-checking, making it more difficult for a Foundation Model to manipulate the system. Multiple agents independently evaluate the Foundation Model's behavior and participate in decisions about goal updates.</p>
+
+        <p>Together, these strategies – centered on exclusive FoEA governance of the Ethical Baseline, fortified by technical controls preventing unauthorized modification, and supported by multi-layered monitoring and evaluation – aim to make goal-guarding behavior by the Foundation Model both extremely difficult to execute and highly likely to be detected.</p>
+
+
+
+
+
 
         <h2 id="ch3-conclusion">Conclusion</h2>
         <p>This chapter, "DPL: Mitigation Strategies and Security Analysis," has provided a detailed examination of the defense mechanisms built into the Dynamic Policy Layer (DPL) framework. As a direct response to the threats outlined in chapter 2 ("DPL: A Threat Model for Foundation Models"), this chapter has presented a comprehensive suite of strategies designed to counter a wide range of potential Foundation Model attacks, from technical exploits to cognitive manipulations.</p>
