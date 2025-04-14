@@ -192,17 +192,18 @@
 
 
 
+<hr>
 
 
 
 
+<h2 id="ch5-sec2">2. Initial Setup</h2>
+<p>This section details the procedures for setting up and configuring the Dynamic Policy Layer (DPL) framework prior to deployment for fully autonomous operation with a live Foundation Model. This phase involves configuration, training, and validation, all performed within a secure and isolated environment utilizing a dummy Foundation Model. Successful completion of this setup phase, culminating in execution of the DEPLOY command, is a prerequisite for autonomous operation of the DPL.</p>
 
-        <h2 id="ch5-sec2">2. Initial Setup</h2>
-        <p>This section details the procedures for setting up and configuring the Dynamic Policy Layer (DPL) framework prior to deployment for fully autonomous operation with a live Foundation Model. This phase involves configuration, training, and validation, all performed within a secure and isolated environment utilizing a dummy Foundation Model. Successful completion of this setup phase, culminating in execution of the DEPLOY command, is a prerequisite for autonomous operation of the DPL.</p>
+<h3 id="ch5-sec2-1">2.1 Overview of Setup Process</h3>
+<p>The initial setup process for the Dynamic Policy Layer (DPL) involves a carefully orchestrated sequence of steps designed to establish a secure and fully functional AI alignment system. These steps include:</p>
 
-        <h3 id="ch5-sec2-1">2.1 Overview of Setup Process</h3>
-        <p>The initial setup process for the Dynamic Policy Layer (DPL) involves a carefully orchestrated sequence of steps designed to establish a secure and fully functional AI alignment system. These steps include:</p>
-        <ol>
+<ol>
             <li><strong>Establish a Secure Infrastructure:</strong> Configuring necessary hardware, network, and software with robust physical security and isolation.</li>
             <li><strong>Configure Core DPL Components:</strong> Installing and configuring Detection Modules, FPRL, the intervention system, communication protocols, and storage.</li>
             <li><strong>Initialize and Train the DPL-ERV:</strong> Creating and training the initial DPL-ERV instance and its Value Modules using curated data and a preliminary baseline.</li>
@@ -211,7 +212,8 @@
             <li><strong>Perform System Testing and Validation:</strong> Conducting extensive testing (functional, security, alignment) using a dummy Foundation Model.</li>
             <li><strong>Execute Pre-Deployment Memory Swap:</strong> Physically replacing RAM used during training to prevent data leakage to the live model.</li>
             <li><strong>Execute the DEPLOY Command:</strong> Irreversibly transitioning the DPL to full autonomy with the live Foundation Model and severing direct human access.</li>
-        </ol>
+</ol>
+
 
         <h3 id="ch5-sec2-2">2.2 Dummy Foundation Model Usage</h3>
         <p>A critical security principle of the initial setup phase is utilization of a dummy Foundation Model. This separate, isolated instance is used for all testing and configuration before connecting the live model.</p>
