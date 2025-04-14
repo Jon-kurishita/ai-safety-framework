@@ -514,23 +514,22 @@ dd {
     color: var(--text-color);
 }
 
-/* Updated h2/h3 spacing within content-container */
 .content-container h2 {
-    margin-top: 1.5em; /* Original top margin for h2 */
-    margin-bottom: 0.25em; /* Original bottom margin for h2 */
+    margin-top: 1.5em;
+    margin-bottom: 0.25em;
     color: var(--text-color);
 }
 .content-container h3 {
-    margin-top: 3em;    /* Increased top margin for h3 */
-    margin-bottom: 0;   /* Removed bottom margin for h3 */
+    margin-top: 3em;
+    margin-bottom: 0;
     color: var(--text-color);
 }
 .content-container h3 + p {
-    margin-top: 0;      /* Removed top margin for paragraph after h3 */
+    margin-top: 0;
 }
 
 .content-container > h2:first-of-type {
-    margin-top: 0; /* Keep this rule */
+    margin-top: 0;
 }
 .content-container p,
 .content-container ul,
@@ -538,7 +537,7 @@ dd {
 .content-container dl,
 .content-container figure {
      margin-top: 0;
-     margin-bottom: 1em; /* Keep default bottom margin for paragraphs etc. */
+     margin-bottom: 1em;
      color: var(--text-color);
 }
 .content-container h4 {
@@ -579,11 +578,10 @@ dd {
 .content-container h2 + ol,
 .content-container h2 + dl,
 .content-container h2 + img.content-image,
-/* .content-container h3 + p, -- Handled by specific h3 + p rule */
-.content-container h3 + ul, /* Keep original spacing if needed */
-.content-container h3 + ol, /* Keep original spacing if needed */
-.content-container h3 + dl, /* Keep original spacing if needed */
-.content-container h3 + img.content-image, /* Keep original spacing if needed */
+.content-container h3 + ul,
+.content-container h3 + ol,
+.content-container h3 + dl,
+.content-container h3 + img.content-image,
 .content-container h4 + ul,
 .content-container h4 + ol {
      margin-top: 0;
@@ -617,24 +615,19 @@ dd {
 
 #page-about main .contact-info h3,
 #page-about main .project-info h3 {
-    /* Use the general .content-container h3 spacing now */
-    /* margin-bottom: 0.3em; */
-    /* margin-left: 0; */
-    /* padding-left: 0; */
     color: var(--text-color);
 }
 
 #page-about main .contact-info ul,
 #page-about main .project-info ul {
-    margin-top: 0.3em; /* Keep tighter spacing for lists in these specific sections */
+    margin-top: 0.3em;
     padding-left: 20px;
     margin-left: 0;
     color: var(--text-color);
 }
-/* Adjust paragraph spacing following h3 specifically in these sections if needed */
 #page-about main .contact-info h3 + ul,
 #page-about main .project-info h3 + ul {
-     margin-top: 0.3em; /* Override the general h3+p rule if needed */
+     margin-top: 0.3em;
 }
 
 
@@ -723,9 +716,8 @@ dd {
     .intro-heading-center {
          text-align: center;
     }
-    /* Adjust h3 spacing for mobile if needed */
     .content-container h3 {
-         margin-top: 2em; /* Less top margin on mobile */
+         margin-top: 2em;
     }
 
     #page-about main .profile-picture {
