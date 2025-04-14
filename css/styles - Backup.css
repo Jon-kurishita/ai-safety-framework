@@ -1,9 +1,10 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
-    --nav-bg-color: #f4f4f4;
-    --nav-text-color: #333333;
-    --nav-link-hover-bg: #dddddd;
+    /* Nav variables no longer strictly needed if nav is hardcoded */
+    /* --nav-bg-color: #f4f4f4; */
+    /* --nav-text-color: #333333; */
+    /* --nav-link-hover-bg: #dddddd; */
     --link-color: #0066cc;
     --link-hover-color: #004c99;
     --section-bg-color: transparent;
@@ -19,9 +20,10 @@
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #e0e0e0;
-    --nav-bg-color: #1e1e1e;
-    --nav-text-color: #e0e0e0;
-    --nav-link-hover-bg: #333333;
+    /* Nav variables overrides removed/ignored as nav is hardcoded */
+    /* --nav-bg-color: #1e1e1e; */
+    /* --nav-text-color: #e0e0e0; */
+    /* --nav-link-hover-bg: #333333; */
     --link-color: #8ab4f8;
     --link-hover-color: #aecbfa;
     --section-bg-color: transparent;
@@ -44,7 +46,7 @@ body {
 /* --- Navigation Styles (Hardcoded Light Theme) --- */
 nav {
     width: 480px;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Hardcoded light */
     padding: 20px;
     position: fixed;
     height: 100vh;
@@ -53,11 +55,13 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
+    /* No transition needed */
 }
 
 nav h2 {
     margin-top: 0;
-    color: #333333;
+    color: #333333; /* Hardcoded light */
+    /* No transition needed */
 }
 
 nav ul {
@@ -71,15 +75,16 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333333;
+    color: #333333; /* Hardcoded light */
     display: block;
     padding: 8px;
     border-radius: 5px;
     font-size: 0.9em;
+    /* No transition needed for theme colors */
 }
 
 nav ul li a:hover {
-    background-color: #dddddd;
+    background-color: #dddddd; /* Hardcoded light hover */
 }
 
 #theme-toggle-button {
@@ -87,14 +92,15 @@ nav ul li a:hover {
     margin: 20px auto 0 auto;
     padding: 8px 15px;
     cursor: pointer;
-    border: 1px solid #cccccc;
-    background-color: #f4f4f4;
-    color: #333333;
+    border: 1px solid #cccccc; /* Hardcoded light border */
+    background-color: #f4f4f4; /* Hardcoded light background */
+    color: #333333; /* Hardcoded light text */
     border-radius: 5px;
+    /* No transition needed for theme colors */
 }
 
 #theme-toggle-button:hover {
-    background-color: #dddddd;
+    background-color: #dddddd; /* Hardcoded light hover */
 }
 /* --- End Navigation Styles --- */
 
@@ -107,21 +113,21 @@ main {
     align-items: center;
     box-sizing: border-box;
     min-height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg-color); /* Uses variable */
+    color: var(--text-color); /* Uses variable */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main a {
-    color: var(--link-color);
+    color: var(--link-color); /* Uses variable */
 }
 main a:hover {
-    color: var(--link-hover-color);
+    color: var(--link-hover-color); /* Uses variable */
 }
 
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x400/?business') no-repeat center center/cover;
-    color: var(--header-bg-image-text-color);
+    color: var(--header-bg-image-text-color); /* Uses variable (kept white) */
     text-align: center;
     padding: 5rem 0;
 }
@@ -202,12 +208,12 @@ main a:hover {
 }
 
 .team-member .social-icons a {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* Adjusted to a light grey, could use a variable if needed elsewhere */
     color: var(--dark-color, var(--dark-color-placeholder));
     transition: background-color 0.3s ease;
 }
 body.dark-mode .team-member .social-icons a {
-     background-color: #333333;
+     background-color: #333333; /* Darker background for icons in dark mode */
 }
 
 
@@ -513,24 +519,14 @@ dd {
     margin-bottom: 1em;
     color: var(--text-color);
 }
-
-/* Updated h2/h3 spacing within content-container */
-.content-container h2 {
-    margin-top: 1.5em; /* Original top margin for h2 */
-    margin-bottom: 0.25em; /* Original bottom margin for h2 */
-    color: var(--text-color);
-}
+.content-container h2,
 .content-container h3 {
-    margin-top: 3em;    /* Increased top margin for h3 */
-    margin-bottom: 0;   /* Removed bottom margin for h3 */
+    margin-top: 1.5em;
+    margin-bottom: 0.25em;
     color: var(--text-color);
 }
-.content-container h3 + p {
-    margin-top: 0;      /* Removed top margin for paragraph after h3 */
-}
-
 .content-container > h2:first-of-type {
-    margin-top: 0; /* Keep this rule */
+    margin-top: 0;
 }
 .content-container p,
 .content-container ul,
@@ -538,7 +534,7 @@ dd {
 .content-container dl,
 .content-container figure {
      margin-top: 0;
-     margin-bottom: 1em; /* Keep default bottom margin for paragraphs etc. */
+     margin-bottom: 1em;
      color: var(--text-color);
 }
 .content-container h4 {
@@ -579,11 +575,11 @@ dd {
 .content-container h2 + ol,
 .content-container h2 + dl,
 .content-container h2 + img.content-image,
-/* .content-container h3 + p, -- Handled by specific h3 + p rule */
-.content-container h3 + ul, /* Keep original spacing if needed */
-.content-container h3 + ol, /* Keep original spacing if needed */
-.content-container h3 + dl, /* Keep original spacing if needed */
-.content-container h3 + img.content-image, /* Keep original spacing if needed */
+.content-container h3 + p,
+.content-container h3 + ul,
+.content-container h3 + ol,
+.content-container h3 + dl,
+.content-container h3 + img.content-image,
 .content-container h4 + ul,
 .content-container h4 + ol {
      margin-top: 0;
@@ -604,6 +600,7 @@ dd {
 }
 
 /* Specific styles for #page-about */
+/* These will only apply on about.html */
 #page-about main .contact-info,
 #page-about main .project-info {
     margin-left: 0;
@@ -611,32 +608,25 @@ dd {
     width: 100%;
     max-width: 800px;
     box-sizing: border-box;
-    background-color: var(--section-bg-color);
-    color: var(--text-color);
+    background-color: var(--section-bg-color); /* Uses variable */
+    color: var(--text-color); /* Uses variable */
 }
 
 #page-about main .contact-info h3,
 #page-about main .project-info h3 {
-    /* Use the general .content-container h3 spacing now */
-    /* margin-bottom: 0.3em; */
-    /* margin-left: 0; */
-    /* padding-left: 0; */
-    color: var(--text-color);
+    margin-bottom: 0.3em;
+    margin-left: 0;
+    padding-left: 0;
+    color: var(--text-color); /* Uses variable */
 }
 
 #page-about main .contact-info ul,
 #page-about main .project-info ul {
-    margin-top: 0.3em; /* Keep tighter spacing for lists in these specific sections */
+    margin-top: 0.3em;
     padding-left: 20px;
     margin-left: 0;
-    color: var(--text-color);
+    color: var(--text-color); /* Uses variable */
 }
-/* Adjust paragraph spacing following h3 specifically in these sections if needed */
-#page-about main .contact-info h3 + ul,
-#page-about main .project-info h3 + ul {
-     margin-top: 0.3em; /* Override the general h3+p rule if needed */
-}
-
 
 #page-about main .profile-picture {
     display: block;
@@ -672,6 +662,7 @@ dd {
         margin-bottom: 20px;
         z-index: auto;
         box-sizing: border-box;
+        /* Ensure nav background remains light */
         background-color: #f4f4f4 !important;
     }
     main {
@@ -708,10 +699,10 @@ dd {
     }
     nav ul li a {
         font-size: 1em;
-         color: #333333 !important;
+         color: #333333 !important; /* Ensure nav text remains dark */
     }
      nav h2 {
-         color: #333333 !important;
+         color: #333333 !important; /* Ensure nav title remains dark */
      }
     main .page-header {
         padding: 1rem 0;
@@ -723,11 +714,6 @@ dd {
     .intro-heading-center {
          text-align: center;
     }
-    /* Adjust h3 spacing for mobile if needed */
-    .content-container h3 {
-         margin-top: 2em; /* Less top margin on mobile */
-    }
-
     #page-about main .profile-picture {
         width: 80px;
         height: 80px;
@@ -738,6 +724,7 @@ dd {
     }
     #theme-toggle-button {
         margin: 10px auto;
+         /* Ensure button remains light */
          background-color: #f4f4f4 !important;
          color: #333333 !important;
          border-color: #cccccc !important;
@@ -746,3 +733,4 @@ dd {
          background-color: #dddddd !important;
      }
 }
+
