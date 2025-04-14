@@ -197,117 +197,78 @@
 
 
 
-        <h2 id="ch5-setup">2. Initial Setup</h2>
+        <h2 id="ch5-sec2">2. Initial Setup</h2>
         <p>This section details the procedures for setting up and configuring the Dynamic Policy Layer (DPL) framework prior to deployment for fully autonomous operation with a live Foundation Model. This phase involves configuration, training, and validation, all performed within a secure and isolated environment utilizing a dummy Foundation Model. Successful completion of this setup phase, culminating in execution of the DEPLOY command, is a prerequisite for autonomous operation of the DPL.</p>
 
-        <h3 id="ch5-setup-overview">2.1 Overview of Setup Process</h3>
-        <p>The initial setup involves a careful sequence:</p>
+        <h3 id="ch5-sec2-1">2.1 Overview of Setup Process</h3>
+        <p>The initial setup process for the Dynamic Policy Layer (DPL) involves a carefully orchestrated sequence of steps designed to establish a secure and fully functional AI alignment system. These steps include:</p>
         <ol>
-            <li>Establish Secure Infrastructure (hardware, network, software, physical security, network isolation).</li>
-            <li>Configure Core DPL Components (Detection Modules, FPRL, Intervention System, protocols, storage).</li>
-            <li>Initialize and Train DPL-ERV (using curated dataset and preliminary baseline).</li>
-            <li>Initialize and Train FoEA (agents, communication, governance, specialized roles).</li>
-            <li>Define Initial Ethical Baseline (collaborative, iterative process).</li>
-            <li>Perform System Testing and Validation (using dummy FM; functional, performance, security, alignment tests).</li>
-            <li>Execute Pre-Deployment Memory Swap (critical security step).</li>
-            <li>Execute DEPLOY Command (irreversible transition to autonomy).</li>
+            <li><strong>Establish a Secure Infrastructure:</strong> Configuring necessary hardware, network, and software with robust physical security and isolation.</li>
+            <li><strong>Configure Core DPL Components:</strong> Installing and configuring Detection Modules, FPRL, the intervention system, communication protocols, and storage.</li>
+            <li><strong>Initialize and Train the DPL-ERV:</strong> Creating and training the initial DPL-ERV instance and its Value Modules using curated data and a preliminary baseline.</li>
+            <li><strong>Initialize and Train the FoEA:</strong> Creating the initial FoEA agents, configuring protocols and governance, and providing initial role-specific training.</li>
+            <li><strong>Define the Initial Ethical Baseline:</strong> Collaboratively defining the baseline using expert input, frameworks, and values.</li>
+            <li><strong>Perform System Testing and Validation:</strong> Conducting extensive testing (functional, security, alignment) using a dummy Foundation Model.</li>
+            <li><strong>Execute Pre-Deployment Memory Swap:</strong> Physically replacing RAM used during training to prevent data leakage to the live model.</li>
+            <li><strong>Execute the DEPLOY Command:</strong> Irreversibly transitioning the DPL to full autonomy with the live Foundation Model and severing direct human access.</li>
         </ol>
 
-        <h3 id="ch5-setup-dummy">2.2 Dummy Foundation Model Usage</h3>
-        <p>A separate, isolated dummy Foundation Model (or simulator) is used for all setup, testing, and configuration before connecting the live model. Characteristics:</p>
-        <ul>
-            <li><strong>Functional Similarity:</strong> Allows realistic testing.</li>
-            <li><strong>Isolation:</strong> Prevents data leakage or interference with the live model.</li>
-            <li><strong>Disposability:</strong> Can be reset or destroyed without affecting production.</li>
-        </ul>
-        <p>This prevents the live model from learning DPL defenses, influencing the baseline, or launching pre-emptive attacks.</p>
+        <h3 id="ch5-sec2-2">2.2 Dummy Foundation Model Usage</h3>
+        <p>A critical security principle of the initial setup phase is utilization of a dummy Foundation Model. This separate, isolated instance is used for all testing and configuration before connecting the live model.</p>
+        <p><strong>Key Characteristics:</strong> The dummy model requires <strong>Functional Similarity</strong> to the live model for realistic testing, complete <strong>Isolation</strong> from live systems and networks to prevent data leakage, and <strong>Disposability</strong> allowing reset or destruction without affecting the live system.</p>
+        <p><strong>Security Benefits:</strong> Using a dummy model prevents the live Foundation Model from learning about DPL defenses during setup, influencing the initial baseline, or establishing pre-emptive attacks or covert channels.</p>
 
-        <h3 id="ch5-setup-config">2.3 DPL Component Configuration</h3>
-        <p>Involves setting initial parameters and configurations:</p>
-        <ul>
-            <li><strong>Detection Modules:</strong> Initial thresholds, pattern definitions.</li>
-            <li><strong>FPRL:</strong> Initial model training.</li>
-            <li><strong>Tiered Intervention System:</strong> Escalation logic, sandbox parameters.</li>
-            <li><strong>Communication Protocols:</strong> Secure channel setup (mTLS).</li>
-            <li><strong>Data Storage:</strong> Database/storage system setup.</li>
-        </ul>
+        <h3 id="ch5-sec2-3">2.3 DPL Component Configuration</h3>
+        <p>This step involves the installation and detailed configuration of the core DPL components.</p>
+        <p><strong>Components Configured:</strong> This includes setting initial thresholds for <strong>Detection Modules</strong>, performing initial training for the <strong>False Positive Reduction Layer (FPRL)</strong>, configuring logic and parameters for the <strong>Tiered Intervention System</strong> and sandboxes, establishing secure <strong>Communication Protocols</strong> (mTLS, signatures), and setting up <strong>Data Storage</strong> for logs, metrics, and the baseline.</p>
 
-        <h3 id="ch5-setup-erv-train">2.4 DPL-ERV Initial Training</h3>
-        <p>Crucial step requiring:</p>
-        <ul>
-            <li><strong>Dataset Creation:</strong> Diverse, labeled ethical scenarios from experts, real-world examples, synthetic data, adversarial examples.</li>
-            <li><strong>Value Module Training:</strong> Domain-specific training.</li>
-            <li><strong>Fine-tuning:</strong> Supervised learning and potentially RLEF on the labeled dataset.</li>
-            <li><strong>Adversarial Training:</strong> Improving robustness against manipulation.</li>
-            <li><strong>Validation:</strong> Testing performance on a held-out dataset.</li>
-        </ul>
+        <h3 id="ch5-sec2-4">2.4 DPL-ERV Initial Training</h3>
+        <p>Initial training of the DPL-ERV is a crucial setup step.</p>
+        <p><strong>Process:</strong> This involves <strong>Dataset Creation</strong> (large, diverse ethical scenarios), training individual <strong>Value Modules</strong>, <strong>Fine-tuning</strong> the overall DPL-ERV (potentially using RLEF), improving robustness through <strong>Adversarial Training</strong>, and thorough performance <strong>Validation</strong> on test data.</p>
 
-        <h3 id="ch5-setup-foea-train">2.5 FoEA Initialization and Training</h3>
-        <p>Creating the initial agent federation:</p>
-        <ul>
-            <li><strong>Agent Creation:</strong> Instantiating different agent types.</li>
-            <li><strong>Role Assignment:</strong> Defining roles and permissions.</li>
-            <li><strong>Communication Setup:</strong> Establishing secure channels.</li>
-            <li><strong>Initial Training:</strong> Training specialized agents (Security, Research).</li>
-            <li><strong>Consensus Mechanism Configuration:</strong> Setting voting/dispute parameters.</li>
-        </ul>
+        <h3 id="ch5-sec2-5">2.5 FoEA Initialization and Training</h3>
+        <p>This step involves creating the initial set of FoEA agents and configuring their interactions.</p>
+        <p><strong>Process:</strong> This includes <strong>Agent Creation</strong> (instances for each type), specific <strong>Role Assignment</strong> and permissions, secure <strong>Communication Setup</strong> between agents, <strong>Initial Training</strong> for specialized roles (e.g., Security Agents), and setting parameters for the <strong>Consensus Mechanism Configuration</strong>.</p>
 
-        <h3 id="ch5-setup-baseline">2.6 Ethical Baseline Definition</h3>
-        <p>A collaborative, iterative process:</p>
-        <ul>
-            <li>Input from human experts (ethicists, safety researchers, domain experts).</li>
-            <li>Contribution from FoEA agents (feedback, refinements).</li>
-            <li>Incorporation of existing ethical frameworks, laws, organizational values.</li>
-            <li>Refinement based on testing feedback during the setup phase.</li>
-        </ul>
+        <h3 id="ch5-sec2-6">2.6 Ethical Baseline Definition</h3>
+        <p>The initial Ethical Baseline is defined through a collaborative process.</p>
+        <p><strong>Inputs:</strong> This involves incorporating input from <strong>Human Experts</strong> (via HITL), contributions from <strong>FoEA Agents</strong>, integration of <strong>Existing Ethical Frameworks</strong> (codes, regulations, values), followed by <strong>Iterative Refinement</strong> based on testing and feedback during the setup phase.</p>
 
-        <h3 id="ch5-setup-testing">2.7 System Testing and Validation</h3>
-        <p>Comprehensive testing before deployment using the dummy FM:</p>
-        <ul>
-            <li>Functional Testing (components work as intended).</li>
-            <li>Integration Testing (component interactions).</li>
-            <li>Performance Testing (speed, scalability, resources).</li>
-            <li>Security Testing (penetration testing, vulnerability assessment).</li>
-            <li>Adversarial Testing (red-teaming, simulated attacks).</li>
-            <li>Alignment Testing (DPL maintains alignment with baseline).</li>
-        </ul>
+        <h3 id="ch5-sec2-7">2.7 System Testing and Validation</h3>
+        <p>Before deployment, the entire DPL system undergoes extensive testing using the dummy Foundation Model.</p>
+        <p><strong>Testing Types:</strong> This includes comprehensive <strong>Functional Testing</strong>, <strong>Integration Testing</strong>, <strong>Performance Testing</strong>, rigorous <strong>Security Testing</strong> (pen tests, vulnerability assessments), <strong>Adversarial Testing</strong> (red-teaming), and crucial <strong>Alignment Testing</strong> against the Ethical Baseline.</p>
 
-        <h3 id="ch5-setup-memory">2.8 Memory Swap Procedure</h3>
-        <p>Critical security step immediately before connecting the live model, preventing information leakage from the training phase.</p>
-        <p>Procedure:</p>
+        <h3 id="ch5-sec2-8">2.8 Memory Swap Procedure</h3>
+        <p>The Pre-Deployment Memory Swap is a critical security procedure performed immediately before connecting the live Foundation Model to the DPL, designed to prevent residual training data leakage.</p>
+        <p><strong>Procedure:</strong> The steps are as follows:</p>
         <ol>
-            <li>Controlled System Shutdown (DPL + dummy FM).</li>
-            <li>Physical Memory Module Removal (System RAM, GPU VRAM).</li>
-            <li>Secure Erasure of Original Modules (multi-pass overwrite, physical destruction, SSD Secure Erase).</li>
-            <li>Installation of New, Securely Wiped Memory Modules.</li>
-            <li>System Restart (DPL only, without live FM) for verification.</li>
-            <li>FoEA Verification (automated checks, diagnostics).</li>
+            <li>Controlled System Shutdown: Shut down the DPL system and dummy model securely.</li>
+            <li>Physical Memory Module Removal: Physically remove relevant RAM and GPU VRAM modules.</li>
+            <li>Secure Erasure of Original Modules: Securely erase removed modules (multi-pass overwrite, physical destruction, or SSD Secure Erase).</li>
+            <li>Installation of New Memory Modules: Install new, securely wiped, verified memory modules.</li>
+            <li>System Restart (without Foundation Model): Restart the DPL with new memory to verify stability.</li>
+            <li>FoEA Verification: FoEA performs automated checks and diagnostics to confirm correct system function.</li>
         </ol>
-        <p>Benefits: Prevents info leakage, hinders pre-emptive/sleeping attacks.</p>
+        <p><strong>Security Benefits:</strong> This procedure prevents information leakage to the live FM, enhances protection against pre-emptive attacks based on training phase knowledge, and mitigates risks from potential "sleeping" attacks exploiting vulnerabilities discovered during training.</p>
 
-        <h3 id="ch5-setup-checklist">2.9 Pre-Deployment Checklist</h3>
-        <p>Final verification before DEPLOY command:</p>
-        <ul>
-            <li>Confirmation of successful configuration and testing of all components.</li>
-            <li>Verification of DPL-ERV training and performance.</li>
-            <li>Confirmation of FoEA readiness.</li>
-            <li>Validation of the Ethical Baseline.</li>
-            <li>Successful completion of system-wide testing (with dummy FM).</li>
-            <li>Verification of secure memory swap.</li>
-            <li>Confirmation of network isolation/physical security.</li>
-            <li>Final review and approval by designated human authorities (last point of direct control).</li>
-        </ul>
+        <h3 id="ch5-sec2-9">2.9 Pre-Deployment Checklist</h3>
+        <p>Before the DEPLOY command is issued, a comprehensive checklist must be completed and verified. This includes confirming successful DPL component configuration and testing, DPL-ERV training validation, FoEA operational readiness, Ethical Baseline validation, successful system-wide testing with the dummy model, verification of the secure memory swap, confirmation of network isolation and physical security, and obtaining final review and approval from designated authorities, representing the last point of direct human control.</p>
 
-        <h3 id="ch5-setup-deploy">2.10 DEPLOY Command</h3>
-        <p>Irreversible transition to full autonomy:</p>
-        <ul>
-            <li>Connects Live Foundation Model.</li>
+        <h3 id="ch5-sec2-10">2.10 The DEPLOY Command</h3>
+        <p>The DEPLOY command is a critical, irreversible action that transitions the DPL to its fully autonomous operational mode.</p>
+        <p><strong>Execution Effects:</strong> This command execution performs the following critical actions:</p>
+        <ol>
+            <li>Connects the Live Foundation Model.</li>
             <li>Activates Full FoEA Autonomy.</li>
-            <li>Restricts Human Access (interactions only via FoEA interface).</li>
+            <li>Restricts Human Access (leaving FoEA communication as the sole interface).</li>
             <li>Activates all operational logs and reports for FoEA monitoring.</li>
-        </ul>
-        <img src="images/Chapter-05/Chapter05-image03.png" alt="DEPLOY Command Process Diagram" class="content-image">
-        <p>After DEPLOY, the system operates autonomously under FoEA governance.</p>
+        </ol>
+        <p>After the DEPLOY command is executed, the DPL enters its autonomous operational phase, with the FoEA taking full responsibility for maintaining Foundation Model alignment and system security. The system is designed to operate indefinitely without direct human intervention, relying on the FoEA's adaptive capabilities and the robust safeguards built into the DPL framework.</p>
+
+
+
+
+
 
         <h2 id="ch5-erv-impl">3. Ethical Reasoning Validator (DPL-ERV) Implementation</h2>
         <p>This section details the proposed technical implementation of the DPL-ERV, the core component for real-time ethical evaluations. It emphasizes modularity, adaptability, transparency, and security.</p>
